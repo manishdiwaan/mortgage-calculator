@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mortgage Repayment Calculator</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0f172a;--card:#1e293b;--card2:#334155;--accent:#3b82f6;--accent2:#22d3ee;--green:#10b981;--red:#ef4444;--orange:#f59e0b;--text:#f1f5f9;--text2:#94a3b8;--border:#475569;--input:#0f172a}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;min-height:100vh}
+.container{max-width:1400px;margin:0 auto;padding:16px}
+h1{text-align:center;font-size:1.8rem;padding:20px 0 4px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{text-align:center;color:var(--text2);margin-bottom:20px;font-size:.9rem}
+.grid{display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}
+.panel{background:var(--card);border-radius:12px;padding:20px;border:1px solid var(--border)}
+.section-title{font-size:1rem;font-weight:700;margin:16px 0 10px;color:var(--accent2);display:flex;align-items:center;gap:6px}
+.section-title:first-child{margin-top:0}
+.field{margin-bottom:12px}
+.label-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.label-row label{font-size:.8rem;color:var(--text2);font-weight:500}
+.help-icon{width:16px;height:16px;border-radius:50%;background:var(--card2);color:var(--text2);font-size:10px;display:inline-flex;align-items:center;justify-content:center;cursor:help;position:relative;border:1px solid var(--border);flex-shrink:0}
+.help-icon:hover{background:var(--accent);color:#fff}
+.help-icon .tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1a1a2e;color:#e2e8f0;padding:10px 12px;border-radius:8px;font-size:.75rem;width:240px;z-index:100;line-height:1.5;font-weight:400;border:1px solid var(--border);box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.help-icon:hover .tip{display:block}
+.help-icon .tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#1a1a2e}
+input,select{width:100%;padding:8px 10px;background:var(--input);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;outline:none;transition:border .2s}
+input:focus,select:focus{border-color:var(--accent)}
+select{cursor:pointer}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{width:100%;padding:12px;border:none;border-radius:10px;font-size:.9rem;font-weight:700;cursor:pointer;margin-top:8px;transition:transform .1s}
+.btn:active{transform:scale(.98)}
+.btn-calc{background:linear-gradient(135deg,var(--accent),#2563eb);color:#fff}
+.btn-export{background:var(--card2);color:var(--text);border:1px solid var(--border);margin-top:6px}
+.btn-export:hover{border-color:var(--accent)}
+.results{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px}
+@media(max-width:900px){.results{grid-template-columns:1fr 1fr}}
+.metric{background:var(--card2);border-radius:10px;padding:14px;text-align:center}
+.metric .val{font-size:1.3rem;font-weight:800;color:var(--accent2)}
+.metric .lbl{font-size:.7rem;color:var(--text2);margin-top:2px;display:flex;align-items:center;justify-content:center;gap:4px}
+.metric.green .val{color:var(--green)}
+.metric.orange .val{color:var(--orange)}
+.metric.red .val{color:var(--red)}
+.chart-box{background:var(--card);border-radius:12px;padding:16px;border:1px solid var(--border);margin-bottom:16px}
+.chart-box h3{font-size:.9rem;margin-bottom:10px;color:var(--text2)}
+.chart-wrap{position:relative;height:280px}
+.tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:8px 16px;border-radius:8px;background:var(--card2);color:var(--text2);cursor:pointer;font-size:.8rem;font-weight:600;border:1px solid transparent;transition:all .2s}
+.tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tab:hover:not(.active){border-color:var(--border)}
+table{width:100%;border-collapse:collapse;font-size:.78rem}
+th{background:var(--card2);color:var(--text2);padding:8px 6px;text-align:right;position:sticky;top:0}
+th:first-child{text-align:left}
+td{padding:7px 6px;border-bottom:1px solid rgba(71,85,105,.3);text-align:right}
+td:first-child{text-align:left}
+tr:hover td{background:rgba(59,130,246,.05)}
+.table-wrap{max-height:500px;overflow-y:auto;border-radius:8px;border:1px solid var(--border)}
+.table-wrap::-webkit-scrollbar{width:6px}
+.table-wrap::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.lmi-badge{display:inline-block;background:var(--red);color:#fff;font-size:.65rem;padding:2px 8px;border-radius:10px;margin-left:6px}
+.input-prefix{position:relative}
+.input-prefix span{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text2);font-size:.85rem}
+.input-prefix input{padding-left:24px}
+.input-suffix{position:relative}
+.input-suffix span{position:absolute;right:10px;top:50%;transform:translateY(-50%);color:var(--text2);font-size:.85rem}
+.input-suffix input{padding-right:28px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🏠 Mortgage Repayment Calculator</h1>
+<p class="subtitle">Comprehensive Australian mortgage calculator with amortisation schedule</p>
+<div class="grid">
+<div>
+<div class="panel" id="inputPanel">
+<div class="section-title">🏡 Property & Loan Details</div>
+<div class="field">
+<div class="label-row"><label>Property Price ($)</label><span class="help-icon">?<span class="tip">The total purchase price of the property you're buying. Used to calculate the Loan-to-Value Ratio (LVR).</span></span></div>
+<div class="input-prefix"><span>$</span><input type="number" id="propPrice" value="750000"></div>
+</div>
+<div class="field">
+<div class="label-row"><label>Deposit Amount ($)</label><span class="help-icon">?<span class="tip">Your upfront contribution towards the property. A larger deposit means a lower LVR and potentially avoiding Lenders Mortgage Insurance (LMI).</span></span></div>
+<div class="input-prefix"><span>$</span><input type="number" id="deposit" value="150000"></div>
+</div>
+<div class="field">
+<div class="label-row"><label>Loan Amount ($)</label><span class="help-icon">?<span class="tip">The total amount you're borrowing from the lender. All repayment calculations are based on this amount. This is independent of property price and deposit.</span></span></div>
+<div class="input-prefix"><span>$</span><input type="number" id="loanAmt" value="600000"></div>
+</div>
+
+<div class="section-title">📋 Loan Terms</div>
+<div class="row2">
+<div class="field">
+<div class="label-row"><label>Interest Rate</label><span class="help-icon">?<span class="tip">The annual interest rate charged by your lender. Even small rate differences significantly impact total interest over the loan term.</span></span></div>
+<div class="input-suffix"><span>%</span><input type="number" id="intRate" value="6.2" step="0.01"></div>
+</div>
+<div class="field">
+<div class="label-row"><label>Loan Term</label><span class="help-icon">?<span class="tip">The total duration of your loan in years. Common terms are 25 or 30 years. A shorter term means higher repayments but much less total interest.</span></span></div>
+<div class="input-suffix"><span>yrs</span><input type="number" id="loanTerm" value="30" min="1" max="40"></div>
+</div>
+</div>
+<div class="row2">
+<div class="field">
+<div class="label-row"><label>Repayment Type</label><span class="help-icon">?<span class="tip"><strong>Principal & Interest (P&I):</strong> You pay both interest and reduce the loan balance each period.<br><br><strong>Interest Only (IO):</strong> You only pay interest for a set period. The loan balance doesn't reduce.</span></span></div>
+<select id="repayType"><option value="pi">Principal & Interest</option><option value="io">Interest Only</option></select>
+</div>
+<div class="field">
+<div class="label-row"><label>Rate Type</label><span class="help-icon">?<span class="tip"><strong>Variable:</strong> Rate can change with market conditions.<br><strong>Fixed:</strong> Rate is locked for a set period.<br><strong>Split:</strong> Part fixed, part variable. This is for labelling only; calculations use the rate entered.</span></span></div>
+<select id="rateType"><option value="variable">Variable</option><option value="fixed">Fixed</option><option value="split">Split</option></select>
+</div>
+</div>
+
+<div class="section-title">💰 Repayment Preferences</div>
+<div class="field">
+<div class="label-row"><label>Repayment Frequency</label><span class="help-icon">?<span class="tip">How often you make repayments. More frequent repayments (weekly/fortnightly) can save interest because the balance reduces sooner.</span></span></div>
+<select id="repayFreq"><option value="monthly">Monthly</option><option value="fortnightly">Fortnightly</option><option value="weekly">Weekly</option></select>
+</div>
+<div class="row2">
+<div class="field">
+<div class="label-row"><label>Extra Repayment ($)</label><span class="help-icon">?<span class="tip">Additional amount paid on top of your minimum repayment. Even small extra repayments can significantly reduce your loan term and total interest.</span></span></div>
+<div class="input-prefix"><span>$</span><input type="number" id="extraRepay" value="0" min="0"></div>
+</div>
+<div class="field">
+<div class="label-row"><label>Extra Repay Freq.</label><span class="help-icon">?<span class="tip">How often you make extra repayments. Choose from one-time, weekly, fortnightly, or monthly.</span></span></div>
+<select id="extraFreq"><option value="monthly">Monthly</option><option value="fortnightly">Fortnightly</option><option value="weekly">Weekly</option><option value="onetime">One-Time</option></select>
+</div>
+</div>
+<div class="field">
+<div class="label-row"><label>One-Time Lump Sum Deposit ($)</label><span class="help-icon">?<span class="tip">A single lump sum payment towards your loan principal (e.g., from a bonus, inheritance, tax refund, or savings). Applied at the start and immediately reduces your balance.</span></span></div>
+<div class="input-prefix"><span>$</span><input type="number" id="oneTimeDep" value="0" min="0"></div>
+</div>
+<div class="field">
+<div class="label-row"><label>Offset Account Balance ($)</label><span class="help-icon">?<span class="tip">Money in your offset account reduces the loan balance that interest is calculated on. E.g., $50k offset on a $500k loan means interest is only charged on $450k.</span></span></div>
+<div class="input-prefix"><span>$</span><input type="number" id="offsetBal" value="0" min="0"></div>
+</div>
+
+<div class="section-title">🧾 Costs & Fees</div>
+<div class="row2">
+<div class="field">
+<div class="label-row"><label>Application Fee ($)</label><span class="help-icon">?<span class="tip">One-off fee charged by the lender to process your loan application. Typically ranges from $0 to $600. Added to your total loan cost.</span></span></div>
+<div class="input-prefix"><span>$</span><input type="number" id="appFee" value="0" min="0"></div>
+</div>
+<div class="field">
+<div class="label-row"><label>Monthly Loan Fee ($)</label><span class="help-icon">?<span class="tip">Ongoing monthly service fee charged by some lenders. Typically $0–$15/month. Adds up over the loan term and is included in the comparison rate calculation.</span></span></div>
+<div class="input-prefix"><span>$</span><input type="number" id="monthFee" value="0" min="0"></div>
+</div>
+</div>
+</div>
+<button class="btn btn-calc" onclick="calculate()">Calculate Repayments</button>
+<button class="btn btn-export" onclick="exportCSV()">📥 Export to CSV / Excel</button>
+</div>
+
+<div id="outputArea">
+<div class="panel" style="margin-bottom:16px">
+<div class="section-title">📊 Repayment Summary</div>
+<div class="results" id="metricsGrid"></div>
+</div>
+<div class="tabs" id="tabBar">
+<div class="tab active" onclick="switchTab('balance')">Balance Over Time</div>
+<div class="tab" onclick="switchTab('split')">Principal vs Interest</div>
+<div class="tab" onclick="switchTab('cumulative')">Cumulative Interest</div>
+<div class="tab" onclick="switchTab('table')">Amortisation Table</div>
+</div>
+<div id="tab-balance" class="chart-box"><h3>Loan Balance Over Time</h3><div class="chart-wrap"><canvas id="chartBalance"></canvas></div></div>
+<div id="tab-split" class="chart-box hidden"><h3>Principal vs Interest Breakdown (Monthly)</h3><div class="chart-wrap"><canvas id="chartSplit"></canvas></div></div>
+<div id="tab-cumulative" class="chart-box hidden"><h3>Cumulative Interest Paid</h3><div class="chart-wrap"><canvas id="chartCumulative"></canvas></div></div>
+<div id="tab-table" class="hidden">
+<div class="panel"><div class="section-title">📅 Amortisation Schedule</div><div class="table-wrap" id="amortTable"></div></div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+const $ = id => document.getElementById(id);
+let scheduleData = [];
+let charts = {};
+
+function fmt(n){return '$'+Math.round(n).toLocaleString()}
+function fmtDec(n){return '$'+n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
+
+function calcLMI(lvr,loan){
+  if(lvr<=80) return 0;
+  if(lvr<=85) return loan*0.01;
+  if(lvr<=90) return loan*0.02;
+  if(lvr<=95) return loan*0.035;
+  return loan*0.05;
+}
+
+function calculate(){
+  const propPrice=+$('propPrice').value||0;
+  const depositAmt=+$('deposit').value||0;
+  const loanAmt=+$('loanAmt').value||0;
+  const rate=+$('intRate').value/100;
+  const termYrs=+$('loanTerm').value||30;
+  const repayType=$('repayType').value;
+  const freq=$('repayFreq').value;
+  const extraRepay=+$('extraRepay').value||0;
+  const extraFreq=$('extraFreq').value;
+  const oneTimeDep=+$('oneTimeDep').value||0;
+  const offsetBal=+$('offsetBal').value||0;
+  const appFee=+$('appFee').value||0;
+  const monthFee=+$('monthFee').value||0;
+
+  const lvr=propPrice>0?(loanAmt/propPrice*100):0;
+  const lmi=calcLMI(lvr,loanAmt);
+  const effectiveLoan=loanAmt+lmi;
+  const startBal=Math.max(effectiveLoan-oneTimeDep,0);
+
+  const monthlyRate=rate/12;
+  const totalMonths=termYrs*12;
+  let periodsPerYear=12, freqLabel='Monthly';
+  if(freq==='fortnightly'){periodsPerYear=26;freqLabel='Fortnightly'}
+  if(freq==='weekly'){periodsPerYear=52;freqLabel='Weekly'}
+  const periodRate=rate/periodsPerYear;
+  const totalPeriods=termYrs*periodsPerYear;
+
+  let basePayment;
+  if(repayType==='io'){
+    basePayment=Math.max(startBal-offsetBal,0)*periodRate;
+  } else {
+    const effBal=Math.max(startBal-offsetBal,0);
+    if(periodRate===0) basePayment=effBal/totalPeriods;
+    else basePayment=effBal*(periodRate*Math.pow(1+periodRate,totalPeriods))/(Math.pow(1+periodRate,totalPeriods)-1);
+  }
+
+  // Calculate extra repayment per period
+  let extraPerPeriod=0;
+  if(extraFreq==='onetime'){extraPerPeriod=0}
+  else if(extraFreq===freq){extraPerPeriod=extraRepay}
+  else{
+    let extraPerYear=0;
+    if(extraFreq==='weekly') extraPerYear=extraRepay*52;
+    else if(extraFreq==='fortnightly') extraPerYear=extraRepay*26;
+    else if(extraFreq==='monthly') extraPerYear=extraRepay*12;
+    extraPerPeriod=extraPerYear/periodsPerYear;
+  }
+
+  // One-time extra repayment applied at period 1
+  const oneTimeExtra = (extraFreq==='onetime') ? extraRepay : 0;
+
+  // Build schedule WITH extras
+  scheduleData=[];
+  let bal=startBal, totalInt=0, totalPrin=0;
+  let finished=false, periodsUsed=totalPeriods;
+
+  for(let p=1;p<=totalPeriods;p++){
+    if(bal<=0){periodsUsed=p-1;break;}
+    const intAmt=Math.max(bal-offsetBal,0)*periodRate;
+    let prinAmt;
+    if(repayType==='io'){
+      prinAmt=extraPerPeriod + (p===1?oneTimeExtra:0);
+    } else {
+      prinAmt=basePayment-intAmt+extraPerPeriod + (p===1?oneTimeExtra:0);
+    }
+    if(prinAmt>bal) prinAmt=bal;
+    const payment=intAmt+prinAmt;
+    bal=Math.max(bal-prinAmt,0);
+    totalInt+=intAmt;
+    totalPrin+=prinAmt;
+    scheduleData.push({period:p,payment,principal:prinAmt,interest:intAmt,balance:bal,totalInt});
+    if(bal<=0){periodsUsed=p;finished=true;break;}
+  }
+  if(!finished) periodsUsed=totalPeriods;
+
+  // Build schedule WITHOUT extras for comparison
+  let balNoExtra=startBal, totalIntNoExtra=0;
+  let basePaymentNoExtra;
+  if(repayType==='io'){
+    basePaymentNoExtra=Math.max(startBal-offsetBal,0)*periodRate;
+  } else {
+    const effB=Math.max(startBal-offsetBal,0);
+    if(periodRate===0) basePaymentNoExtra=effB/totalPeriods;
+    else basePaymentNoExtra=effB*(periodRate*Math.pow(1+periodRate,totalPeriods))/(Math.pow(1+periodRate,totalPeriods)-1);
+  }
+  for(let p=1;p<=totalPeriods;p++){
+    if(balNoExtra<=0) break;
+    const intA=Math.max(balNoExtra-offsetBal,0)*periodRate;
+    let prinA=repayType==='io'?0:(basePaymentNoExtra-intA);
+    if(prinA>balNoExtra) prinA=balNoExtra;
+    balNoExtra=Math.max(balNoExtra-prinA,0);
+    totalIntNoExtra+=intA;
+  }
+
+  const intSaved=totalIntNoExtra-totalInt;
+  const timeSavedPeriods=totalPeriods-periodsUsed;
+  const timeSavedYrs=Math.floor(timeSavedPeriods/periodsPerYear);
+  const timeSavedMo=Math.round((timeSavedPeriods%periodsPerYear)/(periodsPerYear/12));
+
+  const totalFees=appFee+(monthFee*termYrs*12);
+  const totalCost=effectiveLoan+totalInt+totalFees;
+
+  const effectiveRate=startBal>0?((totalInt/startBal)/(periodsUsed/periodsPerYear)*100):0;
+  const compRate=startBal>0?(rate*100+(totalFees/startBal/termYrs)*100):0;
+
+  const endDate=new Date();
+  endDate.setMonth(endDate.getMonth()+Math.round(periodsUsed/(periodsPerYear/12)));
+  const endDateStr=endDate.toLocaleDateString('en-AU',{month:'short',year:'numeric'});
+
+  const actualYrs=Math.floor(periodsUsed/periodsPerYear);
+  const actualMo=Math.round((periodsUsed%periodsPerYear)/(periodsPerYear/12));
+
+  // Build metrics
+  let metricsHTML='';
+  const m=(val,label,cls='',tipText='')=>{
+    let tipHtml=tipText?`<span class="help-icon" style="font-size:9px;width:14px;height:14px">?<span class="tip">${tipText}</span></span>`:'';
+    metricsHTML+=`<div class="metric ${cls}"><div class="val">${val}</div><div class="lbl">${label}${tipHtml}</div></div>`;
+  };
+
+  m(fmtDec(basePayment),`${freqLabel} Repayment`);
+  m(fmt(basePayment*periodsPerYear/12),'Monthly Equivalent');
+  m(fmt(basePayment*periodsPerYear),'Annual Repayment');
+  m(fmt(totalInt),'Total Interest','orange');
+  m(fmt(totalCost),'Total Loan Cost');
+  m(lvr.toFixed(1)+'%','LVR',lvr>80?'red':'green',`Loan-to-Value Ratio. Calculated as (Loan Amount / Property Price) × 100. LVR above 80% typically requires LMI.`);
+  if(lmi>0) m(fmt(lmi),'LMI Payable','red');
+  m(effectiveRate.toFixed(2)+'%','Effective Rate','',`The effective interest rate reflects the actual rate you pay factoring in the offset account and how interest compounds.`);
+  m(compRate.toFixed(2)+'%','Comparison Rate','',`An Australian regulatory rate that includes fees and charges to give a more accurate cost of the loan. Useful for comparing loans from different lenders.`);
+  m(endDateStr,'Loan End Date');
+  m(`${actualYrs}y ${actualMo}m`,'Actual Loan Duration');
+  if(intSaved>0){
+    m(fmt(intSaved),'Interest Saved','green');
+    m(`${timeSavedYrs}y ${timeSavedMo}m`,'Time Saved','green');
+  }
+
+  $('metricsGrid').innerHTML=metricsHTML;
+
+  // Charts
+  renderCharts(periodsPerYear, freqLabel);
+}
+
+function renderCharts(ppy, freqLabel){
+  const labels=[], balData=[], prinData=[], intData=[], cumIntData=[];
+  const step=Math.max(1,Math.floor(scheduleData.length/120));
+  for(let i=0;i<scheduleData.length;i+=step){
+    const d=scheduleData[i];
+    const yr=(d.period/ppy).toFixed(1);
+    labels.push('Yr '+yr);
+    balData.push(Math.round(d.balance));
+    prinData.push(Math.round(d.principal));
+    intData.push(Math.round(d.interest));
+    cumIntData.push(Math.round(d.totalInt));
+  }
+
+  const gridColor='rgba(148,163,184,0.15)';
+  const tickColor='#94a3b8';
+  const commonOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:tickColor,font:{size:11}}}},scales:{x:{ticks:{color:tickColor,maxTicksLimit:10,font:{size:10}},grid:{color:gridColor}},y:{ticks:{color:tickColor,callback:v=>'$'+Math.round(v/1000)+'k',font:{size:10}},grid:{color:gridColor}}}};
+
+  if(charts.balance) charts.balance.destroy();
+  if(charts.split) charts.split.destroy();
+  if(charts.cumulative) charts.cumulative.destroy();
+
+  charts.balance=new Chart($('chartBalance'),{type:'line',data:{labels,datasets:[{label:'Loan Balance',data:balData,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,0.15)',fill:true,tension:.3,pointRadius:0}]},options:commonOpts});
+
+  charts.split=new Chart($('chartSplit'),{type:'bar',data:{labels,datasets:[{label:'Principal',data:prinData,backgroundColor:'#10b981'},{label:'Interest',data:intData,backgroundColor:'#f59e0b'}]},options:{...commonOpts,scales:{...commonOpts.scales,x:{...commonOpts.scales.x,stacked:true},y:{...commonOpts.scales.y,stacked:true}}}});
+
+  charts.cumulative=new Chart($('chartCumulative'),{type:'line',data:{labels,datasets:[{label:'Cumulative Interest',data:cumIntData,borderColor:'#ef4444',backgroundColor:'rgba(239,68,68,0.12)',fill:true,tension:.3,pointRadius:0}]},options:commonOpts});
+
+  // Amortisation table
+  let html='<table><thead><tr><th>Period</th><th>Payment</th><th>Principal</th><th>Interest</th><th>Balance</th><th>Total Interest</th></tr></thead><tbody>';
+  const maxRows=Math.min(scheduleData.length, 600);
+  for(let i=0;i<maxRows;i++){
+    const d=scheduleData[i];
+    html+=`<tr><td>${d.period}</td><td>${fmtDec(d.payment)}</td><td>${fmtDec(d.principal)}</td><td>${fmtDec(d.interest)}</td><td>${fmt(d.balance)}</td><td>${fmt(d.totalInt)}</td></tr>`;
+  }
+  if(scheduleData.length>maxRows) html+=`<tr><td colspan="6" style="text-align:center;color:var(--text2);padding:12px">Showing first ${maxRows} of ${scheduleData.length} periods. Export CSV for full schedule.</td></tr>`;
+  html+='</tbody></table>';
+  $('amortTable').innerHTML=html;
+}
+
+function switchTab(name){
+  ['balance','split','cumulative','table'].forEach(t=>{
+    const el=$('tab-'+t);
+    if(el) el.classList.toggle('hidden',t!==name);
+  });
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  event.target.classList.add('active');
+  if(name!=='table' && charts[name]) charts[name].resize();
+}
+
+function exportCSV(){
+  if(!scheduleData.length){alert('Please calculate first.');return;}
+  let csv='Mortgage Repayment Schedule\n';
+  csv+=`Property Price,${$('propPrice').value}\n`;
+  csv+=`Deposit,${$('deposit').value}\n`;
+  csv+=`Loan Amount,${$('loanAmt').value}\n`;
+  csv+=`Interest Rate,${$('intRate').value}%\n`;
+  csv+=`Loan Term,${$('loanTerm').value} years\n`;
+  csv+=`Repayment Type,${$('repayType').value==='pi'?'Principal & Interest':'Interest Only'}\n`;
+  csv+=`Frequency,${$('repayFreq').value}\n`;
+  csv+=`Extra Repayment,${$('extraRepay').value}\n`;
+  csv+=`Extra Repay Frequency,${$('extraFreq').value}\n`;
+  csv+=`One-Time Deposit,${$('oneTimeDep').value}\n`;
+  csv+=`Offset Balance,${$('offsetBal').value}\n\n`;
+  csv+='Period,Payment,Principal,Interest,Balance,Total Interest Paid\n';
+  scheduleData.forEach(d=>{
+    csv+=`${d.period},${d.payment.toFixed(2)},${d.principal.toFixed(2)},${d.interest.toFixed(2)},${d.balance.toFixed(2)},${d.totalInt.toFixed(2)}\n`;
+  });
+  const blob=new Blob([csv],{type:'text/csv'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='mortgage_schedule.csv';a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Auto-calculate on load
+window.addEventListener('DOMContentLoaded',()=>{
+  calculate();
+  // Add live recalculation
+  document.querySelectorAll('input,select').forEach(el=>{
+    el.addEventListener('change',calculate);
+    if(el.tagName==='INPUT') el.addEventListener('input',calculate);
+  });
+});
+</script>
+</body>
+</html>
