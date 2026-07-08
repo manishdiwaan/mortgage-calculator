@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Global Mortgage Calculator</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263369613506494" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f172a;color:#f1f5f9;line-height:1.5}
@@ -53,53 +56,135 @@ td:first-child{text-align:left}
 .si{display:flex;justify-content:space-between;align-items:center;padding:5px 7px;background:#0f172a;border:1px solid #475569;border-radius:7px;margin-bottom:3px;font-size:.73rem}
 .hidden{display:none}
 .aw{font-size:.65rem;color:#94a3b8;font-style:italic;margin-top:1px;min-height:14px;padding-left:2px}
+
+/* ═══ TOOLTIPS ═══ */
+.tip{position:relative;display:inline-flex;align-items:center;margin-left:5px;cursor:help}
+.tip .ti{width:15px;height:15px;border-radius:50%;background:rgba(59,130,246,.2);color:#3b82f6;font-size:.6rem;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-style:normal;border:1px solid rgba(59,130,246,.3);flex-shrink:0;transition:all .2s}
+.tip:hover .ti{background:rgba(59,130,246,.4);color:#fff}
+.tip .tt{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1e293b;color:#e2e8f0;font-size:.72rem;font-weight:400;padding:8px 11px;border-radius:8px;border:1px solid #3b82f6;width:220px;z-index:100;line-height:1.4;box-shadow:0 8px 24px rgba(0,0,0,.4);transition:opacity .2s,visibility .2s;pointer-events:none;font-style:normal}
+.tip .tt::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#3b82f6}
+.tip:hover .tt{visibility:visible;opacity:1}
+.tip.show .tt{visibility:visible;opacity:1}
+.tip.tl .tt{left:0;transform:none}
+.tip.tl .tt::after{left:12px;transform:none}
+.tip.tr .tt{left:auto;right:0;transform:none}
+.tip.tr .tt::after{left:auto;right:12px;transform:none}
+
+/* ═══ MOBILE RESPONSIVE ═══ */
+@media(max-width:900px){
+  .g{grid-template-columns:1fr}
+  .wrap{padding:8px}
+  h1{font-size:1.4rem;padding:12px 0 2px}
+}
+@media(max-width:768px){
+  .r3{grid-template-columns:1fr 1fr}
+  .cg{grid-template-columns:repeat(2,1fr)}
+  .tabs{gap:3px}
+  .tab{padding:8px 14px;font-size:.8rem}
+  input,select{padding:10px 11px;font-size:.88rem;min-height:44px}
+  .btn{padding:10px 14px;font-size:.82rem;min-height:44px}
+  .bx{padding:6px 10px;font-size:.74rem;min-height:36px}
+  .P{padding:12px}
+  .M .v{font-size:1rem}
+  .M .l{font-size:.68rem}
+  .cwrap{height:220px}
+  table{font-size:.68rem}
+  th,td{padding:6px 4px}
+  .tip .tt{width:180px;font-size:.7rem;padding:7px 9px}
+}
+@media(max-width:600px){
+  .wrap{padding:6px}
+  h1{font-size:1.2rem}
+  .sub{font-size:.78rem}
+  .r2{grid-template-columns:1fr}
+  .r3{grid-template-columns:1fr}
+  .cg{grid-template-columns:1fr 1fr}
+  .M{padding:8px}
+  .M .v{font-size:.92rem}
+  .ic .v{font-size:.95rem}
+  .cwrap{height:200px}
+  .tw{max-height:350px}
+  .ec{padding:7px}
+  .si{flex-wrap:wrap;gap:4px}
+  .tip .tt{width:160px;font-size:.68rem}
+}
+@media(max-width:480px){
+  .wrap{padding:4px}
+  h1{font-size:1.05rem}
+  .sub{font-size:.72rem;margin-bottom:10px}
+  .P{padding:10px;border-radius:8px}
+  .T{font-size:.82rem}
+  .F label{font-size:.73rem}
+  input,select{padding:11px;font-size:.9rem}
+  .cg{grid-template-columns:1fr}
+  .cwrap{height:180px}
+  .tw{-webkit-overflow-scrolling:touch}
+  table{min-width:520px}
+  .tw{overflow-x:auto}
+}
+
+/* ═══ PDF BUTTON ═══ */
+.bp{background:linear-gradient(135deg,#ef4444,#dc2626);color:#fff;width:100%;border:none}
+/* ═══ ADS ═══ */
+.ad-wrap{margin:10px 0;text-align:center;min-height:50px;overflow:hidden;border-radius:8px}
+.ad-wrap ins{display:block}
+.ad-label{font-size:.55rem;color:#475569;text-align:center;letter-spacing:.5px;margin-bottom:2px}
+@media(max-width:480px){.ad-wrap{margin:8px 0}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <h1>🏠 Global Mortgage Calculator</h1>
 <p class="sub">25 countries · 250+ lenders · Central bank rates · Save & reload</p>
+<div class="ad-wrap"><div class="ad-label">ADVERTISEMENT</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 <div class="P"><div class="T">🌍 Select Country</div><select id="cSel" onchange="onC(this.value)"></select><div id="cInfo" style="margin-top:5px;font-size:.7rem;color:#94a3b8"></div></div>
 <div class="g">
 <div>
 <div class="P" id="iP">
 <div class="T">🏡 Loan Details</div>
-<div class="F"><label>Property Price</label><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="ppW"></div></div>
-<div class="F"><label>Deposit</label><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="dpW"></div></div>
-<div class="F"><label>Loan Amount</label><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="laW"></div></div>
-<div class="r2"><div class="F"><label>Start Date</label><input type="date" id="sd"></div><div class="F"><label>Term (yrs)</label><input type="number" id="lt" value="30"></div></div>
-<div class="r2"><div class="F"><label>Interest Rate %</label><input type="number" id="ir" value="6.20" step="0.01"></div><div class="F"><label>Repay Type</label><select id="rt"><option value="pi">P&I</option><option value="io">Interest Only</option></select></div></div>
-<div class="F"><label>Application Fee</label><input type="number" id="af" value="0"></div>
+<div class="F"><label>Property Price <span class="tip"><span class="ti">i</span><span class="tt">The total purchase price of the property you're buying or the current market value for refinancing.</span></span></label><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="ppW"></div></div>
+<div class="F"><label>Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. A higher deposit means a smaller loan and often better rates. Aim for 20%+ to avoid LMI.</span></span></label><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="dpW"></div></div>
+<div class="F"><label>Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated as Property Price minus Deposit. You can also enter a custom amount directly.</span></span></label><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="laW"></div></div>
+<div class="r2"><div class="F"><label>Start Date <span class="tip"><span class="ti">i</span><span class="tt">When your loan begins. All rate changes and extra repayments are calculated relative to this date.</span></span></label><input type="date" id="sd"></div><div class="F"><label>Term (yrs) <span class="tip"><span class="ti">i</span><span class="tt">Loan duration in years. Common terms: 25–30 years. Shorter terms mean higher repayments but much less interest paid.</span></span></label><input type="number" id="lt" value="30"></div></div>
+<div class="r2"><div class="F"><label>Interest Rate % <span class="tip"><span class="ti">i</span><span class="tt">Your starting annual interest rate. Auto-set when you pick a lender (central bank rate + lender margin).</span></span></label><input type="number" id="ir" value="6.20" step="0.01"></div><div class="F"><label>Repay Type <span class="tip"><span class="ti">i</span><span class="tt">P&I: pay principal + interest each month, reducing your balance. Interest Only: pay only interest, balance stays the same.</span></span></label><select id="rt"><option value="pi">P&I</option><option value="io">Interest Only</option></select></div></div>
+<div class="F"><label>Application Fee <span class="tip"><span class="ti">i</span><span class="tt">One-off fee charged by the lender to set up your loan. Added to total cost calculations.</span></span></label><input type="number" id="af" value="0"></div>
 </div>
 <div class="P"><div class="T" id="lT">🏦 Lender</div>
 <select id="lS" onchange="oL(+this.value)"></select>
 <div id="clW" class="hidden r2" style="margin-top:5px"><div class="F"><label>Name</label><input type="text" id="cln" placeholder="Lender name"></div><div class="F"><label>Margin %</label><input type="number" id="cm" step="0.05" value="1.75" oninput="oCM()"></div></div>
 <div class="r2" style="margin-top:5px"><div class="M"><div class="l">Margin</div><div class="v" id="dM">+1.69%</div></div><div class="M"><div class="l">Your Rate</div><div class="v" style="color:#10b981" id="dR">6.04%</div></div></div>
 <button class="btn bg" style="width:100%;margin-top:5px" onclick="aAR()">🔄 Apply All Rates to Loan</button></div>
+<div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="rectangle" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 <div class="P"><div class="T" id="rT">📈 Rate History</div><div class="tw" id="rTbl" style="max-height:180px"></div><div id="aC" style="font-size:.7rem;color:#94a3b8;margin-top:3px"></div></div>
-<div class="P"><div class="T">💰 Extra Repayments</div><div id="eL"></div><div style="display:flex;gap:3px;margin-top:5px;flex-wrap:wrap"><button class="btn bg" onclick="aE('recurring')">+ Recurring</button><button class="btn bg" onclick="aE('annual')">+ Annual</button><button class="btn bg" onclick="aE('onetime')">+ Lump Sum</button></div></div>
+<div class="P"><div class="T">💰 Extra Repayments <span class="tip"><span class="ti">i</span><span class="tt">Payments above your minimum. Recurring: regular extras. Annual: once yearly. Lump Sum: one-time payment. Each has a date window.</span></span></div><div id="eL"></div><div style="display:flex;gap:3px;margin-top:5px;flex-wrap:wrap"><button class="btn bg" onclick="aE('recurring')">+ Recurring</button><button class="btn bg" onclick="aE('annual')">+ Annual</button><button class="btn bg" onclick="aE('onetime')">+ Lump Sum</button></div></div>
 
 <!-- OFFSET ACCOUNT -->
-<div class="P"><div class="T">🏦 Offset Account</div>
+<div class="P"><div class="T">🏦 Offset Account <span class="tip"><span class="ti">i</span><span class="tt">Money in your offset account reduces the balance interest is charged on. e.g. $50k offset on a $500k loan means you only pay interest on $450k.</span></span></div>
 <p style="font-size:.73rem;color:#94a3b8;margin-bottom:8px">Model your changing offset balance over time. Each period has a starting balance and optional monthly growth.</p>
 <div id="oL"></div>
 <button class="btn bg" onclick="addOffset()" style="margin-top:5px">+ Add Offset Period</button></div>
 
 <!-- SCHEDULE CHANGES -->
-<div class="P"><div class="T">🔄 Schedule Changes</div>
+<div class="P"><div class="T">🔄 Schedule Changes <span class="tip"><span class="ti">i</span><span class="tt">Model mid-loan changes: switch between P&I and Interest Only, change payment frequency, or toggle fixed/variable rates.</span></span></div>
 <p style="font-size:.73rem;color:#94a3b8;margin-bottom:8px">Record changes to repayment type, frequency, or switch between fixed and variable rates during the loan.</p>
 <div id="scL"></div>
 <button class="btn bg" onclick="addSched()" style="margin-top:5px">+ Add Schedule Change</button></div>
 <div class="P"><div class="T">💾 Save & Load</div><div class="r2" style="margin-bottom:5px"><input type="text" id="sN" placeholder="Config name..."><button class="btn bg" onclick="sC()">💾 Save</button></div><div id="sL"></div></div>
 <button class="btn bb" onclick="calc()" style="padding:10px;font-size:.88rem">Calculate Repayments</button>
 <button class="btn" onclick="exportCSV()" style="width:100%;margin-top:5px;padding:10px;font-size:.88rem;background:#334155;color:#f1f5f9;border:1px solid #475569">📥 Export to CSV / Excel</button>
+<button class="btn bp" onclick="exportPDF()" style="width:100%;margin-top:5px;padding:10px;font-size:.88rem">📄 Export PDF Report</button>
 </div>
 <div>
 <div class="P"><div class="T">📊 Results</div><div id="mG"></div></div>
+<div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 <div class="tabs"><div class="tab a" onclick="sT(this,'bal')">Balance Chart</div><div class="tab" onclick="sT(this,'tbl')">Amortisation</div></div>
 <div id="t-bal" class="cbox"><div class="cwrap"><canvas id="cB"></canvas></div></div>
 <div id="t-tbl" class="cbox hidden"><div class="tw" id="aT"></div></div>
+<div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
 </div></div></div>
+<div style="max-width:1440px;margin:0 auto;padding:0 12px">
+<div class="ad-wrap"><div class="ad-label">ADVERTISEMENT</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+</div>
 <script>
 const $=i=>document.getElementById(i);
 function dtS(d){return d.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})}
@@ -469,6 +554,156 @@ function showWords(){
 // Hook into country change
 var origOnC=onC;
 onC=function(v){origOnC(v);showWords()};
+
+// ═══ MOBILE TOOLTIP TOGGLE ═══
+document.addEventListener('click',function(e){
+  var tip=e.target.closest('.tip');
+  if(tip){
+    document.querySelectorAll('.tip.show').forEach(function(t){if(t!==tip)t.classList.remove('show')});
+    tip.classList.toggle('show');
+    e.stopPropagation();
+  }else{
+    document.querySelectorAll('.tip.show').forEach(function(t){t.classList.remove('show')});
+  }
+});
+
+// ═══ PDF EXPORT ═══
+function exportPDF(){
+  var w=rS(true),n=rS(false);
+  if(!w.D.length){alert('Calculate first.');return}
+  var jsPDF=window.jspdf.jsPDF;
+  var doc=new jsPDF({orientation:'portrait',unit:'mm',format:'a4'});
+  var sy=co.c;var pw=190;var y=15;
+  var pg=function(){if(y>265){doc.addPage();y=15}};
+
+  // Header
+  doc.setFillColor(15,23,42);doc.rect(0,0,210,297,'F');
+  doc.setTextColor(241,245,249);
+  doc.setFontSize(18);doc.setFont('helvetica','bold');
+  doc.text('Mortgage Repayment Report',105,y,{align:'center'});y+=8;
+  doc.setFontSize(9);doc.setTextColor(148,163,184);
+  doc.text(co.f+' '+co.n+' | '+co.cb+' Rate: '+co.cu+'% | Generated: '+new Date().toLocaleDateString('en-AU'),105,y,{align:'center'});y+=3;
+  doc.setDrawColor(59,130,246);doc.setLineWidth(0.5);doc.line(10,y,200,y);y+=8;
+
+  // Loan Details
+  doc.setFontSize(12);doc.setTextColor(34,211,238);doc.setFont('helvetica','bold');
+  doc.text('Loan Details',10,y);y+=6;
+  doc.setFontSize(9);doc.setTextColor(226,232,240);doc.setFont('helvetica','normal');
+
+  var lender=$('lS');var lName=lender.options[lender.selectedIndex]?.text||'Custom';
+  var details=[
+    ['Property Price',fm(gv('pp'),sy)],
+    ['Deposit',fm(gv('dp'),sy)],
+    ['Loan Amount',fm(gv('la'),sy)],
+    ['Start Date',$('sd').value||'Today'],
+    ['Term',$('lt').value+' years'],
+    ['Interest Rate',$('ir').value+'%'],
+    ['Repayment Type',$('rt').value==='pi'?'Principal & Interest':'Interest Only'],
+    ['Lender',lName],
+    ['LVR',w.lv.toFixed(1)+'%']
+  ];
+  if(w.lmi>0)details.push(['LMI/PMI',fm(w.lmi,sy)]);
+
+  details.forEach(function(d){
+    doc.setTextColor(148,163,184);doc.text(d[0]+':',12,y);
+    doc.setTextColor(241,245,249);doc.text(d[1],70,y);
+    y+=5;
+  });y+=4;pg();
+
+  // Base Results
+  doc.setFontSize(12);doc.setTextColor(34,211,238);doc.setFont('helvetica','bold');
+  doc.text('Base Loan Results (No Extras)',10,y);y+=6;
+  doc.setFontSize(9);doc.setFont('helvetica','normal');
+  var pB=n.D.length;var eBD=new Date($('sd').value?new Date($('sd').value):new Date());eBD.setMonth(eBD.getMonth()+pB);
+  var tF=+$('af').value||0;
+  var baseRes=[
+    ['Monthly Repayment',fd(n.D[0]?.p||0,sy)],
+    ['Total Interest',fm(n.ti,sy)],
+    ['Total Cost',fm(w.el+n.ti+tF,sy)],
+    ['End Date',dtS(eBD)],
+    ['Duration',Math.floor(pB/12)+'y '+pB%12+'m'],
+    ['Rate Changes Applied',''+rc.length]
+  ];
+  baseRes.forEach(function(d){
+    doc.setTextColor(148,163,184);doc.text(d[0]+':',12,y);
+    doc.setTextColor(241,245,249);doc.text(d[1],70,y);y+=5;
+  });y+=4;pg();
+
+  // With Extras (if applicable)
+  var tE=w.D.reduce(function(s,d){return s+d.e},0);
+  if(tE>0){
+    var pU=w.D.length;var iS=n.ti-w.ti;var tS=pB-pU;
+    var eD=new Date($('sd').value?new Date($('sd').value):new Date());eD.setMonth(eD.getMonth()+pU);
+
+    doc.setFontSize(12);doc.setTextColor(16,185,129);doc.setFont('helvetica','bold');
+    doc.text('With Extra Repayments',10,y);y+=6;
+    doc.setFontSize(9);doc.setFont('helvetica','normal');
+    var extRes=[
+      ['Interest Saved',fm(iS,sy)],
+      ['Time Saved',Math.floor(tS/12)+'y '+tS%12+'m'],
+      ['Total Extra Paid',fm(tE,sy)],
+      ['New End Date',dtS(eD)],
+      ['New Duration',Math.floor(pU/12)+'y '+pU%12+'m'],
+      ['New Total Interest',fm(w.ti,sy)]
+    ];
+    extRes.forEach(function(d){
+      doc.setTextColor(148,163,184);doc.text(d[0]+':',12,y);
+      doc.setTextColor(16,185,129);doc.text(d[1],70,y);y+=5;
+    });y+=4;pg();
+  }
+
+  // Rate Changes
+  if(rc.length>0){
+    doc.setFontSize(12);doc.setTextColor(34,211,238);doc.setFont('helvetica','bold');
+    doc.text('Rate Changes Applied',10,y);y+=6;
+    doc.autoTable({
+      startY:y,
+      head:[['Date','Rate (%)']],
+      body:rc.map(function(r){return[r.d,r.r+'%']}),
+      theme:'grid',
+      styles:{fontSize:7,textColor:[241,245,249],fillColor:[30,41,59],lineColor:[71,85,105],lineWidth:0.2},
+      headStyles:{fillColor:[51,65,85],textColor:[148,163,184],fontStyle:'bold'},
+      alternateRowStyles:{fillColor:[15,23,42]},
+      margin:{left:10,right:10}
+    });
+    y=doc.lastAutoTable.finalY+6;pg();
+  }
+
+  // Amortisation Table
+  doc.addPage();y=15;
+  doc.setFillColor(15,23,42);doc.rect(0,0,210,297,'F');
+  doc.setFontSize(12);doc.setTextColor(34,211,238);doc.setFont('helvetica','bold');
+  doc.text('Amortisation Schedule',10,y);y+=2;
+
+  var tRows=w.D.map(function(d){
+    return[d.m,dtS(d.d),d.rt.toFixed(2)+'%',fd(d.p,sy),fd(d.pr,sy),fd(d.i,sy),d.e>0?fd(d.e,sy):'-',fm(d.b,sy)];
+  });
+
+  doc.autoTable({
+    startY:y,
+    head:[['Mth','Date','Rate','Payment','Principal','Interest','Extra','Balance']],
+    body:tRows,
+    theme:'grid',
+    styles:{fontSize:6,textColor:[241,245,249],fillColor:[30,41,59],lineColor:[71,85,105],lineWidth:0.15,cellPadding:1.5},
+    headStyles:{fillColor:[51,65,85],textColor:[148,163,184],fontStyle:'bold',fontSize:6.5},
+    alternateRowStyles:{fillColor:[15,23,42]},
+    margin:{left:5,right:5},
+    didDrawPage:function(data){
+      doc.setFillColor(15,23,42);doc.rect(0,0,210,12,'F');
+      doc.setFontSize(7);doc.setTextColor(148,163,184);
+      doc.text('urmortgage.online | '+co.f+' '+co.n+' Mortgage Report',105,8,{align:'center'});
+    }
+  });
+
+  // Footer on last page
+  var finalY=doc.lastAutoTable.finalY+8;
+  if(finalY>275){doc.addPage();doc.setFillColor(15,23,42);doc.rect(0,0,210,297,'F');finalY=15}
+  doc.setFontSize(7);doc.setTextColor(148,163,184);
+  doc.text('This report is for illustrative purposes only. Consult a licensed financial advisor before making mortgage decisions.',105,finalY,{align:'center',maxWidth:180});
+  doc.text('Generated by urmortgage.online | '+new Date().toLocaleDateString('en-AU'),105,finalY+4,{align:'center'});
+
+  doc.save('Mortgage_Report_'+co.n.replace(/\s/g,'_')+'_'+new Date().toISOString().slice(0,10)+'.pdf');
+}
 
 window.addEventListener('DOMContentLoaded',function(){init();lS();showWords()});
 </script>
