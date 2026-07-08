@@ -3,98 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Global Mortgage Calculator — 25 Countries · 250+ Lenders · Free</title>
 <meta name="description" content="Free mortgage repayment calculator supporting 25 countries and 250+ lenders. Compare rates, model extra repayments, offset accounts, rate changes, and export full amortisation schedules.">
-<meta name="keywords" content="mortgage calculator, home loan calculator, mortgage repayment calculator, amortisation schedule, extra repayment calculator, offset account calculator, EMI calculator, loan calculator">
-<meta name="author" content="urmortgage.online">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://urmortgage.online/">
-
-<!-- Security Headers (meta-tag equivalent for static hosting) -->
-<meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="X-Frame-Options" content="DENY">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://urmortgage.online/">
 <meta property="og:title" content="Global Mortgage Calculator — 25 Countries · 250+ Lenders">
 <meta property="og:description" content="Free mortgage repayment calculator with central bank rate tracking, extra repayments, offset accounts, and full amortisation schedules for 25 countries.">
 <meta property="og:site_name" content="urmortgage.online">
-<meta property="og:locale" content="en_US">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Global Mortgage Calculator — 25 Countries · 250+ Lenders">
-<meta name="twitter:description" content="Free mortgage repayment calculator with central bank rate tracking, extra repayments, offset accounts, and full amortisation schedules.">
-
-<!-- Structured Data: @graph with Organization + WebSite + SoftwareApplication -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://urmortgage.online/#organization",
-      "name": "urmortgage.online",
-      "url": "https://urmortgage.online",
-      "description": "Free global mortgage repayment calculator supporting 25 countries and 250+ lenders."
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://urmortgage.online/#website",
-      "url": "https://urmortgage.online",
-      "name": "urmortgage.online — Global Mortgage Calculator",
-      "description": "Free mortgage repayment calculator with central bank rate tracking, extra repayments, offset accounts, and amortisation schedules.",
-      "publisher": {"@id": "https://urmortgage.online/#organization"}
-    },
-    {
-      "@type": "SoftwareApplication",
-      "name": "Global Mortgage Calculator",
-      "url": "https://urmortgage.online",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "description": "Comprehensive mortgage repayment calculator supporting 25 countries, 250+ lenders, central bank rate history, extra repayments, offset accounts, rate changes, schedule changes, and CSV/PDF export.",
-      "featureList": "25 countries, 250+ lenders, central bank rate tracking, extra repayments, offset accounts, rate change modelling, amortisation schedule, CSV export, PDF report generation"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "How does the mortgage calculator work?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Select your country and lender to auto-calculate your interest rate based on the central bank rate plus lender margin. Enter your loan details, add extra repayments or offset accounts, and see your full amortisation schedule with savings comparison."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Which countries are supported?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The calculator supports 25 countries across Asia-Pacific (Australia, New Zealand, Japan, Singapore, Hong Kong, South Korea, India, Malaysia), North America (USA, Canada), Europe (UK, Germany, France, Netherlands, Spain, Italy, Sweden, Norway, Denmark, Switzerland, Ireland, Belgium, Portugal), Middle East (UAE), Latin America (Brazil), and Africa (South Africa)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are the interest rates accurate?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Central bank rates are updated after each policy meeting. Lender margins are approximate based on publicly available variable rates. Always confirm current rates directly with your lender before making financial decisions."
-          }
-        }
-      ]
-    }
-  ]
-}
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://urmortgage.online/#organization","name":"urmortgage.online","url":"https://urmortgage.online"},{"@type":"WebSite","@id":"https://urmortgage.online/#website","url":"https://urmortgage.online","name":"Global Mortgage Calculator","publisher":{"@id":"https://urmortgage.online/#organization"}},{"@type":"SoftwareApplication","name":"Global Mortgage Calculator","url":"https://urmortgage.online","applicationCategory":"FinanceApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263369613506494" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
@@ -104,262 +27,297 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script>
 <script>
-tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        "surface": "#f8f9ff","surface-dim": "#cbdbf5","surface-container-lowest": "#ffffff",
-        "surface-container-low": "#eff4ff","surface-container": "#e5eeff",
-        "surface-container-high": "#dce9ff","surface-container-highest": "#d3e4fe",
-        "on-surface": "#0b1c30","on-surface-variant": "#434655",
-        "inverse-surface": "#213145","inverse-on-surface": "#eaf1ff",
-        "outline": "#737686","outline-variant": "#c3c6d7",
-        "primary": "#004ac6","on-primary": "#ffffff","primary-container": "#2563eb",
-        "primary-fixed": "#dbe1ff","primary-fixed-dim": "#b4c5ff",
-        "secondary": "#006c49","secondary-container": "#6cf8bb",
-        "on-secondary-container": "#00714d","secondary-fixed-dim": "#4edea3",
-        "tertiary": "#943700","tertiary-container": "#bc4800",
-        "error": "#ba1a1a","error-container": "#ffdad6",
-        "accent-warning": "#F59E0B","chart-blue": "#3B82F6","chart-teal": "#2DD4BF",
-        "bg-dark": "#0F172A","surface-dark": "#1E293B",
-        "surface-tint": "#0053db","surface-variant": "#d3e4fe"
-      },
-      fontFamily: { "display": ["Geist"],"headline-md": ["Geist"],"body-md": ["Geist"],"label-md": ["Geist"],"label-sm": ["Geist"] },
-      fontSize: {
-        "display": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}],
-        "headline-md": ["20px", {lineHeight: "28px", fontWeight: "600"}],
-        "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}],
-        "label-md": ["14px", {lineHeight: "20px", fontWeight: "500"}],
-        "label-sm": ["12px", {lineHeight: "16px", fontWeight: "500"}]
-      },
-      spacing: { "container-padding": "1.5rem","stack-gap": "2rem","grid-gutter": "1rem" }
-    }
-  }
-}
+tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface":"#f8f9ff","surface-container-lowest":"#ffffff","surface-container-low":"#eff4ff","surface-container":"#e5eeff","surface-container-high":"#dce9ff","surface-container-highest":"#d3e4fe","on-surface":"#0b1c30","on-surface-variant":"#434655","inverse-surface":"#213145","inverse-on-surface":"#eaf1ff","outline":"#737686","outline-variant":"#c3c6d7","primary":"#004ac6","on-primary":"#ffffff","primary-container":"#2563eb","primary-fixed":"#dbe1ff","primary-fixed-dim":"#b4c5ff","secondary":"#006c49","secondary-container":"#6cf8bb","secondary-fixed-dim":"#4edea3","on-secondary-container":"#00714d","tertiary":"#943700","tertiary-container":"#bc4800","error":"#ba1a1a","error-container":"#ffdad6","accent-warning":"#F59E0B","chart-blue":"#3B82F6","chart-teal":"#2DD4BF","bg-dark":"#0F172A","surface-dark":"#1E293B","surface-tint":"#0053db","surface-variant":"#d3e4fe"},fontFamily:{"display":["Geist"],"body":["Geist"]},fontSize:{"display":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}]}}}}
 </script>
 <style>
-body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
+body{font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
-/* ═══ Calculator-generated element styles ═══ */
+/* Tab sections */
+.view-section{display:none}.view-section.active{display:block}
+/* Calculator-generated classes */
 .r2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .r3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .hidden{display:none}
 .M{background:#eff4ff;border-radius:10px;padding:14px;text-align:center;transition:all .2s}
 .dark .M{background:#1E293B}
-.M .v{font-size:1.05rem;font-weight:800;color:#0b1c30;letter-spacing:-.02em}
-.dark .M .v{color:#eaf1ff}
+.M .v{font-size:1.05rem;font-weight:800;color:#0b1c30}.dark .M .v{color:#eaf1ff}
 .M .l{font-size:.58rem;color:#737686;margin-top:3px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
 .M.gr .v{color:#006c49}.M.or .v{color:#F59E0B}.M.rd .v{color:#ba1a1a}
 .dark .M.gr .v{color:#4edea3}.dark .M.rd .v{color:#ff8a80}
 .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#c3c6d7;border-radius:0 0 10px 10px;overflow:hidden}
-.dark .cg{background:#434655}
-.cg .M{border-radius:0}
+.dark .cg{background:#434655}.cg .M{border-radius:0}
 .ct{font-size:.65rem;font-weight:700;padding:10px 16px;border-radius:10px 10px 0 0;text-transform:uppercase;letter-spacing:.1em}
-.cb{background:#e5eeff;color:#737686}
-.dark .cb{background:#213145;color:#737686}
-.ce{background:rgba(0,108,73,.08);color:#006c49}
-.dark .ce{background:rgba(78,222,163,.08);color:#4edea3}
+.cb{background:#e5eeff;color:#737686}.dark .cb{background:#213145}
+.ce{background:rgba(0,108,73,.08);color:#006c49}.dark .ce{background:rgba(78,222,163,.08);color:#4edea3}
 .ic{background:rgba(0,108,73,.06);border:1px solid rgba(0,108,73,.15);border-radius:12px;padding:16px;text-align:center}
-.ic .v{font-size:1.1rem;font-weight:800;color:#006c49}
-.dark .ic .v{color:#4edea3}
-.aw{font-size:.6rem;color:#737686;font-style:italic;margin-top:2px;min-height:14px;padding-left:2px}
+.ic .v{font-size:1.1rem;font-weight:800;color:#006c49}.dark .ic .v{color:#4edea3}
+.aw{font-size:.6rem;color:#737686;font-style:italic;margin-top:2px;min-height:14px}
 .ec{padding:12px;border-radius:10px;margin-bottom:6px;border:1px solid #c3c6d7;background:#eff4ff}
 .dark .ec{border-color:#434655;background:#0F172A}
 .si{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#eff4ff;border:1px solid #c3c6d7;border-radius:8px;margin-bottom:4px;font-size:.75rem}
 .dark .si{background:#0F172A;border-color:#434655}
 .bx{background:rgba(186,26,26,.06);color:#ba1a1a;border:1px solid rgba(186,26,26,.12);padding:5px 10px;font-size:.68rem;border-radius:6px;cursor:pointer;font-weight:600}
-.dark .bx{color:#ff8a80}
-.tip{position:relative;display:inline-flex;align-items:center;margin-left:5px;cursor:help}
+.tip{position:relative;display:inline-flex;align-items:center;margin-left:4px;cursor:help}
 .tip .ti{width:14px;height:14px;border-radius:50%;background:rgba(0,74,198,.1);color:#004ac6;font-size:.5rem;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-style:normal;border:1px solid rgba(0,74,198,.15)}
-.tip .tt{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#ffffff;color:#434655;font-size:.72rem;padding:10px 14px;border-radius:10px;border:1px solid #c3c6d7;width:220px;z-index:100;line-height:1.5;box-shadow:0 12px 40px rgba(0,0,0,.12);transition:opacity .2s;pointer-events:none}
+.tip .tt{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;color:#434655;font-size:.72rem;padding:10px 14px;border-radius:10px;border:1px solid #c3c6d7;width:220px;z-index:100;line-height:1.5;box-shadow:0 12px 40px rgba(0,0,0,.12);pointer-events:none;transition:opacity .2s}
 .dark .tip .tt{background:#1E293B;color:#c3c6d7;border-color:#434655}
 .tip .tt::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#c3c6d7}
 .tip:hover .tt,.tip.show .tt{visibility:visible;opacity:1}
 .tip:hover .ti{background:#004ac6;color:#fff}
-.tw{max-height:450px;overflow-y:auto;border-radius:10px;border:1px solid #c3c6d7}
-.dark .tw{border-color:#434655}
-.tw::-webkit-scrollbar{width:4px}
-.tw::-webkit-scrollbar-thumb{background:#c3c6d7;border-radius:4px}
+.tw{max-height:450px;overflow-y:auto;border-radius:10px;border:1px solid #c3c6d7}.dark .tw{border-color:#434655}
+.tw::-webkit-scrollbar{width:4px}.tw::-webkit-scrollbar-thumb{background:#c3c6d7;border-radius:4px}
 table{width:100%;border-collapse:collapse;font-size:.72rem}
 th{background:#eff4ff;color:#737686;padding:10px 8px;text-align:right;position:sticky;top:0;z-index:2;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.58rem}
 .dark th{background:#213145}
-th:first-child{text-align:left}td:first-child{text-align:left}
-td{padding:8px;border-bottom:1px solid #e5eeff;text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
-.dark td{border-color:#213145}
+th:first-child,td:first-child{text-align:left}
+td{padding:8px;border-bottom:1px solid #e5eeff;text-align:right;font-weight:500;font-variant-numeric:tabular-nums}.dark td{border-color:#213145}
 tr:hover td{background:rgba(0,74,198,.04)}
 .tabs{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap}
 .tab{padding:9px 18px;border-radius:9999px;background:#eff4ff;color:#737686;cursor:pointer;font-size:.72rem;font-weight:700;border:1px solid #c3c6d7}
 .dark .tab{background:#1E293B;border-color:#434655}
 .tab.a{background:rgba(0,74,198,.1);color:#004ac6;border-color:#004ac6}
-.dark .tab.a{background:rgba(180,197,255,.1);color:#b4c5ff;border-color:#b4c5ff}
+.dark .tab.a{color:#b4c5ff;border-color:#b4c5ff}
 .cwrap{position:relative;height:300px}
+.inp{width:100%;padding:10px 14px;border-radius:8px;border:1px solid #c3c6d7;background:#fff;color:#0b1c30;font-size:.88rem;font-weight:500;outline:none;font-family:'Geist',sans-serif;transition:border-color .2s}
+.dark .inp{background:#0F172A;color:#eaf1ff;border-color:#434655}
+.inp:focus{border-color:#004ac6;box-shadow:0 0 0 3px rgba(0,74,198,.1)}
+.inp-pre{padding-left:28px}
+.card{background:#fff;border-radius:12px;padding:24px;border:1px solid #c3c6d7;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:border-color .2s}
+.dark .card{background:#1E293B;border-color:#434655}
+.card:hover{border-color:#004ac6}
+.lbl{font-size:13px;font-weight:500;color:#434655;display:block;margin-bottom:4px}
+.dark .lbl{color:#737686}
+.btn-primary{width:100%;padding:12px;border:none;border-radius:10px;background:#004ac6;color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:'Geist',sans-serif;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-primary:hover{background:#0053db;box-shadow:0 4px 16px rgba(0,74,198,.2)}
+.btn-primary:active{transform:scale(.98)}
+.btn-ghost{padding:8px 14px;border:1px solid rgba(0,108,73,.3);border-radius:8px;background:transparent;color:#006c49;font-size:12px;font-weight:700;cursor:pointer;font-family:'Geist',sans-serif;transition:all .15s}
+.dark .btn-ghost{color:#4edea3;border-color:rgba(78,222,163,.3)}
+.btn-ghost:hover{background:rgba(0,108,73,.06)}
 @media(max-width:768px){.r3{grid-template-columns:1fr 1fr}.cg{grid-template-columns:repeat(2,1fr)}.cwrap{height:220px}}
 @media(max-width:600px){.r2,.r3{grid-template-columns:1fr}.cwrap{height:200px}}
 @media(max-width:480px){.cg{grid-template-columns:1fr}table{min-width:520px}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}}
 </style>
 </head>
-<body class="bg-surface dark:bg-bg-dark text-on-surface dark:text-on-surface-variant font-body-md min-h-screen flex flex-col transition-colors duration-300">
+<body class="bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface min-h-screen flex flex-col transition-colors duration-300">
 
 <!-- ═══ NAVBAR ═══ -->
-<header class="sticky top-0 w-full z-50 flex justify-between items-center px-container-padding h-16 bg-surface dark:bg-bg-dark border-b border-outline-variant dark:border-outline backdrop-blur-sm">
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white/90 dark:bg-bg-dark/90 border-b border-outline-variant dark:border-outline backdrop-blur-md">
 <div class="flex items-center gap-4">
-<span class="font-display text-display text-primary dark:text-primary-fixed-dim text-xl md:text-2xl font-extrabold tracking-tight">GlobalMortgage</span>
-<nav class="hidden md:flex gap-6 ml-8">
-<a class="text-label-md font-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 cursor-pointer" href="#">Dashboard</a>
-<a class="text-label-md font-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer" href="#">Amortization</a>
-<a class="text-label-md font-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer" href="#">Scenarios</a>
+<span class="text-2xl font-extrabold text-primary dark:text-primary-fixed-dim tracking-tight cursor-pointer" onclick="switchView('dashboard')">GlobalMortgage</span>
+<nav class="hidden md:flex gap-1 ml-6">
+<button onclick="switchView('dashboard')" class="nav-btn active px-4 py-2 text-sm font-medium rounded-lg transition-colors" data-view="dashboard">Dashboard</button>
+<button onclick="switchView('scenarios')" class="nav-btn px-4 py-2 text-sm font-medium rounded-lg transition-colors" data-view="scenarios">Scenarios</button>
+<button onclick="switchView('amortisation')" class="nav-btn px-4 py-2 text-sm font-medium rounded-lg transition-colors" data-view="amortisation">Amortisation</button>
 </nav>
 </div>
-<div class="flex items-center gap-3">
-<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full" data-icon="public">public</button>
-<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full cursor-pointer" onclick="toggleTheme()" id="themeBtn">dark_mode</button>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors p-2 rounded-full">public</button>
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors p-2 rounded-full cursor-pointer" onclick="toggleTheme()" id="themeBtn">dark_mode</button>
 </div>
 </header>
 
-<!-- ═══ MAIN LAYOUT ═══ -->
-<main class="flex-grow flex flex-col md:flex-row w-full max-w-[1600px] mx-auto p-4 md:p-container-padding gap-grid-gutter">
-
-<!-- ═══ LEFT SIDEBAR ═══ -->
-<aside class="w-full md:w-[400px] lg:w-[420px] flex flex-col gap-stack-gap shrink-0">
-
-<!-- Country Selector -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
-<div class="flex items-center gap-3 mb-4">
-<div class="p-2 bg-primary/10 rounded-lg"><span class="material-symbols-outlined text-primary">travel_explore</span></div>
-<h2 class="text-headline-md font-headline-md text-on-surface dark:text-primary-fixed-dim">Select Country</h2>
+<!-- Mobile Nav -->
+<div class="md:hidden flex border-b border-outline-variant dark:border-outline bg-white dark:bg-bg-dark">
+<button onclick="switchView('dashboard')" class="mob-nav active flex-1 py-3 text-xs font-bold text-center border-b-2" data-view="dashboard">Dashboard</button>
+<button onclick="switchView('scenarios')" class="mob-nav flex-1 py-3 text-xs font-bold text-center border-b-2 border-transparent" data-view="scenarios">Scenarios</button>
+<button onclick="switchView('amortisation')" class="mob-nav flex-1 py-3 text-xs font-bold text-center border-b-2 border-transparent" data-view="amortisation">Amortisation</button>
 </div>
-<select id="cSel" onchange="onC(this.value)" class="w-full px-4 py-3 bg-surface dark:bg-bg-dark border border-outline-variant dark:border-outline rounded-lg focus:ring-2 focus:ring-primary text-on-surface dark:text-inverse-on-surface"></select>
-<div id="cInfo" class="mt-2 text-label-sm text-outline"></div>
-</section>
 
-<!-- Loan Details -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm" id="iP">
-<div class="flex items-center justify-between mb-4">
-<h2 class="text-headline-md font-headline-md text-on-surface dark:text-primary-fixed-dim">Loan Settings</h2>
-<span class="material-symbols-outlined text-primary">tune</span>
+<main class="flex-grow w-full max-w-[1600px] mx-auto p-4 md:p-6 lg:p-8">
+
+<!-- ════════════════════════════════════ -->
+<!-- DASHBOARD: Country + Loan + Results + Chart -->
+<!-- ════════════════════════════════════ -->
+<div id="view-dashboard" class="view-section active">
+<div class="flex flex-col lg:flex-row gap-6">
+
+<!-- Left: Inputs -->
+<div class="w-full lg:w-[420px] shrink-0 space-y-5">
+
+<!-- Country -->
+<div class="card">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-primary/10 rounded-lg"><span class="material-symbols-outlined text-primary text-xl">travel_explore</span></div>
+<h2 class="text-lg font-bold text-on-surface dark:text-primary-fixed-dim">Select Country</h2>
+</div>
+<select id="cSel" onchange="onC(this.value)" class="inp"></select>
+<div id="cInfo" class="mt-2 text-xs text-outline"></div>
+</div>
+
+<!-- Loan Settings -->
+<div class="card" id="iP">
+<div class="flex items-center justify-between mb-5">
+<h2 class="text-lg font-bold text-on-surface dark:text-primary-fixed-dim">Loan Settings</h2>
+<span class="material-symbols-outlined text-primary text-xl">tune</span>
 </div>
 <div class="space-y-4">
-<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Property Price <span class="tip"><span class="ti">i</span><span class="tt">The total purchase price of the property you're buying or the current market value for refinancing.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="w-full pl-8 pr-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div><div class="aw" id="ppW"></div></div>
-<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. A higher deposit means a smaller loan and often better rates. Aim for 20%+ to avoid LMI.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="w-full pl-8 pr-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div><div class="aw" id="dpW"></div></div>
-<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated as Property Price minus Deposit. You can also enter a custom amount directly.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="w-full pl-8 pr-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div><div class="aw" id="laW"></div></div>
-<div class="grid grid-cols-2 gap-4">
-<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Start Date <span class="tip"><span class="ti">i</span><span class="tt">When your loan begins. All rate changes and extra repayments are calculated relative to this date.</span></span></label><input type="date" id="sd" class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface [color-scheme:light] dark:[color-scheme:dark]"></div>
-<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Term (Yrs) <span class="tip"><span class="ti">i</span><span class="tt">Loan duration in years. Shorter terms = higher repayments but much less interest.</span></span></label><input type="number" id="lt" value="30" class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div>
+<div><label class="lbl">Property Price <span class="tip"><span class="ti">i</span><span class="tt">Total purchase price or current market value.</span></span></label><div class="relative"><span class="absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">$</span><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="ppW"></div></div>
+<div><label class="lbl">Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. 20%+ avoids LMI.</span></span></label><div class="relative"><span class="absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">$</span><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="dpW"></div></div>
+<div><label class="lbl">Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated: Price minus Deposit.</span></span></label><div class="relative"><span class="absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">$</span><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="laW"></div></div>
+<div class="grid grid-cols-2 gap-3">
+<div><label class="lbl">Start Date <span class="tip"><span class="ti">i</span><span class="tt">When your loan begins.</span></span></label><input type="date" id="sd" class="inp [color-scheme:light] dark:[color-scheme:dark]"></div>
+<div><label class="lbl">Term (Yrs) <span class="tip"><span class="ti">i</span><span class="tt">Loan duration. Shorter = less interest.</span></span></label><input type="number" id="lt" value="30" class="inp"></div>
 </div>
-<div class="grid grid-cols-2 gap-4">
-<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Interest Rate % <span class="tip"><span class="ti">i</span><span class="tt">Your starting annual interest rate. Auto-set when you pick a lender.</span></span></label><div class="relative"><input type="number" id="ir" value="6.20" step="0.01" class="w-full pr-8 pl-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"><span class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">%</span></div></div>
-<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Repay Type <span class="tip"><span class="ti">i</span><span class="tt">P&I: reduces balance. Interest Only: balance stays the same.</span></span></label><select id="rt" class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"><option value="pi">P&I</option><option value="io">Interest Only</option></select></div>
+<div class="grid grid-cols-2 gap-3">
+<div><label class="lbl">Interest Rate <span class="tip"><span class="ti">i</span><span class="tt">Annual rate. Auto-set from lender selection.</span></span></label><div class="relative"><input type="number" id="ir" value="6.20" step="0.01" class="inp" style="padding-right:28px"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-outline text-sm">%</span></div></div>
+<div><label class="lbl">Repay Type <span class="tip"><span class="ti">i</span><span class="tt">P&I reduces balance. IO keeps it flat.</span></span></label><select id="rt" class="inp"><option value="pi">P & I</option><option value="io">Interest Only</option></select></div>
 </div>
-<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Application Fee <span class="tip"><span class="ti">i</span><span class="tt">One-off fee charged by the lender. Added to total cost.</span></span></label><input type="number" id="af" value="0" class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div>
+<div><label class="lbl">Application Fee</label><input type="number" id="af" value="0" class="inp"></div>
 </div>
-</section>
+</div>
 
 <!-- Lender -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
+<div class="card">
 <div class="flex items-center gap-3 mb-4">
-<div class="p-2 bg-secondary-container/20 rounded-lg"><span class="material-symbols-outlined text-secondary">account_balance</span></div>
-<h3 class="text-headline-md font-headline-md text-on-surface dark:text-primary-fixed-dim" id="lT">Lender</h3>
+<div class="p-2 bg-secondary-container/20 rounded-lg"><span class="material-symbols-outlined text-secondary text-xl">account_balance</span></div>
+<h3 class="text-lg font-bold text-on-surface dark:text-primary-fixed-dim" id="lT">Lender</h3>
 </div>
-<select id="lS" onchange="oL(+this.value)" class="w-full px-4 py-3 bg-surface dark:bg-bg-dark border border-outline-variant dark:border-outline rounded-lg focus:ring-2 focus:ring-primary text-on-surface dark:text-inverse-on-surface mb-3"></select>
-<div id="clW" class="hidden r2" style="margin-top:6px"><div><label class="text-label-sm text-outline block mb-1">Name</label><input type="text" id="cln" placeholder="Lender name" class="w-full px-3 py-2 rounded-lg border border-outline-variant dark:border-outline bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface text-sm"></div><div><label class="text-label-sm text-outline block mb-1">Margin %</label><input type="number" id="cm" step="0.05" value="1.75" oninput="oCM()" class="w-full px-3 py-2 rounded-lg border border-outline-variant dark:border-outline bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface text-sm"></div></div>
+<select id="lS" onchange="oL(+this.value)" class="inp mb-3"></select>
+<div id="clW" class="hidden r2"><div><label class="lbl">Name</label><input type="text" id="cln" placeholder="Lender name" class="inp text-sm"></div><div><label class="lbl">Margin %</label><input type="number" id="cm" step="0.05" value="1.75" oninput="oCM()" class="inp text-sm"></div></div>
 <div class="grid grid-cols-2 gap-3 mt-3">
-<div class="bg-surface-container dark:bg-bg-dark p-3 rounded-lg text-center"><div class="text-label-sm text-outline uppercase tracking-wider mb-1">Margin</div><div class="text-lg font-bold text-on-surface dark:text-inverse-on-surface" id="dM">+1.69%</div></div>
-<div class="bg-surface-container dark:bg-bg-dark p-3 rounded-lg text-center"><div class="text-label-sm text-outline uppercase tracking-wider mb-1">Your Rate</div><div class="text-lg font-bold text-secondary dark:text-secondary-fixed-dim" id="dR">6.04%</div></div>
+<div class="bg-surface-container dark:bg-bg-dark p-3 rounded-lg text-center"><div class="text-[10px] text-outline uppercase tracking-wider font-bold">Margin</div><div class="text-lg font-bold mt-1" id="dM">+1.69%</div></div>
+<div class="bg-surface-container dark:bg-bg-dark p-3 rounded-lg text-center"><div class="text-[10px] text-outline uppercase tracking-wider font-bold">Your Rate</div><div class="text-lg font-bold text-secondary dark:text-secondary-fixed-dim mt-1" id="dR">6.04%</div></div>
 </div>
-<button onclick="aAR()" class="w-full mt-3 py-2.5 rounded-lg border-2 border-primary text-primary font-label-md hover:bg-primary hover:text-on-primary transition-all">🔄 Apply All Rates to Loan</button>
-</section>
+<button onclick="aAR()" class="w-full mt-3 py-2.5 rounded-lg border-2 border-primary text-primary text-sm font-bold hover:bg-primary hover:text-on-primary transition-all">🔄 Apply All Rates</button>
+</div>
 
 <!-- Rate History -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
-<h3 class="text-label-sm text-outline uppercase tracking-wider mb-3" id="rT">📈 Rate History</h3>
+<div class="card">
+<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-3" id="rT">📈 Rate History</h3>
 <div class="tw" id="rTbl" style="max-height:180px"></div>
-<div id="aC" class="text-label-sm text-outline mt-2"></div>
-</section>
-
-<!-- Extra Repayments -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
-<h3 class="text-label-sm text-outline uppercase tracking-wider mb-3">💰 Extra Repayments <span class="tip"><span class="ti">i</span><span class="tt">Payments above your minimum. Each has a date window.</span></span></h3>
-<div id="eL"></div>
-<div class="flex gap-2 mt-3 flex-wrap">
-<button onclick="aE('recurring')" class="px-3 py-1.5 rounded-lg border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container/20 transition-colors">+ Recurring</button>
-<button onclick="aE('annual')" class="px-3 py-1.5 rounded-lg border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container/20 transition-colors">+ Annual</button>
-<button onclick="aE('onetime')" class="px-3 py-1.5 rounded-lg border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container/20 transition-colors">+ Lump Sum</button>
+<div id="aC" class="text-xs text-outline mt-2"></div>
 </div>
-</section>
 
-<!-- Offset Account -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
-<h3 class="text-label-sm text-outline uppercase tracking-wider mb-2">🏦 Offset Account <span class="tip"><span class="ti">i</span><span class="tt">Offset reduces the balance interest is charged on.</span></span></h3>
-<p class="text-label-sm text-outline mb-3">Model your changing offset balance over time.</p>
-<div id="oL"></div>
-<button onclick="addOffset()" class="mt-2 px-3 py-1.5 rounded-lg border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container/20 transition-colors">+ Add Offset Period</button>
-</section>
-
-<!-- Schedule Changes -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
-<h3 class="text-label-sm text-outline uppercase tracking-wider mb-2">🔄 Schedule Changes <span class="tip"><span class="ti">i</span><span class="tt">Mid-loan changes: switch P&I/IO, frequency, or fixed/variable.</span></span></h3>
-<div id="scL"></div>
-<button onclick="addSched()" class="mt-2 px-3 py-1.5 rounded-lg border border-primary/30 text-primary text-xs font-bold hover:bg-primary/5 transition-colors">+ Add Schedule Change</button>
-</section>
-
-<!-- Save & Load -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
-<h3 class="text-label-sm text-outline uppercase tracking-wider mb-3">💾 Save & Load</h3>
-<div class="flex gap-2 mb-3"><input type="text" id="sN" placeholder="Config name..." class="flex-grow px-3 py-2 rounded-lg border border-outline-variant dark:border-outline bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface text-sm"><button onclick="sC()" class="px-4 py-2 rounded-lg bg-primary/10 text-primary font-bold text-xs hover:bg-primary/20 transition-colors">Save</button></div>
-<div id="sL"></div>
-</section>
-
-<!-- Action Buttons -->
-<button onclick="calc()" class="w-full py-3.5 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-surface-tint transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-md">
+<!-- Calculate -->
+<button onclick="calc()" class="btn-primary shadow-lg">
 <span class="material-symbols-outlined text-lg">calculate</span> Calculate Repayments
 </button>
-<div class="grid grid-cols-2 gap-3">
-<button onclick="exportCSV()" class="py-2.5 rounded-lg border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors text-sm">📥 CSV</button>
-<button onclick="exportPDF()" class="py-2.5 rounded-lg bg-error text-on-error font-label-md text-label-md hover:opacity-90 transition-opacity text-sm">📄 PDF</button>
+<div class="grid grid-cols-2 gap-3 mt-2">
+<button onclick="exportCSV()" class="py-2.5 rounded-lg border border-outline-variant text-on-surface-variant text-sm font-medium hover:bg-surface-container transition-colors cursor-pointer">📥 CSV</button>
+<button onclick="exportPDF()" class="py-2.5 rounded-lg bg-error text-on-error text-sm font-medium hover:opacity-90 transition-opacity cursor-pointer border-none">📄 PDF Report</button>
 </div>
 
-</aside>
+</div><!-- end left -->
 
-<!-- ═══ RIGHT: RESULTS ═══ -->
-<div class="flex-grow flex flex-col gap-grid-gutter">
-
-<!-- Results -->
-<section class="bg-surface-container-lowest dark:bg-surface-dark p-6 rounded-xl border border-outline-variant dark:border-outline shadow-sm">
-<h2 class="text-headline-md font-headline-md text-on-surface dark:text-primary-fixed-dim mb-4">Results</h2>
-<div id="mG"></div>
-</section>
-
-<!-- Chart / Table -->
-<div class="tabs">
-<div class="tab a" onclick="sT(this,'bal')">Balance Chart</div>
-<div class="tab" onclick="sT(this,'tbl')">Amortisation</div>
+<!-- Right: Results + Chart -->
+<div class="flex-grow space-y-5 min-w-0">
+<div class="card"><div class="flex items-center gap-3 mb-3"><div class="p-2 bg-tertiary-container/10 rounded-lg"><span class="material-symbols-outlined text-tertiary text-xl">monitoring</span></div><h2 class="text-lg font-bold text-on-surface dark:text-primary-fixed-dim">Results</h2></div><div id="mG"></div></div>
+<div class="tabs"><div class="tab a" onclick="sT(this,'bal')">Balance Chart</div><div class="tab" onclick="sT(this,'tbl')">Amortisation</div></div>
+<div id="t-bal" class="card"><div class="cwrap"><canvas id="cB"></canvas></div></div>
+<div id="t-tbl" class="card hidden"><div class="tw" id="aT"></div></div>
 </div>
-<div id="t-bal" class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm"><div class="cwrap"><canvas id="cB"></canvas></div></div>
-<div id="t-tbl" class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-4 border border-outline-variant dark:border-outline shadow-sm hidden"><div class="tw" id="aT"></div></div>
 
-<!-- Ad Slots -->
-<div class="text-center min-h-[50px] overflow-hidden rounded-lg">
+</div><!-- end flex -->
+</div><!-- end dashboard -->
+
+<!-- ════════════════════════════════════ -->
+<!-- SCENARIOS: Extra Repayments + Offset + Schedule -->
+<!-- ════════════════════════════════════ -->
+<div id="view-scenarios" class="view-section">
+<div class="max-w-3xl mx-auto space-y-5">
+
+<div class="mb-6">
+<h1 class="text-2xl font-extrabold text-on-surface dark:text-primary-fixed-dim mb-1">Scenarios</h1>
+<p class="text-sm text-outline">Model extra repayments, offset accounts, and schedule changes to see their impact.</p>
+</div>
+
+<div class="card">
+<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-3">💰 Extra Repayments</h3>
+<div id="eL"></div>
+<div class="flex gap-2 mt-3 flex-wrap">
+<button onclick="aE('recurring')" class="btn-ghost">+ Recurring</button>
+<button onclick="aE('annual')" class="btn-ghost">+ Annual</button>
+<button onclick="aE('onetime')" class="btn-ghost">+ Lump Sum</button>
+</div>
+</div>
+
+<div class="card">
+<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-2">🏦 Offset Account</h3>
+<p class="text-xs text-outline mb-3">Model your changing offset balance over time.</p>
+<div id="oL"></div>
+<button onclick="addOffset()" class="btn-ghost mt-2">+ Add Offset Period</button>
+</div>
+
+<div class="card">
+<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-2">🔄 Schedule Changes</h3>
+<p class="text-xs text-outline mb-3">Record changes during the loan.</p>
+<div id="scL"></div>
+<button onclick="addSched()" class="btn-ghost mt-2">+ Add Schedule Change</button>
+</div>
+
+<button onclick="calc();switchView('dashboard')" class="btn-primary shadow-lg">
+<span class="material-symbols-outlined text-lg">calculate</span> Recalculate & View Results
+</button>
+
+<div class="card">
+<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-3">💾 Save & Load</h3>
+<div class="flex gap-2 mb-3"><input type="text" id="sN" placeholder="Config name..." class="inp flex-grow text-sm"><button onclick="sC()" class="px-4 py-2 rounded-lg bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20 transition-colors cursor-pointer border-none">Save</button></div>
+<div id="sL"></div>
+</div>
+
+</div>
+</div><!-- end scenarios -->
+
+<!-- ════════════════════════════════════ -->
+<!-- AMORTISATION: Full table -->
+<!-- ════════════════════════════════════ -->
+<div id="view-amortisation" class="view-section">
+<div class="max-w-6xl mx-auto space-y-5">
+<div class="mb-4">
+<h1 class="text-2xl font-extrabold text-on-surface dark:text-primary-fixed-dim mb-1">Amortisation Schedule</h1>
+<p class="text-sm text-outline">Full month-by-month breakdown of your loan. Click Calculate on the Dashboard first.</p>
+</div>
+<div class="card">
+<div class="tw" id="aT2" style="max-height:70vh"></div>
+</div>
+<div class="grid grid-cols-2 gap-3 max-w-md">
+<button onclick="exportCSV()" class="py-2.5 rounded-lg border border-outline-variant text-on-surface-variant text-sm font-medium hover:bg-surface-container transition-colors cursor-pointer">📥 Export CSV</button>
+<button onclick="exportPDF()" class="py-2.5 rounded-lg bg-error text-on-error text-sm font-medium hover:opacity-90 transition-opacity cursor-pointer border-none">📄 Export PDF</button>
+</div>
+</div>
+</div><!-- end amortisation -->
+
+<!-- Ad -->
+<div class="text-center mt-6 min-h-[50px]">
 <div class="text-[10px] text-outline uppercase tracking-widest mb-1">Advertisement</div>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
 
-</div>
 </main>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="w-full py-section-margin px-container-padding flex flex-col md:flex-row justify-between items-center gap-grid-gutter bg-surface-container-low dark:bg-bg-dark border-t border-outline-variant dark:border-outline">
-<div class="flex flex-col items-center md:items-start gap-2">
-<span class="font-display text-xl font-extrabold text-primary">GlobalMortgage</span>
-<p class="text-label-sm text-outline text-center md:text-left max-w-md">© 2026 urmortgage.online. Financial modeling for illustrative purposes only.</p>
+<footer class="w-full py-10 px-6 flex flex-col md:flex-row justify-between items-center gap-6 bg-surface-container-low dark:bg-bg-dark border-t border-outline-variant dark:border-outline mt-8">
+<div class="flex flex-col items-center md:items-start gap-1">
+<span class="text-xl font-extrabold text-primary">GlobalMortgage</span>
+<p class="text-xs text-outline text-center md:text-left max-w-md">© 2026 urmortgage.online. Financial modeling for illustrative purposes only.</p>
 </div>
 <div class="flex gap-6">
-<a href="privacy.html" class="text-label-sm text-outline hover:text-primary transition-colors underline">Privacy Policy</a>
-<a href="terms.html" class="text-label-sm text-outline hover:text-primary transition-colors underline">Terms</a>
-<a href="https://urmortgage.online" class="text-label-sm text-outline hover:text-primary transition-colors underline">Home</a>
+<a href="privacy.html" class="text-xs text-outline hover:text-primary underline transition-colors">Privacy</a>
+<a href="terms.html" class="text-xs text-outline hover:text-primary underline transition-colors">Terms</a>
 </div>
 </footer>
 
+<script>
+/* ═══ VIEW SWITCHING ═══ */
+function switchView(v){
+  document.querySelectorAll('.view-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>{b.classList.remove('active','text-primary','dark:text-primary-fixed-dim','bg-primary/5');b.classList.add('text-on-surface-variant','dark:text-outline-variant')});
+  document.querySelectorAll('.mob-nav').forEach(b=>{b.classList.remove('active','text-primary','border-primary');b.classList.add('text-on-surface-variant','border-transparent')});
+  var nb=document.querySelector('.nav-btn[data-view="'+v+'"]');if(nb){nb.classList.add('active','text-primary','dark:text-primary-fixed-dim','bg-primary/5');nb.classList.remove('text-on-surface-variant','dark:text-outline-variant')}
+  var mb=document.querySelector('.mob-nav[data-view="'+v+'"]');if(mb){mb.classList.add('active','text-primary','border-primary');mb.classList.remove('text-on-surface-variant','border-transparent')}
+  if(v==='amortisation'){var src=$('aT');var dst=$('aT2');if(src&&dst)dst.innerHTML=src.innerHTML}
+  window.scrollTo(0,0);
+}
+/* ═══ THEME TOGGLE ═══ */
+function toggleTheme(){
+  document.documentElement.classList.toggle('dark');
+  var d=document.documentElement.classList.contains('dark');
+  document.getElementById('themeBtn').textContent=d?'light_mode':'dark_mode';
+  try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}
+}
+(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');var b=document.getElementById('themeBtn');if(b)b.textContent='light_mode'}}catch(e){}})();
+</script>
 <script>
 const $=i=>document.getElementById(i);
 function dtS(d){return d.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})}
