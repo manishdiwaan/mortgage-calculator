@@ -10,6 +10,11 @@
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://urmortgage.online/">
 
+<!-- Security Headers (meta-tag equivalent for static hosting) -->
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://urmortgage.online/">
@@ -475,6 +480,9 @@ $('aT').innerHTML=t+'</tbody></table>'}
 
 function sT(el,n){['bal','tbl'].forEach(t=>{$('t-'+t)?.classList.toggle('hidden',t!==n)});document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a'));el.classList.add('a');if(ch)ch.resize()}
 
+// ═══ SECURITY: HTML SANITIZER ═══
+function esc(s){var d=document.createElement('div');d.appendChild(document.createTextNode(s));return d.innerHTML}
+
 async function sC(){const nm=$('sN').value.trim();if(!nm)return;
 var cfg={nm,cc:cc,pp:gv('pp'),dp:gv('dp'),la:gv('la'),sd:$('sd').value,ir:$('ir').value,lt:$('lt').value,rt:$('rt').value,af:$('af').value,li:$('lS').value,mg:mg,rc:rc,sv:new Date().toISOString()};
 const k='gc:'+nm.replace(/[^a-zA-Z0-9_-]/g,'_');
@@ -485,7 +493,7 @@ async function lS(){const cs=[];
 try{const ks=await window.storage.list('gc:');for(const k of(ks?.keys||[])){try{const r=await window.storage.get(k);if(r?.value)cs.push({k,c:JSON.parse(r.value)})}catch(e){}}}catch(e){}
 if(window._s)Object.entries(window._s).forEach(([k,v])=>{if(!cs.find(c=>c.k===k))try{cs.push({k,c:JSON.parse(v)})}catch(e){}});
 if(!cs.length){$('sL').innerHTML='<div style="font-size:.7rem;color:#94a3b8;text-align:center;padding:5px">No saved configs</div>';return}
-let h='';cs.forEach(({k,c})=>{h+=`<div class="si"><span style="font-weight:600">${CD[c.cc]?.f||''} ${c.nm}</span><div style="display:flex;gap:3px"><button class="bx" style="background:rgba(16,185,129,.15);color:#10b981;border-color:rgba(16,185,129,.3)" onclick="lC('${k}')">Load</button><button class="bx" onclick="dC('${k}')">✕</button></div></div>`});
+let h='';cs.forEach(({k,c})=>{h+=`<div class="si"><span style="font-weight:600">${esc(CD[c.cc]?.f||'')} ${esc(c.nm||'')}</span><div style="display:flex;gap:3px"><button class="bx" style="background:rgba(16,185,129,.15);color:#10b981;border-color:rgba(16,185,129,.3)" onclick="lC('${esc(k)}')">Load</button><button class="bx" onclick="dC('${esc(k)}')">✕</button></div></div>`});
 $('sL').innerHTML=h}
 
 async function lC(k){let raw=null;try{const r=await window.storage.get(k);if(r?.value)raw=r.value}catch(e){}
