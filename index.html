@@ -81,7 +81,7 @@ tr:hover td{background:rgba(0,74,198,.04)}
 .inp{width:100%;padding:10px 14px;border-radius:8px;border:1px solid #c3c6d7;background:#fff;color:#0b1c30;font-size:.88rem;font-weight:500;outline:none;font-family:'Geist',sans-serif;transition:border-color .2s}
 .dark .inp{background:#0F172A;color:#eaf1ff;border-color:#434655}
 .inp:focus{border-color:#004ac6;box-shadow:0 0 0 3px rgba(0,74,198,.1)}
-.inp-pre{padding-left:28px}
+.inp-pre{padding-left:32px}
 .card{background:#fff;border-radius:12px;padding:24px;border:1px solid #c3c6d7;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:border-color .2s}
 .dark .card{background:#1E293B;border-color:#434655}
 .card:hover{border-color:#004ac6}
@@ -163,7 +163,7 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <div><label class="lbl">Interest Rate <span class="tip"><span class="ti">i</span><span class="tt">Annual rate. Auto-set from lender selection.</span></span></label><div class="relative"><input type="number" id="ir" value="6.20" step="0.01" class="inp" style="padding-right:28px"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-outline text-sm">%</span></div></div>
 <div><label class="lbl">Repay Type <span class="tip"><span class="ti">i</span><span class="tt">P&I reduces balance. IO keeps it flat.</span></span></label><select id="rt" class="inp"><option value="pi">P & I</option><option value="io">Interest Only</option></select></div>
 </div>
-<div><label class="lbl">Application Fee</label><input type="number" id="af" value="0" class="inp"></div>
+<div><label class="lbl">Application Fee <span class="tip"><span class="ti">i</span><span class="tt">One-off fee charged by the lender to set up your loan. Added to total cost.</span></span></label><input type="number" id="af" value="0" class="inp"></div>
 </div>
 </div>
 
@@ -215,52 +215,50 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <!-- SCENARIOS: Extra Repayments + Offset + Schedule -->
 <!-- ════════════════════════════════════ -->
 <div id="view-scenarios" class="view-section">
-<div class="max-w-3xl mx-auto space-y-5">
+<div class="max-w-4xl mx-auto space-y-5">
 
 <div class="mb-6">
 <h1 class="text-2xl font-extrabold text-on-surface dark:text-primary-fixed-dim mb-1">Scenarios</h1>
-<p class="text-sm text-outline">Model extra repayments, offset accounts, and schedule changes to see their impact.</p>
+<p class="text-sm text-outline">Add extra repayments, offset accounts, and schedule changes — then see how they reduce your loan.</p>
 </div>
 
+<!-- Impact Metrics (shown after calc) -->
+<div id="scenarioMetrics" class="hidden">
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
+<div class="bg-primary text-on-primary p-5 rounded-xl shadow-md"><p class="text-xs opacity-80 uppercase tracking-wider font-bold mb-1">Interest Saved</p><h4 class="text-2xl font-extrabold" id="scIS">-</h4><p class="text-xs opacity-70 mt-1" id="scISsub"></p></div>
+<div class="bg-secondary-container p-5 rounded-xl border border-secondary/20"><p class="text-xs text-on-secondary-container uppercase tracking-wider font-bold mb-1">Time Saved</p><h4 class="text-2xl font-extrabold text-on-secondary-container" id="scTS">-</h4><p class="text-xs text-on-secondary-container/70 mt-1" id="scTSsub"></p></div>
+<div class="bg-surface-container-highest dark:bg-surface-dark p-5 rounded-xl border border-outline-variant dark:border-outline"><p class="text-xs text-outline uppercase tracking-wider font-bold mb-1">Total Extra Paid</p><h4 class="text-2xl font-extrabold text-on-surface dark:text-inverse-on-surface" id="scTE">-</h4></div>
+</div>
+<div class="card mb-5"><div class="cwrap"><canvas id="cB2"></canvas></div></div>
+</div>
+
+<!-- Config Cards - 2 column -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 <div class="card">
-<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-3">💰 Extra Repayments</h3>
+<div class="flex items-center gap-2 mb-4"><div class="p-1.5 bg-accent-warning/10 rounded-lg"><span class="material-symbols-outlined text-accent-warning text-lg">payments</span></div><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim">Extra Repayments</h3><span class="tip"><span class="ti">i</span><span class="tt">Payments above your minimum. Recurring: regular extras. Annual: once yearly. Lump Sum: one-time. Each has a date window.</span></span></div>
 <div id="eL"></div>
-<div class="flex gap-2 mt-3 flex-wrap">
-<button onclick="aE('recurring')" class="btn-ghost">+ Recurring</button>
-<button onclick="aE('annual')" class="btn-ghost">+ Annual</button>
-<button onclick="aE('onetime')" class="btn-ghost">+ Lump Sum</button>
+<div class="flex gap-2 mt-3 flex-wrap"><button onclick="aE('recurring')" class="btn-ghost">+ Recurring</button><button onclick="aE('annual')" class="btn-ghost">+ Annual</button><button onclick="aE('onetime')" class="btn-ghost">+ Lump Sum</button></div>
 </div>
-</div>
-
 <div class="card">
-<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-2">🏦 Offset Account</h3>
+<div class="flex items-center gap-2 mb-4"><div class="p-1.5 bg-secondary/10 rounded-lg"><span class="material-symbols-outlined text-secondary text-lg">savings</span></div><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim">Offset Account</h3><span class="tip"><span class="ti">i</span><span class="tt">Money in your offset account reduces the balance interest is charged on. e.g. $50k offset on a $500k loan = interest on $450k only.</span></span></div>
 <p class="text-xs text-outline mb-3">Model your changing offset balance over time.</p>
 <div id="oL"></div>
 <button onclick="addOffset()" class="btn-ghost mt-2">+ Add Offset Period</button>
 </div>
-
 <div class="card">
-<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-2">🔄 Schedule Changes</h3>
+<div class="flex items-center gap-2 mb-4"><div class="p-1.5 bg-primary/10 rounded-lg"><span class="material-symbols-outlined text-primary text-lg">event_repeat</span></div><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim">Schedule Changes</h3><span class="tip"><span class="ti">i</span><span class="tt">Model mid-loan changes: switch P&I/IO, change frequency, or toggle fixed/variable rates.</span></span></div>
 <p class="text-xs text-outline mb-3">Record changes during the loan.</p>
 <div id="scL"></div>
 <button onclick="addSched()" class="btn-ghost mt-2">+ Add Schedule Change</button>
 </div>
-
-<button onclick="calc();document.getElementById('scenarioResults').classList.remove('hidden')" class="btn-primary shadow-lg">
-<span class="material-symbols-outlined text-lg">calculate</span> Recalculate & View Impact
-</button>
-
-<!-- Scenario Results (shown after calculate) -->
-<div id="scenarioResults" class="hidden space-y-5">
-<div class="card"><h3 class="text-lg font-bold text-on-surface dark:text-primary-fixed-dim mb-3">📊 Impact Summary</h3><div id="mG2"></div></div>
-<div class="card"><div class="cwrap"><canvas id="cB2"></canvas></div></div>
-</div>
-
 <div class="card">
-<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-3">💾 Save & Load</h3>
+<div class="flex items-center gap-2 mb-4"><span class="material-symbols-outlined text-outline text-lg">save</span><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim">Save & Load</h3></div>
 <div class="flex gap-2 mb-3"><input type="text" id="sN" placeholder="Config name..." class="inp flex-grow text-sm"><button onclick="sC()" class="px-4 py-2 rounded-lg bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20 transition-colors cursor-pointer border-none">Save</button></div>
 <div id="sL"></div>
 </div>
+</div>
+
+<button onclick="calc()" class="btn-primary shadow-lg mt-2"><span class="material-symbols-outlined text-lg">calculate</span> Recalculate Scenarios</button>
 
 </div>
 </div><!-- end scenarios -->
@@ -527,8 +525,13 @@ if(cB2El){
   if(window.ch2)window.ch2.destroy();
   window.ch2=new Chart(cB2El,{type:'line',data:{labels:lb,datasets:[{label:'Without Extras',data:bN,borderColor:'#64748b',backgroundColor:'rgba(100,116,139,0.08)',fill:true,tension:.3,pointRadius:0,borderDash:[6,4]},{label:'With Extras',data:bW,borderColor:'#10b981',backgroundColor:'rgba(16,185,129,0.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8'}}},scales:{x:{ticks:{color:'#94a3b8',maxTicksLimit:8,font:{size:9}},grid:{color:'rgba(148,163,184,.15)'}},y:{ticks:{color:'#94a3b8',callback:function(v){return sy+fmtStd(Math.round(v/1000))+'k'}},grid:{color:'rgba(148,163,184,.15)'}}}}}); 
 }
-// Show scenario results
-var sr=$('scenarioResults');if(sr)sr.classList.remove('hidden');
+// Populate scenario impact tiles
+var sm=$('scenarioMetrics');if(sm){sm.classList.remove('hidden');
+var scIS=$('scIS');if(scIS)scIS.textContent=tE>0?fm(iS,sy):'-';
+var scTS=$('scTS');if(scTS)scTS.textContent=tE>0?Math.floor(tS/12)+'y '+tS%12+'m':'-';
+var scTE=$('scTE');if(scTE)scTE.textContent=tE>0?fm(tE,sy):'-';
+var scISs=$('scISsub');if(scISs)scISs.textContent=tE>0?'vs base loan':'Add extras in Scenarios';
+var scTSs=$('scTSsub');if(scTSs)scTSs.textContent=tE>0?'Debt-free '+dtS(eD):''}
 }
 
 function sT(el,n){['bal','tbl'].forEach(t=>{$('t-'+t)?.classList.toggle('hidden',t!==n)});document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a'));el.classList.add('a');if(ch)ch.resize()}
