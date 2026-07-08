@@ -104,6 +104,7 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <header class="sticky top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white/90 dark:bg-bg-dark/90 border-b border-outline-variant dark:border-outline backdrop-blur-md">
 <div class="flex items-center gap-4">
 <span class="text-2xl font-extrabold text-primary dark:text-primary-fixed-dim tracking-tight cursor-pointer" onclick="switchView('dashboard')">GlobalMortgage</span>
+<span class="hidden lg:inline text-xs text-outline ml-2">25 countries · 250+ lenders · Central bank rate tracking</span>
 <nav class="hidden md:flex gap-1 ml-6">
 <button onclick="switchView('dashboard')" class="nav-btn active px-4 py-2 text-sm font-medium rounded-lg transition-colors" data-view="dashboard">Dashboard</button>
 <button onclick="switchView('scenarios')" class="nav-btn px-4 py-2 text-sm font-medium rounded-lg transition-colors" data-view="scenarios">Scenarios</button>
@@ -245,9 +246,15 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <button onclick="addSched()" class="btn-ghost mt-2">+ Add Schedule Change</button>
 </div>
 
-<button onclick="calc();switchView('dashboard')" class="btn-primary shadow-lg">
-<span class="material-symbols-outlined text-lg">calculate</span> Recalculate & View Results
+<button onclick="calc();document.getElementById('scenarioResults').classList.remove('hidden')" class="btn-primary shadow-lg">
+<span class="material-symbols-outlined text-lg">calculate</span> Recalculate & View Impact
 </button>
+
+<!-- Scenario Results (shown after calculate) -->
+<div id="scenarioResults" class="hidden space-y-5">
+<div class="card"><h3 class="text-lg font-bold text-on-surface dark:text-primary-fixed-dim mb-3">📊 Impact Summary</h3><div id="mG2"></div></div>
+<div class="card"><div class="cwrap"><canvas id="cB2"></canvas></div></div>
+</div>
 
 <div class="card">
 <h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-3">💾 Save & Load</h3>
@@ -510,7 +517,19 @@ var t='<table><thead><tr><th>Mth</th><th>Date</th><th>Rate</th><th>Payment</th><
 var mx=Math.min(w.D.length,360);
 for(var i=0;i<mx;i++){var d=w.D[i];t+='<tr><td>'+d.m+'</td><td style="font-size:.66rem">'+dtS(d.d)+'</td><td>'+d.rt.toFixed(2)+'%</td><td>'+fd(d.p,sy)+'</td><td>'+fd(d.pr,sy)+'</td><td>'+fd(d.i,sy)+'</td><td style="color:'+(d.e>0?'#10b981':'')+'">'+(d.e>0?fd(d.e,sy):'-')+'</td><td>'+fm(d.b,sy)+'</td></tr>'}
 if(w.D.length>mx)t+='<tr><td colspan="8" style="text-align:center;color:#94a3b8;padding:8px">Showing '+mx+' of '+w.D.length+'</td></tr>';
-$('aT').innerHTML=t+'</tbody></table>'}
+$('aT').innerHTML=t+'</tbody></table>';
+
+// Mirror results to Scenario view
+var mG2=$('mG2');if(mG2)mG2.innerHTML=$('mG').innerHTML;
+// Mirror chart to Scenario view
+var cB2El=$('cB2');
+if(cB2El){
+  if(window.ch2)window.ch2.destroy();
+  window.ch2=new Chart(cB2El,{type:'line',data:{labels:lb,datasets:[{label:'Without Extras',data:bN,borderColor:'#64748b',backgroundColor:'rgba(100,116,139,0.08)',fill:true,tension:.3,pointRadius:0,borderDash:[6,4]},{label:'With Extras',data:bW,borderColor:'#10b981',backgroundColor:'rgba(16,185,129,0.1)',fill:true,tension:.3,pointRadius:0}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#94a3b8'}}},scales:{x:{ticks:{color:'#94a3b8',maxTicksLimit:8,font:{size:9}},grid:{color:'rgba(148,163,184,.15)'}},y:{ticks:{color:'#94a3b8',callback:function(v){return sy+fmtStd(Math.round(v/1000))+'k'}},grid:{color:'rgba(148,163,184,.15)'}}}}}); 
+}
+// Show scenario results
+var sr=$('scenarioResults');if(sr)sr.classList.remove('hidden');
+}
 
 function sT(el,n){['bal','tbl'].forEach(t=>{$('t-'+t)?.classList.toggle('hidden',t!==n)});document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a'));el.classList.add('a');if(ch)ch.resize()}
 
