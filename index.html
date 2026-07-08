@@ -295,17 +295,80 @@ tr:hover td{background:var(--primary-light)}
 .ad-wrap ins{display:block}
 .ad-label{font-size:.48rem;color:var(--text-muted);text-align:center;letter-spacing:.12em;margin-bottom:2px;text-transform:uppercase;font-weight:700}
 @media(max-width:480px){.ad-wrap{margin:8px 0}}
+
+/* ═══ NAVBAR ═══ */
+.navbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border-light);backdrop-filter:blur(12px)}
+.nav-inner{max-width:1440px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-size:1.4rem;font-weight:800;color:var(--primary);letter-spacing:-.02em}
+.nav-links{display:flex;gap:24px;margin-left:32px}
+.nav-link{font-size:.82rem;font-weight:500;color:var(--text-muted);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:all .2s}
+.nav-link:hover{color:var(--primary)}
+.nav-link.active{color:var(--primary);border-bottom-color:var(--primary);font-weight:600}
+.nav-actions{display:flex;align-items:center;gap:12px}
+@media(max-width:600px){.nav-links{display:none}.nav-brand{font-size:1.15rem}}
+
+/* ═══ HERO ═══ */
+.hero{background:var(--surface);border-bottom:1px solid var(--border-light);padding:48px 24px 40px}
+.hero-inner{max-width:1440px;margin:0 auto}
+.hero-title{font-size:2.8rem;font-weight:800;color:var(--text);line-height:1.15;letter-spacing:-.03em;margin-bottom:12px}
+.hero-accent{color:var(--primary)}
+.hero-sub{font-size:1rem;color:var(--text-muted);max-width:560px;line-height:1.6}
+@media(max-width:768px){.hero{padding:32px 16px 28px}.hero-title{font-size:1.8rem}}
+@media(max-width:480px){.hero-title{font-size:1.5rem}.hero-sub{font-size:.88rem}}
+
+/* ═══ THEME TOGGLE (in navbar now) ═══ */
+.theme-toggle{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-light);background:var(--surface-low);color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .25s}
+.theme-toggle:hover{border-color:var(--primary);color:var(--primary)}
+
+/* ═══ FOOTER ═══ */
+.site-footer{background:var(--surface-low);border-top:1px solid var(--border-light);padding:40px 24px;margin-top:32px}
+.footer-inner{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-links a{font-size:.72rem;color:var(--text-muted);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--primary)}
+@media(max-width:600px){.footer-inner{flex-direction:column;align-items:center;text-align:center}}
 </style>
 </head>
 <body>
+
+<!-- ═══ TOP NAVBAR ═══ -->
+<nav class="navbar">
+<div class="nav-inner">
+<span class="nav-brand">GlobalMortgage</span>
+<div class="nav-links">
+<a class="nav-link active" href="#">Dashboard</a>
+<a class="nav-link" href="#inputs-section">Calculator</a>
+<a class="nav-link" href="#results-section">Results</a>
+</div>
+<div class="nav-actions">
 <button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
+</div>
+</div>
+</nav>
+
+<!-- ═══ HERO SECTION ═══ -->
+<section class="hero">
+<div class="hero-inner">
+<h1 class="hero-title">Smart Mortgage Planning <span class="hero-accent">Without Borders.</span></h1>
+<p class="hero-sub">Compare rates across 25+ countries, simulate complex repayment models, and track central bank rate changes — all in one place.</p>
+</div>
+</section>
+
+<!-- ═══ COUNTRY SELECTOR (full width) ═══ -->
 <div class="wrap">
-<h1>🏠 Global Mortgage Calculator</h1>
-<p class="sub">25 countries · 250+ lenders · Central bank rate tracking · Save & reload</p>
-<div class="ad-wrap"><div class="ad-label">ADVERTISEMENT</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-<div class="P"><div class="T">🌍 Select Country</div><select id="cSel" onchange="onC(this.value)"></select><div id="cInfo" style="margin-top:5px;font-size:.7rem;color:#94a3b8"></div></div>
-<div class="g">
+<div class="P" style="margin-bottom:20px">
+<div class="T">🌍 Select Country</div>
+<select id="cSel" onchange="onC(this.value)"></select>
+<div id="cInfo" style="margin-top:6px;font-size:.72rem;color:var(--text-muted)"></div>
+</div>
+
+<!-- ═══ MAIN GRID: Inputs | Results ═══ -->
+<div class="g" id="inputs-section">
+
+<!-- ═══ LEFT SIDEBAR: All Inputs ═══ -->
 <div>
+
+<!-- Loan Details -->
 <div class="P" id="iP">
 <div class="T">🏡 Loan Details</div>
 <div class="F"><label>Property Price <span class="tip"><span class="ti">i</span><span class="tt">The total purchase price of the property you're buying or the current market value for refinancing.</span></span></label><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="ppW"></div></div>
@@ -315,51 +378,113 @@ tr:hover td{background:var(--primary-light)}
 <div class="r2"><div class="F"><label>Interest Rate % <span class="tip"><span class="ti">i</span><span class="tt">Your starting annual interest rate. Auto-set when you pick a lender (central bank rate + lender margin).</span></span></label><input type="number" id="ir" value="6.20" step="0.01"></div><div class="F"><label>Repay Type <span class="tip"><span class="ti">i</span><span class="tt">P&I: pay principal + interest each month, reducing your balance. Interest Only: pay only interest, balance stays the same.</span></span></label><select id="rt"><option value="pi">P&I</option><option value="io">Interest Only</option></select></div></div>
 <div class="F"><label>Application Fee <span class="tip"><span class="ti">i</span><span class="tt">One-off fee charged by the lender to set up your loan. Added to total cost calculations.</span></span></label><input type="number" id="af" value="0"></div>
 </div>
-<div class="P"><div class="T" id="lT">🏦 Lender</div>
+
+<!-- Lender -->
+<div class="P">
+<div class="T" id="lT">🏦 Lender</div>
 <select id="lS" onchange="oL(+this.value)"></select>
-<div id="clW" class="hidden r2" style="margin-top:5px"><div class="F"><label>Name</label><input type="text" id="cln" placeholder="Lender name"></div><div class="F"><label>Margin %</label><input type="number" id="cm" step="0.05" value="1.75" oninput="oCM()"></div></div>
-<div class="r2" style="margin-top:5px"><div class="M"><div class="l">Margin</div><div class="v" id="dM">+1.69%</div></div><div class="M"><div class="l">Your Rate</div><div class="v" style="color:#10b981" id="dR">6.04%</div></div></div>
-<button class="btn bg" style="width:100%;margin-top:5px" onclick="aAR()">🔄 Apply All Rates to Loan</button></div>
-<div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="rectangle" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-<div class="P"><div class="T" id="rT">📈 Rate History</div><div class="tw" id="rTbl" style="max-height:180px"></div><div id="aC" style="font-size:.7rem;color:#94a3b8;margin-top:3px"></div></div>
-<div class="P"><div class="T">💰 Extra Repayments <span class="tip"><span class="ti">i</span><span class="tt">Payments above your minimum. Recurring: regular extras. Annual: once yearly. Lump Sum: one-time payment. Each has a date window.</span></span></div><div id="eL"></div><div style="display:flex;gap:3px;margin-top:5px;flex-wrap:wrap"><button class="btn bg" onclick="aE('recurring')">+ Recurring</button><button class="btn bg" onclick="aE('annual')">+ Annual</button><button class="btn bg" onclick="aE('onetime')">+ Lump Sum</button></div></div>
-
-<!-- OFFSET ACCOUNT -->
-<div class="P"><div class="T">🏦 Offset Account <span class="tip"><span class="ti">i</span><span class="tt">Money in your offset account reduces the balance interest is charged on. e.g. $50k offset on a $500k loan means you only pay interest on $450k.</span></span></div>
-<p style="font-size:.73rem;color:#94a3b8;margin-bottom:8px">Model your changing offset balance over time. Each period has a starting balance and optional monthly growth.</p>
-<div id="oL"></div>
-<button class="btn bg" onclick="addOffset()" style="margin-top:5px">+ Add Offset Period</button></div>
-
-<!-- SCHEDULE CHANGES -->
-<div class="P"><div class="T">🔄 Schedule Changes <span class="tip"><span class="ti">i</span><span class="tt">Model mid-loan changes: switch between P&I and Interest Only, change payment frequency, or toggle fixed/variable rates.</span></span></div>
-<p style="font-size:.73rem;color:#94a3b8;margin-bottom:8px">Record changes to repayment type, frequency, or switch between fixed and variable rates during the loan.</p>
-<div id="scL"></div>
-<button class="btn bg" onclick="addSched()" style="margin-top:5px">+ Add Schedule Change</button></div>
-<div class="P"><div class="T">💾 Save & Load</div><div class="r2" style="margin-bottom:5px"><input type="text" id="sN" placeholder="Config name..."><button class="btn bg" onclick="sC()">💾 Save</button></div><div id="sL"></div></div>
-<button class="btn bb" onclick="calc()" style="padding:12px;font-size:.9rem;font-weight:800;letter-spacing:.02em">Calculate Repayments</button>
-<button class="btn" onclick="exportCSV()" style="width:100%;margin-top:6px;padding:10px;font-size:.82rem;background:rgba(51,65,85,.4);color:#94a3b8;border:1px solid rgba(71,85,105,.35);font-weight:600">📥 Export CSV</button>
-<button class="btn bp" onclick="exportPDF()" style="width:100%;margin-top:6px;padding:10px;font-size:.82rem;font-weight:600">📄 Export PDF Report</button>
+<div id="clW" class="hidden r2" style="margin-top:6px"><div class="F"><label>Name</label><input type="text" id="cln" placeholder="Lender name"></div><div class="F"><label>Margin %</label><input type="number" id="cm" step="0.05" value="1.75" oninput="oCM()"></div></div>
+<div class="r2" style="margin-top:8px"><div class="M"><div class="l">Margin</div><div class="v" id="dM">+1.69%</div></div><div class="M"><div class="l">Your Rate</div><div class="v" style="color:var(--green)" id="dR">6.04%</div></div></div>
+<button class="btn bg" style="width:100%;margin-top:8px" onclick="aAR()">🔄 Apply All Rates to Loan</button>
 </div>
-<div>
+
+<!-- Ad Slot -->
+<div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="rectangle" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+<!-- Rate History -->
+<div class="P">
+<div class="T" id="rT">📈 Rate History</div>
+<div class="tw" id="rTbl" style="max-height:180px"></div>
+<div id="aC" style="font-size:.7rem;color:var(--text-muted);margin-top:4px"></div>
+</div>
+
+<!-- Extra Repayments -->
+<div class="P">
+<div class="T">💰 Extra Repayments <span class="tip"><span class="ti">i</span><span class="tt">Payments above your minimum. Recurring: regular extras. Annual: once yearly. Lump Sum: one-time payment. Each has a date window.</span></span></div>
+<div id="eL"></div>
+<div style="display:flex;gap:4px;margin-top:8px;flex-wrap:wrap">
+<button class="btn bg" onclick="aE('recurring')">+ Recurring</button>
+<button class="btn bg" onclick="aE('annual')">+ Annual</button>
+<button class="btn bg" onclick="aE('onetime')">+ Lump Sum</button>
+</div>
+</div>
+
+<!-- Offset Account -->
+<div class="P">
+<div class="T">🏦 Offset Account <span class="tip"><span class="ti">i</span><span class="tt">Money in your offset account reduces the balance interest is charged on. e.g. $50k offset on a $500k loan means you only pay interest on $450k.</span></span></div>
+<p style="font-size:.72rem;color:var(--text-muted);margin-bottom:8px">Model your changing offset balance over time.</p>
+<div id="oL"></div>
+<button class="btn bg" onclick="addOffset()" style="margin-top:6px">+ Add Offset Period</button>
+</div>
+
+<!-- Schedule Changes -->
+<div class="P">
+<div class="T">🔄 Schedule Changes <span class="tip"><span class="ti">i</span><span class="tt">Model mid-loan changes: switch between P&I and Interest Only, change payment frequency, or toggle fixed/variable rates.</span></span></div>
+<p style="font-size:.72rem;color:var(--text-muted);margin-bottom:8px">Record changes during the loan.</p>
+<div id="scL"></div>
+<button class="btn bg" onclick="addSched()" style="margin-top:6px">+ Add Schedule Change</button>
+</div>
+
+<!-- Save & Load -->
+<div class="P">
+<div class="T">💾 Save & Load</div>
+<div class="r2" style="margin-bottom:6px"><input type="text" id="sN" placeholder="Config name..."><button class="btn bg" onclick="sC()">💾 Save</button></div>
+<div id="sL"></div>
+</div>
+
+<!-- Action Buttons -->
+<button class="btn bb" onclick="calc()" style="padding:13px;font-size:.9rem;font-weight:800;letter-spacing:.02em">Calculate Repayments</button>
+<button class="btn" onclick="exportCSV()" style="width:100%;margin-top:8px;padding:10px;font-size:.82rem;background:var(--surface-low);color:var(--text-sub);border:1px solid var(--border-light);font-weight:600">📥 Export CSV</button>
+<button class="btn bp" onclick="exportPDF()" style="width:100%;margin-top:6px;padding:10px;font-size:.82rem;font-weight:600">📄 Export PDF Report</button>
+
+</div><!-- end left sidebar -->
+
+<!-- ═══ RIGHT SIDE: Results & Visualizations ═══ -->
+<div id="results-section">
+
+<!-- Results -->
 <div class="P"><div class="T">📊 Results</div><div id="mG"></div></div>
+
+<!-- Ad Slot -->
 <div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-<div class="tabs"><div class="tab a" onclick="sT(this,'bal')">Balance Chart</div><div class="tab" onclick="sT(this,'tbl')">Amortisation</div></div>
+
+<!-- Chart / Table Tabs -->
+<div class="tabs">
+<div class="tab a" onclick="sT(this,'bal')">Balance Chart</div>
+<div class="tab" onclick="sT(this,'tbl')">Amortisation</div>
+</div>
 <div id="t-bal" class="cbox"><div class="cwrap"><canvas id="cB"></canvas></div></div>
 <div id="t-tbl" class="cbox hidden"><div class="tw" id="aT"></div></div>
+
+<!-- Ad Slot -->
 <div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-</div></div></div>
-<div style="max-width:1440px;margin:0 auto;padding:0 12px">
+
+</div><!-- end right side -->
+</div><!-- end grid -->
+
+<!-- Top Ad -->
+<div class="ad-wrap" style="margin-top:0"><div class="ad-label">ADVERTISEMENT</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+<!-- Footer Ad -->
 <div class="ad-wrap"><div class="ad-label">ADVERTISEMENT</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+</div><!-- end wrap -->
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<span class="nav-brand">GlobalMortgage</span>
+<p style="font-size:.72rem;color:var(--text-muted);margin-top:4px;max-width:400px">© 2026 urmortgage.online. Financial modeling for illustrative purposes only. Always consult a licensed financial advisor.</p>
 </div>
-<footer style="max-width:1440px;margin:20px auto 0;padding:16px 12px;border-top:1px solid #475569;text-align:center">
-<p style="font-size:.7rem;color:#94a3b8;margin-bottom:8px;line-height:1.6">⚠️ <strong style="color:#f59e0b">Disclaimer:</strong> This calculator provides estimates only and does not constitute financial advice. Interest rates, lender margins, and calculations are approximate. Always consult a licensed financial advisor or mortgage broker before making financial decisions.</p>
-<div style="font-size:.7rem;color:#64748b;margin-bottom:6px">
-<a href="privacy.html" style="color:#3b82f6;text-decoration:none;margin:0 8px">Privacy Policy</a> ·
-<a href="terms.html" style="color:#3b82f6;text-decoration:none;margin:0 8px">Terms of Use</a> ·
-<a href="https://urmortgage.online" style="color:#3b82f6;text-decoration:none;margin:0 8px">urmortgage.online</a>
+<div class="footer-links">
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Use</a>
+<a href="https://urmortgage.online">urmortgage.online</a>
 </div>
-<p style="font-size:.62rem;color:#475569">© 2026 urmortgage.online. All rights reserved.</p>
+</div>
 </footer>
+
 <script>
 const $=i=>document.getElementById(i);
 function dtS(d){return d.toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric'})}
