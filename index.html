@@ -162,6 +162,10 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <div><label class="lbl">Interest Rate <span class="tip"><span class="ti">i</span><span class="tt">Annual rate. Auto-set from lender selection.</span></span></label><div class="relative"><input type="number" id="ir" value="6.20" step="0.01" class="inp" style="padding-right:28px"><span class="absolute right-3 top-1/2 -translate-y-1/2 text-outline text-sm">%</span></div></div>
 <div><label class="lbl">Repay Type <span class="tip"><span class="ti">i</span><span class="tt">P&I reduces balance. IO keeps it flat.</span></span></label><select id="rt" class="inp"><option value="pi">P & I</option><option value="io">Interest Only</option></select></div>
 </div>
+<div class="grid grid-cols-2 gap-3">
+<div><label class="lbl">Frequency</label><select id="pf" class="inp"><option value="monthly">Monthly</option><option value="fortnightly">Fortnightly</option><option value="weekly">Weekly</option></select></div>
+<div><label class="lbl">Rate Type</label><select id="rty" class="inp"><option value="variable">Variable</option><option value="fixed">Fixed</option></select></div>
+</div>
 <div><label class="lbl">Application Fee <span class="tip"><span class="ti">i</span><span class="tt">One-off fee charged by the lender to set up your loan. Added to total cost.</span></span></label><input type="number" id="af" value="0" class="inp"></div>
 </div>
 </div>
@@ -183,13 +187,6 @@ tr:hover td{background:rgba(0,74,198,.04)}
 
 <!-- Ad: Dashboard Left -->
 <div class="text-center min-h-[50px] overflow-hidden rounded-lg my-2"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="rectangle" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-
-<!-- Rate History -->
-<div class="card">
-<h3 class="text-[11px] text-outline uppercase tracking-widest font-bold mb-3" id="rT">📈 Rate History</h3>
-<div class="tw" id="rTbl" style="max-height:180px"></div>
-<div id="aC" class="text-xs text-outline mt-2"></div>
-</div>
 
 <!-- Calculate -->
 <button onclick="calc()" class="btn-primary shadow-lg">
@@ -252,6 +249,16 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <div id="sL"></div>
 </div>
 
+<!-- Ad: Scenarios Left -->
+<div class="text-center min-h-[50px] overflow-hidden rounded-lg my-1"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="rectangle" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+
+<!-- Rate History -->
+<div class="card">
+<div class="flex items-center gap-2 mb-4"><div class="p-1.5 bg-chart-blue/10 rounded-lg"><span class="material-symbols-outlined text-chart-blue text-lg">show_chart</span></div><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim" id="rT">Rate History</h3></div>
+<div class="tw" id="rTbl" style="max-height:200px"></div>
+<div id="aC" class="text-xs text-outline mt-2"></div>
+</div>
+
 <button onclick="calc()" class="btn-primary shadow-lg"><span class="material-symbols-outlined text-lg">calculate</span> Recalculate Scenarios</button>
 
 </div>
@@ -299,15 +306,9 @@ tr:hover td{background:rgba(0,74,198,.04)}
 </div>
 </div><!-- end amortisation -->
 
-<!-- Ad -->
-<div class="text-center mt-6 min-h-[50px]">
-<div class="text-[10px] text-outline uppercase tracking-widest mb-1">Advertisement</div>
-<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
-</div>
-
 </main>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- Ad: Pre-Footer -->
 <div class="max-w-[1600px] mx-auto px-6 mt-4 mb-2 text-center min-h-[50px] overflow-hidden rounded-lg">
 <div class="text-[10px] text-outline uppercase tracking-widest mb-1">Advertisement</div>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
