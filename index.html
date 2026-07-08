@@ -81,7 +81,7 @@ tr:hover td{background:rgba(0,74,198,.04)}
 .inp{width:100%;padding:12px 16px;border-radius:12px;border:1px solid #c3c6d7;background:#fff;color:#0b1c30;font-size:16px;font-weight:500;outline:none;font-family:'Geist',sans-serif;transition:border-color .2s;height:48px;-webkit-appearance:none;appearance:none}
 .dark .inp{background:#0F172A;color:#eaf1ff;border-color:#434655}
 .inp:focus{border-color:#004ac6;box-shadow:0 0 0 3px rgba(0,74,198,.1)}
-.inp-pre{padding-left:36px}
+.inp-pre{padding-left:44px !important}
 .card{background:#fff;border-radius:16px;padding:24px;border:1px solid #c3c6d7;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:border-color .2s}
 .dark .card{background:#1E293B;border-color:#434655}
 .card:hover{border-color:#004ac6}
@@ -151,9 +151,9 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <span class="material-symbols-outlined text-primary text-xl">tune</span>
 </div>
 <div class="space-y-4">
-<div><label class="lbl">Property Price <span class="tip"><span class="ti">i</span><span class="tt">Total purchase price or current market value.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-outline text-sm font-medium">$</span><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="ppW"></div></div>
-<div><label class="lbl">Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. 20%+ avoids LMI.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-outline text-sm font-medium">$</span><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="dpW"></div></div>
-<div><label class="lbl">Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated: Price minus Deposit.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-outline text-sm font-medium">$</span><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="laW"></div></div>
+<div><label class="lbl">Property Price <span class="tip"><span class="ti">i</span><span class="tt">Total purchase price or current market value.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-semibold text-base">$</span><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="ppW"></div></div>
+<div><label class="lbl">Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. 20%+ avoids LMI.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-semibold text-base">$</span><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="dpW"></div></div>
+<div><label class="lbl">Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated: Price minus Deposit.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-semibold text-base">$</span><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp inp-pre"></div><div class="aw" id="laW"></div></div>
 <div class="grid grid-cols-2 gap-3">
 <div><label class="lbl">Start Date <span class="tip"><span class="ti">i</span><span class="tt">When your loan begins.</span></span></label><input type="date" id="sd" class="inp [color-scheme:light] dark:[color-scheme:dark]"></div>
 <div><label class="lbl">Term (Yrs) <span class="tip"><span class="ti">i</span><span class="tt">Loan duration. Shorter = less interest.</span></span></label><input type="number" id="lt" value="30" class="inp"></div>
