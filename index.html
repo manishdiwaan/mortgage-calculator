@@ -201,12 +201,12 @@ tr:hover td{background:rgba(0,74,198,.04)}
 </div><!-- end left -->
 
 <!-- Right: Results + Chart -->
-<div class="flex-grow space-y-5 min-w-0">
+<div class="flex-grow min-w-0"><div class="lg:sticky lg:top-[72px] space-y-5">
 <div class="card"><div class="flex items-center gap-3 mb-3"><div class="p-2 bg-tertiary-container/10 rounded-lg"><span class="material-symbols-outlined text-tertiary text-xl">monitoring</span></div><h2 class="text-lg font-bold text-on-surface dark:text-primary-fixed-dim">Results</h2></div><div id="mG"></div></div>
 <div class="tabs"><div class="tab a" onclick="sT(this,'bal')">Balance Chart</div><div class="tab" onclick="sT(this,'tbl')">Amortisation</div></div>
 <div id="t-bal" class="card"><div class="cwrap"><canvas id="cB"></canvas></div></div>
 <div id="t-tbl" class="card hidden"><div class="tw" id="aT"></div></div>
-</div>
+</div></div>
 
 </div><!-- end flex -->
 </div><!-- end dashboard -->
@@ -215,50 +215,58 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <!-- SCENARIOS: Extra Repayments + Offset + Schedule -->
 <!-- ════════════════════════════════════ -->
 <div id="view-scenarios" class="view-section">
-<div class="max-w-4xl mx-auto space-y-5">
+<div class="flex flex-col lg:flex-row gap-6 max-w-[1600px] mx-auto">
 
-<div class="mb-6">
-<h1 class="text-2xl font-extrabold text-on-surface dark:text-primary-fixed-dim mb-1">Scenarios</h1>
-<p class="text-sm text-outline">Add extra repayments, offset accounts, and schedule changes — then see how they reduce your loan.</p>
-</div>
+<!-- Left: Scenario Inputs -->
+<div class="w-full lg:w-[420px] shrink-0 space-y-5">
 
-<!-- Impact Metrics (shown after calc) -->
-<div id="scenarioMetrics" class="hidden">
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-<div class="bg-primary text-on-primary p-5 rounded-xl shadow-md"><p class="text-xs opacity-80 uppercase tracking-wider font-bold mb-1">Interest Saved</p><h4 class="text-2xl font-extrabold" id="scIS">-</h4><p class="text-xs opacity-70 mt-1" id="scISsub"></p></div>
-<div class="bg-secondary-container p-5 rounded-xl border border-secondary/20"><p class="text-xs text-on-secondary-container uppercase tracking-wider font-bold mb-1">Time Saved</p><h4 class="text-2xl font-extrabold text-on-secondary-container" id="scTS">-</h4><p class="text-xs text-on-secondary-container/70 mt-1" id="scTSsub"></p></div>
-<div class="bg-surface-container-highest dark:bg-surface-dark p-5 rounded-xl border border-outline-variant dark:border-outline"><p class="text-xs text-outline uppercase tracking-wider font-bold mb-1">Total Extra Paid</p><h4 class="text-2xl font-extrabold text-on-surface dark:text-inverse-on-surface" id="scTE">-</h4></div>
-</div>
-<div class="card mb-5"><div class="cwrap"><canvas id="cB2"></canvas></div></div>
-</div>
-
-<!-- Config Cards - 2 column -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 <div class="card">
 <div class="flex items-center gap-2 mb-4"><div class="p-1.5 bg-accent-warning/10 rounded-lg"><span class="material-symbols-outlined text-accent-warning text-lg">payments</span></div><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim">Extra Repayments</h3><span class="tip"><span class="ti">i</span><span class="tt">Payments above your minimum. Recurring: regular extras. Annual: once yearly. Lump Sum: one-time. Each has a date window.</span></span></div>
 <div id="eL"></div>
 <div class="flex gap-2 mt-3 flex-wrap"><button onclick="aE('recurring')" class="btn-ghost">+ Recurring</button><button onclick="aE('annual')" class="btn-ghost">+ Annual</button><button onclick="aE('onetime')" class="btn-ghost">+ Lump Sum</button></div>
 </div>
+
 <div class="card">
 <div class="flex items-center gap-2 mb-4"><div class="p-1.5 bg-secondary/10 rounded-lg"><span class="material-symbols-outlined text-secondary text-lg">savings</span></div><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim">Offset Account</h3><span class="tip"><span class="ti">i</span><span class="tt">Money in your offset account reduces the balance interest is charged on. e.g. $50k offset on a $500k loan = interest on $450k only.</span></span></div>
 <p class="text-xs text-outline mb-3">Model your changing offset balance over time.</p>
 <div id="oL"></div>
 <button onclick="addOffset()" class="btn-ghost mt-2">+ Add Offset Period</button>
 </div>
+
 <div class="card">
 <div class="flex items-center gap-2 mb-4"><div class="p-1.5 bg-primary/10 rounded-lg"><span class="material-symbols-outlined text-primary text-lg">event_repeat</span></div><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim">Schedule Changes</h3><span class="tip"><span class="ti">i</span><span class="tt">Model mid-loan changes: switch P&I/IO, change frequency, or toggle fixed/variable rates.</span></span></div>
 <p class="text-xs text-outline mb-3">Record changes during the loan.</p>
 <div id="scL"></div>
 <button onclick="addSched()" class="btn-ghost mt-2">+ Add Schedule Change</button>
 </div>
+
 <div class="card">
 <div class="flex items-center gap-2 mb-4"><span class="material-symbols-outlined text-outline text-lg">save</span><h3 class="text-sm font-bold text-on-surface dark:text-primary-fixed-dim">Save & Load</h3></div>
 <div class="flex gap-2 mb-3"><input type="text" id="sN" placeholder="Config name..." class="inp flex-grow text-sm"><button onclick="sC()" class="px-4 py-2 rounded-lg bg-primary/10 text-primary text-xs font-bold hover:bg-primary/20 transition-colors cursor-pointer border-none">Save</button></div>
 <div id="sL"></div>
 </div>
+
+<button onclick="calc()" class="btn-primary shadow-lg"><span class="material-symbols-outlined text-lg">calculate</span> Recalculate Scenarios</button>
+
 </div>
 
-<button onclick="calc()" class="btn-primary shadow-lg mt-2"><span class="material-symbols-outlined text-lg">calculate</span> Recalculate Scenarios</button>
+<!-- Right: Impact Results + Chart -->
+<div class="flex-grow min-w-0"><div class="lg:sticky lg:top-[72px] space-y-5">
+
+<!-- Impact Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4" id="scenarioMetrics">
+<div class="bg-primary text-on-primary p-5 rounded-xl shadow-md"><p class="text-xs opacity-80 uppercase tracking-wider font-bold mb-1">Interest Saved</p><h4 class="text-2xl font-extrabold" id="scIS">—</h4><p class="text-xs opacity-70 mt-1" id="scISsub">Calculate to see impact</p></div>
+<div class="bg-secondary-container p-5 rounded-xl border border-secondary/20"><p class="text-xs text-on-secondary-container uppercase tracking-wider font-bold mb-1">Time Saved</p><h4 class="text-2xl font-extrabold text-on-secondary-container" id="scTS">—</h4><p class="text-xs text-on-secondary-container/70 mt-1" id="scTSsub"></p></div>
+<div class="bg-surface-container-highest dark:bg-surface-dark p-5 rounded-xl border border-outline-variant dark:border-outline"><p class="text-xs text-outline uppercase tracking-wider font-bold mb-1">Total Extra Paid</p><h4 class="text-2xl font-extrabold text-on-surface dark:text-inverse-on-surface" id="scTE">—</h4></div>
+</div>
+
+<!-- Results Mirror -->
+<div class="card"><div class="flex items-center gap-3 mb-3"><div class="p-2 bg-tertiary-container/10 rounded-lg"><span class="material-symbols-outlined text-tertiary text-xl">monitoring</span></div><h2 class="text-lg font-bold text-on-surface dark:text-primary-fixed-dim">Results</h2></div><div id="mG2"></div></div>
+
+<!-- Chart -->
+<div class="card"><div class="cwrap"><canvas id="cB2"></canvas></div></div>
+
+</div></div>
 
 </div>
 </div><!-- end scenarios -->
