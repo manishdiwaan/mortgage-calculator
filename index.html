@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="light" lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Global Mortgage Calculator — 25 Countries · 250+ Lenders · Free</title>
@@ -95,393 +97,266 @@
 }
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263369613506494" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script>
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface": "#f8f9ff","surface-dim": "#cbdbf5","surface-container-lowest": "#ffffff",
+        "surface-container-low": "#eff4ff","surface-container": "#e5eeff",
+        "surface-container-high": "#dce9ff","surface-container-highest": "#d3e4fe",
+        "on-surface": "#0b1c30","on-surface-variant": "#434655",
+        "inverse-surface": "#213145","inverse-on-surface": "#eaf1ff",
+        "outline": "#737686","outline-variant": "#c3c6d7",
+        "primary": "#004ac6","on-primary": "#ffffff","primary-container": "#2563eb",
+        "primary-fixed": "#dbe1ff","primary-fixed-dim": "#b4c5ff",
+        "secondary": "#006c49","secondary-container": "#6cf8bb",
+        "on-secondary-container": "#00714d","secondary-fixed-dim": "#4edea3",
+        "tertiary": "#943700","tertiary-container": "#bc4800",
+        "error": "#ba1a1a","error-container": "#ffdad6",
+        "accent-warning": "#F59E0B","chart-blue": "#3B82F6","chart-teal": "#2DD4BF",
+        "bg-dark": "#0F172A","surface-dark": "#1E293B",
+        "surface-tint": "#0053db","surface-variant": "#d3e4fe"
+      },
+      fontFamily: { "display": ["Geist"],"headline-md": ["Geist"],"body-md": ["Geist"],"label-md": ["Geist"],"label-sm": ["Geist"] },
+      fontSize: {
+        "display": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}],
+        "headline-md": ["20px", {lineHeight: "28px", fontWeight: "600"}],
+        "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}],
+        "label-md": ["14px", {lineHeight: "20px", fontWeight: "500"}],
+        "label-sm": ["12px", {lineHeight: "16px", fontWeight: "500"}]
+      },
+      spacing: { "container-padding": "1.5rem","stack-gap": "2rem","grid-gutter": "1rem" }
+    }
+  }
+}
+</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-
-/* ═══ DESIGN TOKENS (Light Mode Default) ═══ */
-:root{
-  --bg:#f8f9ff;--surface:#ffffff;--surface-low:#eff4ff;--surface-mid:#e5eeff;--surface-high:#dce9ff;
-  --text:#0b1c30;--text-sub:#434655;--text-muted:#737686;--text-faint:#c3c6d7;
-  --border:#c3c6d7;--border-light:rgba(195,198,215,.5);
-  --primary:#004ac6;--primary-light:#dbe1ff;--primary-dim:#b4c5ff;--primary-container:#2563eb;
-  --green:#006c49;--green-light:#6cf8bb;--green-bg:rgba(0,108,73,.08);
-  --red:#ba1a1a;--red-light:#ffdad6;--red-bg:rgba(186,26,26,.06);
-  --orange:#943700;--orange-light:#ffdbcd;
-  --warning:#F59E0B;
-  --shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
-  --shadow-lg:0 4px 12px rgba(0,74,198,.06);
-  --input-bg:#ffffff;--card-hover-border:#004ac6;
-  --chart-blue:#3B82F6;--chart-teal:#2DD4BF;
-  --scheme:light;
-}
-/* ═══ DARK MODE ═══ */
-.dark{
-  --bg:#0F172A;--surface:#1E293B;--surface-low:#152137;--surface-mid:#213145;--surface-high:#2a3a52;
-  --text:#eaf1ff;--text-sub:#c3c6d7;--text-muted:#737686;--text-faint:#434655;
-  --border:#434655;--border-light:rgba(67,70,85,.5);
-  --primary:#b4c5ff;--primary-light:rgba(0,74,198,.15);--primary-dim:#dbe1ff;--primary-container:#004ac6;
-  --green:#4edea3;--green-light:rgba(0,108,73,.15);--green-bg:rgba(0,108,73,.1);
-  --red:#ff8a80;--red-light:rgba(186,26,26,.15);--red-bg:rgba(186,26,26,.08);
-  --orange:#ffb596;--orange-light:rgba(148,55,0,.15);
-  --shadow:0 1px 3px rgba(0,0,0,.2);
-  --shadow-lg:0 4px 16px rgba(0,0,0,.2);
-  --input-bg:#0F172A;--card-hover-border:#b4c5ff;
-  --scheme:dark;
-}
-body{font-family:'Geist',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
-
-/* ═══ LAYOUT ═══ */
-.wrap{max-width:1440px;margin:0 auto;padding:20px 24px}
-h1{text-align:center;font-size:1.9rem;font-weight:800;padding:28px 0 6px;color:var(--primary);letter-spacing:-.03em}
-.sub{text-align:center;color:var(--text-muted);margin-bottom:22px;font-size:.82rem;font-weight:500;letter-spacing:.04em}
-.g{display:grid;grid-template-columns:420px 1fr;gap:20px;align-items:start}
-
-/* ═══ THEME TOGGLE ═══ */
-.theme-toggle{position:fixed;top:16px;right:16px;z-index:999;width:40px;height:40px;border-radius:50%;border:1px solid var(--border);background:var(--surface);color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:var(--shadow);transition:all .25s}
-.theme-toggle:hover{border-color:var(--primary);color:var(--primary);box-shadow:var(--shadow-lg)}
-
-/* ═══ PANELS ═══ */
-.P{background:var(--surface);border-radius:12px;padding:20px;border:1px solid var(--border-light);margin-bottom:14px;box-shadow:var(--shadow);transition:all .25s}
-.P:hover{border-color:var(--card-hover-border);box-shadow:var(--shadow-lg)}
-.T{font-size:.68rem;font-weight:700;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:.1em}
-
-/* ═══ FORM FIELDS ═══ */
-.F{margin-bottom:10px}
-.F label{font-size:.68rem;color:var(--text-muted);display:block;margin-bottom:4px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-input,select{width:100%;padding:11px 14px;background:var(--input-bg);border:1px solid var(--border-light);border-radius:8px;color:var(--text);font-size:.88rem;font-weight:500;outline:none;transition:all .25s;font-family:'Geist',system-ui,sans-serif}
-input:focus,select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(0,74,198,.1)}
-input:hover,select:hover{border-color:var(--text-muted)}
-input[type="date"]{color-scheme:var(--scheme)}
-input::placeholder{color:var(--text-faint);font-weight:400}
-
-/* ═══ GRID HELPERS ═══ */
+body{font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
+.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
+/* ═══ Calculator-generated element styles ═══ */
 .r2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .r3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
-
-/* ═══ BUTTONS ═══ */
-.btn{padding:10px 16px;border:none;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .25s;font-family:'Geist',system-ui,sans-serif}
-.btn:hover{transform:translateY(-1px)}
-.btn:active{transform:translateY(0);scale:.98}
-.bg{background:var(--green-bg);color:var(--green);border:1px solid var(--green-light)}
-.bg:hover{filter:brightness(1.05)}
-.bb{background:var(--primary-container);color:#fff;width:100%;box-shadow:0 4px 16px rgba(0,74,198,.2)}
-.bb:hover{filter:brightness(1.1);box-shadow:0 6px 24px rgba(0,74,198,.25)}
-.bx{background:var(--red-bg);color:var(--red);border:1px solid var(--red-light);padding:5px 10px;font-size:.68rem;border-radius:6px;cursor:pointer;font-weight:600;transition:all .15s}
-.bx:hover{filter:brightness(1.1)}
-
-/* ═══ METRIC CARDS ═══ */
-.M{background:var(--surface-low);border-radius:10px;padding:14px;text-align:center;transition:all .25s;border:1px solid transparent}
-.M:hover{transform:translateY(-1px);border-color:var(--border-light)}
-.M .v{font-size:1.05rem;font-weight:800;color:var(--text);letter-spacing:-.02em}
-.M .l{font-size:.58rem;color:var(--text-muted);margin-top:3px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
-.M.gr .v{color:var(--green)}.M.or .v{color:var(--warning)}.M.rd .v{color:var(--red)}
-.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-light);border-radius:0 0 10px 10px;overflow:hidden}
-.cg .M{border-radius:0;border:none}
-
-/* ═══ SECTION HEADERS ═══ */
-.ct{font-size:.65rem;font-weight:700;padding:10px 16px;border-radius:10px 10px 0 0;text-transform:uppercase;letter-spacing:.1em}
-.cb{background:var(--surface-mid);color:var(--text-muted)}
-.ce{background:var(--green-bg);color:var(--green)}
-
-/* ═══ IMPACT CARDS ═══ */
-.ic{background:var(--green-bg);border:1px solid var(--green-light);border-radius:12px;padding:16px;text-align:center;transition:all .25s}
-.ic:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-.ic .v{font-size:1.1rem;font-weight:800;color:var(--green)}
-
-/* ═══ TABS ═══ */
-.tabs{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap}
-.tab{padding:9px 18px;border-radius:9999px;background:var(--surface-low);color:var(--text-muted);cursor:pointer;font-size:.72rem;font-weight:700;border:1px solid var(--border-light);transition:all .25s;letter-spacing:.03em}
-.tab:hover{color:var(--text);background:var(--surface-mid)}
-.tab.a{background:var(--primary-light);color:var(--primary);border-color:var(--primary)}
-
-/* ═══ CHART & TABLE ═══ */
-.cbox{background:var(--surface);border-radius:12px;padding:18px;border:1px solid var(--border-light);margin-bottom:14px;box-shadow:var(--shadow)}
-.cwrap{position:relative;height:300px}
-table{width:100%;border-collapse:collapse;font-size:.72rem}
-th{background:var(--surface-low);color:var(--text-muted);padding:10px 8px;text-align:right;position:sticky;top:0;z-index:2;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.58rem}
-th:first-child{text-align:left;border-radius:8px 0 0 0}
-th:last-child{border-radius:0 8px 0 0}
-td{padding:8px;border-bottom:1px solid var(--border-light);text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
-td:first-child{text-align:left}
-tr:hover td{background:var(--primary-light)}
-.tw{max-height:450px;overflow-y:auto;border-radius:10px;border:1px solid var(--border-light)}
-.tw::-webkit-scrollbar{width:4px}
-.tw::-webkit-scrollbar-thumb{background:var(--text-faint);border-radius:4px}
-.tw::-webkit-scrollbar-track{background:transparent}
-
-/* ═══ EXTRA REPAYMENT CARDS ═══ */
-.ec{padding:12px;border-radius:10px;margin-bottom:6px;border:1px solid var(--border-light);background:var(--surface-low);transition:border-color .2s}
-.ec:hover{border-color:var(--text-faint)}
-.si{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--surface-low);border:1px solid var(--border-light);border-radius:8px;margin-bottom:4px;font-size:.75rem;transition:background .15s}
-.si:hover{background:var(--surface-mid)}
 .hidden{display:none}
-.aw{font-size:.6rem;color:var(--text-muted);font-style:italic;margin-top:2px;min-height:14px;padding-left:2px}
-
-/* ═══ TOOLTIPS ═══ */
+.M{background:#eff4ff;border-radius:10px;padding:14px;text-align:center;transition:all .2s}
+.dark .M{background:#1E293B}
+.M .v{font-size:1.05rem;font-weight:800;color:#0b1c30;letter-spacing:-.02em}
+.dark .M .v{color:#eaf1ff}
+.M .l{font-size:.58rem;color:#737686;margin-top:3px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.M.gr .v{color:#006c49}.M.or .v{color:#F59E0B}.M.rd .v{color:#ba1a1a}
+.dark .M.gr .v{color:#4edea3}.dark .M.rd .v{color:#ff8a80}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#c3c6d7;border-radius:0 0 10px 10px;overflow:hidden}
+.dark .cg{background:#434655}
+.cg .M{border-radius:0}
+.ct{font-size:.65rem;font-weight:700;padding:10px 16px;border-radius:10px 10px 0 0;text-transform:uppercase;letter-spacing:.1em}
+.cb{background:#e5eeff;color:#737686}
+.dark .cb{background:#213145;color:#737686}
+.ce{background:rgba(0,108,73,.08);color:#006c49}
+.dark .ce{background:rgba(78,222,163,.08);color:#4edea3}
+.ic{background:rgba(0,108,73,.06);border:1px solid rgba(0,108,73,.15);border-radius:12px;padding:16px;text-align:center}
+.ic .v{font-size:1.1rem;font-weight:800;color:#006c49}
+.dark .ic .v{color:#4edea3}
+.aw{font-size:.6rem;color:#737686;font-style:italic;margin-top:2px;min-height:14px;padding-left:2px}
+.ec{padding:12px;border-radius:10px;margin-bottom:6px;border:1px solid #c3c6d7;background:#eff4ff}
+.dark .ec{border-color:#434655;background:#0F172A}
+.si{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#eff4ff;border:1px solid #c3c6d7;border-radius:8px;margin-bottom:4px;font-size:.75rem}
+.dark .si{background:#0F172A;border-color:#434655}
+.bx{background:rgba(186,26,26,.06);color:#ba1a1a;border:1px solid rgba(186,26,26,.12);padding:5px 10px;font-size:.68rem;border-radius:6px;cursor:pointer;font-weight:600}
+.dark .bx{color:#ff8a80}
 .tip{position:relative;display:inline-flex;align-items:center;margin-left:5px;cursor:help}
-.tip .ti{width:14px;height:14px;border-radius:50%;background:var(--primary-light);color:var(--primary);font-size:.5rem;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-style:normal;border:1px solid var(--border-light);flex-shrink:0;transition:all .2s}
-.tip:hover .ti{background:var(--primary);color:#fff}
-.tip .tt{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--surface);color:var(--text-sub);font-size:.72rem;font-weight:400;padding:10px 14px;border-radius:10px;border:1px solid var(--border);width:220px;z-index:100;line-height:1.5;box-shadow:0 12px 40px rgba(0,0,0,.12);transition:opacity .2s,visibility .2s;pointer-events:none;font-style:normal;backdrop-filter:blur(8px)}
-.tip .tt::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:var(--border)}
-.tip:hover .tt{visibility:visible;opacity:1}
-.tip.show .tt{visibility:visible;opacity:1}
-.tip.tl .tt{left:0;transform:none}
-.tip.tl .tt::after{left:12px;transform:none}
-.tip.tr .tt{left:auto;right:0;transform:none}
-.tip.tr .tt::after{left:auto;right:12px;transform:none}
-
-/* ═══ MOBILE RESPONSIVE ═══ */
-@media(max-width:900px){
-  .g{grid-template-columns:1fr}
-  .wrap{padding:12px}
-  h1{font-size:1.5rem;padding:16px 0 4px}
-}
-@media(max-width:768px){
-  .r3{grid-template-columns:1fr 1fr}
-  .cg{grid-template-columns:repeat(2,1fr)}
-  .tabs{gap:3px}
-  .tab{padding:10px 16px;font-size:.76rem}
-  input,select{padding:12px 14px;font-size:.9rem;min-height:46px}
-  .btn{padding:11px 16px;font-size:.82rem;min-height:46px}
-  .bx{padding:7px 11px;font-size:.74rem;min-height:36px}
-  .P{padding:16px}
-  .M .v{font-size:1rem}
-  .M .l{font-size:.56rem}
-  .cwrap{height:220px}
-  table{font-size:.68rem}
-  th,td{padding:7px 5px}
-  .tip .tt{width:180px;font-size:.7rem;padding:8px 10px}
-}
-@media(max-width:600px){
-  .wrap{padding:8px}
-  h1{font-size:1.25rem}
-  .sub{font-size:.76rem}
-  .r2{grid-template-columns:1fr}
-  .r3{grid-template-columns:1fr}
-  .cg{grid-template-columns:1fr 1fr}
-  .M{padding:10px}
-  .M .v{font-size:.95rem}
-  .ic .v{font-size:.98rem}
-  .cwrap{height:200px}
-  .tw{max-height:350px}
-  .ec{padding:8px}
-  .si{flex-wrap:wrap;gap:4px}
-  .tip .tt{width:160px;font-size:.68rem}
-}
-@media(max-width:480px){
-  .wrap{padding:6px}
-  h1{font-size:1.1rem}
-  .sub{font-size:.72rem;margin-bottom:12px}
-  .P{padding:12px;border-radius:10px}
-  .T{font-size:.64rem}
-  .F label{font-size:.64rem}
-  input,select{padding:12px;font-size:.9rem}
-  .cg{grid-template-columns:1fr}
-  .cwrap{height:180px}
-  .tw{-webkit-overflow-scrolling:touch}
-  table{min-width:520px}
-  .tw{overflow-x:auto}
-}
-
-/* ═══ PDF BUTTON ═══ */
-.bp{background:var(--red);color:#fff;width:100%;border:none;box-shadow:0 4px 14px rgba(186,26,26,.15)}
-.bp:hover{filter:brightness(1.1)}
-/* ═══ ADS ═══ */
-.ad-wrap{margin:12px 0;text-align:center;min-height:50px;overflow:hidden;border-radius:10px}
-.ad-wrap ins{display:block}
-.ad-label{font-size:.48rem;color:var(--text-muted);text-align:center;letter-spacing:.12em;margin-bottom:2px;text-transform:uppercase;font-weight:700}
-@media(max-width:480px){.ad-wrap{margin:8px 0}}
-
-/* ═══ NAVBAR ═══ */
-.navbar{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border-light);backdrop-filter:blur(12px)}
-.nav-inner{max-width:1440px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
-.nav-brand{font-size:1.4rem;font-weight:800;color:var(--primary);letter-spacing:-.02em}
-.nav-links{display:flex;gap:24px;margin-left:32px}
-.nav-link{font-size:.82rem;font-weight:500;color:var(--text-muted);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;transition:all .2s}
-.nav-link:hover{color:var(--primary)}
-.nav-link.active{color:var(--primary);border-bottom-color:var(--primary);font-weight:600}
-.nav-actions{display:flex;align-items:center;gap:12px}
-@media(max-width:600px){.nav-links{display:none}.nav-brand{font-size:1.15rem}}
-
-/* ═══ HERO ═══ */
-.hero{background:var(--surface);border-bottom:1px solid var(--border-light);padding:48px 24px 40px}
-.hero-inner{max-width:1440px;margin:0 auto}
-.hero-title{font-size:2.8rem;font-weight:800;color:var(--text);line-height:1.15;letter-spacing:-.03em;margin-bottom:12px}
-.hero-accent{color:var(--primary)}
-.hero-sub{font-size:1rem;color:var(--text-muted);max-width:560px;line-height:1.6}
-@media(max-width:768px){.hero{padding:32px 16px 28px}.hero-title{font-size:1.8rem}}
-@media(max-width:480px){.hero-title{font-size:1.5rem}.hero-sub{font-size:.88rem}}
-
-/* ═══ THEME TOGGLE (in navbar now) ═══ */
-.theme-toggle{width:36px;height:36px;border-radius:50%;border:1px solid var(--border-light);background:var(--surface-low);color:var(--text-muted);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:all .25s}
-.theme-toggle:hover{border-color:var(--primary);color:var(--primary)}
-
-/* ═══ FOOTER ═══ */
-.site-footer{background:var(--surface-low);border-top:1px solid var(--border-light);padding:40px 24px;margin-top:32px}
-.footer-inner{max-width:1440px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px}
-.footer-links{display:flex;gap:20px;flex-wrap:wrap}
-.footer-links a{font-size:.72rem;color:var(--text-muted);text-decoration:none;transition:color .2s}
-.footer-links a:hover{color:var(--primary)}
-@media(max-width:600px){.footer-inner{flex-direction:column;align-items:center;text-align:center}}
+.tip .ti{width:14px;height:14px;border-radius:50%;background:rgba(0,74,198,.1);color:#004ac6;font-size:.5rem;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-style:normal;border:1px solid rgba(0,74,198,.15)}
+.tip .tt{visibility:hidden;opacity:0;position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#ffffff;color:#434655;font-size:.72rem;padding:10px 14px;border-radius:10px;border:1px solid #c3c6d7;width:220px;z-index:100;line-height:1.5;box-shadow:0 12px 40px rgba(0,0,0,.12);transition:opacity .2s;pointer-events:none}
+.dark .tip .tt{background:#1E293B;color:#c3c6d7;border-color:#434655}
+.tip .tt::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:#c3c6d7}
+.tip:hover .tt,.tip.show .tt{visibility:visible;opacity:1}
+.tip:hover .ti{background:#004ac6;color:#fff}
+.tw{max-height:450px;overflow-y:auto;border-radius:10px;border:1px solid #c3c6d7}
+.dark .tw{border-color:#434655}
+.tw::-webkit-scrollbar{width:4px}
+.tw::-webkit-scrollbar-thumb{background:#c3c6d7;border-radius:4px}
+table{width:100%;border-collapse:collapse;font-size:.72rem}
+th{background:#eff4ff;color:#737686;padding:10px 8px;text-align:right;position:sticky;top:0;z-index:2;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.58rem}
+.dark th{background:#213145}
+th:first-child{text-align:left}td:first-child{text-align:left}
+td{padding:8px;border-bottom:1px solid #e5eeff;text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
+.dark td{border-color:#213145}
+tr:hover td{background:rgba(0,74,198,.04)}
+.tabs{display:flex;gap:4px;margin-bottom:14px;flex-wrap:wrap}
+.tab{padding:9px 18px;border-radius:9999px;background:#eff4ff;color:#737686;cursor:pointer;font-size:.72rem;font-weight:700;border:1px solid #c3c6d7}
+.dark .tab{background:#1E293B;border-color:#434655}
+.tab.a{background:rgba(0,74,198,.1);color:#004ac6;border-color:#004ac6}
+.dark .tab.a{background:rgba(180,197,255,.1);color:#b4c5ff;border-color:#b4c5ff}
+.cwrap{position:relative;height:300px}
+@media(max-width:768px){.r3{grid-template-columns:1fr 1fr}.cg{grid-template-columns:repeat(2,1fr)}.cwrap{height:220px}}
+@media(max-width:600px){.r2,.r3{grid-template-columns:1fr}.cwrap{height:200px}}
+@media(max-width:480px){.cg{grid-template-columns:1fr}table{min-width:520px}.tw{overflow-x:auto;-webkit-overflow-scrolling:touch}}
 </style>
 </head>
-<body>
+<body class="bg-surface dark:bg-bg-dark text-on-surface dark:text-on-surface-variant font-body-md min-h-screen flex flex-col transition-colors duration-300">
 
-<!-- ═══ TOP NAVBAR ═══ -->
-<nav class="navbar">
-<div class="nav-inner">
-<span class="nav-brand">GlobalMortgage</span>
-<div class="nav-links">
-<a class="nav-link active" href="#">Dashboard</a>
-<a class="nav-link" href="#inputs-section">Calculator</a>
-<a class="nav-link" href="#results-section">Results</a>
-</div>
-<div class="nav-actions">
-<button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">🌙</button>
-</div>
-</div>
+<!-- ═══ NAVBAR ═══ -->
+<header class="sticky top-0 w-full z-50 flex justify-between items-center px-container-padding h-16 bg-surface dark:bg-bg-dark border-b border-outline-variant dark:border-outline backdrop-blur-sm">
+<div class="flex items-center gap-4">
+<span class="font-display text-display text-primary dark:text-primary-fixed-dim text-xl md:text-2xl font-extrabold tracking-tight">GlobalMortgage</span>
+<nav class="hidden md:flex gap-6 ml-8">
+<a class="text-label-md font-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 cursor-pointer" href="#">Dashboard</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer" href="#">Amortization</a>
+<a class="text-label-md font-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer" href="#">Scenarios</a>
 </nav>
+</div>
+<div class="flex items-center gap-3">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full" data-icon="public">public</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full cursor-pointer" onclick="toggleTheme()" id="themeBtn">dark_mode</button>
+</div>
+</header>
 
-<!-- ═══ HERO SECTION ═══ -->
-<section class="hero">
-<div class="hero-inner">
-<h1 class="hero-title">Smart Mortgage Planning <span class="hero-accent">Without Borders.</span></h1>
-<p class="hero-sub">Compare rates across 25+ countries, simulate complex repayment models, and track central bank rate changes — all in one place.</p>
+<!-- ═══ MAIN LAYOUT ═══ -->
+<main class="flex-grow flex flex-col md:flex-row w-full max-w-[1600px] mx-auto p-4 md:p-container-padding gap-grid-gutter">
+
+<!-- ═══ LEFT SIDEBAR ═══ -->
+<aside class="w-full md:w-[400px] lg:w-[420px] flex flex-col gap-stack-gap shrink-0">
+
+<!-- Country Selector -->
+<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-primary/10 rounded-lg"><span class="material-symbols-outlined text-primary">travel_explore</span></div>
+<h2 class="text-headline-md font-headline-md text-on-surface dark:text-primary-fixed-dim">Select Country</h2>
+</div>
+<select id="cSel" onchange="onC(this.value)" class="w-full px-4 py-3 bg-surface dark:bg-bg-dark border border-outline-variant dark:border-outline rounded-lg focus:ring-2 focus:ring-primary text-on-surface dark:text-inverse-on-surface"></select>
+<div id="cInfo" class="mt-2 text-label-sm text-outline"></div>
+</section>
+
+<!-- Loan Details -->
+<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm" id="iP">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-headline-md font-headline-md text-on-surface dark:text-primary-fixed-dim">Loan Settings</h2>
+<span class="material-symbols-outlined text-primary">tune</span>
+</div>
+<div class="space-y-4">
+<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Property Price <span class="tip"><span class="ti">i</span><span class="tt">The total purchase price of the property you're buying or the current market value for refinancing.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="w-full pl-8 pr-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div><div class="aw" id="ppW"></div></div>
+<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. A higher deposit means a smaller loan and often better rates. Aim for 20%+ to avoid LMI.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="w-full pl-8 pr-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div><div class="aw" id="dpW"></div></div>
+<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated as Property Price minus Deposit. You can also enter a custom amount directly.</span></span></label><div class="relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">$</span><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="w-full pl-8 pr-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div><div class="aw" id="laW"></div></div>
+<div class="grid grid-cols-2 gap-4">
+<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Start Date <span class="tip"><span class="ti">i</span><span class="tt">When your loan begins. All rate changes and extra repayments are calculated relative to this date.</span></span></label><input type="date" id="sd" class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface [color-scheme:light] dark:[color-scheme:dark]"></div>
+<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Term (Yrs) <span class="tip"><span class="ti">i</span><span class="tt">Loan duration in years. Shorter terms = higher repayments but much less interest.</span></span></label><input type="number" id="lt" value="30" class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Interest Rate % <span class="tip"><span class="ti">i</span><span class="tt">Your starting annual interest rate. Auto-set when you pick a lender.</span></span></label><div class="relative"><input type="number" id="ir" value="6.20" step="0.01" class="w-full pr-8 pl-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"><span class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant">%</span></div></div>
+<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Repay Type <span class="tip"><span class="ti">i</span><span class="tt">P&I: reduces balance. Interest Only: balance stays the same.</span></span></label><select id="rt" class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"><option value="pi">P&I</option><option value="io">Interest Only</option></select></div>
+</div>
+<div><label class="text-label-md font-label-md text-on-surface-variant block mb-1">Application Fee <span class="tip"><span class="ti">i</span><span class="tt">One-off fee charged by the lender. Added to total cost.</span></span></label><input type="number" id="af" value="0" class="w-full px-4 py-3 rounded-lg border border-outline-variant dark:border-outline focus:ring-2 focus:ring-primary bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface"></div>
 </div>
 </section>
 
-<!-- ═══ COUNTRY SELECTOR (full width) ═══ -->
-<div class="wrap">
-<div class="P" style="margin-bottom:20px">
-<div class="T">🌍 Select Country</div>
-<select id="cSel" onchange="onC(this.value)"></select>
-<div id="cInfo" style="margin-top:6px;font-size:.72rem;color:var(--text-muted)"></div>
-</div>
-
-<!-- ═══ MAIN GRID: Inputs | Results ═══ -->
-<div class="g" id="inputs-section">
-
-<!-- ═══ LEFT SIDEBAR: All Inputs ═══ -->
-<div>
-
-<!-- Loan Details -->
-<div class="P" id="iP">
-<div class="T">🏡 Loan Details</div>
-<div class="F"><label>Property Price <span class="tip"><span class="ti">i</span><span class="tt">The total purchase price of the property you're buying or the current market value for refinancing.</span></span></label><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="ppW"></div></div>
-<div class="F"><label>Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. A higher deposit means a smaller loan and often better rates. Aim for 20%+ to avoid LMI.</span></span></label><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="dpW"></div></div>
-<div class="F"><label>Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated as Property Price minus Deposit. You can also enter a custom amount directly.</span></span></label><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)"><div class="aw" id="laW"></div></div>
-<div class="r2"><div class="F"><label>Start Date <span class="tip"><span class="ti">i</span><span class="tt">When your loan begins. All rate changes and extra repayments are calculated relative to this date.</span></span></label><input type="date" id="sd"></div><div class="F"><label>Term (yrs) <span class="tip"><span class="ti">i</span><span class="tt">Loan duration in years. Common terms: 25–30 years. Shorter terms mean higher repayments but much less interest paid.</span></span></label><input type="number" id="lt" value="30"></div></div>
-<div class="r2"><div class="F"><label>Interest Rate % <span class="tip"><span class="ti">i</span><span class="tt">Your starting annual interest rate. Auto-set when you pick a lender (central bank rate + lender margin).</span></span></label><input type="number" id="ir" value="6.20" step="0.01"></div><div class="F"><label>Repay Type <span class="tip"><span class="ti">i</span><span class="tt">P&I: pay principal + interest each month, reducing your balance. Interest Only: pay only interest, balance stays the same.</span></span></label><select id="rt"><option value="pi">P&I</option><option value="io">Interest Only</option></select></div></div>
-<div class="F"><label>Application Fee <span class="tip"><span class="ti">i</span><span class="tt">One-off fee charged by the lender to set up your loan. Added to total cost calculations.</span></span></label><input type="number" id="af" value="0"></div>
-</div>
-
 <!-- Lender -->
-<div class="P">
-<div class="T" id="lT">🏦 Lender</div>
-<select id="lS" onchange="oL(+this.value)"></select>
-<div id="clW" class="hidden r2" style="margin-top:6px"><div class="F"><label>Name</label><input type="text" id="cln" placeholder="Lender name"></div><div class="F"><label>Margin %</label><input type="number" id="cm" step="0.05" value="1.75" oninput="oCM()"></div></div>
-<div class="r2" style="margin-top:8px"><div class="M"><div class="l">Margin</div><div class="v" id="dM">+1.69%</div></div><div class="M"><div class="l">Your Rate</div><div class="v" style="color:var(--green)" id="dR">6.04%</div></div></div>
-<button class="btn bg" style="width:100%;margin-top:8px" onclick="aAR()">🔄 Apply All Rates to Loan</button>
+<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
+<div class="flex items-center gap-3 mb-4">
+<div class="p-2 bg-secondary-container/20 rounded-lg"><span class="material-symbols-outlined text-secondary">account_balance</span></div>
+<h3 class="text-headline-md font-headline-md text-on-surface dark:text-primary-fixed-dim" id="lT">Lender</h3>
 </div>
-
-<!-- Ad Slot -->
-<div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="rectangle" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+<select id="lS" onchange="oL(+this.value)" class="w-full px-4 py-3 bg-surface dark:bg-bg-dark border border-outline-variant dark:border-outline rounded-lg focus:ring-2 focus:ring-primary text-on-surface dark:text-inverse-on-surface mb-3"></select>
+<div id="clW" class="hidden r2" style="margin-top:6px"><div><label class="text-label-sm text-outline block mb-1">Name</label><input type="text" id="cln" placeholder="Lender name" class="w-full px-3 py-2 rounded-lg border border-outline-variant dark:border-outline bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface text-sm"></div><div><label class="text-label-sm text-outline block mb-1">Margin %</label><input type="number" id="cm" step="0.05" value="1.75" oninput="oCM()" class="w-full px-3 py-2 rounded-lg border border-outline-variant dark:border-outline bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface text-sm"></div></div>
+<div class="grid grid-cols-2 gap-3 mt-3">
+<div class="bg-surface-container dark:bg-bg-dark p-3 rounded-lg text-center"><div class="text-label-sm text-outline uppercase tracking-wider mb-1">Margin</div><div class="text-lg font-bold text-on-surface dark:text-inverse-on-surface" id="dM">+1.69%</div></div>
+<div class="bg-surface-container dark:bg-bg-dark p-3 rounded-lg text-center"><div class="text-label-sm text-outline uppercase tracking-wider mb-1">Your Rate</div><div class="text-lg font-bold text-secondary dark:text-secondary-fixed-dim" id="dR">6.04%</div></div>
+</div>
+<button onclick="aAR()" class="w-full mt-3 py-2.5 rounded-lg border-2 border-primary text-primary font-label-md hover:bg-primary hover:text-on-primary transition-all">🔄 Apply All Rates to Loan</button>
+</section>
 
 <!-- Rate History -->
-<div class="P">
-<div class="T" id="rT">📈 Rate History</div>
+<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
+<h3 class="text-label-sm text-outline uppercase tracking-wider mb-3" id="rT">📈 Rate History</h3>
 <div class="tw" id="rTbl" style="max-height:180px"></div>
-<div id="aC" style="font-size:.7rem;color:var(--text-muted);margin-top:4px"></div>
-</div>
+<div id="aC" class="text-label-sm text-outline mt-2"></div>
+</section>
 
 <!-- Extra Repayments -->
-<div class="P">
-<div class="T">💰 Extra Repayments <span class="tip"><span class="ti">i</span><span class="tt">Payments above your minimum. Recurring: regular extras. Annual: once yearly. Lump Sum: one-time payment. Each has a date window.</span></span></div>
+<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
+<h3 class="text-label-sm text-outline uppercase tracking-wider mb-3">💰 Extra Repayments <span class="tip"><span class="ti">i</span><span class="tt">Payments above your minimum. Each has a date window.</span></span></h3>
 <div id="eL"></div>
-<div style="display:flex;gap:4px;margin-top:8px;flex-wrap:wrap">
-<button class="btn bg" onclick="aE('recurring')">+ Recurring</button>
-<button class="btn bg" onclick="aE('annual')">+ Annual</button>
-<button class="btn bg" onclick="aE('onetime')">+ Lump Sum</button>
+<div class="flex gap-2 mt-3 flex-wrap">
+<button onclick="aE('recurring')" class="px-3 py-1.5 rounded-lg border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container/20 transition-colors">+ Recurring</button>
+<button onclick="aE('annual')" class="px-3 py-1.5 rounded-lg border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container/20 transition-colors">+ Annual</button>
+<button onclick="aE('onetime')" class="px-3 py-1.5 rounded-lg border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container/20 transition-colors">+ Lump Sum</button>
 </div>
-</div>
+</section>
 
 <!-- Offset Account -->
-<div class="P">
-<div class="T">🏦 Offset Account <span class="tip"><span class="ti">i</span><span class="tt">Money in your offset account reduces the balance interest is charged on. e.g. $50k offset on a $500k loan means you only pay interest on $450k.</span></span></div>
-<p style="font-size:.72rem;color:var(--text-muted);margin-bottom:8px">Model your changing offset balance over time.</p>
+<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
+<h3 class="text-label-sm text-outline uppercase tracking-wider mb-2">🏦 Offset Account <span class="tip"><span class="ti">i</span><span class="tt">Offset reduces the balance interest is charged on.</span></span></h3>
+<p class="text-label-sm text-outline mb-3">Model your changing offset balance over time.</p>
 <div id="oL"></div>
-<button class="btn bg" onclick="addOffset()" style="margin-top:6px">+ Add Offset Period</button>
-</div>
+<button onclick="addOffset()" class="mt-2 px-3 py-1.5 rounded-lg border border-secondary/30 text-secondary text-xs font-bold hover:bg-secondary-container/20 transition-colors">+ Add Offset Period</button>
+</section>
 
 <!-- Schedule Changes -->
-<div class="P">
-<div class="T">🔄 Schedule Changes <span class="tip"><span class="ti">i</span><span class="tt">Model mid-loan changes: switch between P&I and Interest Only, change payment frequency, or toggle fixed/variable rates.</span></span></div>
-<p style="font-size:.72rem;color:var(--text-muted);margin-bottom:8px">Record changes during the loan.</p>
+<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
+<h3 class="text-label-sm text-outline uppercase tracking-wider mb-2">🔄 Schedule Changes <span class="tip"><span class="ti">i</span><span class="tt">Mid-loan changes: switch P&I/IO, frequency, or fixed/variable.</span></span></h3>
 <div id="scL"></div>
-<button class="btn bg" onclick="addSched()" style="margin-top:6px">+ Add Schedule Change</button>
-</div>
+<button onclick="addSched()" class="mt-2 px-3 py-1.5 rounded-lg border border-primary/30 text-primary text-xs font-bold hover:bg-primary/5 transition-colors">+ Add Schedule Change</button>
+</section>
 
 <!-- Save & Load -->
-<div class="P">
-<div class="T">💾 Save & Load</div>
-<div class="r2" style="margin-bottom:6px"><input type="text" id="sN" placeholder="Config name..."><button class="btn bg" onclick="sC()">💾 Save</button></div>
+<section class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm">
+<h3 class="text-label-sm text-outline uppercase tracking-wider mb-3">💾 Save & Load</h3>
+<div class="flex gap-2 mb-3"><input type="text" id="sN" placeholder="Config name..." class="flex-grow px-3 py-2 rounded-lg border border-outline-variant dark:border-outline bg-surface dark:bg-bg-dark text-on-surface dark:text-inverse-on-surface text-sm"><button onclick="sC()" class="px-4 py-2 rounded-lg bg-primary/10 text-primary font-bold text-xs hover:bg-primary/20 transition-colors">Save</button></div>
 <div id="sL"></div>
-</div>
+</section>
 
 <!-- Action Buttons -->
-<button class="btn bb" onclick="calc()" style="padding:13px;font-size:.9rem;font-weight:800;letter-spacing:.02em">Calculate Repayments</button>
-<button class="btn" onclick="exportCSV()" style="width:100%;margin-top:8px;padding:10px;font-size:.82rem;background:var(--surface-low);color:var(--text-sub);border:1px solid var(--border-light);font-weight:600">📥 Export CSV</button>
-<button class="btn bp" onclick="exportPDF()" style="width:100%;margin-top:6px;padding:10px;font-size:.82rem;font-weight:600">📄 Export PDF Report</button>
+<button onclick="calc()" class="w-full py-3.5 bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-surface-tint transition-all active:scale-[0.98] flex items-center justify-center gap-2 shadow-md">
+<span class="material-symbols-outlined text-lg">calculate</span> Calculate Repayments
+</button>
+<div class="grid grid-cols-2 gap-3">
+<button onclick="exportCSV()" class="py-2.5 rounded-lg border border-outline-variant text-on-surface-variant font-label-md text-label-md hover:bg-surface-container transition-colors text-sm">📥 CSV</button>
+<button onclick="exportPDF()" class="py-2.5 rounded-lg bg-error text-on-error font-label-md text-label-md hover:opacity-90 transition-opacity text-sm">📄 PDF</button>
+</div>
 
-</div><!-- end left sidebar -->
+</aside>
 
-<!-- ═══ RIGHT SIDE: Results & Visualizations ═══ -->
-<div id="results-section">
+<!-- ═══ RIGHT: RESULTS ═══ -->
+<div class="flex-grow flex flex-col gap-grid-gutter">
 
 <!-- Results -->
-<div class="P"><div class="T">📊 Results</div><div id="mG"></div></div>
+<section class="bg-surface-container-lowest dark:bg-surface-dark p-6 rounded-xl border border-outline-variant dark:border-outline shadow-sm">
+<h2 class="text-headline-md font-headline-md text-on-surface dark:text-primary-fixed-dim mb-4">Results</h2>
+<div id="mG"></div>
+</section>
 
-<!-- Ad Slot -->
-<div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-
-<!-- Chart / Table Tabs -->
+<!-- Chart / Table -->
 <div class="tabs">
 <div class="tab a" onclick="sT(this,'bal')">Balance Chart</div>
 <div class="tab" onclick="sT(this,'tbl')">Amortisation</div>
 </div>
-<div id="t-bal" class="cbox"><div class="cwrap"><canvas id="cB"></canvas></div></div>
-<div id="t-tbl" class="cbox hidden"><div class="tw" id="aT"></div></div>
+<div id="t-bal" class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-6 border border-outline-variant dark:border-outline shadow-sm"><div class="cwrap"><canvas id="cB"></canvas></div></div>
+<div id="t-tbl" class="bg-surface-container-lowest dark:bg-surface-dark rounded-xl p-4 border border-outline-variant dark:border-outline shadow-sm hidden"><div class="tw" id="aT"></div></div>
 
-<!-- Ad Slot -->
-<div class="ad-wrap"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
+<!-- Ad Slots -->
+<div class="text-center min-h-[50px] overflow-hidden rounded-lg">
+<div class="text-[10px] text-outline uppercase tracking-widest mb-1">Advertisement</div>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+</div>
 
-</div><!-- end right side -->
-</div><!-- end grid -->
-
-<!-- Top Ad -->
-<div class="ad-wrap" style="margin-top:0"><div class="ad-label">ADVERTISEMENT</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-
-<!-- Footer Ad -->
-<div class="ad-wrap"><div class="ad-label">ADVERTISEMENT</div><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="auto" data-ad-format="horizontal" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div>
-
-</div><!-- end wrap -->
+</div>
+</main>
 
 <!-- ═══ FOOTER ═══ -->
-<footer class="site-footer">
-<div class="footer-inner">
-<div class="footer-brand">
-<span class="nav-brand">GlobalMortgage</span>
-<p style="font-size:.72rem;color:var(--text-muted);margin-top:4px;max-width:400px">© 2026 urmortgage.online. Financial modeling for illustrative purposes only. Always consult a licensed financial advisor.</p>
+<footer class="w-full py-section-margin px-container-padding flex flex-col md:flex-row justify-between items-center gap-grid-gutter bg-surface-container-low dark:bg-bg-dark border-t border-outline-variant dark:border-outline">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-display text-xl font-extrabold text-primary">GlobalMortgage</span>
+<p class="text-label-sm text-outline text-center md:text-left max-w-md">© 2026 urmortgage.online. Financial modeling for illustrative purposes only.</p>
 </div>
-<div class="footer-links">
-<a href="privacy.html">Privacy Policy</a>
-<a href="terms.html">Terms of Use</a>
-<a href="https://urmortgage.online">urmortgage.online</a>
-</div>
+<div class="flex gap-6">
+<a href="privacy.html" class="text-label-sm text-outline hover:text-primary transition-colors underline">Privacy Policy</a>
+<a href="terms.html" class="text-label-sm text-outline hover:text-primary transition-colors underline">Terms</a>
+<a href="https://urmortgage.online" class="text-label-sm text-outline hover:text-primary transition-colors underline">Home</a>
 </div>
 </footer>
 
@@ -1019,5 +894,4 @@ function exportPDF(){
 
 window.addEventListener('DOMContentLoaded',function(){init();lS();showWords()});
 </script>
-</body>
-</html>
+</body></html>
