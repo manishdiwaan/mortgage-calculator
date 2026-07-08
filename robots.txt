@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://urmortgage.online/sitemap.xml
+
+# Respectful crawling
+Crawl-delay: 1

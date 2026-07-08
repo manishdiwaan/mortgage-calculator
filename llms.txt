@@ -1,0 +1,39 @@
+# urmortgage.online — Global Mortgage Calculator
+
+> Free mortgage repayment calculator supporting 25 countries, 250+ lenders, and central bank rate tracking.
+
+## About
+urmortgage.online is a free, single-page mortgage repayment calculator
+that helps home buyers and property investors model real-world loan
+scenarios. It covers 25 countries across Asia-Pacific, North America,
+Europe, Middle East, Latin America, and Africa with 250+ lenders and
+their current margins. Built as a lightweight static site with no
+login required.
+
+## Key Features
+- Country and lender selection with auto-calculated interest rates
+- Central bank rate history (400+ data points)
+- Extra repayments: recurring, annual, and one-time lump sums
+- Offset account modelling with time-windowed periods
+- Mid-loan schedule changes (repayment type, frequency, rate type)
+- Full amortisation schedule with month-by-month breakdown
+- Balance chart comparing with vs without extra repayments
+- CSV and PDF export
+- Save and load configurations across sessions
+- Indian number system support (Lakh/Crore)
+
+## Countries Supported
+Australia, New Zealand, Japan, Singapore, Hong Kong, South Korea,
+India, Malaysia, United States, Canada, United Kingdom, Germany,
+France, Netherlands, Spain, Italy, Sweden, Norway, Denmark,
+Switzerland, Ireland, Belgium, Portugal, UAE, Brazil, South Africa
+
+## Key Facts
+- Completely free, no registration required
+- Static single-page HTML application
+- No personal data collected or stored server-side
+- Interest rates and lender margins are approximate and updated periodically
+- Not financial advice — users should consult licensed advisors
+
+## Contact
+- Website: https://urmortgage.online
