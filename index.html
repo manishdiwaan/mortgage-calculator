@@ -32,9 +32,9 @@ tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface":"#f8f9ff","su
 <style>
 body{font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 /* ═══ GLOBAL: All inputs & selects uniform ═══ */
-input,select,textarea{width:100%;padding:12px 16px;border-radius:12px;border:1px solid #c3c6d7;background:#fff;color:#0b1c30;font-size:15px;font-weight:500;outline:none;font-family:'Geist',sans-serif;transition:border-color .2s;height:48px;box-sizing:border-box;-webkit-appearance:none;appearance:none}
-.dark input,.dark select,.dark textarea{background:#0F172A;color:#eaf1ff;border-color:#434655}
-input:focus,select:focus,textarea:focus{border-color:#004ac6;box-shadow:0 0 0 3px rgba(0,74,198,.1)}
+input,select,textarea{width:100%;padding:12px 16px;border-radius:12px !important;border:1px solid #c3c6d7 !important;background:#fff;color:#0b1c30;font-size:15px;font-weight:500;outline:none;font-family:'Geist',sans-serif;transition:border-color .2s;height:48px !important;box-sizing:border-box;-webkit-appearance:none;appearance:none}
+.dark input,.dark select,.dark textarea{background:#0F172A;color:#eaf1ff;border-color:#434655 !important}
+input:focus,select:focus,textarea:focus{border-color:#004ac6 !important;box-shadow:0 0 0 3px rgba(0,74,198,.1)}
 input[type="date"]{color-scheme:light}
 .dark input[type="date"]{color-scheme:dark}
 .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;vertical-align:middle}
