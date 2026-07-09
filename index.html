@@ -94,6 +94,10 @@ tr:hover td{background:rgba(0,74,198,.04)}
 .dark .inp-prefix,.dark .inp-suffix{color:#737686}
 .inp-field{flex:1;border:none !important;background:transparent !important;padding:0 16px;height:100% !important;color:#0b1c30;font-size:15px;font-weight:500;outline:none;font-family:'Geist',sans-serif;min-width:0;box-shadow:none !important;border-radius:0 !important}
 .dark .inp-field{color:#eaf1ff}
+.dp-toggle{padding:4px 14px;border-radius:8px;border:1px solid #c3c6d7;background:#fff;color:#737686;font-size:12px;font-weight:700;cursor:pointer;font-family:'Geist',sans-serif;transition:all .15s;height:auto !important;width:auto}
+.dp-toggle.active{background:#004ac6;color:#fff;border-color:#004ac6}
+.dark .dp-toggle{background:#0F172A;border-color:#434655;color:#737686}
+.dark .dp-toggle.active{background:#b4c5ff;color:#0b1c30;border-color:#b4c5ff}
 .card{background:#fff;border-radius:16px;padding:24px;border:1px solid #c3c6d7;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:border-color .2s}
 .dark .card{background:#1E293B;border-color:#434655}
 .card:hover{border-color:#004ac6}
@@ -163,9 +167,9 @@ tr:hover td{background:rgba(0,74,198,.04)}
 <span class="material-symbols-outlined text-primary text-xl">tune</span>
 </div>
 <div class="space-y-4">
-<div><label class="lbl">Property Price <span class="tip"><span class="ti">i</span><span class="tt">Total purchase price or current market value.</span></span></label><div class="inp-group"><span class="inp-prefix">$</span><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp-field"></div><div class="aw" id="ppW"></div></div>
-<div><label class="lbl">Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. 20%+ avoids LMI.</span></span></label><div class="inp-group"><span class="inp-prefix">$</span><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp-field"></div><div class="aw" id="dpW"></div></div>
-<div><label class="lbl">Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated: Price minus Deposit.</span></span></label><div class="inp-group"><span class="inp-prefix">$</span><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp-field"></div><div class="aw" id="laW"></div></div>
+<div><label class="lbl">Property Price <span class="tip"><span class="ti">i</span><span class="tt">Total purchase price or current market value.</span></span></label><div class="inp-group"><span class="inp-prefix" id="cpPP">$</span><input type="text" id="pp" value="750,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp-field"></div><div class="aw" id="ppW"></div></div>
+<div><label class="lbl">Deposit <span class="tip"><span class="ti">i</span><span class="tt">Your upfront cash contribution. 20%+ avoids LMI.</span></span></label><div style="display:flex;gap:6px;margin-bottom:4px"><button id="dpModeVal" onclick="setDpMode('val')" class="dp-toggle active" type="button">Value</button><button id="dpModePct" onclick="setDpMode('pct')" class="dp-toggle" type="button">%</button></div><div class="inp-group" id="dpGroup"><span class="inp-prefix" id="cpDP">$</span><input type="text" id="dp" value="150,000" oninput="fmtInput(this);aL();uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp-field"></div><div class="aw" id="dpW"></div></div>
+<div><label class="lbl">Loan Amount <span class="tip"><span class="ti">i</span><span class="tt">Auto-calculated: Price minus Deposit.</span></span></label><div class="inp-group"><span class="inp-prefix" id="cpLA">$</span><input type="text" id="la" value="600,000" oninput="fmtInput(this);uW()" onfocus="unfmtInput(this)" onblur="refmtInput(this)" class="inp-field"></div><div class="aw" id="laW"></div></div>
 <div class="grid grid-cols-2 gap-3">
 <div><label class="lbl">Start Date <span class="tip"><span class="ti">i</span><span class="tt">When your loan begins.</span></span></label><input type="date" id="sd" class="inp [color-scheme:light] dark:[color-scheme:dark]"></div>
 <div><label class="lbl">Term (Yrs) <span class="tip"><span class="ti">i</span><span class="tt">Loan duration. Shorter = less interest.</span></span></label><input type="number" id="lt" value="30" class="inp"></div>
@@ -459,7 +463,19 @@ function init(){
 function onC(v){cc=v;co=CD[v];mg=co.l[0][1];$('lt').value=co.t;$('ir').value=(co.cu+mg).toFixed(2);
 $('cInfo').innerHTML=co.f+' '+co.cb+' · Current: <b style="color:#22d3ee">'+co.cu+'%</b> · Next: <b style="color:#f59e0b">'+co.nm+'</b> · '+co.c;
 $('lT').textContent='🏦 Lender ('+co.f+' '+co.n+')';$('rT').textContent='📈 '+co.cb+' Rate History';
+// Update currency symbols
+var cs=co.c||'$';$('cpPP').textContent=cs;if(dpMode==='val')$('cpDP').textContent=cs;$('cpLA').textContent=cs;
 bLS();rR();rc=[];uAC();fmtAllInputs();calc();uW();}
+
+// Deposit mode: value or percentage
+var dpMode='val';
+function setDpMode(m){dpMode=m;
+$('dpModeVal').classList.toggle('active',m==='val');
+$('dpModePct').classList.toggle('active',m==='pct');
+var dpEl=$('dp'),ppVal=gv('pp');
+if(m==='pct'){$('cpDP').textContent='%';var curDp=gv('dp');var pct=ppVal>0?Math.round(curDp/ppVal*100):20;dpEl.value=pct;dpEl.setAttribute('type','number')}
+else{$('cpDP').textContent=co?co.c:'$';var pct=parseFloat(dpEl.value)||20;var val=Math.round(ppVal*pct/100);dpEl.value=fm(val,'');dpEl.setAttribute('type','text')}
+aL();uW()}
 
 function bLS(){const s=$('lS');s.innerHTML='';co.l.forEach((l,i)=>{const o=document.createElement('option');o.value=i;o.textContent=l[0]+' (+'+l[1]+'%)';s.appendChild(o)});
 const o=document.createElement('option');o.value=-1;o.textContent='Custom / Other';s.appendChild(o);s.value=0;oL(0);}
@@ -480,7 +496,9 @@ if(sr)$('ir').value=(sr.v+mg).toFixed(2);
 co.R.forEach(r=>{if(r.d>sd)rc.push({d:r.d.toISOString().slice(0,10),r:+(r.v+mg).toFixed(2)})});uAC();calc()}
 function uAC(){$('aC').textContent=rc.length?rc.length+' rate change'+(rc.length>1?'s':'')+' applied':'No rate changes applied'}
 
-function aL(){var v=Math.max(gv('pp')-gv('dp'),0);$('la').value=cc==='IN'?fmtIN(v):fmtStd(v);calc()}
+function aL(){var pp=gv('pp'),dp;
+if(dpMode==='pct'){var pct=parseFloat($('dp').value)||0;dp=Math.round(pp*pct/100)}else{dp=gv('dp')}
+var v=Math.max(pp-dp,0);$('la').value=cc==='IN'?fmtIN(v):fmtStd(v);calc()}
 
 let eC=0;
 function aE(t){eC++;const id='e_'+eC;const d=document.createElement('div');d.className='ec';d.id=id;d.dataset.t=t;
