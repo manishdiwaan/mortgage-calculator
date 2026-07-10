@@ -15,17 +15,13 @@ const crumbs = [
 const allFaqEntries = await getCollection('faqs', (e) => e.data.published);
 const knowledgeBase = allFaqEntries.map((entry) => ({
   country: entry.data.country,
-  faqs: entry.data.faqs.map((f) => ({
-    q: f.question,
-    a: f.answer,
-    cat: f.category,
-  })),
+  count: entry.data.faqs.length,
 }));
 ---
 
 <BaseLayout
   title="Ask URMortgage — Mortgage & Property Q&A"
-  description="Get instant answers to your mortgage and property questions across 6 countries. Search 170+ FAQs or chat with our knowledge base."
+  description="Get instant answers to your mortgage and property questions across 6 countries. AI-powered chat backed by expert guides."
   canonical={canonical}
   schemas={[breadcrumbSchema(crumbs)]}
 >
@@ -37,21 +33,21 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
         <span class="text-primary">Ask</span> URMortgage
       </h1>
       <p class="text-slate-500 max-w-lg mx-auto">
-        Ask anything about mortgages and property. I answer from our 170+ FAQs across 6 countries.
+        AI-powered answers about mortgages and property across 6 countries. Ask anything.
       </p>
     </div>
 
-    <!-- Chat Interface — compact -->
+    <!-- Chat -->
     <div class="max-w-2xl mx-auto mb-12">
       <div class="bg-white border border-slate-200 rounded-2xl shadow-md overflow-hidden">
-        <div id="chat-messages" class="h-[220px] overflow-y-auto p-5 space-y-3">
+        <div id="chat-messages" class="h-[240px] overflow-y-auto p-5 space-y-3">
           <div class="flex gap-3">
             <div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shrink-0">
               <span class="text-white text-[10px] font-bold">UR</span>
             </div>
             <div class="bg-surface rounded-2xl rounded-tl-md px-4 py-2.5 max-w-[85%]">
               <p class="text-sm text-slate-700">
-                Hi! Ask me about deposits, rates, taxes, or buying process in any of our 6 countries.
+                Hi! I can answer questions about mortgages, deposits, taxes, and buying property in Australia, India, US, UK, UAE, and Singapore. What would you like to know?
               </p>
             </div>
           </div>
@@ -60,7 +56,7 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
           <input
             id="chat-input"
             type="text"
-            placeholder="e.g., How much deposit in India?"
+            placeholder="e.g., What's the max LTV for expats in UAE?"
             class="flex-1 px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
           />
           <button
@@ -71,17 +67,16 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
           </button>
         </div>
       </div>
-      <p class="text-[11px] text-slate-400 text-center mt-2">Based on URMortgage guides only. Not financial advice.</p>
+      <p class="text-[11px] text-slate-400 text-center mt-2">AI-powered. Based on URMortgage guides only. Not financial advice.</p>
     </div>
 
     <!-- Country FAQ Cards -->
     <h2 class="text-2xl font-bold text-slate-900 text-center mb-2">Browse FAQs by country</h2>
-    <p class="text-slate-500 text-center mb-8 text-sm">Or dive straight into country-specific questions</p>
+    <p class="text-slate-500 text-center mb-8 text-sm">Or explore country-specific questions directly</p>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto">
       {PILOT_COUNTRIES.map((country) => {
-        const faqEntry = knowledgeBase.find((k) => k.country === country.code);
-        const count = faqEntry?.faqs.length || 0;
+        const entry = knowledgeBase.find((k) => k.country === country.code);
         return (
           <a
             href={`/${country.code}/faqs/`}
@@ -91,7 +86,7 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
             <span class="relative text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">{country.flag}</span>
             <div class="relative text-center">
               <h3 class="text-sm font-bold text-slate-800 group-hover:text-primary transition-colors">{country.name}</h3>
-              <p class="text-xs text-slate-400 mt-0.5">{count} FAQs</p>
+              <p class="text-xs text-slate-400 mt-0.5">{entry?.count || 0} FAQs</p>
             </div>
           </a>
         );
@@ -99,21 +94,8 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
     </div>
   </div>
 
-  <script id="kb-data" type="application/json" set:html={JSON.stringify(knowledgeBase)} />
-
   <script is:inline>
   (function() {
-    var kb = [];
-    try { kb = JSON.parse(document.getElementById('kb-data').textContent); } catch(e) {}
-    
-    var allFaqs = [];
-    var countryNames = {australia:'Australia',india:'India','united-states':'United States','united-kingdom':'United Kingdom',uae:'UAE',singapore:'Singapore'};
-    kb.forEach(function(c) {
-      c.faqs.forEach(function(f) {
-        allFaqs.push({ q: f.q.toLowerCase(), qOrig: f.q, a: f.a, country: c.country, cat: f.cat });
-      });
-    });
-
     var msgs = document.getElementById('chat-messages');
     var input = document.getElementById('chat-input');
     var btn = document.getElementById('chat-send');
@@ -122,7 +104,7 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
       var w = document.createElement('div');
       w.className = 'flex gap-3' + (isUser ? ' justify-end' : '');
       if (isUser) {
-        w.innerHTML = '<div class="bg-primary text-white rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[85%]"><p class="text-sm">' + esc(html) + '</p></div>';
+        w.innerHTML = '<div class="bg-primary text-white rounded-2xl rounded-tr-md px-4 py-2.5 max-w-[85%]"><p class="text-sm">' + escHtml(html) + '</p></div>';
       } else {
         w.innerHTML = '<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="text-white text-[10px] font-bold">UR</span></div><div class="bg-surface rounded-2xl rounded-tl-md px-4 py-2.5 max-w-[85%]"><div class="text-sm text-slate-700">' + html + '</div></div>';
       }
@@ -130,68 +112,58 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
       msgs.scrollTop = msgs.scrollHeight;
     }
 
-    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+    function escHtml(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
 
-    function search(query) {
-      var q = query.toLowerCase().replace(/[?.,!'"]/g, '');
-      var words = q.split(/\s+/).filter(function(w) { return w.length > 2; });
-      
-      // Detect country from query
-      var qCountry = null;
-      var cMap = {australia:'australia',india:'india','united states':'united-states',us:'united-states',usa:'united-states','united kingdom':'united-kingdom',uk:'united-kingdom',uae:'uae',dubai:'uae',singapore:'singapore'};
-      Object.keys(cMap).forEach(function(k) { if (q.indexOf(k) >= 0) qCountry = cMap[k]; });
-
-      var scored = allFaqs.map(function(f) {
-        var s = 0;
-        words.forEach(function(w) {
-          if (f.q.indexOf(w) >= 0) s += 3;
-          if (f.a.toLowerCase().indexOf(w) >= 0) s += 1;
-        });
-        if (f.q.indexOf(q) >= 0) s += 10;
-        if (qCountry && f.country === qCountry) s += 5;
-        if (qCountry && f.country !== qCountry) s -= 2;
-        return { f: f, s: s };
-      });
-
-      scored.sort(function(a, b) { return b.s - a.s; });
-      return scored.filter(function(x) { return x.s > 2; }).slice(0, 3);
+    function showTyping() {
+      var w = document.createElement('div');
+      w.className = 'flex gap-3';
+      w.id = 'typing';
+      w.innerHTML = '<div class="w-7 h-7 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="text-white text-[10px] font-bold">UR</span></div><div class="bg-surface rounded-2xl rounded-tl-md px-4 py-2.5"><p class="text-sm text-slate-400">Thinking...</p></div>';
+      msgs.appendChild(w);
+      msgs.scrollTop = msgs.scrollHeight;
     }
 
-    function send() {
+    function removeTyping() {
+      var t = document.getElementById('typing');
+      if (t) t.remove();
+    }
+
+    async function send() {
       var q = input.value.trim();
       if (!q) return;
       addMsg(q, true);
       input.value = '';
+      btn.disabled = true;
+      input.disabled = true;
+      showTyping();
 
-      setTimeout(function() {
-        var results = search(q);
-        if (!results.length) {
-          addMsg("Sorry, I don't have this information. Try browsing our <a href='/' class='text-primary underline'>country guides</a> or use the <a href='/calculator/' class='text-primary underline'>calculator</a>.", false);
-          return;
-        }
-        var b = results[0].f;
-        var cn = countryNames[b.country] || b.country;
-        var html = '<p class="font-semibold mb-1">' + esc(b.qOrig) + '</p>';
-        html += '<p>' + esc(b.a) + '</p>';
-        html += '<p class="mt-2 text-xs text-slate-400">' + cn + ' · <a href="/' + b.country + '/faqs/" class="text-primary underline">See all ' + cn + ' FAQs</a></p>';
-        
-        if (results.length > 1) {
-          html += '<div class="mt-2 pt-2 border-t border-slate-200"><p class="text-xs text-slate-400 mb-1">You might also want:</p>';
-          results.slice(1).forEach(function(r) {
-            html += '<p class="text-xs text-primary cursor-pointer hover:underline related-q">' + esc(r.f.qOrig) + '</p>';
-          });
-          html += '</div>';
-        }
-        addMsg(html, false);
-
-        // Make related questions clickable
-        msgs.querySelectorAll('.related-q').forEach(function(el) {
-          el.addEventListener('click', function() {
-            input.value = el.textContent;
-            send();
-          });
+      try {
+        var res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: q }),
         });
-      }, 200);
+        var data = await res.json();
+        removeTyping();
+        
+        if (data.error) {
+          addMsg("Sorry, I'm having trouble right now. Try browsing our <a href='/' class='text-primary underline'>country guides</a> instead.", false);
+        } else {
+          // Convert markdown-style links and line breaks
+          var answer = escHtml(data.answer)
+            .replace(/\n/g, '<br>')
+            .replace(/\/calculator\//g, '<a href="/calculator/" class="text-primary underline">/calculator/</a>')
+            .replace(/\/([a-z-]+)\/faqs\//g, '<a href="/$1/faqs/" class="text-primary underline">/$1/faqs/</a>');
+          addMsg(answer, false);
+        }
+      } catch (err) {
+        removeTyping();
+        addMsg("Sorry, something went wrong. Try <a href='/' class='text-primary underline'>browsing our guides</a> instead.", false);
+      }
+
+      btn.disabled = false;
+      input.disabled = false;
+      input.focus();
     }
 
     btn.addEventListener('click', send);
