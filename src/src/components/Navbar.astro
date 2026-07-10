@@ -24,11 +24,11 @@ import { PILOT_COUNTRIES } from '../data/countries';
         </button>
         <div
           id="country-menu"
-          class="absolute top-full left-0 mt-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl p-2 min-w-[200px] hidden"
+          class="absolute top-full left-0 mt-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl p-1.5 min-w-[200px] max-h-[70vh] overflow-y-auto hidden"
         >
           {PILOT_COUNTRIES.map((c) => (
-            <a href={`/${c.code}/`} class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm transition-colors">
-              <span class="text-lg">{c.flag}</span>
+            <a href={`/${c.code}/`} class="flex items-center gap-2.5 px-3 py-1.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm transition-colors">
+              <span class="text-base">{c.flag}</span>
               <span>{c.name}</span>
             </a>
           ))}
