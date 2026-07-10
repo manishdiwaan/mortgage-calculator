@@ -23,9 +23,9 @@ interface Props {
 const { country, title, metaTitle, metaDescription, slug, publishDate, lastUpdated, heroImage, imageAlt, relatedPosts = [] } = Astro.props;
 const canonical = buildCanonical(`/${country.code}/blog/${slug}`);
 const crumbs = [
-  { name: 'Home', url: 'https://urmortgage.online/' },
-  { name: country.name, url: `https://urmortgage.online/${country.code}/` },
-  { name: 'Blog', url: `https://urmortgage.online/${country.code}/blog/` },
+  { name: 'Home', url: '/' },
+  { name: country.name, url: `/${country.code}/` },
+  { name: 'Blog', url: `/${country.code}/blog/` },
   { name: title, url: canonical },
 ];
 const schemas = [

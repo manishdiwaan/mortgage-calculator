@@ -17,7 +17,7 @@ const { country: countryCode } = Astro.params;
 const country = getCountryByCode(countryCode as string)!;
 const canonical = buildCanonical(`/${countryCode}`);
 const crumbs = [
-  { name: 'Home', url: 'https://urmortgage.online/' },
+  { name: 'Home', url: '/' },
   { name: country.name, url: canonical },
 ];
 

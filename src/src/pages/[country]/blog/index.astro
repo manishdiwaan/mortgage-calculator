@@ -28,8 +28,8 @@ const allBlogs = await getCollection('blogs', (entry) =>
 >
   <div class="max-w-[var(--max-width-page)] mx-auto px-4 py-8">
     <Breadcrumbs items={[
-      { name: 'Home', url: 'https://urmortgage.online/' },
-      { name: country.name, url: `https://urmortgage.online/${countryCode}/` },
+      { name: 'Home', url: '/' },
+      { name: country.name, url: `/${countryCode}/` },
       { name: 'Blog', url: canonical },
     ]} />
 

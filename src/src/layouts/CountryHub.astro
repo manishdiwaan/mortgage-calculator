@@ -14,7 +14,7 @@ interface Props {
 const { country, metaTitle, metaDescription } = Astro.props;
 const canonical = buildCanonical(`/${country.code}`);
 const crumbs = [
-  { name: 'Home', url: 'https://urmortgage.online/' },
+  { name: 'Home', url: '/' },
   { name: country.name, url: canonical },
 ];
 ---
