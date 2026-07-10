@@ -1,0 +1,50 @@
+---
+import { PILOT_COUNTRIES } from '../data/countries';
+---
+
+<footer class="bg-slate-900 text-slate-400 mt-16">
+  <div class="max-w-page mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-white font-semibold mb-3">URMortgage</h3>
+        <p class="text-sm leading-relaxed">
+          Free mortgage calculator and property guides for 25 countries.
+          250+ lenders with central bank rate tracking.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-medium mb-3">Countries</h4>
+        <ul class="space-y-2 text-sm">
+          {PILOT_COUNTRIES.map((c) => (
+            <li>
+              <a href={`/${c.code}/`} class="hover:text-white">{c.flag} {c.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-medium mb-3">Tools</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/calculator/" class="hover:text-white">Mortgage Calculator</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-medium mb-3">Legal</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/privacy/" class="hover:text-white">Privacy Policy</a></li>
+          <li><a href="/terms/" class="hover:text-white">Terms of Use</a></li>
+        </ul>
+        <p class="text-xs mt-4">
+          This site provides general information only and is not financial advice.
+        </p>
+      </div>
+    </div>
+
+    <div class="border-t border-slate-700 mt-8 pt-6 text-center text-xs">
+      &copy; {new Date().getFullYear()} urmortgage.online — All rights reserved.
+    </div>
+  </div>
+</footer>

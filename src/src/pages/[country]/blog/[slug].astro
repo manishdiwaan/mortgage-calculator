@@ -1,0 +1,36 @@
+---
+import BlogPost from '../../../layouts/BlogPost.astro';
+import { PILOT_COUNTRIES, getCountryByCode } from '../../../data/countries';
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allBlogs = await getCollection('blogs', (entry) => entry.data.published);
+  return allBlogs.map((blog) => ({
+    params: { country: blog.data.country, slug: blog.data.slug },
+    props: { blog },
+  }));
+};
+
+const { blog } = Astro.props;
+const country = getCountryByCode(blog.data.country)!;
+const { Content } = await render(blog);
+---
+
+<BlogPost
+  country={country}
+  title={blog.data.title}
+  metaTitle={blog.data.metaTitle}
+  metaDescription={blog.data.metaDescription}
+  slug={blog.data.slug}
+  publishDate={blog.data.publishDate.toISOString().split('T')[0]}
+  lastUpdated={blog.data.lastUpdated.toISOString().split('T')[0]}
+  heroImage={blog.data.heroImage}
+  imageAlt={blog.data.imageAlt}
+  relatedPosts={(blog.data.relatedPosts || []).map((slug) => ({
+    title: slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+    url: `/${blog.data.country}/blog/${slug}/`,
+  }))}
+>
+  <Content />
+</BlogPost>

@@ -1,0 +1,67 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { articleSchema, breadcrumbSchema } from '../utils/schema';
+import { buildCanonical } from '../utils/seo';
+import type { CountryMeta } from '../data/countries';
+
+interface Props {
+  country: CountryMeta;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  slug: string;
+  publishDate: string;
+  lastUpdated: string;
+  heroImage?: string;
+  imageAlt?: string;
+  relatedPosts?: { title: string; url: string }[];
+}
+
+const { country, title, metaTitle, metaDescription, slug, publishDate, lastUpdated, heroImage, imageAlt, relatedPosts = [] } = Astro.props;
+const canonical = buildCanonical(`/${country.code}/blog/${slug}`);
+const crumbs = [
+  { name: 'Home', url: 'https://urmortgage.online/' },
+  { name: country.name, url: `https://urmortgage.online/${country.code}/` },
+  { name: 'Blog', url: `https://urmortgage.online/${country.code}/blog/` },
+  { name: title, url: canonical },
+];
+const schemas = [
+  breadcrumbSchema(crumbs),
+  articleSchema({ title, description: metaDescription, url: canonical, publishDate, lastUpdated, image: heroImage }),
+];
+---
+
+<BaseLayout title={metaTitle} description={metaDescription} canonical={canonical} schemas={schemas}>
+  <article class="max-w-page mx-auto px-4 py-8">
+    <Breadcrumbs items={crumbs} />
+    <header class="mb-8 max-w-content">
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">{title}</h1>
+      <p class="text-sm text-slate-500 dark:text-slate-400">
+        Published {publishDate} · Updated {lastUpdated}
+      </p>
+    </header>
+
+    {heroImage && (
+      <img
+        src={heroImage}
+        alt={imageAlt || title}
+        class="w-full max-w-content rounded-card mb-8 object-cover max-h-[400px]"
+        loading="lazy"
+      />
+    )}
+
+    <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+      <div class="max-w-content prose dark:prose-invert prose-slate prose-a:text-primary">
+        <slot />
+      </div>
+      <aside class="hidden lg:block mt-8 lg:mt-0">
+        {relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} />}
+      </aside>
+    </div>
+
+    <CTABanner countryCode={country.code} />
+  </article>
+</BaseLayout>

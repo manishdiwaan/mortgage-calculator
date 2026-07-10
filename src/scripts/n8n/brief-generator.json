@@ -1,0 +1,139 @@
+{
+  "name": "URMortgage Brief Generator",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual_trigger",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "position": [200, 300],
+      "typeVersion": 1,
+      "notes": "Run manually when you want to generate briefs for a new country. Set the country in the Set Country node."
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            { "name": "country_name", "value": "Australia" },
+            { "name": "country_slug", "value": "australia" },
+            { "name": "country_iso", "value": "AU" },
+            { "name": "currency_symbol", "value": "$" },
+            { "name": "currency_code", "value": "AUD" },
+            { "name": "tax_term", "value": "stamp duty" },
+            { "name": "deposit_term", "value": "deposit" },
+            { "name": "central_bank", "value": "Reserve Bank of Australia" }
+          ]
+        }
+      },
+      "id": "set_country",
+      "name": "Set Country Variables",
+      "type": "n8n-nodes-base.set",
+      "position": [400, 300],
+      "typeVersion": 3.4,
+      "notes": "Change these values for each country. Run once per country."
+    },
+    {
+      "parameters": {
+        "jsCode": "const country = $input.first().json;\n\n// Define all content pieces for this country\nconst contentPlan = [\n  // Pillar Guides\n  {\n    type: 'pillar-guide',\n    slug: 'property-buying-guide',\n    title: `Complete Property Buying Guide — ${country.country_name}`,\n    category: 'property-buying',\n    priority: 'P0',\n  },\n  {\n    type: 'pillar-guide',\n    slug: 'mortgage-guide',\n    title: `Complete Mortgage Guide — ${country.country_name}`,\n    category: 'mortgage',\n    priority: 'P0',\n  },\n  // Blog Posts\n  { type: 'blog', slug: 'first-home-buyer-guide', title: `First Home Buyer Guide ${country.country_name} 2026`, category: 'first-home', priority: 'P1' },\n  { type: 'blog', slug: 'buying-costs-explained', title: `Property Buying Costs in ${country.country_name} Explained`, category: 'costs', priority: 'P1' },\n  { type: 'blog', slug: '${country.tax_term.replace(/ /g, '-')}-explained', title: `${country.tax_term.charAt(0).toUpperCase() + country.tax_term.slice(1)} in ${country.country_name} Explained`, category: 'taxes', priority: 'P1' },\n  { type: 'blog', slug: 'government-grants-schemes', title: `Government Grants and Schemes for Buyers in ${country.country_name}`, category: 'grants', priority: 'P1' },\n  { type: 'blog', slug: 'property-inspection-checklist', title: `Property Inspection Checklist for ${country.country_name}`, category: 'inspections', priority: 'P2' },\n  { type: 'blog', slug: 'mortgage-types-compared', title: `Types of Mortgages in ${country.country_name} Compared`, category: 'loan-types', priority: 'P1' },\n  { type: 'blog', slug: 'rent-vs-buy-analysis', title: `Renting vs Buying in ${country.country_name}: Full Analysis`, category: 'rent-vs-buy', priority: 'P2' },\n  { type: 'blog', slug: 'property-investment-guide', title: `Property Investment Guide for ${country.country_name}`, category: 'investment', priority: 'P2' },\n  { type: 'blog', slug: 'refinancing-guide', title: `When and How to Refinance Your Mortgage in ${country.country_name}`, category: 'refinancing', priority: 'P2' },\n  { type: 'blog', slug: 'common-buying-mistakes', title: `10 Common Property Buying Mistakes in ${country.country_name}`, category: 'mistakes', priority: 'P2' },\n  // FAQ Hub\n  {\n    type: 'faq-hub',\n    slug: 'faqs',\n    title: `${country.country_name} Mortgage & Property FAQs`,\n    category: 'general',\n    priority: 'P1',\n  },\n];\n\nreturn contentPlan.map(item => ({\n  json: {\n    ...country,\n    ...item,\n    url: item.type === 'faq-hub'\n      ? `${country.country_slug}/faqs/`\n      : item.type === 'pillar-guide'\n        ? `${country.country_slug}/${item.slug}/`\n        : `${country.country_slug}/blog/${item.slug}/`,\n  }\n}));"
+      },
+      "id": "build_plan",
+      "name": "Build Content Plan (13 items)",
+      "type": "n8n-nodes-base.code",
+      "position": [600, 300],
+      "typeVersion": 2,
+      "notes": "Generates 2 pillar guides + 10 blogs + 1 FAQ hub = 13 content items per country."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 2000, messages: [{ role: 'user', content: `You are an SEO content strategist for urmortgage.online. Generate a content brief for: Country: ${$json.country_name}, Content Type: ${$json.type}, Topic: ${$json.title}, Category: ${$json.category}. Include: primaryKeyword, secondaryKeywords (5), outline (4-8 H2 sections with key points), 5 FAQs. Use ${$json.country_name}-specific terminology. Currency: ${$json.currency_symbol}. Tax term: ${$json.tax_term}. Respond ONLY with valid JSON.` }] }) }}"
+      },
+      "id": "generate_brief",
+      "name": "Generate Brief (Claude API)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [800, 300],
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "{{CLAUDE_CREDENTIAL_ID}}",
+          "name": "Claude API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $('Build Content Plan (13 items)').first().json;\nconst briefResponse = $input.first().json;\nconst briefText = briefResponse.content[0].text;\n\n// Build the full generation prompt based on content type\nlet promptTemplate;\nif (item.type === 'pillar-guide') {\n  promptTemplate = `You are an expert mortgage writer for urmortgage.online. Write a 2,500-3,000 word pillar guide. Country: ${item.country_name}. Title: ${item.title}. Type: ${item.category}. Slug: ${item.slug}. Country slug: ${item.country_slug}. Currency: ${item.currency_symbol}. Tax term: ${item.tax_term}. Deposit term: ${item.deposit_term}. Central bank: ${item.central_bank}. Brief: ${briefText}. Output ONLY valid Markdown with YAML frontmatter starting with ---. Include published: true in frontmatter.`;\n} else if (item.type === 'faq-hub') {\n  promptTemplate = `You are an expert mortgage writer for urmortgage.online. Generate 50 FAQs for ${item.country_name}. Country slug: ${item.country_slug}. Currency: ${item.currency_symbol} (${item.currency_code}). Tax term: ${item.tax_term}. Central bank: ${item.central_bank}. Categories: buying-process, financing, costs, legal, investment, general. Output ONLY valid Markdown with YAML frontmatter starting with ---. Include published: true in frontmatter.`;\n} else {\n  promptTemplate = `You are an expert mortgage writer for urmortgage.online. Write a 1,200-1,800 word blog post. Country: ${item.country_name}. Title: ${item.title}. Slug: ${item.slug}. Category: ${item.category}. Country slug: ${item.country_slug}. Currency: ${item.currency_symbol}. Tax term: ${item.tax_term}. Brief: ${briefText}. Include internal links to /${item.country_slug}/property-buying-guide/, /${item.country_slug}/mortgage-guide/, /${item.country_slug}/faqs/, /calculator/?country=${item.country_iso.toLowerCase()}. Output ONLY valid Markdown with YAML frontmatter starting with ---. Include published: true in frontmatter.`;\n}\n\nreturn [{\n  json: {\n    ...item,\n    brief: briefText,\n    prompt: promptTemplate,\n  }\n}];"
+      },
+      "id": "build_prompt",
+      "name": "Build Generation Prompt",
+      "type": "n8n-nodes-base.code",
+      "position": [1000, 300],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "operation": "create",
+        "application": "{{AIRTABLE_BASE_ID}}",
+        "table": "Content Queue",
+        "fields": {
+          "Country": "={{ $json.country_name }}",
+          "Country Slug": "={{ $json.country_slug }}",
+          "Title": "={{ $json.title }}",
+          "Slug": "={{ $json.slug }}",
+          "Content Type": "={{ $json.type }}",
+          "Category": "={{ $json.category }}",
+          "URL": "={{ $json.url }}",
+          "Status": "Ready",
+          "Priority": "={{ $json.priority }}",
+          "Brief": "={{ $json.brief }}",
+          "Prompt": "={{ $json.prompt }}"
+        }
+      },
+      "id": "airtable_create",
+      "name": "Create Airtable Row",
+      "type": "n8n-nodes-base.airtable",
+      "position": [1200, 300],
+      "typeVersion": 2.1,
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "{{AIRTABLE_CREDENTIAL_ID}}",
+          "name": "Airtable"
+        }
+      },
+      "notes": "Creates one row per content item with Status=Ready. The Content Pipeline workflow picks these up and generates the actual content."
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [[{ "node": "Set Country Variables", "type": "main", "index": 0 }]]
+    },
+    "Set Country Variables": {
+      "main": [[{ "node": "Build Content Plan (13 items)", "type": "main", "index": 0 }]]
+    },
+    "Build Content Plan (13 items)": {
+      "main": [[{ "node": "Generate Brief (Claude API)", "type": "main", "index": 0 }]]
+    },
+    "Generate Brief (Claude API)": {
+      "main": [[{ "node": "Build Generation Prompt", "type": "main", "index": 0 }]]
+    },
+    "Build Generation Prompt": {
+      "main": [[{ "node": "Create Airtable Row", "type": "main", "index": 0 }]]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true
+  }
+}

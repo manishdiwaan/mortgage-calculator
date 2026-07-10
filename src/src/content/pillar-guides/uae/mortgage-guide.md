@@ -1,0 +1,80 @@
+---
+title: "Complete Mortgage Guide — UAE"
+country: "uae"
+slug: "mortgage-guide"
+type: "mortgage"
+metaTitle: "Mortgage Guide UAE 2026 | Rates, Lenders & Tips"
+metaDescription: "Everything about getting a mortgage in UAE. Compare loan types, understand rates, and find the right lender for your situation."
+primaryKeyword: "mortgage UAE"
+secondaryKeywords:
+  - "home loan UAE"
+  - "mortgage rates UAE"
+  - "how to get a mortgage in UAE"
+publishDate: 2026-07-10
+lastUpdated: 2026-07-10
+wordCount: 2600
+faqs:
+  - question: "What is a good mortgage rate in UAE?"
+    answer: "Mortgage rates in UAE vary by lender, loan type, and your financial profile. Rates are influenced by the Central Bank of the UAE's benchmark rate. Compare rates across multiple lenders using our mortgage calculator to find competitive options for your situation."
+  - question: "How much can I borrow for a mortgage in UAE?"
+    answer: "Lenders in UAE typically assess borrowing capacity based on your income, expenses, existing debts, and the property value. Most lenders allow you to borrow 3-6 times your annual income, subject to affordability assessments."
+  - question: "What documents do I need for a mortgage application in UAE?"
+    answer: "You will typically need proof of identity, proof of income (payslips, tax returns, or business accounts), bank statements, details of existing debts and financial commitments, and proof of your down payment savings."
+relatedBlogs:
+  - "first-home-buyer-guide"
+  - "mortgage-types-compared"
+  - "refinancing-guide"
+published: true
+---
+
+## How Mortgages Work in UAE
+
+A mortgage is a loan secured against property. You borrow from a bank or lender, and the property serves as security until the loan is repaid in full. Understanding how mortgages work in UAE will help you make better financial decisions.
+
+The Central Bank of the UAE plays a key role in the mortgage market by setting benchmark interest rates that influence what lenders charge. Use our [mortgage calculator](/calculator/?country=ae) to see how current rates affect your repayments.
+
+## Types of Mortgages Available
+
+### Fixed Rate Mortgages
+
+A fixed rate mortgage locks in your interest rate for a set period, giving you payment certainty. Your repayments stay the same regardless of market movements during the fixed period.
+
+### Variable Rate Mortgages
+
+Variable rate mortgages move with market conditions. When the Central Bank of the UAE adjusts its benchmark rate, your repayments may change. Variable rates often offer more flexibility for extra repayments and other features.
+
+### Other Loan Types
+
+Depending on the UAE market, you may also have access to split loans, interest-only loans, and other specialised products. Each has advantages and trade-offs depending on your situation. Read our [mortgage types guide](/uae/blog/mortgage-types-compared/) for a detailed comparison.
+
+## The Application Process
+
+### Pre-Approval
+
+Pre-approval gives you a clear borrowing limit before you start property hunting. Most lenders can provide conditional pre-approval within a few business days based on your financial documents.
+
+### Full Application
+
+Once you have found a property, you submit a full application. The lender will conduct a valuation, verify your documents, and make a final lending decision.
+
+## Understanding Interest Rates
+
+Interest rates in UAE are influenced by the Central Bank of the UAE's monetary policy, global economic conditions, and competition between lenders. Always compare the total cost of a loan — not just the headline rate — by looking at fees, features, and comparison rates where available.
+
+## Managing Your Mortgage
+
+### Extra Repayments
+
+Making extra repayments can significantly reduce your total interest and shorten your loan term. Even small additional amounts each month add up over the life of the loan. Our [mortgage calculator](/calculator/?country=ae) lets you model the impact.
+
+### Refinancing
+
+If your current rate is not competitive, refinancing to a new loan can save you money. Our [refinancing guide](/uae/blog/refinancing-guide/) covers when and how to refinance effectively.
+
+## Common Mistakes to Avoid
+
+Not comparing enough lenders, choosing the wrong loan structure, and not factoring in all costs are among the most common mortgage mistakes. See our [common mistakes guide](/uae/blog/common-buying-mistakes/) for more pitfalls to avoid.
+
+## Next Steps
+
+Use our [mortgage calculator](/calculator/?country=ae) to model different scenarios. Read our [property buying guide](/uae/property-buying-guide/) for the complete purchasing process, or check our [FAQs](/uae/faqs/) for quick answers.

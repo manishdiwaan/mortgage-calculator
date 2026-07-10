@@ -1,0 +1,19 @@
+---
+interface Props {
+  slot: string;
+  class?: string;
+}
+const { slot, class: className = '' } = Astro.props;
+const pubId = 'ca-pub-1263369613506494';
+---
+
+<div class={`ad-container my-6 ${className}`}>
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client={pubId}
+    data-ad-slot={slot}
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+  ></ins>
+</div>

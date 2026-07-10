@@ -1,0 +1,44 @@
+---
+import PillarGuide from '../../layouts/PillarGuide.astro';
+import { PILOT_COUNTRIES, getCountryByCode } from '../../data/countries';
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return PILOT_COUNTRIES.map((c) => ({
+    params: { country: c.code },
+  }));
+};
+
+const { country: countryCode } = Astro.params;
+const country = getCountryByCode(countryCode as string)!;
+
+const allGuides = await getCollection('pillar-guides', (entry) =>
+  entry.data.country === countryCode && entry.data.type === 'property-buying' && entry.data.published
+);
+
+const guide = allGuides[0];
+if (!guide) {
+  return Astro.redirect(`/${countryCode}/`);
+}
+
+const { Content, headings } = await render(guide);
+---
+
+<PillarGuide
+  country={country}
+  title={guide.data.title}
+  metaTitle={guide.data.metaTitle}
+  metaDescription={guide.data.metaDescription}
+  slug="property-buying-guide"
+  publishDate={guide.data.publishDate.toISOString().split('T')[0]}
+  lastUpdated={guide.data.lastUpdated.toISOString().split('T')[0]}
+  faqs={guide.data.faqs}
+  headings={headings}
+  relatedBlogs={(guide.data.relatedBlogs || []).map((slug) => ({
+    title: slug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
+    url: `/${countryCode}/blog/${slug}/`,
+  }))}
+>
+  <Content />
+</PillarGuide>

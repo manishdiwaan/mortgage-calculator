@@ -1,0 +1,32 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { breadcrumbSchema } from '../utils/schema';
+import { buildCanonical } from '../utils/seo';
+import type { CountryMeta } from '../data/countries';
+
+interface Props {
+  country: CountryMeta;
+  metaTitle: string;
+  metaDescription: string;
+}
+
+const { country, metaTitle, metaDescription } = Astro.props;
+const canonical = buildCanonical(`/${country.code}`);
+const crumbs = [
+  { name: 'Home', url: 'https://urmortgage.online/' },
+  { name: country.name, url: canonical },
+];
+---
+
+<BaseLayout
+  title={metaTitle}
+  description={metaDescription}
+  canonical={canonical}
+  schemas={[breadcrumbSchema(crumbs)]}
+>
+  <div class="max-w-page mx-auto px-4 py-8">
+    <Breadcrumbs items={crumbs} />
+    <slot />
+  </div>
+</BaseLayout>

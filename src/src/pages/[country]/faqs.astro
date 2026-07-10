@@ -1,0 +1,33 @@
+---
+import FAQHub from '../../layouts/FAQHub.astro';
+import { PILOT_COUNTRIES, getCountryByCode } from '../../data/countries';
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return PILOT_COUNTRIES.map((c) => ({
+    params: { country: c.code },
+  }));
+};
+
+const { country: countryCode } = Astro.params;
+const country = getCountryByCode(countryCode as string)!;
+
+const faqEntries = await getCollection('faqs', (entry) =>
+  entry.data.country === countryCode && entry.data.published
+);
+
+const faqData = faqEntries[0];
+const faqs = faqData?.data.faqs || [];
+
+if (faqs.length === 0) {
+  return Astro.redirect(`/${countryCode}/`);
+}
+---
+
+<FAQHub
+  country={country}
+  metaTitle={`${country.name} Mortgage FAQs 2026 | URMortgage`}
+  metaDescription={`Answers to ${faqs.length}+ common questions about mortgages and property buying in ${country.name}.`}
+  faqs={faqs}
+/>

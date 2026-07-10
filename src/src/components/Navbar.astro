@@ -1,0 +1,123 @@
+---
+import { PILOT_COUNTRIES } from '../data/countries';
+---
+
+<nav class="sticky top-0 z-50 bg-white/95 dark:bg-bg-dark/95 backdrop-blur border-b border-slate-200 dark:border-slate-700">
+  <div class="max-w-page mx-auto px-4 sm:px-6 h-14 md:h-16 flex items-center justify-between">
+    <!-- Brand -->
+    <a href="/" class="flex items-center gap-2 text-primary font-bold text-base md:text-lg shrink-0">
+      <span class="material-symbols-outlined text-xl md:text-2xl">home</span>
+      <span class="hidden sm:inline">urmortgage.online</span>
+      <span class="sm:hidden">URMortgage</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+      <div class="relative" id="country-dropdown">
+        <button
+          id="country-btn"
+          class="flex items-center gap-1 text-slate-600 dark:text-slate-300 hover:text-primary transition-colors"
+          aria-expanded="false"
+        >
+          Countries
+          <span class="material-symbols-outlined text-base transition-transform duration-200" id="country-chevron">expand_more</span>
+        </button>
+        <div
+          id="country-menu"
+          class="absolute top-full left-0 mt-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl p-2 min-w-[200px] hidden"
+        >
+          {PILOT_COUNTRIES.map((c) => (
+            <a href={`/${c.code}/`} class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm transition-colors">
+              <span class="text-lg">{c.flag}</span>
+              <span>{c.name}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+      <a href="/calculator/" class="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors">Calculator</a>
+    </div>
+
+    <!-- Right: Theme toggle + mobile menu -->
+    <div class="flex items-center gap-1">
+      <button
+        id="theme-toggle"
+        class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+        aria-label="Toggle dark mode"
+      >
+        <span class="material-symbols-outlined text-xl dark:hidden">dark_mode</span>
+        <span class="material-symbols-outlined text-xl hidden dark:inline">light_mode</span>
+      </button>
+      <!-- Mobile menu button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+        aria-label="Menu"
+      >
+        <span class="material-symbols-outlined text-xl" id="mobile-menu-icon">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-slate-200 dark:border-slate-700 bg-white dark:bg-bg-dark">
+    <div class="px-4 py-3 space-y-1">
+      <a href="/calculator/" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-medium">
+        <span class="material-symbols-outlined text-lg text-primary">calculate</span>
+        Calculator
+      </a>
+      <div class="border-t border-slate-100 dark:border-slate-700 my-2"></div>
+      <p class="px-3 text-xs font-semibold text-slate-400 uppercase tracking-wider">Countries</p>
+      {PILOT_COUNTRIES.map((c) => (
+        <a href={`/${c.code}/`} class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm">
+          <span class="text-lg">{c.flag}</span>
+          <span>{c.name}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script is:inline>
+  // Country dropdown (desktop) — click to toggle
+  (function() {
+    var btn = document.getElementById('country-btn');
+    var menu = document.getElementById('country-menu');
+    var chevron = document.getElementById('country-chevron');
+    if (btn && menu) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var open = !menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        chevron.style.transform = open ? '' : 'rotate(180deg)';
+        btn.setAttribute('aria-expanded', !open);
+      });
+      document.addEventListener('click', function() {
+        menu.classList.add('hidden');
+        chevron.style.transform = '';
+        btn.setAttribute('aria-expanded', 'false');
+      });
+      menu.addEventListener('click', function(e) { e.stopPropagation(); });
+    }
+
+    // Mobile menu toggle
+    var mobBtn = document.getElementById('mobile-menu-btn');
+    var mobMenu = document.getElementById('mobile-menu');
+    var mobIcon = document.getElementById('mobile-menu-icon');
+    if (mobBtn && mobMenu) {
+      mobBtn.addEventListener('click', function() {
+        var open = !mobMenu.classList.contains('hidden');
+        mobMenu.classList.toggle('hidden');
+        mobIcon.textContent = open ? 'menu' : 'close';
+      });
+    }
+
+    // Theme toggle
+    var themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', function() {
+        document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light'); } catch(e) {}
+      });
+    }
+  })();
+</script>

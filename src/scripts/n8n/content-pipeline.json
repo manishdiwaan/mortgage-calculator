@@ -1,0 +1,217 @@
+{
+  "name": "URMortgage Content Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 8
+            }
+          ]
+        }
+      },
+      "id": "trigger",
+      "name": "Schedule (Every 8 Hours)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "position": [200, 300],
+      "typeVersion": 1.2,
+      "notes": "Runs 3x daily. Change interval to control publishing pace."
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "application": "{{AIRTABLE_BASE_ID}}",
+        "table": "Content Queue",
+        "filterByFormula": "AND({Status} = 'Ready', {Content} = '')",
+        "sort": {
+          "property": [
+            {
+              "field": "Priority",
+              "direction": "asc"
+            }
+          ]
+        },
+        "limit": 1
+      },
+      "id": "airtable_read",
+      "name": "Get Next Brief from Airtable",
+      "type": "n8n-nodes-base.airtable",
+      "position": [400, 300],
+      "typeVersion": 2.1,
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "{{AIRTABLE_CREDENTIAL_ID}}",
+          "name": "Airtable"
+        }
+      },
+      "notes": "Reads the next row with Status='Ready' and no Content yet. Sorted by Priority."
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true
+          },
+          "conditions": [
+            {
+              "leftValue": "={{ $json.id }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ]
+        }
+      },
+      "id": "has_brief",
+      "name": "Has Brief?",
+      "type": "n8n-nodes-base.if",
+      "position": [600, 300],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 8000, messages: [{ role: 'user', content: $json.fields.Prompt }] }) }}"
+      },
+      "id": "claude_api",
+      "name": "Generate Content (Claude API)",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [800, 200],
+      "typeVersion": 4.2,
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "{{CLAUDE_CREDENTIAL_ID}}",
+          "name": "Claude API Key"
+        }
+      },
+      "notes": "Calls Claude Sonnet to generate content. The Prompt field in Airtable contains the full prompt with variables already injected."
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract the markdown content from Claude's response\nconst response = $input.first().json;\nconst content = response.content[0].text;\n\n// Get metadata from Airtable row\nconst fields = $('Get Next Brief from Airtable').first().json.fields;\nconst recordId = $('Get Next Brief from Airtable').first().json.id;\n\n// Determine file path based on content type\nlet filePath;\nconst countrySlug = fields['Country Slug'];\nconst slug = fields['Slug'];\nconst contentType = fields['Content Type'];\n\nswitch (contentType) {\n  case 'pillar-guide':\n    filePath = `src/content/pillar-guides/${countrySlug}-${slug}.md`;\n    break;\n  case 'blog':\n    filePath = `src/content/blogs/${countrySlug}-${slug}.md`;\n    break;\n  case 'faq-hub':\n    filePath = `src/content/faqs/${countrySlug}.md`;\n    break;\n  default:\n    filePath = `src/content/blogs/${countrySlug}-${slug}.md`;\n}\n\nreturn [{\n  json: {\n    filePath,\n    content,\n    recordId,\n    countrySlug,\n    slug,\n    contentType,\n    title: fields['Title'],\n    url: fields['URL'],\n  }\n}];"
+      },
+      "id": "parse_content",
+      "name": "Parse Content & Build Path",
+      "type": "n8n-nodes-base.code",
+      "position": [1000, 200],
+      "typeVersion": 2
+    },
+    {
+      "parameters": {
+        "resource": "file",
+        "operation": "create",
+        "owner": "manishdiwaan",
+        "repository": "mortgage-calculator",
+        "filePath": "={{ $json.filePath }}",
+        "fileContent": "={{ $json.content }}",
+        "commitMessage": "=content: publish {{ $json.contentType }} — {{ $json.title }}",
+        "branch": "main"
+      },
+      "id": "github_commit",
+      "name": "Commit to GitHub",
+      "type": "n8n-nodes-base.github",
+      "position": [1200, 200],
+      "typeVersion": 1,
+      "credentials": {
+        "githubApi": {
+          "id": "{{GITHUB_CREDENTIAL_ID}}",
+          "name": "GitHub"
+        }
+      },
+      "notes": "Creates/updates the .md file in the repo. Push to main triggers Cloudflare Pages auto-deploy."
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "application": "{{AIRTABLE_BASE_ID}}",
+        "table": "Content Queue",
+        "id": "={{ $json.recordId }}",
+        "fields": {
+          "Status": "Published",
+          "Publish Date": "={{ new Date().toISOString().split('T')[0] }}",
+          "URL": "={{ 'https://urmortgage.online/' + $json.url }}"
+        }
+      },
+      "id": "airtable_update",
+      "name": "Update Airtable Status",
+      "type": "n8n-nodes-base.airtable",
+      "position": [1400, 200],
+      "typeVersion": 2.1,
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "{{AIRTABLE_CREDENTIAL_ID}}",
+          "name": "Airtable"
+        }
+      },
+      "notes": "Marks the row as Published with today's date and the live URL."
+    },
+    {
+      "parameters": {},
+      "id": "no_briefs",
+      "name": "No Briefs — Stop",
+      "type": "n8n-nodes-base.noOp",
+      "position": [800, 400],
+      "typeVersion": 1
+    }
+  ],
+  "connections": {
+    "Schedule (Every 8 Hours)": {
+      "main": [
+        [{ "node": "Get Next Brief from Airtable", "type": "main", "index": 0 }]
+      ]
+    },
+    "Get Next Brief from Airtable": {
+      "main": [
+        [{ "node": "Has Brief?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Has Brief?": {
+      "main": [
+        [{ "node": "Generate Content (Claude API)", "type": "main", "index": 0 }],
+        [{ "node": "No Briefs — Stop", "type": "main", "index": 0 }]
+      ]
+    },
+    "Generate Content (Claude API)": {
+      "main": [
+        [{ "node": "Parse Content & Build Path", "type": "main", "index": 0 }]
+      ]
+    },
+    "Parse Content & Build Path": {
+      "main": [
+        [{ "node": "Commit to GitHub", "type": "main", "index": 0 }]
+      ]
+    },
+    "Commit to GitHub": {
+      "main": [
+        [{ "node": "Update Airtable Status", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "any"
+  }
+}

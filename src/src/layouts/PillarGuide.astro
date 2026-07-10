@@ -1,0 +1,76 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import TOC from '../components/TOC.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { articleSchema, faqSchema, breadcrumbSchema } from '../utils/schema';
+import { buildCanonical } from '../utils/seo';
+import type { CountryMeta } from '../data/countries';
+
+interface Props {
+  country: CountryMeta;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  slug: string;
+  publishDate: string;
+  lastUpdated: string;
+  faqs?: { question: string; answer: string }[];
+  relatedBlogs?: { title: string; url: string }[];
+  headings?: { depth: number; slug: string; text: string }[];
+}
+
+const { country, title, metaTitle, metaDescription, slug, publishDate, lastUpdated, faqs = [], relatedBlogs = [], headings = [] } = Astro.props;
+const canonical = buildCanonical(`/${country.code}/${slug}`);
+const crumbs = [
+  { name: 'Home', url: 'https://urmortgage.online/' },
+  { name: country.name, url: `https://urmortgage.online/${country.code}/` },
+  { name: title, url: canonical },
+];
+
+const schemas: object[] = [
+  breadcrumbSchema(crumbs),
+  articleSchema({ title, description: metaDescription, url: canonical, publishDate, lastUpdated }),
+];
+if (faqs.length > 0) {
+  schemas.push(faqSchema(faqs));
+}
+---
+
+<BaseLayout title={metaTitle} description={metaDescription} canonical={canonical} schemas={schemas}>
+  <article class="max-w-page mx-auto px-4 py-8">
+    <Breadcrumbs items={crumbs} />
+    <header class="mb-8">
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">{title}</h1>
+      <p class="text-sm text-slate-500 dark:text-slate-400">
+        Published {publishDate} · Updated {lastUpdated}
+      </p>
+    </header>
+
+    <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
+      <div class="max-w-content">
+        {headings.length > 0 && <TOC headings={headings} />}
+        <div class="prose dark:prose-invert prose-slate prose-a:text-primary">
+          <slot />
+        </div>
+        {faqs.length > 0 && (
+          <section class="mt-12 border-t border-border dark:border-slate-700 pt-8">
+            <h2 class="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+            {faqs.map((faq) => (
+              <details class="mb-4 bg-white dark:bg-slate-800 border border-border dark:border-slate-700 rounded-card p-4">
+                <summary class="font-medium cursor-pointer">{faq.question}</summary>
+                <p class="mt-3 text-slate-600 dark:text-slate-300">{faq.answer}</p>
+              </details>
+            ))}
+          </section>
+        )}
+        <CTABanner countryCode={country.code} />
+      </div>
+
+      <aside class="hidden lg:block">
+        {relatedBlogs.length > 0 && <RelatedPosts posts={relatedBlogs} />}
+      </aside>
+    </div>
+  </article>
+</BaseLayout>
