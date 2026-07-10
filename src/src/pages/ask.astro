@@ -151,9 +151,7 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
         } else {
           // Convert markdown-style links and line breaks
           var answer = escHtml(data.answer)
-            .replace(/\n/g, '<br>')
-            .replace(/\/calculator\//g, '<a href="/calculator/" class="text-primary underline">/calculator/</a>')
-            .replace(/\/([a-z-]+)\/faqs\//g, '<a href="/$1/faqs/" class="text-primary underline">/$1/faqs/</a>');
+            .replace(/\n/g, '<br>');
           addMsg(answer, false);
         }
       } catch (err) {
