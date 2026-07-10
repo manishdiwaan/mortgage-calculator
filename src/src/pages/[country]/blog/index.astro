@@ -26,7 +26,7 @@ const allBlogs = await getCollection('blogs', (entry) =>
   description={`Tips, guides, and insights about buying property and getting a mortgage in ${country.name}.`}
   canonical={canonical}
 >
-  <div class="max-w-[var(--max-width-page)] mx-auto px-4 py-8">
+  <div class="max-w-page mx-auto px-6 py-8">
     <Breadcrumbs items={[
       { name: 'Home', url: '/' },
       { name: country.name, url: `/${countryCode}/` },
@@ -43,23 +43,23 @@ const allBlogs = await getCollection('blogs', (entry) =>
     {allBlogs.length > 0 ? (
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {allBlogs.map((blog) => (
-          <a href={`/${countryCode}/blog/${blog.data.slug}/`} class="bg-white dark:bg-slate-800 border border-[var(--color-border)] dark:border-slate-700 rounded-[var(--radius-card)] p-5 hover:shadow-md hover:border-[var(--color-primary)] transition-all">
+          <a href={`/${countryCode}/blog/${blog.data.slug}/`} class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl p-5 hover:shadow-md hover:border-primary transition-all">
             <h2 class="font-semibold text-lg mb-2">{blog.data.title}</h2>
             <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">{blog.data.metaDescription}</p>
-            <span class="text-xs text-[var(--color-primary)] font-medium">Read more →</span>
+            <span class="text-xs text-primary font-medium">Read more →</span>
           </a>
         ))}
       </div>
     ) : (
-      <div class="bg-[var(--color-surface)] dark:bg-slate-800 rounded-[var(--radius-card)] p-8 text-center">
+      <div class="bg-surface dark:bg-slate-800 rounded-2xl p-8 text-center">
         <p class="text-slate-600 dark:text-slate-400">
           Articles are being published. Check back soon, or explore our guides:
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-          <a href={`/${countryCode}/property-buying-guide/`} class="text-[var(--color-primary)] font-medium hover:underline">
+          <a href={`/${countryCode}/property-buying-guide/`} class="text-primary font-medium hover:underline">
             Property Buying Guide
           </a>
-          <a href={`/${countryCode}/mortgage-guide/`} class="text-[var(--color-primary)] font-medium hover:underline">
+          <a href={`/${countryCode}/mortgage-guide/`} class="text-primary font-medium hover:underline">
             Mortgage Guide
           </a>
         </div>
