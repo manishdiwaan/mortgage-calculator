@@ -1,0 +1,240 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PILOT_COUNTRIES } from '../data/countries';
+import { getCollection } from 'astro:content';
+import { breadcrumbSchema, faqSchema } from '../utils/schema';
+import { buildCanonical } from '../utils/seo';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const canonical = buildCanonical('/ask');
+const crumbs = [
+  { name: 'Home', url: '/' },
+  { name: 'Ask URMortgage', url: canonical },
+];
+
+// Load all FAQs for the knowledge base
+const allFaqEntries = await getCollection('faqs', (e) => e.data.published);
+const knowledgeBase = allFaqEntries.map((entry) => ({
+  country: entry.data.country,
+  faqs: entry.data.faqs.map((f) => ({
+    q: f.question,
+    a: f.answer,
+    cat: f.category,
+  })),
+}));
+
+// Top 10 universal FAQs (hand-picked cross-country)
+const topFaqs = [
+  { question: "How much deposit do I need to buy a house?", answer: "Most lenders require 5-25% of the property price as a deposit. The exact amount varies by country and lender. A larger deposit typically gets you better loan terms. Some countries offer government schemes that allow lower deposits for eligible first-time buyers." },
+  { question: "What is the difference between fixed and variable rate mortgages?", answer: "A fixed rate locks in your interest rate for a set period (usually 1-5 years), giving payment certainty. A variable rate moves with market conditions, offering more flexibility but less predictability. Many buyers choose a split between both." },
+  { question: "How much can I borrow for a mortgage?", answer: "Lenders typically allow borrowing of 3-6 times your annual income, subject to affordability assessments. Your capacity depends on income, expenses, existing debts, and the lender's criteria. Use our mortgage calculator for an estimate." },
+  { question: "Should I use a mortgage broker?", answer: "A broker compares loans across multiple lenders, handles paperwork, and is usually paid by the lender (no direct cost to you). About 60-70% of home loans in many countries are arranged through brokers. They can save you time and potentially find better deals." },
+  { question: "What are the hidden costs of buying property?", answer: "Beyond the purchase price, budget for stamp duty or transfer tax, legal fees, inspection costs, loan fees, insurance, and moving costs. Total additional costs typically range from 3-8% of the property price depending on your country." },
+];
+---
+
+<BaseLayout
+  title="Ask URMortgage — Mortgage & Property Q&A"
+  description="Get instant answers to your mortgage and property questions across 6 countries. Search 170+ FAQs or chat with our knowledge base."
+  canonical={canonical}
+  schemas={[breadcrumbSchema(crumbs), faqSchema(topFaqs)]}
+>
+  <div class="max-w-page mx-auto px-6 py-8">
+    <Breadcrumbs items={crumbs} />
+
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
+        <span class="text-primary">Ask</span> URMortgage
+      </h1>
+      <p class="text-slate-500 text-lg max-w-xl mx-auto">
+        Get instant answers to your mortgage and property questions. 170+ FAQs across 6 countries.
+      </p>
+    </div>
+
+    <!-- Chat Interface -->
+    <div class="max-w-2xl mx-auto mb-16">
+      <div id="chat-container" class="bg-white border border-slate-200 rounded-2xl shadow-lg overflow-hidden">
+        <!-- Messages -->
+        <div id="chat-messages" class="h-[400px] overflow-y-auto p-6 space-y-4">
+          <div class="flex gap-3">
+            <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
+              <span class="text-white text-xs font-bold">UR</span>
+            </div>
+            <div class="bg-surface rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%]">
+              <p class="text-sm text-slate-700">
+                Hi! I'm the URMortgage assistant. Ask me anything about mortgages, property buying, costs, or taxes across our 6 countries. I answer based on our guides and FAQs only.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Input -->
+        <div class="border-t border-slate-200 p-4 flex gap-3">
+          <input
+            id="chat-input"
+            type="text"
+            placeholder="Ask a question... e.g., How much deposit do I need in Australia?"
+            class="flex-1 px-4 py-3 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
+          />
+          <button
+            id="chat-send"
+            class="bg-primary text-white px-5 py-3 rounded-xl font-semibold text-sm hover:bg-blue-700 transition-colors flex items-center gap-2 shrink-0"
+          >
+            <span class="material-symbols-outlined text-lg">send</span>
+          </button>
+        </div>
+      </div>
+      <p class="text-xs text-slate-400 text-center mt-3">
+        Answers are based on URMortgage guides and FAQs. Not financial advice.
+      </p>
+    </div>
+
+    <!-- Country FAQ Cards -->
+    <h2 class="text-2xl font-bold text-slate-900 text-center mb-3">Browse by country</h2>
+    <p class="text-slate-500 text-center mb-8">Explore country-specific FAQs</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 md:gap-6 max-w-3xl mx-auto mb-16">
+      {PILOT_COUNTRIES.map((country) => {
+        const faqEntry = knowledgeBase.find((k) => k.country === country.code);
+        const count = faqEntry?.faqs.length || 0;
+        return (
+          <a
+            href={`/${country.code}/faqs/`}
+            class="group relative flex flex-col items-center gap-3 bg-white border border-slate-200 rounded-2xl p-6 hover:border-primary hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
+          >
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <span class="relative text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">{country.flag}</span>
+            <div class="relative text-center">
+              <h3 class="text-sm font-bold text-slate-800 group-hover:text-primary transition-colors">{country.name}</h3>
+              <p class="text-xs text-slate-400 mt-0.5">{count} FAQs</p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+    <!-- Top Universal FAQs -->
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl font-bold text-slate-900 text-center mb-8">Most asked questions</h2>
+      {topFaqs.map((faq) => (
+        <details class="mb-3 bg-white border border-slate-200 rounded-xl overflow-hidden group">
+          <summary class="px-5 py-4 font-medium text-slate-800 cursor-pointer hover:bg-slate-50 transition-colors flex items-center justify-between">
+            {faq.question}
+            <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform">expand_more</span>
+          </summary>
+          <div class="px-5 pb-4">
+            <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+
+  <!-- Knowledge Base (hidden, used by chat JS) -->
+  <script id="kb-data" type="application/json" set:html={JSON.stringify(knowledgeBase)} />
+
+  <script is:inline>
+  (function() {
+    var kb = [];
+    try { kb = JSON.parse(document.getElementById('kb-data').textContent); } catch(e) {}
+    
+    var allFaqs = [];
+    kb.forEach(function(country) {
+      country.faqs.forEach(function(faq) {
+        allFaqs.push({ q: faq.q.toLowerCase(), a: faq.a, country: country.country, cat: faq.cat });
+      });
+    });
+
+    var msgs = document.getElementById('chat-messages');
+    var input = document.getElementById('chat-input');
+    var btn = document.getElementById('chat-send');
+
+    function addMessage(text, isUser) {
+      var wrap = document.createElement('div');
+      wrap.className = 'flex gap-3' + (isUser ? ' justify-end' : '');
+      
+      if (isUser) {
+        wrap.innerHTML = '<div class="bg-primary text-white rounded-2xl rounded-tr-md px-4 py-3 max-w-[85%]"><p class="text-sm">' + escHtml(text) + '</p></div>';
+      } else {
+        wrap.innerHTML = '<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="text-white text-xs font-bold">UR</span></div><div class="bg-surface rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%]"><p class="text-sm text-slate-700">' + text + '</p></div>';
+      }
+      msgs.appendChild(wrap);
+      msgs.scrollTop = msgs.scrollHeight;
+    }
+
+    function escHtml(s) {
+      var d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    }
+
+    function searchKB(query) {
+      var q = query.toLowerCase().replace(/[?.,!]/g, '');
+      var words = q.split(/\s+/).filter(function(w) { return w.length > 2; });
+      
+      var scored = allFaqs.map(function(faq) {
+        var score = 0;
+        var faqText = faq.q + ' ' + faq.a.toLowerCase();
+        
+        words.forEach(function(word) {
+          if (faq.q.indexOf(word) >= 0) score += 3;
+          if (faqText.indexOf(word) >= 0) score += 1;
+        });
+        
+        // Boost exact phrase matches
+        if (faq.q.indexOf(q) >= 0) score += 10;
+        
+        // Boost country mentions
+        var countries = ['australia','india','united-states','united-kingdom','uae','singapore','us','uk','usa'];
+        countries.forEach(function(c) {
+          if (q.indexOf(c) >= 0 && faq.country.indexOf(c) >= 0) score += 5;
+        });
+        
+        return { faq: faq, score: score };
+      });
+
+      scored.sort(function(a, b) { return b.score - a.score; });
+      return scored.filter(function(s) { return s.score > 2; }).slice(0, 3);
+    }
+
+    function handleSend() {
+      var q = input.value.trim();
+      if (!q) return;
+      
+      addMessage(q, true);
+      input.value = '';
+
+      setTimeout(function() {
+        var results = searchKB(q);
+        
+        if (results.length === 0) {
+          addMessage("Sorry, I don't have this information in our guides. Try browsing our <a href='/' class='text-primary underline'>country hubs</a> or <a href='/calculator/' class='text-primary underline'>mortgage calculator</a> for help.", false);
+          return;
+        }
+
+        var best = results[0].faq;
+        var countryName = best.country.replace(/-/g, ' ').replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+        var answer = '<strong>' + escHtml(best.faq.q) + '</strong><br><br>' + escHtml(best.a);
+        
+        if (results.length > 1) {
+          answer += '<br><br><span class="text-xs text-slate-400">Related: ';
+          results.slice(1).forEach(function(r, i) {
+            if (i > 0) answer += ' · ';
+            answer += escHtml(r.faq.q.substring(0, 60)) + (r.faq.q.length > 60 ? '...' : '');
+          });
+          answer += '</span>';
+        }
+        
+        answer += '<br><br><a href="/' + best.country + '/faqs/" class="text-primary text-xs underline">See all ' + countryName + ' FAQs →</a>';
+        
+        addMessage(answer, false);
+      }, 300);
+    }
+
+    btn.addEventListener('click', handleSend);
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') handleSend();
+    });
+  })();
+  </script>
+</BaseLayout>
