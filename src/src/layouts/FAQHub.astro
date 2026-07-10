@@ -1,6 +1,8 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
+import CTABanner from '../components/CTABanner.astro';
+import AdSlot from '../components/AdSlot.astro';
 import { faqSchema, breadcrumbSchema } from '../utils/schema';
 import { buildCanonical } from '../utils/seo';
 import type { CountryMeta } from '../data/countries';
@@ -34,22 +36,43 @@ const grouped = categories.map((cat) => ({
   canonical={canonical}
   schemas={[breadcrumbSchema(crumbs), faqSchema(faqs)]}
 >
-  <div class="max-w-page mx-auto px-4 py-8">
+  <div class="max-w-page mx-auto px-6 py-8">
     <Breadcrumbs items={crumbs} />
-    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-8">
-      {country.name} Mortgage & Property FAQs
+    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+      {country.flag} {country.name} Mortgage & Property FAQs
     </h1>
+    <p class="text-slate-500 mb-8">{faqs.length} answers to common questions</p>
 
-    {grouped.map((group) => (
-      <section class="mb-10">
-        <h2 class="text-xl font-semibold text-primary dark:text-blue-400 mb-4">{group.label}</h2>
-        {group.items.map((faq) => (
-          <details class="mb-3 bg-white dark:bg-slate-800 border border-border dark:border-slate-700 rounded-card p-4">
-            <summary class="font-medium cursor-pointer">{faq.question}</summary>
-            <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">{faq.answer}</p>
-          </details>
-        ))}
-      </section>
-    ))}
+    <div class="max-w-content">
+      {grouped.map((group, i) => (
+        <section class="mb-8">
+          <h2 class="text-lg font-bold text-primary dark:text-blue-400 mb-3 flex items-center gap-2">
+            <span class="material-symbols-outlined text-base">
+              {group.category === 'financing' ? 'payments' : 
+               group.category === 'buying-process' ? 'home' :
+               group.category === 'costs' ? 'receipt_long' :
+               group.category === 'legal' ? 'gavel' :
+               group.category === 'investment' ? 'trending_up' : 'help'}
+            </span>
+            {group.label}
+          </h2>
+          {group.items.map((faq) => (
+            <details class="mb-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden group">
+              <summary class="px-4 py-3 font-medium text-sm text-slate-800 dark:text-slate-200 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center justify-between">
+                {faq.question}
+                <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform text-base shrink-0 ml-2">expand_more</span>
+              </summary>
+              <div class="px-4 pb-3">
+                <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+          {/* Ad after 2nd FAQ group */}
+          {i === 1 && <AdSlot slot="faq-mid" class="ad-slot-inline" />}
+        </section>
+      ))}
+
+      <CTABanner countryCode={country.code} />
+    </div>
   </div>
 </BaseLayout>

@@ -4,6 +4,7 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import TOC from '../components/TOC.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import CTABanner from '../components/CTABanner.astro';
+import AdSlot from '../components/AdSlot.astro';
 import { articleSchema, faqSchema, breadcrumbSchema } from '../utils/schema';
 import { buildCanonical } from '../utils/seo';
 import type { CountryMeta } from '../data/countries';
@@ -33,43 +34,53 @@ const schemas: object[] = [
   breadcrumbSchema(crumbs),
   articleSchema({ title, description: metaDescription, url: canonical, publishDate, lastUpdated }),
 ];
-if (faqs.length > 0) {
-  schemas.push(faqSchema(faqs));
-}
+if (faqs.length > 0) schemas.push(faqSchema(faqs));
 ---
 
 <BaseLayout title={metaTitle} description={metaDescription} canonical={canonical} schemas={schemas}>
-  <article class="max-w-page mx-auto px-4 py-8">
+  <article class="max-w-page mx-auto px-6 py-8">
     <Breadcrumbs items={crumbs} />
     <header class="mb-8">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">{title}</h1>
-      <p class="text-sm text-slate-500 dark:text-slate-400">
-        Published {publishDate} · Updated {lastUpdated}
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 leading-tight">{title}</h1>
+      <p class="text-sm text-slate-400">
+        Published {publishDate} · Updated {lastUpdated} · {country.flag} {country.name}
       </p>
     </header>
 
     <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
       <div class="max-w-content">
         {headings.length > 0 && <TOC headings={headings} />}
-        <div class="prose dark:prose-invert prose-slate prose-a:text-primary">
+
+        <div class="content-body">
           <slot />
         </div>
+
         {faqs.length > 0 && (
-          <section class="mt-12 border-t border-border dark:border-slate-700 pt-8">
-            <h2 class="text-2xl font-semibold mb-6">Frequently Asked Questions</h2>
+          <section class="mt-12 border-t border-slate-200 dark:border-slate-700 pt-8">
+            <h2 class="text-2xl font-bold mb-6 text-slate-900 dark:text-white">Frequently Asked Questions</h2>
             {faqs.map((faq) => (
-              <details class="mb-4 bg-white dark:bg-slate-800 border border-border dark:border-slate-700 rounded-card p-4">
-                <summary class="font-medium cursor-pointer">{faq.question}</summary>
-                <p class="mt-3 text-slate-600 dark:text-slate-300">{faq.answer}</p>
+              <details class="mb-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl p-4 group">
+                <summary class="font-medium cursor-pointer text-slate-800 dark:text-slate-200 flex justify-between items-center">
+                  {faq.question}
+                  <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform text-base">expand_more</span>
+                </summary>
+                <p class="mt-3 text-slate-600 dark:text-slate-300 text-sm leading-relaxed">{faq.answer}</p>
               </details>
             ))}
           </section>
         )}
+
+        <!-- Ad after FAQs -->
+        <AdSlot slot="pillar-bottom" class="ad-slot-inline" />
+
         <CTABanner countryCode={country.code} />
       </div>
 
       <aside class="hidden lg:block">
         {relatedBlogs.length > 0 && <RelatedPosts posts={relatedBlogs} />}
+        <div class="mt-6">
+          <AdSlot slot="pillar-sidebar" />
+        </div>
       </aside>
     </div>
   </article>

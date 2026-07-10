@@ -7,7 +7,7 @@ const { slot, class: className = '' } = Astro.props;
 const pubId = 'ca-pub-1263369613506494';
 ---
 
-<div class={`ad-container my-6 ${className}`}>
+<div class={`ad-slot ${className}`} data-ad-slot={slot}>
   <ins
     class="adsbygoogle"
     style="display:block"

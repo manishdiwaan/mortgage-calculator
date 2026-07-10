@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Content styling — replaces @tailwindcss/typography for reliability */
+@layer components {
+  .content-body h2 {
+    @apply text-2xl font-bold text-slate-900 mt-10 mb-4;
+  }
+  .content-body h3 {
+    @apply text-xl font-semibold text-slate-800 mt-8 mb-3;
+  }
+  .content-body p {
+    @apply text-base leading-relaxed text-slate-700 mb-4;
+  }
+  .content-body a {
+    @apply text-primary hover:underline;
+  }
+  .content-body ul, .content-body ol {
+    @apply mb-4 pl-6;
+  }
+  .content-body li {
+    @apply mb-2 text-slate-700;
+  }
+  .content-body ul li {
+    @apply list-disc;
+  }
+  .content-body ol li {
+    @apply list-decimal;
+  }
+  .content-body strong {
+    @apply font-semibold text-slate-900;
+  }
+  .content-body blockquote {
+    @apply border-l-4 border-primary pl-4 py-1 my-4 text-slate-600 italic;
+  }
+  .content-body hr {
+    @apply my-8 border-slate-200;
+  }
+
+  /* Dark mode */
+  .dark .content-body h2 { @apply text-white; }
+  .dark .content-body h3 { @apply text-slate-200; }
+  .dark .content-body p { @apply text-slate-300; }
+  .dark .content-body li { @apply text-slate-300; }
+  .dark .content-body strong { @apply text-white; }
+  .dark .content-body blockquote { @apply text-slate-400 border-slate-600; }
+  .dark .content-body hr { @apply border-slate-700; }
+
+  /* Ad container styling */
+  .ad-slot {
+    @apply my-6 mx-auto overflow-hidden rounded-lg;
+    min-height: 90px;
+  }
+  .ad-slot-inline {
+    @apply my-8;
+  }
+}

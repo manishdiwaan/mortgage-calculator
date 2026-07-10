@@ -3,6 +3,7 @@ import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import RelatedPosts from '../components/RelatedPosts.astro';
 import CTABanner from '../components/CTABanner.astro';
+import AdSlot from '../components/AdSlot.astro';
 import { articleSchema, breadcrumbSchema } from '../utils/schema';
 import { buildCanonical } from '../utils/seo';
 import type { CountryMeta } from '../data/countries';
@@ -35,12 +36,12 @@ const schemas = [
 ---
 
 <BaseLayout title={metaTitle} description={metaDescription} canonical={canonical} schemas={schemas}>
-  <article class="max-w-page mx-auto px-4 py-8">
+  <article class="max-w-page mx-auto px-6 py-8">
     <Breadcrumbs items={crumbs} />
     <header class="mb-8 max-w-content">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3">{title}</h1>
-      <p class="text-sm text-slate-500 dark:text-slate-400">
-        Published {publishDate} · Updated {lastUpdated}
+      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 leading-tight">{title}</h1>
+      <p class="text-sm text-slate-400">
+        Published {publishDate} · Updated {lastUpdated} · {country.flag} {country.name}
       </p>
     </header>
 
@@ -48,20 +49,29 @@ const schemas = [
       <img
         src={heroImage}
         alt={imageAlt || title}
-        class="w-full max-w-content rounded-card mb-8 object-cover max-h-[400px]"
+        class="w-full max-w-content rounded-2xl mb-8 object-cover max-h-[400px]"
         loading="lazy"
       />
     )}
 
     <div class="lg:grid lg:grid-cols-[1fr_280px] lg:gap-10">
-      <div class="max-w-content prose dark:prose-invert prose-slate prose-a:text-primary">
-        <slot />
+      <div class="max-w-content">
+        <div class="content-body">
+          <slot />
+        </div>
+
+        <!-- Ad after content -->
+        <AdSlot slot="blog-bottom" class="ad-slot-inline" />
+
+        <CTABanner countryCode={country.code} />
       </div>
       <aside class="hidden lg:block mt-8 lg:mt-0">
         {relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} />}
+        <!-- Ad in sidebar -->
+        <div class="mt-6">
+          <AdSlot slot="blog-sidebar" />
+        </div>
       </aside>
     </div>
-
-    <CTABanner countryCode={country.code} />
   </article>
 </BaseLayout>
