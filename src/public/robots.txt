@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://urmortgage.online/sitemap-index.xml
+Sitemap: https://urmortgage.online/sitemap-0.xml
