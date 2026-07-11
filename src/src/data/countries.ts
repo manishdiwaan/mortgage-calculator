@@ -37,6 +37,13 @@ export const ALL_COUNTRIES: CountryMeta[] = [
   { name: 'Brazil', code: 'brazil', iso: 'BR', currency: 'BRL', currencySymbol: 'R$', flag: '🇧🇷', language: 'en', region: 'South America', centralBank: 'Central Bank of Brazil', slug: 'brazil' },
   { name: 'Mexico', code: 'mexico', iso: 'MX', currency: 'MXN', currencySymbol: '$', flag: '🇲🇽', language: 'en', region: 'North America', centralBank: 'Bank of Mexico', slug: 'mexico' },
   { name: 'Saudi Arabia', code: 'saudi-arabia', iso: 'SA', currency: 'SAR', currencySymbol: 'ر.س', flag: '🇸🇦', language: 'en', region: 'Middle East', centralBank: 'Saudi Central Bank', slug: 'saudi-arabia' },
+  // New countries — expanding to 29
+  { name: 'Belgium', code: 'belgium', iso: 'BE', currency: 'EUR', currencySymbol: '€', flag: '🇧🇪', language: 'en', region: 'Europe', centralBank: 'European Central Bank', slug: 'belgium' },
+  { name: 'Switzerland', code: 'switzerland', iso: 'CH', currency: 'CHF', currencySymbol: 'CHF', flag: '🇨🇭', language: 'en', region: 'Europe', centralBank: 'Swiss National Bank', slug: 'switzerland' },
+  { name: 'Denmark', code: 'denmark', iso: 'DK', currency: 'DKK', currencySymbol: 'kr', flag: '🇩🇰', language: 'en', region: 'Europe', centralBank: 'Danmarks Nationalbank', slug: 'denmark' },
+  { name: 'Norway', code: 'norway', iso: 'NO', currency: 'NOK', currencySymbol: 'kr', flag: '🇳🇴', language: 'en', region: 'Europe', centralBank: 'Norges Bank', slug: 'norway' },
+  { name: 'Portugal', code: 'portugal', iso: 'PT', currency: 'EUR', currencySymbol: '€', flag: '🇵🇹', language: 'en', region: 'Europe', centralBank: 'European Central Bank', slug: 'portugal' },
+  { name: 'Sweden', code: 'sweden', iso: 'SE', currency: 'SEK', currencySymbol: 'kr', flag: '🇸🇪', language: 'en', region: 'Europe', centralBank: 'Sveriges Riksbank', slug: 'sweden' },
 ];
 
 // Keep backward compatibility

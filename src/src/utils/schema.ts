@@ -51,7 +51,7 @@ export function softwareApplicationSchema() {
     operatingSystem: 'Web',
     url: `${SITE.url}/calculator`,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-    description: 'Free mortgage calculator supporting 25 countries, 250+ lenders, with central bank rate tracking and full amortisation scheduling.',
+    description: 'Free mortgage calculator supporting 29 countries, 250+ lenders, with central bank rate tracking and full amortisation scheduling.',
   };
 }
 
