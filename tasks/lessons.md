@@ -22,3 +22,8 @@
 - **Date:** 2026-07-11
 - **Mistake:** Asked Manish to manually copy/paste files and run commands when API key and GitHub token were available.
 - **Correct Rule:** With ANTHROPIC_API_KEY and GITHUB_TOKEN available — clone repo, generate, commit, push autonomously. Only interrupt Manish for decisions, not execution.
+
+## Lesson 005 — Security Review Against posst.app Framework
+- **Date:** 2026-07-11
+- **Finding:** CORS wildcard * on chat.js allowed any domain to call the Claude API endpoint — potential credit drain attack.
+- **Correct Rule:** Always restrict CORS to known origins. For Cloudflare Pages Functions, use CF-Connecting-IP for rate limiting. Static sites still need _headers file for HTTP security headers.

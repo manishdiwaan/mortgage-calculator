@@ -48,3 +48,16 @@
 - [x] Country hub page — smaller flag, gap, h1, body text on mobile
 - [x] Homepage — smaller country card padding, emoji, CTA button, features gap
 - [x] BaseLayout pre-footer ad — px-4 sm:px-6
+
+### ✅ Security Hardening — COMPLETE
+- [x] CORS restricted to urmortgage.online on chat API (was wildcard *)
+- [x] Rate limiting: 10 req/60s per IP on chat endpoint
+- [x] Security headers via _headers file: X-Frame-Options, CSP, Permissions-Policy
+- [x] Breadcrumb schema @id now uses absolute URLs (fixes GSC non-critical warning)
+- [x] System prompt hardened — prompt injection resistance added
+- [x] Chat system prompt updated to cover all 23 countries (was 6)
+
+### Remaining Security (future)
+- [ ] Cloudflare WAF custom rule — block non-browser UAs on /api/chat
+- [ ] Cloudflare Rate Limiting rule at edge level (upgrade from in-memory)
+- [ ] Quarterly security review scheduled
