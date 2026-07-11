@@ -61,3 +61,8 @@
 - [ ] Cloudflare WAF custom rule — block non-browser UAs on /api/chat
 - [ ] Cloudflare Rate Limiting rule at edge level (upgrade from in-memory)
 - [ ] Quarterly security review scheduled
+
+### ✅ Cloudflare WAF Edge Rate Limiting — COMPLETE
+- [x] Rate limiting rule: 20 req/10s per IP on /api/chat — Active
+- [x] Custom rule: block empty User-Agent on /api/chat — Active
+- [x] Both rules verified Active in Cloudflare Security rules dashboard
