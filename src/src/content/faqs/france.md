@@ -48,6 +48,146 @@ faqs:
   - question: "How do interest rate changes affect my mortgage?"
     answer: "Variable rate mortgages are affected by European Central Bank rate changes. Fixed rate borrowers are not affected until their fixed term expires."
     category: "general"
+```yaml
+- question: "What is the Prêt à Taux Zéro (PTZ) and who qualifies?"
+  answer: "The PTZ is a zero-interest government loan available to first-time buyers purchasing a primary residence in France. Eligibility depends on household income, property location (zones A, B1, B2, C), and whether the property is new or meets energy renovation criteria. It can cover up to 50% of the purchase price in high-demand zones and must be combined with another main mortgage. Income ceilings are revised periodically, so check the current limits with your bank or a courtier."
+  category: "financing"
+
+- question: "What is the loi Carrez and why does it matter when buying an apartment?"
+  answer: "The loi Carrez is a French law that guarantees the exact private floor area of any apartment in a co-ownership building, measured with ceilings above 1.8 metres. The seller must include the Carrez measurement in the compromis de vente and the final acte authentique. If the actual area is more than 5% less than stated, you can claim a price reduction proportional to the shortfall within one year of signing. Always verify this measurement independently before signing."
+  category: "legal"
+
+- question: "What is a compromis de vente and what happens after signing it?"
+  answer: "The compromis de vente is a binding preliminary sale agreement signed between buyer and seller, typically before a notaire or agent immobilier. Once signed, the buyer has a 10-day cooling-off period (délai de rétractation) during which they can withdraw without penalty. After this period, both parties are legally committed and the buyer usually pays a deposit of 5–10% of the purchase price. The final sale is then completed at the acte authentique, typically 2–3 months later."
+  category: "buying-process"
+
+- question: "What is the acte authentique and what happens at that appointment?"
+  answer: "The acte authentique is the final notarised deed of sale signed before a notaire, which legally transfers ownership of the property to the buyer. Both buyer and seller (or their representatives) must attend, and the buyer must have transferred all funds including frais de notaire in advance. The notaire reads the full deed aloud, all parties sign, and the buyer receives the keys. Title is registered with the Service de Publicité Foncière, and the official title deed arrives several months later."
+  category: "buying-process"
+
+- question: "What are the frais de notaire and what do they actually cover?"
+  answer: "Frais de notaire typically represent 7–8% of the purchase price for older properties and around 2–3% for new builds. Despite the name, only a small portion (around 1%) is the notaire's actual fee (émoluments); the majority consists of government taxes and duties, notably the droits de mutation. They also include land registry fees and administrative costs. These fees are paid by the buyer at the time of signing the acte authentique and are non-negotiable in their tax component."
+  category: "costs"
+
+- question: "What is a Diagnostic de Performance Énergétique (DPE) and why is it important?"
+  answer: "The DPE is a mandatory energy performance certificate that rates a property from A (most efficient) to G (least efficient) based on energy consumption and greenhouse gas emissions. Since 2021, the DPE is legally binding and must be provided to buyers before signing the compromis de vente. Properties rated F or G are classified as passoires thermiques and face increasing restrictions, including bans on new rentals starting in 2023 for G-rated properties. A poor DPE rating can significantly affect resale value and rental potential."
+  category: "buying-process"
+
+- question: "What are diagnostics immobiliers and which ones are mandatory?"
+  answer: "Diagnostics immobiliers are a set of mandatory technical surveys the seller must provide to the buyer before sale, compiled into a Dossier de Diagnostic Technique (DDT). Required diagnostics typically include DPE, asbestos (amiante), lead (plomb), electricity, gas, termites (in certain zones), natural and technological risk (ERP), and flood zone status. The number required depends on the age, type, and location of the property. If mandatory diagnostics are missing or fraudulent, the seller can face legal liability."
+  category: "legal"
+
+- question: "What is taxe foncière and how much should I budget for it?"
+  answer: "Taxe foncière is an annual property ownership tax paid by whoever owns the property on 1 January of the tax year, regardless of whether it is rented or occupied. It is calculated based on the cadastral rental value of the property set by local authorities, so amounts vary significantly by commune. Typical annual amounts range from a few hundred euros for a small apartment to several thousand euros for a large house in an affluent area. Always ask the seller for their last taxe foncière bill before purchasing."
+  category: "costs"
+
+- question: "What is an SCI and should I use one to buy property in France?"
+  answer: "A Société Civile Immobilière (SCI) is a French civil property company used to purchase and hold real estate, commonly used by families or investors. Benefits include simplified inheritance planning, easier co-ownership management, and potential tax advantages depending on your situation. However, setting up and running an SCI involves administrative costs, annual accounting obligations, and legal complexity. You should consult a notaire or fiscal advisor to determine whether an SCI suits your personal and financial circumstances."
+  category: "legal"
+
+- question: "How does the French mortgage application process work?"
+  answer: "In France, you first obtain a mortgage agreement in principle (accord de principe) from a bank before making an offer, though it is not legally binding. After signing the compromis de vente, you have a legally protected period of typically 45 days to obtain a formal mortgage offer (offre de prêt). The bank issues the offre de prêt, after which there is a mandatory 10-day reflection period before you can formally accept it. The funds are then released to the notaire for the acte authentique."
+  category: "financing"
+
+- question: "What is the taux d'usure and how does it affect my mortgage eligibility?"
+  answer: "The taux d'usure is the maximum legal interest rate lenders in France can charge on a mortgage, set quarterly by the Banque de France. The overall APR including insurance and fees cannot exceed this rate, which has sometimes caused eligibility issues when rates rise quickly. During periods of rapid rate increases, some borrowers found themselves refused mortgages because the total cost exceeded the usury ceiling despite being creditworthy. Changes made in 2023 moved to monthly updates of the taux d'usure to improve market responsiveness."
+  category: "financing"
+
+- question: "What is assurance emprunteur and is it mandatory?"
+  answer: "Assurance emprunteur is borrower's insurance covering death, total disability, and often job loss, which lenders require before granting a mortgage in France. While legally you are not obliged to take the bank's own insurance, lenders require equivalent coverage as a condition of the loan. Since the loi Lemoine (2022), you can switch your borrower insurance at any time without penalty, potentially saving thousands of euros over the loan term. Shopping for insurance separately from your bank is strongly recommended."
+  category: "financing"
+
+- question: "Can I get a mortgage in France as a non-resident foreigner?"
+  answer: "Yes, non-resident foreigners can obtain mortgages in France, though conditions are generally stricter than for residents. French banks typically lend a maximum of 70–80% LTV to non-residents and scrutinise foreign income more carefully, often requiring additional documentation and sometimes a French bank account. Some specialist lenders and brokers focus on non-resident borrowers and can navigate cross-border income assessment. EU and non-EU buyers are treated similarly in terms of lending law, though individual bank policies vary."
+  category: "financing"
+
+- question: "What is the taux d'endettement and how does it affect my borrowing capacity?"
+  answer: "The taux d'endettement is your debt-to-income ratio, and French lenders are guided by the Haut Conseil de Stabilité Financière (HCSF) rules capping it at 35% of gross income including insurance. This means your total monthly debt repayments cannot exceed 35% of your gross monthly income. Lenders have limited flexibility to exceed this threshold for a small proportion of their loan book. Understanding your taux d'endettement before approaching banks is essential to knowing your realistic borrowing ceiling."
+  category: "financing"
+
+- question: "What is the difference between a résidence principale and a résidence secondaire for mortgage purposes?"
+  answer: "A résidence principale is your main home where you live for the majority of the year, while a résidence secondaire is a secondary property such as a holiday home. Mortgages for a résidence principale often benefit from better rates, PTZ eligibility, and more favourable lending conditions. Résidence secondaire purchases typically require larger deposits, face higher rates, and are ineligible for most government-assisted loan schemes. Tax treatment also differs significantly between the two classifications."
+  category: "financing"
+
+- question: "What is viager and how does this unusual French property purchase work?"
+  answer: "Viager is a uniquely French property transaction where the buyer pays the seller a lump sum (bouquet) upfront plus monthly payments (rente viagère) for the rest of the seller's life. The buyer takes ownership but the seller typically retains the right to live in the property (viager occupé) until death. It can offer buyers a below-market entry price and sellers a retirement income, but the financial outcome is uncertain and depends on the seller's longevity. Legal advice from a notaire is essential before entering a viager arrangement."
+  category: "buying-process"
+
+- question: "What is a prêt relais and when would I need one?"
+  answer: "A prêt relais (bridging loan) is a short-term French mortgage product designed for homeowners who need to buy a new property before selling their existing one. The bank advances a portion of the estimated value of your current property, typically 60–80%, allowing you to fund the new purchase. Interest is paid monthly or rolled up, and the loan is repaid when the old property sells, usually within 12–24 months. Bridging loans carry risk if the existing property takes longer to sell than anticipated or achieves a lower price."
+  category: "financing"
+
+- question: "What taxes do I pay when selling a property in France?"
+  answer: "When selling a property in France, the main tax on capital gain is the plus-value immobilière, levied on the difference between sale and purchase price after allowable deductions. Your résidence principale is fully exempt from this tax. For other properties, you benefit from progressive abatements for years of ownership, reaching full exemption after 22 years for income tax and 30 years for social charges. Non-residents selling French property face specific withholding tax rules and may require a fiscal representative."
+  category: "costs"
+
+- question: "What is the role of the notaire in a French property transaction?"
+  answer: "The notaire is a state-appointed legal officer who is mandatory in all French property sales and plays a central, neutral role representing both buyer and seller. They verify the legal status of the property, check for debts or charges, draft the compromis de vente and acte authentique, collect all taxes and fees, and register the title. In France, unlike in some countries, you do not need a separate property lawyer, though buyers may instruct their own notaire alongside the seller's at no extra cost. The notaire's fees are regulated by the government."
+  category: "legal"
+
+- question: "What is a servitude and how can it affect a property I want to buy?"
+  answer: "A servitude is a legal right attached to land that grants specific usage rights to a third party or neighbouring property, such as rights of way (droit de passage) or utility easements. Servitudes are registered in the land registry (cadastre) and transfer with the property, meaning you inherit them as the new owner. They can restrict what you build, how you access the property, or grant neighbours rights over part of your land. Your notaire is obliged to disclose all servitudes attached to the property before sale."
+  category: "legal"
+
+- question: "What is a copropriété and what additional checks should I do before buying an apartment?"
+  answer: "A copropriété is a co-ownership structure governing apartment buildings in France, managed by a syndic (managing agent) on behalf of all owners. Before buying, you are legally entitled to receive the last three years of general meeting minutes, the building's maintenance budget, and details of any planned major works. Check whether the copropriété has significant debt or outstanding works that could result in special levies (appels de fonds) shortly after purchase. Monthly charges (charges de copropriété) vary widely and must be factored into your running costs."
+  category: "buying-process"
+
+- question: "What is the fonds de travaux in a copropriété and why does it matter?"
+  answer: "The fonds de travaux is a mandatory reserve fund that all co-ownership buildings must maintain under the loi ALUR, requiring a minimum annual contribution of 5% of the building's operating budget. Its purpose is to fund future major works without requiring large emergency special levies from owners. A healthy fonds de travaux indicates good building management and reduces the risk of unexpected large costs after purchase. Always request the current balance and recent contributions before signing."
+  category: "costs"
+
+- question: "What is a Plan Local d'Urbanisme (PLU) and why should I check it before buying land?"
+  answer: "A PLU is a local urban planning document that defines land use rules, building restrictions, and development possibilities for each commune in France. Before purchasing land or a property you intend to modify or extend, you should verify the PLU to confirm what is legally permitted on that plot. Zones in a PLU are classified as constructible or non-constructible, and restrictions can affect height, footprint, facade materials, and more. Your mairie (town hall) holds the PLU and can provide a certificat d'urbanisme confirming the rules applicable to a specific plot."
+  category: "legal"
+
+- question: "What is a certificat d'urbanisme and should I request one before buying?"
+  answer: "A certificat d'urbanisme is an official document issued by the mairie that details the planning rules, taxes, and servitudes applicable to a specific property or plot of land. There are two types: an information certificate (type A) and a more detailed pre-application certificate (type B) indicating whether a project is feasible. Requesting one before signing provides important protection, especially if you plan renovations or extensions. It is not mandatory but is strongly advisable for any purchase involving land or planned works."
+  category: "buying-process"
+
+- question: "How does inheritance law in France affect property ownership?"
+  answer: "French inheritance law (droit de succession) applies to property located in France regardless of your nationality, and it includes strict reserved heir rules (réserve héréditaire) that protect children's inheritance rights. Spouses do not automatically inherit in France the same way as in some other countries, making estate planning particularly important. Non-French nationals may be able to elect their country of nationality's succession law to apply under EU Regulation 650/2012, but professional advice is essential. Holding property in an SCI can also be a planning tool but comes with its own legal implications."
+  category: "legal"
+
+- question: "What is the difference between a maison individuelle and a maison en lotissement?"
+  answer: "A maison individuelle is a standalone house built on an individual plot without specific shared development rules, while a maison en lotissement is part of a planned residential development (lotissement) with a shared framework (cahier des charges). In a lotissement, there may be rules governing fence heights, exterior colours, extensions, and common area maintenance charges. These rules can restrict personalisation of the property and should be reviewed carefully before purchase. The notaire will provide the relevant lotissement documents as part of the sale process."
+  category: "buying-process"
+
+- question: "What is the garantie décennale and how does it protect new property buyers?"
+  answer: "The garantie décennale is a mandatory 10-year construction warranty in France that obliges builders and contractors to cover structural defects that render a property uninhabitable or significantly impair its structural integrity. If you buy a newly built property (VEFA or completed), you inherit the benefit of any unexpired garantie décennale. Always verify that the builder held valid décennale insurance at the time of construction before purchasing a recently built property. Sellers must disclose the existence and expiry of this warranty."
+  category: "legal"
+
+- question: "What is a VEFA and what protections do I have when buying off-plan in France?"
+  answer: "VEFA (Vente en l'État Futur d'Achèvement) is the French off-plan purchase contract used to buy a new property before it is built or completed. Payments are made in regulated staged instalments tied to construction milestones, protecting the buyer from paying everything upfront. The developer must provide a garantie financière d'
+```yaml
+- question: "What is the droit de préemption and how can it derail my property purchase?"
+  answer: "The droit de préemption is a legal right held by certain parties — most commonly the local municipality (via the droit de préemption urbain) or a tenant in residence — to purchase a property ahead of you at the agreed sale price. After the compromis de vente is signed, the notaire must formally notify any holder of this right, who then typically has two months to decide whether to exercise it. If the municipality steps in, your purchase is cancelled and you receive your deposit back, but you lose the time and any costs incurred. Checking with the notaire whether a préemption right exists over a property before you make an offer is strongly advisable."
+  category: "legal"
+
+- question: "What is the difference between frais de notaire for a new versus an old property in France?"
+  answer: "For older properties (biens anciens), frais de notaire typically amount to 7–8% of the purchase price, because they include substantial transfer taxes (droits de mutation) payable to the state and local authorities. For new-build properties (biens neufs, including VEFA purchases), these fees drop to around 2–3%, as the transfer taxes are largely replaced by TVA (VAT) already included in the developer's price. This significant difference in acquisition cost is one reason buyers sometimes favour new-build property, even though the purchase price per square metre is usually higher. Always ask your notaire for a precise fee estimate before signing."
+  category: "costs"
+
+- question: "Can the notaire act for both buyer and seller in France, and is that a problem?"
+  answer: "Yes, in France it is entirely legal and common for a single notaire to act for both the buyer and the seller in the same transaction, as the notaire is a public officer with a duty of impartiality to both parties rather than an advocate for either side. However, the buyer has the absolute right to appoint their own notaire at no additional cost, since the notaire fees are fixed by law and simply shared between the two offices. Having your own notaire means you have a professional who can proactively explain clauses, flag risks, and ensure your interests are considered throughout. For complex purchases — such as rural land, properties with servitudes, or copropriété apartments — appointing a separate notaire is strongly recommended."
+  category: "legal"
+
+- question: "What is the PTZ (Prêt à Taux Zéro) and what conditions must I meet to qualify?"
+  answer: "The Prêt à Taux Zéro is a government-backed, interest-free loan designed to help first-time buyers (those who have not owned their primary residence in the past two years) finance a purchase without paying interest on that portion of the loan. Eligibility depends on household income relative to the zone (A, B1, B2, or C) where the property is located, the number of people in the household, and the type of property — from 2025, PTZ has been extended to cover both new-build and, under certain conditions, old properties requiring significant renovation. The PTZ cannot finance the entire purchase and must be combined with a conventional mortgage; it covers up to 50% of the purchase price in some zones. Apply through an approved lender (banque conventionnée) and ask your broker to model the PTZ alongside your main mortgage to maximise your borrowing capacity."
+  category: "financing"
+
+- question: "What is the loi Carrez measurement and what happens if the seller has declared the wrong floor area?"
+  answer: "The loi Carrez requires that any apartment or unit within a copropriété sold in France must have its private floor area (surface privative) formally measured and stated in the compromis de vente and acte authentique, excluding areas with a ceiling height below 1.80 metres, walls, and common parts. If the actual measured area is more than 5% less than the declared area, the buyer has one year from the date of the acte authentique to claim a proportional reduction in the purchase price from the seller. If no loi Carrez measurement is stated at all, the buyer can have the sale annulled within one month of signing. Always verify that the measurement was carried out by a qualified diagnostiqueur and not simply estimated by the seller or agent."
+  category: "legal"
+
+- question: "How does the DPE energy rating affect my ability to rent or sell a property in France?"
+  answer: "The Diagnostic de Performance Énergétique rates a property from A (most efficient) to G (least efficient) and has become increasingly consequential under French law. Properties rated G are already banned from being rented to new tenants as of January 2025, with F-rated properties to follow progressively by 2028, making DPE a critical factor for buy-to-let investors. When selling, the DPE must be included in the mandatory diagnostics dossier and displayed in all advertising; a poor rating will deter buyers or force a price reduction to account for future renovation costs. Buyers financing a purchase with renovation intent may be able to access eco-loans (éco-PTZ or MaPrimeRénov' grants) to upgrade the rating, which can significantly alter the financial case for buying a less efficient property."
+  category: "costs"
+
+- question: "What is an SCI and what are the main advantages and disadvantages of using one to buy property in France?"
+  answer: "A Société Civile Immobilière (SCI) is a French civil property company that allows two or more people to hold property collectively through shares rather than direct joint ownership (indivision), offering greater flexibility in how ownership is structured, transferred, and inherited. Key advantages include easier estate planning — shares can be gifted progressively to reduce inheritance tax — clearer governance between co-owners (such as couples or business partners), and the ability to choose between income tax or corporate tax for rental income under certain conditions. However, an SCI involves ongoing administrative obligations including annual accounts, potentially a formal audit, and registration costs at formation, making it disproportionate for a straightforward primary residence purchase. Non-residents and investors holding multiple French properties often find the SCI worthwhile, but you should take advice from a notaire and a French tax accountant (expert-comptable) before deciding."
+  category: "legal"
+```
 published: true
 ---
 

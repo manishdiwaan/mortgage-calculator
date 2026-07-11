@@ -48,6 +48,144 @@ faqs:
   - question: "How do interest rate changes affect my mortgage?"
     answer: "Variable rate mortgages are affected by Bank of Japan rate changes. Fixed rate borrowers are not affected until their fixed term expires."
     category: "general"
+```yaml
+- question: "What is the Flat 35 mortgage and who offers it?"
+  answer: "Flat 35 is a long-term fixed-rate mortgage product managed by the Japan Housing Finance Agency (JHF) and offered through partner private lenders. The interest rate is fixed for the entire loan term of up to 35 years, providing payment certainty. It is available to both Japanese nationals and foreigners with permanent residency, and the property must meet JHF quality standards including minimum floor area and structural requirements."
+  category: "financing"
+
+- question: "What are the eligibility requirements for a Flat 35 loan?"
+  answer: "To qualify for Flat 35, the borrower must be under 70 years old at the time of application, and the loan repayment period cannot extend beyond age 80. The property must pass a JHF technical inspection confirming it meets standards for floor area, ceiling height, insulation, and durability. Income requirements vary by lender, but annual repayment burden ratios are typically capped at 30–35% of gross income."
+  category: "financing"
+
+- question: "What is the difference between shintaishin and kyuutaishin earthquake resistance standards?"
+  answer: "Kyuutaishin refers to Japan's pre-1981 building codes, which required structures to withstand a seismic intensity of 5 on the Japanese scale without collapsing. Shintaishin, introduced in June 1981, significantly raised the standard, requiring buildings to withstand a magnitude-6-lower intensity without major damage and a magnitude-7 without collapsing. Properties built before June 1981 are presumed to be kyuutaishin unless they have undergone certified seismic retrofitting, which affects mortgage eligibility, acquisition tax exemptions, and resale value."
+  category: "general"
+
+- question: "Why does the 1981 earthquake resistance law matter when buying property in Japan?"
+  answer: "The June 1981 revision to Japan's Building Standards Act is a critical dividing line for property buyers. Homes built under the old kyuutaishin standard are statistically more likely to suffer serious damage in major earthquakes, as demonstrated in the 1995 Kobe earthquake. Lenders, including JHF Flat 35 partners, may refuse financing for kyuutaishin properties unless a seismic assessment confirms compliance with modern standards, and tax exemption thresholds on registration and acquisition taxes are stricter for older buildings."
+  category: "general"
+
+- question: "How much does seismic retrofitting cost for an older Japanese home?"
+  answer: "Seismic retrofitting (taishin hokyou kouji) for a typical wooden detached house in Japan generally costs between ¥1,000,000 and ¥2,500,000, though costs vary widely depending on the extent of work required. Many local municipalities and prefectures offer subsidies covering 50–80% of costs to encourage retrofitting of kyuutaishin-era homes. A seismic diagnostic inspection (taishin shindan) should be conducted first, costing roughly ¥50,000–¥100,000, to determine the scope of necessary work."
+  category: "costs"
+
+- question: "What is an akiya and how do I buy one in Japan?"
+  answer: "Akiya (空き家) are vacant or abandoned homes, often found in rural and suburban areas, and Japan has over 8 million of them due to demographic decline. Many local governments maintain akiya banks (akiya banku), which are online registries connecting buyers with sellers, sometimes at prices as low as ¥1. Buyers should budget for significant renovation costs, conduct thorough due diligence on title, outstanding liens, and structural condition, and use a judicial scrivener (shiho shoshi) to handle registration."
+  category: "buying-process"
+
+- question: "Are there special loans available for purchasing or renovating akiya in Japan?"
+  answer: "Yes, JHF offers renovation loan products compatible with akiya purchases, and some regional banks have specific akiya revitalization loan programs. The Flat 35 Renovation (Flat 35 Kaizen) product allows buyers to finance both the purchase and qualifying renovation work under a single fixed-rate mortgage. Local governments sometimes offer additional low-interest loans or grants, particularly for buyers who commit to relocating to depopulating rural areas."
+  category: "financing"
+
+- question: "What is the difference between a mansion and an ikkodate in Japan?"
+  answer: "In Japanese real estate, mansion (マンション) refers to a reinforced concrete or steel-framed condominium apartment, not a large luxury house. Ikkodate (一戸建て) refers to a detached single-family house, typically wood-framed. Mansions generally offer lower maintenance burdens and urban locations but come with monthly kanri-hi (management fees) and sinking fund contributions, while ikkodate offer more space and land ownership but require owners to manage all maintenance independently."
+  category: "general"
+
+- question: "What ongoing fees do mansion condominium owners pay in Japan?"
+  answer: "Mansion owners pay monthly kanri-hi (管理費), which covers building management services such as cleaning and security, typically ranging from ¥10,000 to ¥30,000 per month. They also pay a sinking fund contribution (shuuzen tsumitate-kin) that accumulates for future large-scale repairs like elevator replacement or exterior waterproofing. Additionally, owners pay property tax (kotei shisanzei) annually and may face special assessments if the sinking fund is insufficient for major repairs."
+  category: "costs"
+
+- question: "Is a hanko seal still required for mortgage transactions in Japan?"
+  answer: "Hanko (印鑑) seals, particularly the registered jitsuin seal with a certificate of seal registration (inkan shomeisho), remain common in Japanese mortgage and real estate transactions as proof of identity and consent. However, Japan has been gradually digitizing processes, and some lenders now accept digital signatures for certain documents. Buyers should obtain an inkan shomeisho from their local municipal office, as banks and notaries typically require it at the time of contract signing and loan execution."
+  category: "legal"
+
+- question: "What does a judicial scrivener (shiho shoshi) do in a Japanese property purchase?"
+  answer: "A shiho shoshi (司法書士) is a licensed legal professional authorized to prepare and submit property registration documents to the Legal Affairs Bureau (Houmu-kyoku) on behalf of buyers. They verify that the seller holds legitimate title, prepare the transfer of ownership registration, and register any new mortgage (teito-ken). Their fees typically range from ¥80,000 to ¥200,000 depending on the property value, and using one is strongly advisable as errors in registration can have serious legal consequences."
+  category: "legal"
+
+- question: "What is fudousan shutoku zei and when is it charged?"
+  answer: "Fudousan shutoku zei (不動産取得税), or real estate acquisition tax, is a one-time prefectural tax levied on the buyer when ownership of property is transferred. The standard rate is 4% of the assessed value (koteishisan hyouka-gaku), but reduced rates of 3% apply to land and residential buildings meeting certain conditions. There are additional deductions available for new homes and shintaishin-compliant homes that can significantly reduce or sometimes eliminate this tax."
+  category: "costs"
+
+- question: "How do I calculate the acquisition tax exemption for a residential property in Japan?"
+  answer: "For residential buildings, the acquisition tax base is reduced by ¥12,000,000 if the home meets shintaishin earthquake standards or has a valid seismic retrofitting certificate, effectively reducing the tax to near zero for many purchases. For land, a deduction equal to the greater of ¥45,000 or (land tax amount × ½) × (floor area of home ÷ 200 sqm × 2) is applied. Buyers should apply for these deductions at their prefectural tax office within the specified period after acquisition."
+  category: "costs"
+
+- question: "What is a kobestu chinryo floor certificate and why does it matter?"
+  answer: "A kobestu chinryo floor certificate (個別沈降証明書) is not standard terminology; you may be referring to a floor area certificate or measurement report (menseki sokuryo-sho) confirming the registered versus actual floor area of a property. Discrepancies between registered and actual floor areas are common in older Japanese buildings and can affect loan eligibility, since lenders base maximum loan amounts partly on floor area. Always request an up-to-date survey or measurement report and compare it against the registered specifications before completing a purchase."
+  category: "legal"
+
+- question: "What are Japan's urban planning zones and how do they affect property purchases?"
+  answer: "Japan's City Planning Act divides land into urbanization promotion areas (shigaika kuiki) and urbanization control areas (shigaika chousei kuiki), with the latter generally prohibiting new residential construction. Within promotion areas, land is further classified into 13 use zones (youto chiiki) such as Category 1 low-rise residential, commercial, and industrial, each with specific restrictions on building type, height, and floor-area ratio. Buyers must verify the zoning of any property through the municipal planning department, as zone classification directly affects what can be built or renovated."
+  category: "buying-process"
+
+- question: "How does urban planning zone classification affect my mortgage in Japan?"
+  answer: "Lenders assess lending risk partly based on zone classification, and properties in urbanization control areas or industrial zones may be ineligible for certain loan products including Flat 35. The zone determines permitted floor-area ratio (yousekiritsu) and building coverage ratio (kenpei-ritsu), which affect the property's future development potential and resale value. Buyers should obtain a zoning certificate (youto chiiki shomeisho) from the municipality and share it with their lender early in the process."
+  category: "financing"
+
+- question: "What is the real estate agent commission (agency fee) in Japan and is it negotiable?"
+  answer: "Real estate agent commission in Japan is legally capped at 3% of the transaction price plus ¥60,000, to which 10% consumption tax is added, so the effective maximum is approximately 3.3% of the purchase price plus ¥66,000. Both buyer and seller pay this fee to their respective agents, though in many transactions a single agent represents both parties and collects from both sides. The fee is technically negotiable, but agents rarely discount it on standard transactions, and attempting to negotiate may reduce agent motivation to support your purchase."
+  category: "costs"
+
+- question: "What is jiko buk
+```yaml
+- question: "What is key money (reikin) and do I need to pay it when buying property in Japan?"
+  answer: "Reikin, or key money, is a non-refundable gift payment traditionally made to a landlord in the rental market, typically equivalent to one to two months' rent, and has no direct equivalent in the property purchase process. However, buyers should be aware of it when evaluating investment properties, as high reikin requirements in a rental market can affect tenant demand and yield calculations. Some older commercial property transactions may still involve goodwill payments with similar characteristics, so always confirm with your agent whether any non-refundable fees are expected."
+  category: "costs"
+
+- question: "Is the 3% plus tax real estate agency fee in Japan truly fixed and are there any exceptions?"
+  answer: "Under Japan's Real Estate Brokerage Act, the maximum agency fee a licensed agent can charge on properties sold above ¥4 million is 3% of the sale price plus ¥60,000, with consumption tax applied on top, making the effective rate approximately 3.3%. This is a legal ceiling, not a mandatory floor, meaning fees are technically negotiable, though few agents will reduce them on standard transactions. For properties priced under ¥400 million, agents may also charge both buyer and seller up to the same cap, so ensure you understand which party is paying your agent in dual-agency situations."
+  category: "costs"
+
+- question: "What is a jiko bukken (stigmatised property) and how must it be disclosed in Japan?"
+  answer: "A jiko bukken is a property where a death, crime, or other psychologically distressing event has occurred, and Japanese real estate agents are legally obligated to disclose such history to prospective buyers and tenants under Ministry of Land guidelines updated in 2021. The disclosure obligation generally applies for roughly three years after the incident for rentals and on a case-by-case basis for sales, though there is no absolute statutory expiry for particularly notorious cases. Stigmatised properties are often sold at significant discounts of 10–30%, making them attractive to investors who conduct thorough due diligence and are comfortable with the history."
+  category: "buying-process"
+
+- question: "How does Japan's Akiya Bank programme work and can I use it with a mortgage?"
+  answer: "Akiya Banks are government-run or municipally operated online portals that list vacant homes available for purchase or rent, often at very low prices, to encourage rural and regional revitalisation. Many listed properties are priced below ¥5 million and some are offered free of charge, though buyers typically inherit renovation costs that can be substantial. Standard bank mortgages can be used for Akiya Bank purchases provided the property meets the lender's appraisal standards, and specialised renovation loans (reform loans) are increasingly available through regional banks and Flat 35 S schemes to fund necessary repairs."
+  category: "financing"
+
+- question: "What is the mansion management fee (kanrihi) and what does it cover?"
+  answer: "The kanrihi is a monthly fee paid by all condominium owners in a mansion to fund day-to-day building management, including cleaning of common areas, security, elevator maintenance, and management company administration fees. Amounts vary widely but typically range from ¥10,000 to ¥30,000 per month depending on building size, age, and amenities, with luxury high-rises in central Tokyo often exceeding ¥50,000. When applying for a mortgage, lenders will factor your kanrihi obligation into your monthly debt burden, so high fees in premium buildings can reduce your borrowing capacity."
+  category: "costs"
+
+- question: "What is the repair reserve fund (shuuzentsumitatekin) and why should I check it before buying a mansion?"
+  answer: "The shuuzentsumitatekin is a mandatory monthly contribution paid by mansion owners into a collective reserve fund designated for major periodic repairs such as exterior repainting, rooftop waterproofing, elevator replacement, and pipe renewal. Monthly contributions typically start at ¥5,000–¥20,000 but often increase significantly as the building ages, and special assessments called rinji shuuzenhi can be levied when the reserve is insufficient for large-scale repairs. Before purchasing a used mansion, request the chōki shuuryou keikaku (long-term repair plan) and the reserve fund balance statement to assess whether the fund is adequately funded, as underfunded reserves are a major financial risk."
+  category: "costs"
+
+- question: "What role does a judicial scrivener (shiho shoshi) play in property registration in Japan?"
+  answer: "A shiho shoshi is a licensed legal professional responsible for preparing and submitting the documents necessary to register the transfer of property ownership and mortgage liens at the Legal Affairs Bureau (Houmu Kyoku) on behalf of buyers and lenders. In Japan, unlike many Western countries, attorneys are rarely involved in standard property transactions, and the shiho shoshi effectively serves as the legal administrator ensuring the title is correctly transferred and the lender's security interest is properly recorded. Their fees typically range from ¥80,000 to ¥200,000 depending on transaction complexity, and most mortgage lenders require buyers to use a shiho shoshi approved by or acceptable to the bank."
+  category: "legal"
+
+- question: "How does the gift tax apply when property is transferred as a gift in Japan?"
+  answer: "When real estate is gifted in Japan, the recipient is subject to zouyo zei (gift tax) calculated on the assessed value of the property, typically the fixed asset tax assessed value (kotei shisan zeigaku), which is often 60–70% of market value. Gift tax rates are progressive, ranging from 10% for gifts valued under ¥2 million to 55% for amounts exceeding ¥30 million, with an annual basic exemption of only ¥1.1 million. The Souzoku Jizokuzei special provision allows parents aged 60 or over to transfer assets up to ¥25 million to children or grandchildren aged 18 or over using a deferred taxation system, which can be advantageous for property succession planning."
+  category: "legal"
+
+- question: "How does depreciation differ between wooden and reinforced concrete buildings in Japan?"
+  answer: "Japanese tax law assigns different useful lives to building structures, which directly determines the annual depreciation rate: wooden structures have a statutory useful life of 22 years while reinforced concrete (RC) mansion structures have a useful life of 47 years. For investment property owners, a wooden building delivers faster depreciation deductions, improving short-term cash flow from a tax perspective, whereas an RC building provides smaller annual deductions spread over a much longer period. Investors should note that a used property purchased beyond its statutory life can still be depreciated using a simplified calculation of 20% of the new-building useful life, which creates a popular tax minimisation strategy using older wooden buildings."
+  category: "investment"
+
+- question: "When and how is fixed asset tax (kotei shisan zei) paid on property in Japan?"
+  answer: "Fixed asset tax is levied annually by the municipal government on owners of land and buildings as of January 1st each year, at a standard rate of 1.4% of the fixed asset tax assessed value, which is reassessed every three years. Payment is typically made in four quarterly installments between April and February, and local governments send payment notices to registered owners each spring. Residential land up to 200 square meters receives a special reduction to one-sixth of the assessed value for fixed asset tax purposes, and buildings that meet long-term excellent housing (nintei choujyuu jutaku) standards may qualify for additional reductions during initial years."
+  category: "costs"
+
+- question: "What is the city planning tax (toshi keikakuzei) and who must pay it?"
+  answer: "Toshi keikakuzei is an annual tax levied in addition to the fixed asset tax on properties located within urbanisation promotion areas (shigaika kuiki), at a maximum rate of 0.3% of the fixed asset tax assessed value. Not all municipalities charge the full 0.3%, and properties in urbanisation control areas or rural zones are generally exempt from this tax entirely. When budgeting for property ownership costs, buyers in central city areas should plan for a combined fixed asset tax and city planning tax burden of approximately 1.7% of assessed value annually, though actual cash costs are lower since assessed values are typically well below market prices."
+  category: "costs"
+
+- question: "How does the home loan tax deduction (jutaku loan genzei) work and how much can I save?"
+  answer: "The jutaku loan genzei is a tax credit that allows homebuyers with an outstanding mortgage balance to deduct 0.7% of the year-end loan balance directly from their income tax liability for up to 13 years for new homes meeting energy efficiency standards. For a ¥40 million mortgage, the maximum annual deduction is ¥280,000, which can eliminate income tax liability entirely for many buyers, with any excess credit applied against inhabitant tax up to a cap. Eligibility requires the property to be your primary residence, the floor area to be at least 50 square meters (40 square meters for certain new constructions), and the mortgage term to be at least 10 years."
+  category: "financing"
+
+- question: "What disaster insurance should I consider when purchasing property in Japan and what does fire insurance cover?"
+  answer: "Fire insurance (kasai hoken) is required by virtually all Japanese mortgage lenders as a condition of loan approval and covers damage from fire, lightning, wind, flood, and certain other natural perils but does not cover earthquake, volcanic eruption, or tsunami damage as standard. Earthquake insurance (jishin hoken) is a separate, government-backed product sold only as a rider to fire insurance, covering loss from earthquakes, eruption, and tsunami at up to 50% of the fire insurance sum insured for buildings and contents. Given Japan's seismic risk, financial advisors strongly recommend purchasing both products together, and premium subsidies or discounts are available for homes built to new earthquake resistance standards or that have received seismic retrofitting certification."
+  category: "costs"
+
+- question: "Are there government incentives for installing solar panels on a home in Japan?"
+  answer: "Japan offers several national and municipal incentive programmes for residential solar installations, including subsidies through the Environment Ministry's ZEH (Zero Energy House) support programme, which provides grants of ¥550,000 or more for homes achieving net-zero energy performance that include solar panels. The feed-in tariff (FIT) system allows homeowners to sell surplus electricity to utilities at fixed rates, currently around ¥16–¥17 per kWh for 10-year contracts on systems up to 10kW, providing a revenue stream that can partially offset mortgage costs. Additionally, some lenders including Japan Housing Finance Agency under Flat 35 S offer prefer
+```yaml
+- question: "What warranty protection do I get when buying a newly built home in Japan?"
+  answer: "Under Japan's Housing Quality Assurance Act (Jutaku no Hinshitsu Kakuho no Sokushin nado ni kansuru Horitsu), newly constructed homes must carry a mandatory 10-year structural defect warranty covering foundations and load-bearing elements, which the builder or developer is legally obligated to provide. For condominiums sold by developers, a separate 10-year warranty on common structural areas is also required by law. Beyond the mandatory coverage, many reputable builders offer extended warranties of 20 to 60 years on premium homes if regular paid inspections are completed. Always confirm the warranty transferability if you intend to resell, as some builder warranties are voided upon change of ownership."
+  category: "buying-process"
+
+- question: "What are the inheritance tax implications when inheriting property in Japan?"
+  answer: "Inherited property in Japan is subject to inheritance tax (souzokuzei) calculated on the property's assessed value (rosenka for land, fixed asset tax valuation for buildings), which is typically 60–80% of market value, offering some tax efficiency compared to inheriting cash. Japan's inheritance tax rates are progressive, ranging from 10% to 55% depending on the total inherited estate value after deducting the basic exemption of 30 million yen plus 6 million yen per legal heir. Foreign nationals are also subject to Japanese inheritance tax if they inherit Japanese real estate, regardless of where the heir resides. Consulting a Japanese tax accountant (zeirishi) before inheritance occurs is strongly advised, as there are legal structures such as small-scale residential land deductions (shougakujutaku tochi no tokurei) that can reduce the taxable land value by up to 80%."
+  category: "costs"
+
+- question: "What financing challenges do foreign buyers face when applying for a mortgage in Japan?"
+  answer: "Foreign nationals without permanent residency face significant hurdles when applying for a Japanese mortgage, as most major city banks and regional banks either decline non-permanent residents outright or impose stricter conditions such as higher down payments of 30–50% and shorter loan terms. Some lenders, including certain international banks operating in Japan and a handful of domestic institutions like SMBC and SBI, will lend to foreigners on work visas, but typically require at least one to three years of continuous Japanese employment history and a strong credit profile. Permanent residents are generally treated comparably to Japanese nationals and have access to a broader range of products including Flat 35. Engaging a bilingual mortgage broker with experience in foreign-buyer applications is highly recommended, as they can identify the small number of lenders willing to work with non-residents and navigate documentation requirements."
+  category: "financing"
+```
 published: true
 ---
 
