@@ -4,15 +4,16 @@
 - [x] Google Search Console — submit sitemap, verify indexing, monitor coverage
 
 ## P1 — Soon
-- [ ] Multi-language support for 12 non-English countries
+- [x] Content enrichment (FAQ equalisation — all 29 countries at 50 FAQs)
+- [x] Mobile responsive final tweaks
 - [ ] Airtable + n8n pipeline activation
-- [ ] Content enrichment (Australia has 50 FAQs, others have 15-20 — equalise)
-- [ ] Mobile responsive final tweaks
+- [ ] Multi-language support for non-English countries
 
 ## P2 — Track
 - [ ] Content refresh automation (flag pages older than 6 months)
 - [ ] Competitor benchmarking
 - [ ] KPI dashboard (organic traffic, rankings, CTR, backlinks)
+- [ ] GSC — submit updated sitemap after 29-country expansion (~420+ URLs)
 
 ## P3 — Future
 - [ ] Affiliate links on lender names
