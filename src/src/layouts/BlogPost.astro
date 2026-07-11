@@ -36,10 +36,10 @@ const schemas = [
 ---
 
 <BaseLayout title={metaTitle} description={metaDescription} canonical={canonical} schemas={schemas}>
-  <article class="max-w-page mx-auto px-6 py-8">
+  <article class="max-w-page mx-auto px-4 sm:px-6 py-8">
     <Breadcrumbs items={crumbs} />
     <header class="mb-8 max-w-content">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 leading-tight">{title}</h1>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-3 leading-tight">{title}</h1>
       <p class="text-sm text-slate-400">
         Published {publishDate} · Updated {lastUpdated} · {country.flag} {country.name}
       </p>

@@ -74,7 +74,7 @@ const schemas = [organizationSchema(), websiteSchema(), softwareApplicationSchem
       <div class="text-center mt-10">
         <a
           href="/calculator/"
-          class="inline-flex items-center gap-3 bg-white text-primary font-bold px-8 py-4 rounded-xl text-lg hover:bg-blue-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+          class="inline-flex items-center gap-3 bg-white text-primary font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-xl text-base sm:text-lg hover:bg-blue-50 hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
         >
           <span class="material-symbols-outlined text-2xl">calculate</span>
           Open Calculator
@@ -98,14 +98,14 @@ const schemas = [organizationSchema(), websiteSchema(), softwareApplicationSchem
       {PILOT_COUNTRIES.map((country) => (
         <a
           href={`/${country.code}/`}
-          class="group relative flex flex-col items-center gap-3 bg-white border border-slate-200 rounded-2xl p-6 md:p-10 hover:border-primary hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
+          class="group relative flex flex-col items-center gap-3 bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 md:p-10 hover:border-primary hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
         >
           <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <span class="relative text-5xl md:text-7xl group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">
+          <span class="relative text-4xl sm:text-5xl md:text-7xl group-hover:scale-110 transition-transform duration-300 drop-shadow-sm">
             {country.flag}
           </span>
           <div class="relative text-center">
-            <h3 class="text-sm md:text-lg font-bold text-slate-800 group-hover:text-primary transition-colors duration-300">
+            <h3 class="text-xs sm:text-sm md:text-lg font-bold text-slate-800 group-hover:text-primary transition-colors duration-300">
               {country.name}
             </h3>
             <p class="text-xs text-slate-400 mt-0.5">{country.currency}</p>
@@ -126,7 +126,7 @@ const schemas = [organizationSchema(), websiteSchema(), softwareApplicationSchem
       <h2 class="text-2xl font-bold text-center text-slate-900 mb-10">
         What's inside each country hub
       </h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto">
         <div class="text-center">
           <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
             <span class="material-symbols-outlined text-xl text-primary">menu_book</span>

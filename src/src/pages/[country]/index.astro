@@ -34,19 +34,19 @@ const allBlogs = await getCollection('blogs', (entry) =>
   canonical={canonical}
   schemas={[breadcrumbSchema(crumbs)]}
 >
-  <div class="max-w-page mx-auto px-6 py-8">
+  <div class="max-w-page mx-auto px-4 sm:px-6 py-8">
     <Breadcrumbs items={crumbs} />
 
     <!-- Country Header -->
-    <div class="flex items-center gap-5 mb-8">
-      <span class="text-6xl">{country.flag}</span>
+    <div class="flex items-center gap-3 sm:gap-5 mb-8">
+      <span class="text-4xl sm:text-6xl">{country.flag}</span>
       <div>
-        <h1 class="text-3xl md:text-4xl font-bold text-slate-900">{country.name}</h1>
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900">{country.name}</h1>
         <p class="text-slate-500 mt-1">{country.centralBank} · {country.currency}</p>
       </div>
     </div>
 
-    <p class="text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
+    <p class="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed mb-10">
       Everything you need to buy property and get a mortgage in {country.name}.
       Step-by-step guides, FAQs, lender comparisons, and a free calculator.
     </p>

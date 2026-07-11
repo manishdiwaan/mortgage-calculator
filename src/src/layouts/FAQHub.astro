@@ -36,9 +36,9 @@ const grouped = categories.map((cat) => ({
   canonical={canonical}
   schemas={[breadcrumbSchema(crumbs), faqSchema(faqs)]}
 >
-  <div class="max-w-page mx-auto px-6 py-8">
+  <div class="max-w-page mx-auto px-4 sm:px-6 py-8">
     <Breadcrumbs items={crumbs} />
-    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-2">
       {country.flag} {country.name} Mortgage & Property FAQs
     </h1>
     <p class="text-slate-500 mb-8">{faqs.length} answers to common questions</p>
@@ -58,11 +58,11 @@ const grouped = categories.map((cat) => ({
           </h2>
           {group.items.map((faq) => (
             <details class="mb-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden group">
-              <summary class="px-4 py-3 font-medium text-sm text-slate-800 dark:text-slate-200 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center justify-between">
+              <summary class="px-4 py-3 sm:py-4 font-medium text-sm text-slate-800 dark:text-slate-200 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center justify-between">
                 {faq.question}
                 <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform text-base shrink-0 ml-2">expand_more</span>
               </summary>
-              <div class="px-4 pb-3">
+              <div class="px-4 pb-4">
                 <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.answer}</p>
               </div>
             </details>
