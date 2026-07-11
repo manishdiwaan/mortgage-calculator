@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -57,6 +58,7 @@ const ogImg = ogImage || 'https://urmortgage.online/images/og-default.png';
         <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1263369613506494" data-ad-slot="pre-footer" data-ad-format="auto" data-full-width-responsive="true"></ins>
       </div>
     </div>
+    <CookieBanner />
     <Footer />
     <script is:inline>
       if (localStorage.getItem('theme') === 'dark' ||

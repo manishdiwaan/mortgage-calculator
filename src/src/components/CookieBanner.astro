@@ -1,0 +1,54 @@
+---
+// Cookie consent banner — required for AdSense + Australian APPs compliance
+---
+<div
+  id="cookie-banner"
+  class="fixed bottom-0 left-0 right-0 z-50 bg-slate-900 text-white px-4 py-4 sm:px-6 hidden"
+  role="dialog"
+  aria-label="Cookie consent"
+>
+  <div class="max-w-page mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+    <p class="text-sm text-slate-300 max-w-2xl">
+      We use cookies for analytics and personalised ads via Google AdSense. By continuing to use this site you agree to our
+      <a href="/privacy/" class="underline text-blue-300 hover:text-white">Privacy Policy</a>.
+    </p>
+    <div class="flex gap-2 shrink-0">
+      <button
+        id="cookie-decline"
+        class="px-4 py-2 text-sm border border-slate-600 rounded-lg hover:bg-slate-700 transition-colors"
+      >
+        Decline
+      </button>
+      <button
+        id="cookie-accept"
+        class="px-4 py-2 text-sm bg-primary rounded-lg hover:bg-blue-700 transition-colors font-medium"
+      >
+        Accept
+      </button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+(function() {
+  var banner = document.getElementById('cookie-banner');
+  var consent = null;
+  try { consent = localStorage.getItem('cookie-consent'); } catch(e) {}
+
+  if (!consent) {
+    banner.classList.remove('hidden');
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', function() {
+    try { localStorage.setItem('cookie-consent', 'accepted'); } catch(e) {}
+    banner.classList.add('hidden');
+  });
+
+  document.getElementById('cookie-decline').addEventListener('click', function() {
+    try { localStorage.setItem('cookie-consent', 'declined'); } catch(e) {}
+    banner.classList.add('hidden');
+    // Disable AdSense if declined
+    try { window['ga-disable-G-XXXXXXX'] = true; } catch(e) {}
+  });
+})();
+</script>

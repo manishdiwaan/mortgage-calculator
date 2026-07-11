@@ -17,23 +17,31 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
   country: entry.data.country,
   count: entry.data.faqs.length,
 }));
+
+// Turnstile site key — set via environment or placeholder (replaced at build)
+const TURNSTILE_SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY || '';
 ---
 
 <BaseLayout
   title="Ask URMortgage — Mortgage & Property Q&A"
-  description="Get instant answers to your mortgage and property questions across 6 countries. AI-powered chat backed by expert guides."
+  description="Get instant answers to your mortgage and property questions across 23 countries. AI-powered chat backed by expert guides."
   canonical={canonical}
   schemas={[breadcrumbSchema(crumbs)]}
 >
-  <div class="max-w-page mx-auto px-6 py-8">
+  <!-- Turnstile script (only loaded if site key is configured) -->
+  {TURNSTILE_SITE_KEY && (
+    <script slot="head" src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  )}
+
+  <div class="max-w-page mx-auto px-4 sm:px-6 py-8">
     <Breadcrumbs items={crumbs} />
 
     <div class="text-center mb-8">
-      <h1 class="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-900 mb-2">
         <span class="text-primary">Ask</span> URMortgage
       </h1>
-      <p class="text-slate-500 max-w-lg mx-auto">
-        AI-powered answers about mortgages and property across 6 countries. Ask anything.
+      <p class="text-slate-500 max-w-lg mx-auto text-sm sm:text-base">
+        AI-powered answers about mortgages and property across 23 countries. Ask anything.
       </p>
     </div>
 
@@ -47,7 +55,7 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
             </div>
             <div class="bg-surface rounded-2xl rounded-tl-md px-4 py-2.5 max-w-[85%]">
               <p class="text-sm text-slate-700">
-                Hi! I can answer questions about mortgages, deposits, taxes, and buying property in Australia, India, US, UK, UAE, and Singapore. What would you like to know?
+                Hi! I can answer questions about mortgages, deposits, taxes, and buying property across 23 countries. What would you like to know?
               </p>
             </div>
           </div>
@@ -57,6 +65,7 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
             id="chat-input"
             type="text"
             placeholder="e.g., What's the max LTV for expats in UAE?"
+            maxlength="500"
             class="flex-1 px-4 py-2.5 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
           />
           <button
@@ -67,6 +76,16 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
           </button>
         </div>
       </div>
+      <!-- Turnstile widget (invisible) -->
+      {TURNSTILE_SITE_KEY && (
+        <div
+          id="turnstile-widget"
+          class="cf-turnstile"
+          data-sitekey={TURNSTILE_SITE_KEY}
+          data-theme="light"
+          data-size="invisible"
+        ></div>
+      )}
       <p class="text-[11px] text-slate-400 text-center mt-2">AI-powered. Based on URMortgage guides only. Not financial advice.</p>
     </div>
 
@@ -80,12 +99,12 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
         return (
           <a
             href={`/${country.code}/faqs/`}
-            class="group relative flex flex-col items-center gap-3 bg-white border border-slate-200 rounded-2xl p-6 hover:border-primary hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
+            class="group relative flex flex-col items-center gap-3 bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 hover:border-primary hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
           >
             <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/5 to-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <span class="relative text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">{country.flag}</span>
             <div class="relative text-center">
-              <h3 class="text-sm font-bold text-slate-800 group-hover:text-primary transition-colors">{country.name}</h3>
+              <h3 class="text-xs sm:text-sm font-bold text-slate-800 group-hover:text-primary transition-colors">{country.name}</h3>
               <p class="text-xs text-slate-400 mt-0.5">{entry?.count || 0} FAQs</p>
             </div>
           </a>
@@ -99,6 +118,8 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
     var msgs = document.getElementById('chat-messages');
     var input = document.getElementById('chat-input');
     var btn = document.getElementById('chat-send');
+    var turnstileWidget = document.querySelector('.cf-turnstile');
+    var hasTurnstile = !!turnstileWidget;
 
     function addMsg(html, isUser) {
       var w = document.createElement('div');
@@ -128,9 +149,31 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
       if (t) t.remove();
     }
 
+    function getTurnstileToken() {
+      return new Promise(function(resolve) {
+        if (!hasTurnstile || typeof turnstile === 'undefined') {
+          resolve(null);
+          return;
+        }
+        try {
+          turnstile.execute('.cf-turnstile', {
+            callback: function(token) { resolve(token); },
+            'error-callback': function() { resolve(null); }
+          });
+        } catch(e) {
+          resolve(null);
+        }
+      });
+    }
+
     async function send() {
       var q = input.value.trim();
-      if (!q) return;
+      if (!q || q.length < 3) return;
+      if (q.length > 500) {
+        addMsg('Your question is too long. Please keep it under 500 characters.', false);
+        return;
+      }
+
       addMsg(q, true);
       input.value = '';
       btn.disabled = true;
@@ -138,20 +181,28 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
       showTyping();
 
       try {
+        // Get Turnstile token if available
+        var turnstileToken = await getTurnstileToken();
+
+        var payload = { question: q };
+        if (turnstileToken) payload.turnstileToken = turnstileToken;
+
         var res = await fetch('/api/chat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ question: q }),
+          body: JSON.stringify(payload),
         });
         var data = await res.json();
         removeTyping();
-        
-        if (data.error) {
+
+        if (res.status === 429) {
+          addMsg("You're sending too many questions. Please wait a moment before asking again.", false);
+        } else if (res.status === 403) {
+          addMsg("Bot verification failed. Please refresh the page and try again.", false);
+        } else if (data.error) {
           addMsg("Sorry, I'm having trouble right now. Try browsing our <a href='/' class='text-primary underline'>country guides</a> instead.", false);
         } else {
-          // Convert markdown-style links and line breaks
-          var answer = escHtml(data.answer)
-            .replace(/\n/g, '<br>');
+          var answer = escHtml(data.answer).replace(/\n/g, '<br>');
           addMsg(answer, false);
         }
       } catch (err) {
@@ -162,6 +213,11 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
       btn.disabled = false;
       input.disabled = false;
       input.focus();
+
+      // Reset Turnstile for next request
+      if (hasTurnstile && typeof turnstile !== 'undefined') {
+        try { turnstile.reset('.cf-turnstile'); } catch(e) {}
+      }
     }
 
     btn.addEventListener('click', send);
