@@ -36,3 +36,15 @@
 - [ ] P1 — Mobile responsive final tweaks
 - [ ] P1 — Airtable + n8n pipeline activation
 - [ ] P1 — Multi-language support (12 non-English countries)
+
+### ✅ P1 — Mobile Responsive Tweaks — COMPLETE
+- [x] Breadcrumbs — truncate long titles, smaller text on xs screens
+- [x] TOC — collapsible on mobile via details/summary
+- [x] CTABanner — responsive padding and text sizes
+- [x] BlogPost — px-4 sm:px-6, smaller h1 on mobile
+- [x] PillarGuide — px-4 sm:px-6, smaller h1, larger FAQ touch targets
+- [x] FAQHub — px-4 sm:px-6, smaller h1, larger accordion touch targets
+- [x] CountryHub — px-4 sm:px-6
+- [x] Country hub page — smaller flag, gap, h1, body text on mobile
+- [x] Homepage — smaller country card padding, emoji, CTA button, features gap
+- [x] BaseLayout pre-footer ad — px-4 sm:px-6
