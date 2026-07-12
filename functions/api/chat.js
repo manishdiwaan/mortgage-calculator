@@ -45,7 +45,7 @@ function sanitise(str) {
 }
 
 async function verifyTurnstile(token, ip, secretKey) {
-  if (!secretKey) return true; // skip if not configured yet
+  if (!secretKey) return false; // fail CLOSED — reject if secret is missing
   const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -127,21 +127,28 @@ export async function onRequestPost(context) {
     });
   }
 
-  // Verify Turnstile token if secret is configured
-  if (TURNSTILE_SECRET) {
-    if (!turnstileToken || typeof turnstileToken !== 'string') {
-      return new Response(JSON.stringify({ error: 'Bot verification required.' }), {
-        status: 403,
-        headers: { 'Content-Type': 'application/json', ...corsHeaders },
-      });
-    }
-    const valid = await verifyTurnstile(turnstileToken, ip, TURNSTILE_SECRET);
-    if (!valid) {
-      return new Response(JSON.stringify({ error: 'Bot verification failed. Please refresh and try again.' }), {
-        status: 403,
-        headers: { 'Content-Type': 'application/json', ...corsHeaders },
-      });
-    }
+  // Verify Turnstile token — FAIL CLOSED: reject if secret is missing or token is invalid
+  if (!TURNSTILE_SECRET) {
+    console.error('FATAL: TURNSTILE_SECRET_KEY environment variable is not set');
+    return new Response(JSON.stringify({ error: 'Service unavailable.' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+    });
+  }
+
+  if (!turnstileToken || typeof turnstileToken !== 'string') {
+    return new Response(JSON.stringify({ error: 'Bot verification required.' }), {
+      status: 403,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+    });
+  }
+
+  const valid = await verifyTurnstile(turnstileToken, ip, TURNSTILE_SECRET);
+  if (!valid) {
+    return new Response(JSON.stringify({ error: 'Bot verification failed. Please refresh and try again.' }), {
+      status: 403,
+      headers: { 'Content-Type': 'application/json', ...corsHeaders },
+    });
   }
 
     const systemPrompt = `You are the URMortgage assistant — a helpful mortgage and property Q&A bot for urmortgage.online.
