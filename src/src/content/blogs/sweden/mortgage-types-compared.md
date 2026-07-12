@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared in Sweden 2026"
 country: "sweden"
 slug: "mortgage-types-compared"
-category: "financing"
+category: "loan-types"
 metaTitle: "Mortgage Types Compared in Sweden 2026 | URMortgage"
 metaDescription: "Complete guide to mortgage types compared in Sweden. Expert advice for property buyers and investors."
 primaryKeyword: "mortgage types compared Sweden"

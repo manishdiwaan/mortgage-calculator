@@ -155,5 +155,4 @@ faqs:
     category: "general"
 published: true
 ---
-
 Find answers to the most common questions about mortgages, property buying, costs, and investment in Australia. If you cannot find what you are looking for, explore our complete [property buying guide](/australia/property-buying-guide/) or [mortgage guide](/australia/mortgage-guide/). Use our [mortgage calculator](/calculator/?country=au) to run the numbers for your situation.

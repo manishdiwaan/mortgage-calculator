@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis in Norway 2026"
 country: "norway"
 slug: "rent-vs-buy-analysis"
-category: "general"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis in Norway 2026 | URMortgage"
 metaDescription: "Complete guide to rent vs buy analysis in Norway. Expert advice for property buyers and investors."
 primaryKeyword: "rent vs buy analysis Norway"

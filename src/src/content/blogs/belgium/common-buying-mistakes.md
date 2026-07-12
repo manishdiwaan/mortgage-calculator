@@ -2,7 +2,7 @@
 title: "Common Property Buying Mistakes to Avoid in Belgium 2026"
 country: "belgium"
 slug: "common-buying-mistakes"
-category: "buying-process"
+category: "mistakes"
 metaTitle: "Common Property Buying Mistakes to Avoid in Belgium 2026 | URMortgage"
 metaDescription: "Complete guide to common property buying mistakes to avoid in Belgium. Expert advice for property buyers and investors."
 primaryKeyword: "common property buying mistakes to avoid Belgium"

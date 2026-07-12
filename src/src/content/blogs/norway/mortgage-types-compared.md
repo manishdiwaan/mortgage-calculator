@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared in Norway 2026"
 country: "norway"
 slug: "mortgage-types-compared"
-category: "financing"
+category: "loan-types"
 metaTitle: "Mortgage Types Compared in Norway 2026 | URMortgage"
 metaDescription: "Complete guide to mortgage types compared in Norway. Expert advice for property buyers and investors."
 primaryKeyword: "mortgage types compared Norway"

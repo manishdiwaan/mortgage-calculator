@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist in Belgium 2026"
 country: "belgium"
 slug: "property-inspection-checklist"
-category: "buying-process"
+category: "inspections"
 metaTitle: "Property Inspection Checklist in Belgium 2026 | URMortgage"
 metaDescription: "Complete guide to property inspection checklist in Belgium. Expert advice for property buyers and investors."
 primaryKeyword: "property inspection checklist Belgium"

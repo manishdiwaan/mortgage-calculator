@@ -155,5 +155,4 @@ faqs:
     category: "general"
 published: true
 ---
-
 Find answers to 50 common questions about mortgages and property buying in the UAE. Explore our [property buying guide](/uae/property-buying-guide/) or [mortgage guide](/uae/mortgage-guide/) for detailed information. Use our [mortgage calculator](/calculator/?country=ae) to run the numbers.

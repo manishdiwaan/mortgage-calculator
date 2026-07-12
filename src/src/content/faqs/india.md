@@ -155,5 +155,4 @@ faqs:
     category: "legal"
 published: true
 ---
-
 Find answers to 50 common questions about mortgages, home loans, property buying, costs, and investment in India. Explore our [property buying guide](/india/property-buying-guide/) or [mortgage guide](/india/mortgage-guide/) for detailed information. Use our [mortgage calculator](/calculator/?country=in) to run the numbers.

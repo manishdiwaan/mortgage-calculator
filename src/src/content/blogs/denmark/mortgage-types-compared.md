@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared in Denmark 2026"
 country: "denmark"
 slug: "mortgage-types-compared"
-category: "financing"
+category: "loan-types"
 metaTitle: "Mortgage Types Compared in Denmark 2026 | URMortgage"
 metaDescription: "Complete guide to mortgage types compared in Denmark. Expert advice for property buyers and investors."
 primaryKeyword: "mortgage types compared Denmark"

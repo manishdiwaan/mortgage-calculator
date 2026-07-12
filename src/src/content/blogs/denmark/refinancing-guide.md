@@ -2,7 +2,7 @@
 title: "Refinancing Guide in Denmark 2026"
 country: "denmark"
 slug: "refinancing-guide"
-category: "financing"
+category: "refinancing"
 metaTitle: "Refinancing Guide in Denmark 2026 | URMortgage"
 metaDescription: "Complete guide to refinancing guide in Denmark. Expert advice for property buyers and investors."
 primaryKeyword: "refinancing guide Denmark"

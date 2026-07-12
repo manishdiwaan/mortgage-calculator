@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist in Portugal 2026"
 country: "portugal"
 slug: "property-inspection-checklist"
-category: "buying-process"
+category: "inspections"
 metaTitle: "Property Inspection Checklist in Portugal 2026 | URMortgage"
 metaDescription: "Complete guide to property inspection checklist in Portugal. Expert advice for property buyers and investors."
 primaryKeyword: "property inspection checklist Portugal"

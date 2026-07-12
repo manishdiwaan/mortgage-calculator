@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared in Belgium 2026"
 country: "belgium"
 slug: "mortgage-types-compared"
-category: "financing"
+category: "loan-types"
 metaTitle: "Mortgage Types Compared in Belgium 2026 | URMortgage"
 metaDescription: "Complete guide to mortgage types compared in Belgium. Expert advice for property buyers and investors."
 primaryKeyword: "mortgage types compared Belgium"

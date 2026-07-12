@@ -2,7 +2,7 @@
 title: "Refinancing Guide in Portugal 2026"
 country: "portugal"
 slug: "refinancing-guide"
-category: "financing"
+category: "refinancing"
 metaTitle: "Refinancing Guide in Portugal 2026 | URMortgage"
 metaDescription: "Complete guide to refinancing guide in Portugal. Expert advice for property buyers and investors."
 primaryKeyword: "refinancing guide Portugal"

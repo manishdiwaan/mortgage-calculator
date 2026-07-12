@@ -2,7 +2,7 @@
 title: "Refinancing Guide in Norway 2026"
 country: "norway"
 slug: "refinancing-guide"
-category: "financing"
+category: "refinancing"
 metaTitle: "Refinancing Guide in Norway 2026 | URMortgage"
 metaDescription: "Complete guide to refinancing guide in Norway. Expert advice for property buyers and investors."
 primaryKeyword: "refinancing guide Norway"

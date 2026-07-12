@@ -2,7 +2,7 @@
 title: "Refinancing Guide in Switzerland 2026"
 country: "switzerland"
 slug: "refinancing-guide"
-category: "financing"
+category: "refinancing"
 metaTitle: "Refinancing Guide in Switzerland 2026 | URMortgage"
 metaDescription: "Complete guide to refinancing guide in Switzerland. Expert advice for property buyers and investors."
 primaryKeyword: "refinancing guide Switzerland"

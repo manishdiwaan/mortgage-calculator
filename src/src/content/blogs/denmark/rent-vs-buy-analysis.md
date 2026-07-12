@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis in Denmark 2026"
 country: "denmark"
 slug: "rent-vs-buy-analysis"
-category: "general"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis in Denmark 2026 | URMortgage"
 metaDescription: "Complete guide to rent vs buy analysis in Denmark. Expert advice for property buyers and investors."
 primaryKeyword: "rent vs buy analysis Denmark"

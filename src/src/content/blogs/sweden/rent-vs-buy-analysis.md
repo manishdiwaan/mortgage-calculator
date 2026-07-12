@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis in Sweden 2026"
 country: "sweden"
 slug: "rent-vs-buy-analysis"
-category: "general"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis in Sweden 2026 | URMortgage"
 metaDescription: "Complete guide to rent vs buy analysis in Sweden. Expert advice for property buyers and investors."
 primaryKeyword: "rent vs buy analysis Sweden"

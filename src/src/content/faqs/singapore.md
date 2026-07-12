@@ -155,5 +155,4 @@ faqs:
     category: "costs"
 published: true
 ---
-
 Find answers to 50 common questions about mortgages and property buying in Singapore. Explore our [property buying guide](/singapore/property-buying-guide/) or [mortgage guide](/singapore/mortgage-guide/) for detailed information. Use our [mortgage calculator](/calculator/?country=sg) to run the numbers.

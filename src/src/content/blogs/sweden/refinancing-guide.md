@@ -2,7 +2,7 @@
 title: "Refinancing Guide in Sweden 2026"
 country: "sweden"
 slug: "refinancing-guide"
-category: "financing"
+category: "refinancing"
 metaTitle: "Refinancing Guide in Sweden 2026 | URMortgage"
 metaDescription: "Complete guide to refinancing guide in Sweden. Expert advice for property buyers and investors."
 primaryKeyword: "refinancing guide Sweden"

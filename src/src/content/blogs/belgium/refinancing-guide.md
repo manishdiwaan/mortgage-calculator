@@ -2,7 +2,7 @@
 title: "Refinancing Guide in Belgium 2026"
 country: "belgium"
 slug: "refinancing-guide"
-category: "financing"
+category: "refinancing"
 metaTitle: "Refinancing Guide in Belgium 2026 | URMortgage"
 metaDescription: "Complete guide to refinancing guide in Belgium. Expert advice for property buyers and investors."
 primaryKeyword: "refinancing guide Belgium"

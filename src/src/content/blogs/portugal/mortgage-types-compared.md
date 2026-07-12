@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared in Portugal 2026"
 country: "portugal"
 slug: "mortgage-types-compared"
-category: "financing"
+category: "loan-types"
 metaTitle: "Mortgage Types Compared in Portugal 2026 | URMortgage"
 metaDescription: "Complete guide to mortgage types compared in Portugal. Expert advice for property buyers and investors."
 primaryKeyword: "mortgage types compared Portugal"

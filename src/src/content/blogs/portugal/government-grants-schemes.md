@@ -2,7 +2,7 @@
 title: "Government Grants and Schemes for Home Buyers in Portugal 2026"
 country: "portugal"
 slug: "government-grants-schemes"
-category: "financing"
+category: "grants"
 metaTitle: "Government Grants and Schemes for Home Buyers in Portugal 2026 | URMortgage"
 metaDescription: "Complete guide to government grants and schemes for home buyers in Portugal. Expert advice for property buyers and investors."
 primaryKeyword: "government grants and schemes for home buyers Portugal"

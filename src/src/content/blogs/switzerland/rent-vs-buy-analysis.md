@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis in Switzerland 2026"
 country: "switzerland"
 slug: "rent-vs-buy-analysis"
-category: "general"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis in Switzerland 2026 | URMortgage"
 metaDescription: "Complete guide to rent vs buy analysis in Switzerland. Expert advice for property buyers and investors."
 primaryKeyword: "rent vs buy analysis Switzerland"

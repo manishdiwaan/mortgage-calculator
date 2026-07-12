@@ -2,7 +2,7 @@
 title: "Government Grants and Schemes for Home Buyers in Denmark 2026"
 country: "denmark"
 slug: "government-grants-schemes"
-category: "financing"
+category: "grants"
 metaTitle: "Government Grants and Schemes for Home Buyers in Denmark 2026 | URMortgage"
 metaDescription: "Complete guide to government grants and schemes for home buyers in Denmark. Expert advice for property buyers and investors."
 primaryKeyword: "government grants and schemes for home buyers Denmark"

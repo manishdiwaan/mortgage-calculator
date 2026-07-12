@@ -155,5 +155,4 @@ faqs:
     category: "financing"
 published: true
 ---
-
 Find answers to 50 common questions about mortgages and property buying in the United Kingdom. Explore our [property buying guide](/united-kingdom/property-buying-guide/) or [mortgage guide](/united-kingdom/mortgage-guide/) for detailed information. Use our [mortgage calculator](/calculator/?country=gb) to run the numbers.

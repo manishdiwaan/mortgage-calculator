@@ -155,5 +155,4 @@ faqs:
     category: "financing"
 published: true
 ---
-
 Find answers to 50 common questions about mortgages and property buying in the United States. Explore our [property buying guide](/united-states/property-buying-guide/) or [mortgage guide](/united-states/mortgage-guide/) for detailed information. Use our [mortgage calculator](/calculator/?country=us) to run the numbers.

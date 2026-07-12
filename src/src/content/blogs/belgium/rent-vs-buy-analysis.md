@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis in Belgium 2026"
 country: "belgium"
 slug: "rent-vs-buy-analysis"
-category: "general"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis in Belgium 2026 | URMortgage"
 metaDescription: "Complete guide to rent vs buy analysis in Belgium. Expert advice for property buyers and investors."
 primaryKeyword: "rent vs buy analysis Belgium"
