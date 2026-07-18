@@ -20,6 +20,7 @@ const knowledgeBase = allFaqEntries.map((entry) => ({
 
 // Turnstile site key — set via environment or placeholder (replaced at build)
 const TURNSTILE_SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY || '';
+import Icon from '../components/Icon.astro';
 ---
 
 <BaseLayout
@@ -72,7 +73,7 @@ const TURNSTILE_SITE_KEY = import.meta.env.TURNSTILE_SITE_KEY || '';
             id="chat-send"
             class="bg-primary text-white px-4 py-2.5 rounded-xl text-sm hover:bg-blue-700 transition-colors shrink-0"
           >
-            <span class="material-symbols-outlined text-lg">send</span>
+            <Icon name="send" class="text-lg" />
           </button>
         </div>
       </div>

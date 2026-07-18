@@ -3,6 +3,7 @@ interface Props {
   countryCode: string;
 }
 const { countryCode } = Astro.props;
+import Icon from './Icon.astro';
 ---
 
 <section class="mt-12 bg-primary rounded-card p-6 sm:p-8 text-center">
@@ -16,7 +17,7 @@ const { countryCode } = Astro.props;
     href={`/calculator/?country=${countryCode}`}
     class="inline-flex items-center gap-2 bg-white text-primary font-semibold px-5 py-3 sm:px-6 rounded-button hover:bg-blue-50 transition-colors text-sm sm:text-base"
   >
-    <span class="material-symbols-outlined text-lg">calculate</span>
+    <Icon name="calculate" class="text-lg" />
     Open Calculator
   </a>
 </section>

@@ -3,13 +3,14 @@ interface Props {
   items: { name: string; url: string }[];
 }
 const { items } = Astro.props;
+import Icon from './Icon.astro';
 ---
 
 <nav aria-label="Breadcrumb" class="mb-6">
   <ol class="flex flex-wrap items-center gap-1 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
     {items.map((item, i) => (
       <li class="flex items-center gap-1 min-w-0">
-        {i > 0 && <span class="material-symbols-outlined text-sm shrink-0">chevron_right</span>}
+        {i > 0 && <Icon name="chevron_right" class="text-sm shrink-0" />}
         {i === items.length - 1 ? (
           <span class="text-slate-800 dark:text-slate-200 font-medium truncate max-w-[160px] sm:max-w-xs">{item.name}</span>
         ) : (

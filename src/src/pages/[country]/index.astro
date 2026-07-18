@@ -26,6 +26,7 @@ const crumbs = [
 const allBlogs = await getCollection('blogs', (entry) =>
   entry.data.country === countryCode && entry.data.published
 );
+import Icon from '../../components/Icon.astro';
 ---
 
 <BaseLayout
@@ -53,14 +54,14 @@ const allBlogs = await getCollection('blogs', (entry) =>
 
     <!-- Pillar Guides -->
     <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-      <span class="material-symbols-outlined text-primary">auto_stories</span>
+      <Icon name="auto_stories" class="text-primary" />
       Comprehensive Guides
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
       <a href={`/${countryCode}/property-buying-guide/`} class="group bg-white border border-slate-200 rounded-2xl p-6 hover:border-primary hover:shadow-lg transition-all duration-300">
         <div class="flex items-start gap-4">
           <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-            <span class="material-symbols-outlined text-xl text-primary">real_estate_agent</span>
+            <Icon name="real_estate_agent" class="text-xl text-primary" />
           </div>
           <div>
             <h3 class="font-bold text-slate-800 group-hover:text-primary transition-colors">Complete Property Buying Guide</h3>
@@ -71,7 +72,7 @@ const allBlogs = await getCollection('blogs', (entry) =>
       <a href={`/${countryCode}/mortgage-guide/`} class="group bg-white border border-slate-200 rounded-2xl p-6 hover:border-secondary hover:shadow-lg transition-all duration-300">
         <div class="flex items-start gap-4">
           <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center shrink-0 group-hover:bg-secondary/20 transition-colors">
-            <span class="material-symbols-outlined text-xl text-secondary">account_balance</span>
+            <Icon name="account_balance" class="text-xl text-secondary" />
           </div>
           <div>
             <h3 class="font-bold text-slate-800 group-hover:text-secondary transition-colors">Complete Mortgage Guide</h3>
@@ -83,7 +84,7 @@ const allBlogs = await getCollection('blogs', (entry) =>
 
     <!-- Blog Posts -->
     <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-      <span class="material-symbols-outlined text-primary">article</span>
+      <Icon name="article" class="text-primary" />
       Articles & Guides
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-10">
@@ -94,7 +95,7 @@ const allBlogs = await getCollection('blogs', (entry) =>
             <h3 class="font-semibold text-sm text-slate-800 group-hover:text-primary transition-colors truncate">{blog.data.title}</h3>
             <p class="text-xs text-slate-400 mt-0.5 truncate">{blog.data.metaDescription}</p>
           </div>
-          <span class="material-symbols-outlined text-slate-300 group-hover:text-primary text-base transition-colors shrink-0">arrow_forward</span>
+          <Icon name="arrow_forward" class="text-slate-300 group-hover:text-primary text-base transition-colors shrink-0" />
         </a>
       )) : (
         <div class="col-span-2 bg-slate-50 rounded-xl p-6 text-center text-slate-500">
@@ -108,22 +109,22 @@ const allBlogs = await getCollection('blogs', (entry) =>
 
     <!-- FAQs & Tools -->
     <h2 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2">
-      <span class="material-symbols-outlined text-primary">build</span>
+      <Icon name="build" class="text-primary" />
       Tools & Resources
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
       <a href={`/${countryCode}/faqs/`} class="group bg-white border border-slate-200 rounded-xl p-5 hover:border-primary/50 hover:shadow-md transition-all duration-200">
-        <span class="material-symbols-outlined text-2xl text-primary mb-3 block">help</span>
+        <Icon name="help" class="text-2xl text-primary mb-3 block" />
         <h3 class="font-bold text-slate-800 group-hover:text-primary transition-colors">{country.name} FAQs</h3>
         <p class="text-sm text-slate-500 mt-1">50+ answers to common questions</p>
       </a>
       <a href={`/calculator/?country=${country.iso.toLowerCase()}`} class="group bg-white border border-slate-200 rounded-xl p-5 hover:border-secondary/50 hover:shadow-md transition-all duration-200">
-        <span class="material-symbols-outlined text-2xl text-secondary mb-3 block">calculate</span>
+        <Icon name="calculate" class="text-2xl text-secondary mb-3 block" />
         <h3 class="font-bold text-slate-800 group-hover:text-secondary transition-colors">Mortgage Calculator</h3>
         <p class="text-sm text-slate-500 mt-1">Calculate repayments in {country.currencySymbol}{country.currency}</p>
       </a>
       <a href={`/${countryCode}/blog/`} class="group bg-white border border-slate-200 rounded-xl p-5 hover:border-primary/50 hover:shadow-md transition-all duration-200">
-        <span class="material-symbols-outlined text-2xl text-primary mb-3 block">library_books</span>
+        <Icon name="library_books" class="text-2xl text-primary mb-3 block" />
         <h3 class="font-bold text-slate-800 group-hover:text-primary transition-colors">All Articles</h3>
         <p class="text-sm text-slate-500 mt-1">Browse the full blog</p>
       </a>

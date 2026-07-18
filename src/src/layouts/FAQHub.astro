@@ -28,6 +28,7 @@ const grouped = categories.map((cat) => ({
   label: cat.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase()),
   items: faqs.filter((f) => f.category === cat),
 }));
+import Icon from '../components/Icon.astro';
 ---
 
 <BaseLayout
@@ -47,20 +48,18 @@ const grouped = categories.map((cat) => ({
       {grouped.map((group, i) => (
         <section class="mb-8">
           <h2 class="text-lg font-bold text-primary dark:text-blue-400 mb-3 flex items-center gap-2">
-            <span class="material-symbols-outlined text-base">
-              {group.category === 'financing' ? 'payments' : 
+            <Icon name={group.category === 'financing' ? 'payments' : 
                group.category === 'buying-process' ? 'home' :
                group.category === 'costs' ? 'receipt_long' :
                group.category === 'legal' ? 'gavel' :
-               group.category === 'investment' ? 'trending_up' : 'help'}
-            </span>
+               group.category === 'investment' ? 'trending_up' : 'help'} class="text-base" />
             {group.label}
           </h2>
           {group.items.map((faq) => (
             <details class="mb-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden group">
               <summary class="px-4 py-3 sm:py-4 font-medium text-sm text-slate-800 dark:text-slate-200 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors flex items-center justify-between">
                 {faq.question}
-                <span class="material-symbols-outlined text-slate-400 group-open:rotate-180 transition-transform text-base shrink-0 ml-2">expand_more</span>
+                <Icon name="expand_more" class="text-slate-400 group-open:rotate-180 transition-transform text-base shrink-0 ml-2" />
               </summary>
               <div class="px-4 pb-4">
                 <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{faq.answer}</p>
