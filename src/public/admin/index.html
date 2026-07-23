@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>URMortgage Admin</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; background: #f1f5f9; color: #1e293b; min-height: 100vh; }
+    .container { max-width: 720px; margin: 0 auto; padding: 24px 16px; }
+    h1 { font-size: 24px; font-weight: 700; color: #004ac6; margin-bottom: 4px; }
+    .subtitle { color: #64748b; font-size: 14px; margin-bottom: 24px; }
+    .card { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; margin-bottom: 16px; }
+    .card h2 { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: #334155; }
+    .login-form { display: flex; gap: 8px; }
+    .login-form input { flex: 1; padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; }
+    .btn { padding: 10px 20px; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .btn-primary { background: #004ac6; color: #fff; }
+    .btn-primary:hover { background: #003da8; }
+    .btn-primary:disabled { background: #94a3b8; cursor: not-allowed; }
+    .btn-sm { padding: 6px 12px; font-size: 12px; }
+    .schedule { margin-top: 8px; }
+    .schedule-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px; border-radius: 8px; font-size: 14px; }
+    .schedule-row:nth-child(odd) { background: #f8fafc; }
+    .schedule-row.current { background: #eff6ff; border: 1px solid #bfdbfe; }
+    .week-label { color: #64748b; font-size: 12px; min-width: 60px; }
+    .country-name { font-weight: 500; flex: 1; }
+    .status { font-size: 12px; padding: 2px 8px; border-radius: 4px; }
+    .status-current { background: #dbeafe; color: #1d4ed8; }
+    .status-upcoming { background: #f1f5f9; color: #64748b; }
+    #generate-section { display: none; }
+    .generate-box { text-align: center; padding: 20px; }
+    .generate-box p { margin-bottom: 16px; color: #475569; }
+    .generate-box .country-highlight { font-size: 20px; font-weight: 700; color: #004ac6; margin: 8px 0; }
+    .override-section { margin-top: 16px; padding-top: 16px; border-top: 1px solid #e2e8f0; }
+    .override-section select { padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; margin-right: 8px; }
+    .log { margin-top: 12px; background: #0f172a; color: #e2e8f0; border-radius: 8px; padding: 16px; font-family: monospace; font-size: 13px; max-height: 300px; overflow-y: auto; white-space: pre-wrap; display: none; }
+    .result-card { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 16px; margin-top: 12px; display: none; }
+    .result-card h3 { color: #166534; font-size: 14px; margin-bottom: 8px; }
+    .result-card a { color: #004ac6; text-decoration: underline; }
+    .result-card .meta { color: #64748b; font-size: 13px; margin-top: 4px; }
+    .error-card { background: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; padding: 16px; margin-top: 12px; display: none; }
+    .error-card h3 { color: #991b1b; font-size: 14px; margin-bottom: 4px; }
+    .error-card p { color: #dc2626; font-size: 13px; }
+    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid #fff; border-top-color: transparent; border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 6px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>URMortgage Admin</h1>
+    <p class="subtitle">Weekly Blog Generator</p>
+
+    <!-- Login -->
+    <div class="card" id="login-section">
+      <h2>Enter Admin Password</h2>
+      <div class="login-form">
+        <input type="password" id="secret-input" placeholder="Admin secret" autocomplete="off" />
+        <button class="btn btn-primary" onclick="authenticate()">Login</button>
+      </div>
+    </div>
+
+    <!-- Main UI (hidden until auth) -->
+    <div id="generate-section">
+      <!-- Schedule -->
+      <div class="card">
+        <h2>Country Rotation Schedule</h2>
+        <div class="schedule" id="schedule-list"></div>
+      </div>
+
+      <!-- Generate -->
+      <div class="card">
+        <h2>Generate Blog Post</h2>
+        <div class="generate-box">
+          <p>This week's country:</p>
+          <div class="country-highlight" id="current-country">Loading...</div>
+          <button class="btn btn-primary" id="generate-btn" onclick="generateBlog()">
+            Generate & Publish
+          </button>
+
+          <div class="override-section">
+            <label style="font-size:13px; color:#64748b;">Or pick a specific country:</label><br style="margin-bottom:8px" />
+            <select id="country-select"><option value="">— Use rotation —</option></select>
+            <button class="btn btn-primary btn-sm" onclick="generateBlog(true)" style="margin-top:8px">Generate for Selected</button>
+          </div>
+        </div>
+
+        <div class="log" id="log"></div>
+        <div class="result-card" id="result"></div>
+        <div class="error-card" id="error"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let adminSecret = '';
+
+    const COUNTRIES = [
+      'australia','belgium','brazil','canada','denmark','france','germany',
+      'hong-kong','india','ireland','italy','japan','malaysia','mexico',
+      'netherlands','new-zealand','norway','portugal','saudi-arabia',
+      'singapore','south-africa','south-korea','spain','sweden',
+      'switzerland','thailand','uae','united-kingdom','united-states'
+    ];
+
+    async function authenticate() {
+      adminSecret = document.getElementById('secret-input').value.trim();
+      if (!adminSecret) return;
+
+      try {
+        const res = await fetch('/api/generate-blog?secret=' + encodeURIComponent(adminSecret));
+        if (!res.ok) {
+          alert('Invalid secret');
+          return;
+        }
+        const data = await res.json();
+
+        document.getElementById('login-section').style.display = 'none';
+        document.getElementById('generate-section').style.display = 'block';
+
+        // Populate schedule
+        const list = document.getElementById('schedule-list');
+        list.innerHTML = data.schedule.map((s, i) => `
+          <div class="schedule-row ${i === 0 ? 'current' : ''}">
+            <span class="week-label">Week ${s.week}</span>
+            <span class="country-name">${s.country}</span>
+            <span class="status ${i === 0 ? 'status-current' : 'status-upcoming'}">
+              ${i === 0 ? 'This week' : 'Upcoming'}
+            </span>
+          </div>
+        `).join('');
+
+        document.getElementById('current-country').textContent = data.currentWeekCountry.name;
+
+        // Populate country dropdown
+        const select = document.getElementById('country-select');
+        COUNTRIES.forEach(c => {
+          const opt = document.createElement('option');
+          opt.value = c;
+          opt.textContent = c.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+          select.appendChild(opt);
+        });
+      } catch (e) {
+        alert('Connection error: ' + e.message);
+      }
+    }
+
+    async function generateBlog(useOverride) {
+      const log = document.getElementById('log');
+      const result = document.getElementById('result');
+      const error = document.getElementById('error');
+      const btn = document.getElementById('generate-btn');
+
+      log.style.display = 'block';
+      result.style.display = 'none';
+      error.style.display = 'none';
+      log.textContent = '';
+
+      const addLog = (msg) => {
+        log.textContent += new Date().toLocaleTimeString() + ' — ' + msg + '\n';
+        log.scrollTop = log.scrollHeight;
+      };
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner"></span> Generating...';
+
+      const body = {};
+      if (useOverride) {
+        const sel = document.getElementById('country-select').value;
+        if (sel) body.countrySlug = sel;
+      }
+
+      addLog('Starting blog generation...');
+      addLog('Sending request to Claude API...');
+
+      try {
+        const res = await fetch('/api/generate-blog', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Admin-Secret': adminSecret,
+          },
+          body: JSON.stringify(body),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          throw new Error(data.details || data.error || 'Unknown error');
+        }
+
+        addLog('Blog generated: ' + data.title);
+        addLog('Category: ' + data.category + ' | Words: ' + data.wordCount);
+        addLog('Committed to GitHub successfully');
+        addLog('Cloudflare will auto-deploy in ~15 seconds');
+        addLog('Done!');
+
+        result.style.display = 'block';
+        result.innerHTML = `
+          <h3>Blog Published Successfully</h3>
+          <strong>${data.title}</strong>
+          <div class="meta">
+            Country: ${data.country} | Category: ${data.category} | ${data.wordCount} words
+          </div>
+          <div style="margin-top:8px">
+            <a href="${data.pageUrl}" target="_blank">View Post</a>
+            ${data.commitUrl ? ` · <a href="${data.commitUrl}" target="_blank">View Commit</a>` : ''}
+          </div>
+        `;
+      } catch (e) {
+        addLog('ERROR: ' + e.message);
+        error.style.display = 'block';
+        error.innerHTML = `<h3>Generation Failed</h3><p>${e.message}</p>`;
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = 'Generate & Publish';
+    }
+
+    // Enter key on password field
+    document.getElementById('secret-input').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') authenticate();
+    });
+  </script>
+</body>
+</html>
