@@ -466,7 +466,16 @@ function init(){
   const G={'Asia-Pacific':['AU','NZ','JP','SG','HK','KR','IN','MY','TH'],'North America':['US','CA','MX'],'Europe':['GB','DE','FR','NL','ES','IT','SE','NO','DK','CH','IE','BE','PT'],'Middle East & Africa':['AE','SA','ZA'],'South America':['BR']};
   Object.entries(G).forEach(([g,ks])=>{const og=document.createElement('optgroup');og.label=g;ks.forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=CD[k].f+' '+CD[k].n;og.appendChild(o)});s.appendChild(og)});
   const t=new Date();$('sd').value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
-  onC('AU');
+  // Read country from URL param e.g. /calculator/?country=AU
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramCountry = urlParams.get('country');
+  if (paramCountry && CD[paramCountry.toUpperCase()]) {
+    onC(paramCountry.toUpperCase());
+    const sel = document.getElementById('cSel');
+    if (sel) sel.value = paramCountry.toUpperCase();
+  } else {
+    onC('AU');
+  }
 }
 
 function onC(v){cc=v;co=CD[v];mg=co.l[0][1];$('lt').value=co.t;$('ir').value=(co.cu+mg).toFixed(2);
