@@ -276,6 +276,10 @@ tr:hover td{background:rgba(0,74,198,.04)}
 </div>
 
 <button onclick="calc()" class="btn-primary shadow-lg"><span class="material-symbols-outlined text-lg">calculate</span> Recalculate Scenarios</button>
+<div class="grid grid-cols-2 gap-3 mt-3">
+<button onclick="exportCSV()" class="py-2.5 rounded-lg border border-outline-variant text-on-surface-variant text-sm font-medium hover:bg-surface-container transition-colors cursor-pointer">📥 Export CSV</button>
+<button onclick="exportPDF()" class="py-2.5 rounded-lg bg-error text-on-error text-sm font-medium hover:opacity-90 transition-opacity cursor-pointer border-none">📄 PDF Report</button>
+</div>
 
 </div>
 
@@ -466,7 +470,12 @@ function init(){
   const G={'Asia-Pacific':['AU','NZ','JP','SG','HK','KR','IN','MY','TH'],'North America':['US','CA','MX'],'Europe':['GB','DE','FR','NL','ES','IT','SE','NO','DK','CH','IE','BE','PT'],'Middle East & Africa':['AE','SA','ZA'],'South America':['BR']};
   Object.entries(G).forEach(([g,ks])=>{const og=document.createElement('optgroup');og.label=g;ks.forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=CD[k].f+' '+CD[k].n;og.appendChild(o)});s.appendChild(og)});
   const t=new Date();$('sd').value=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
-  onC('AU');
+  // Pre-select country from URL param e.g. /calculator/?country=AU
+  const _up = new URLSearchParams(window.location.search);
+  const _pc = (_up.get('country') || '').toUpperCase();
+  const _sc = CD[_pc] ? _pc : 'AU';
+  onC(_sc);
+  s.value = _sc;
 }
 
 function onC(v){cc=v;co=CD[v];mg=co.l[0][1];$('lt').value=co.t;$('ir').value=(co.cu+mg).toFixed(2);
