@@ -118,25 +118,34 @@ tr:hover td{background:rgba(0,74,198,.04)}
 
 <!-- ═══ NAVBAR ═══ -->
 <header class="sticky top-0 w-full z-50 bg-white/95 dark:bg-bg-dark/95 border-b border-outline-variant dark:border-outline backdrop-blur-md">
+<!-- Top row: site nav matching all other pages -->
 <div style="max-width:1200px;margin:0 auto;padding:0 16px;height:56px;display:flex;align-items:center;justify-content:space-between">
-<div class="flex items-center gap-4">
-<a href="/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:16px;color:#004ac6"><span class="material-symbols-outlined" style="font-size:20px">home</span><span>urmortgage.online</span></a>
-<nav class="hidden md:flex gap-1 ml-4" style="border-left:1px solid #c3c6d7;padding-left:16px">
-<button onclick="switchView('dashboard')" class="nav-btn active px-4 py-2 text-sm font-medium rounded-lg transition-colors" data-view="dashboard">Dashboard</button>
-<button onclick="switchView('scenarios')" class="nav-btn px-4 py-2 text-sm font-medium rounded-lg transition-colors" data-view="scenarios">Scenarios</button>
-<button onclick="switchView('amortisation')" class="nav-btn px-4 py-2 text-sm font-medium rounded-lg transition-colors" data-view="amortisation">Amortisation</button>
+<a href="/" style="display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:16px;color:#004ac6"><span class="material-symbols-outlined" style="font-size:20px">home</span><span class="hidden sm:inline">urmortgage.online</span><span class="sm:hidden">URMortgage</span></a>
+<nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+<a href="/" style="color:#475569;text-decoration:none" onmouseover="this.style.color='#004ac6'" onmouseout="this.style.color='#475569'">Countries</a>
+<a href="/calculator/" style="color:#004ac6;text-decoration:none;font-weight:700">Calculator</a>
+<a href="/ask/" style="color:#475569;text-decoration:none" onmouseover="this.style.color='#004ac6'" onmouseout="this.style.color='#475569'">Ask URMortgage</a>
 </nav>
-</div>
 <div class="flex items-center gap-2">
 <button class="material-symbols-outlined text-outline hover:text-primary transition-colors p-2 rounded-full cursor-pointer" onclick="toggleTheme()" id="themeBtn">dark_mode</button>
+<button class="md:hidden material-symbols-outlined text-outline p-2 rounded-full cursor-pointer" onclick="document.getElementById('calc-mobile-menu').classList.toggle('hidden')">menu</button>
+</div>
+</div>
+<!-- Calculator tabs row -->
+<div class="border-t border-outline-variant/50 dark:border-outline/50 bg-white dark:bg-bg-dark">
+<div style="max-width:1200px;margin:0 auto;padding:0 16px;display:flex;align-items:center;gap:0">
+<button onclick="switchView('dashboard')" class="nav-btn active px-4 py-2.5 text-sm font-medium transition-colors" data-view="dashboard">Dashboard</button>
+<button onclick="switchView('scenarios')" class="nav-btn px-4 py-2.5 text-sm font-medium transition-colors" data-view="scenarios">Scenarios</button>
+<button onclick="switchView('amortisation')" class="nav-btn px-4 py-2.5 text-sm font-medium transition-colors" data-view="amortisation">Amortisation</button>
+</div>
 </div>
 </header>
 
-<!-- Mobile Nav -->
-<div class="md:hidden flex border-b border-outline-variant dark:border-outline bg-white dark:bg-bg-dark">
-<button onclick="switchView('dashboard')" class="mob-nav active flex-1 py-3 text-xs font-bold text-center border-b-2" data-view="dashboard">Dashboard</button>
-<button onclick="switchView('scenarios')" class="mob-nav flex-1 py-3 text-xs font-bold text-center border-b-2 border-transparent" data-view="scenarios">Scenarios</button>
-<button onclick="switchView('amortisation')" class="mob-nav flex-1 py-3 text-xs font-bold text-center border-b-2 border-transparent" data-view="amortisation">Amortisation</button>
+<!-- Mobile site nav -->
+<div id="calc-mobile-menu" class="md:hidden hidden border-b border-outline-variant bg-white dark:bg-bg-dark px-4 py-2 space-y-1">
+<a href="/" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-slate-700 hover:bg-slate-50">Countries</a>
+<a href="/calculator/" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-bold text-primary bg-slate-50">Calculator</a>
+<a href="/ask/" class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-slate-700 hover:bg-slate-50">Ask URMortgage</a>
 </div>
 
 <main class="flex-grow w-full max-w-[1600px] mx-auto p-4 md:p-6 lg:p-8">
