@@ -319,3 +319,35 @@ git commit --allow-empty -m "chore: trigger redeploy" && git push origin main
 
 **Pending from this session:**
 - Resubmit sitemap-0.xml to GSC (new pages from expansion not yet crawled)
+
+---
+
+## Session 2 — August 2026
+
+**What was done:**
+- Fixed Icon component SVG sizing — added `width="1em" height="1em"` so icons respond to text-xl/text-lg like Material Symbols
+- Standardised calculator nav to match site nav (Countries/Calculator/Ask URMortgage) with Dashboard/Scenarios/Amortisation as tabs below
+- Fixed CSP headers — added fonts.googleapis.com, fonts.gstatic.com, cdnjs.cloudflare.com, cdn.tailwindcss.com, ep2.adtrafficquality.google to appropriate CSP directives
+- Added favicon to calculator page
+- Added URL param country pre-selection to calculator (?country=AU etc)
+- Added Export CSV/PDF buttons to Scenarios tab
+- Removed ad gap in Dashboard — moved Calculate Repayments button directly under Apply All Rates
+- Fixed Dashboard tab not highlighted on calculator load
+
+**Key lesson from this session:**
+- L010: Always `git pull origin main` before making ANY changes. Never work from a stale clone. Our stale push overwrote 3 commits of work and broke the entire site.
+- L011: The calculator (src/public/calculator/index.html) is a standalone HTML file. It has its own font/script/icon dependencies separate from the Astro build. Any CSP changes in _headers must account for ALL resources the calculator uses: Material Symbols (fonts.googleapis.com + fonts.gstatic.com), Chart.js + jsPDF (cdnjs.cloudflare.com), Tailwind CDN (cdn.tailwindcss.com).
+- L012: Never push code without verifying it works first. Always get a screenshot confirmation before the next change.
+
+**Commits this session:**
+- `f68364a` — feat: add country URL param pre-selection + export buttons to Scenarios tab
+- `f4312ba` — fix: remove gap — move Calculate button directly under Apply All Rates
+- `00582f4` — fix: standardise calculator nav to match site nav
+- `2efe039` — fix: highlight Dashboard tab on calculator load
+- `8984a0c` — fix: add favicon to calculator page
+- `edf4b36` — fix: CSP frame-src for Google ad traffic quality
+
+**Pending:**
+- Favicon browser cache — will clear naturally for users
+- Country auto-selection from landing page → calculator: working (?country=XX param)
+- Chart rendering gap: ad slot removed, chart renders on calculate click
