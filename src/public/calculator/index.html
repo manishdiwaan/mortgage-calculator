@@ -482,6 +482,7 @@ function init(){
   const _sc = CD[_pc] ? _pc : 'AU';
   onC(_sc);
   s.value = _sc;
+  switchView('dashboard');
 }
 
 function onC(v){cc=v;co=CD[v];mg=co.l[0][1];$('lt').value=co.t;$('ir').value=(co.cu+mg).toFixed(2);
