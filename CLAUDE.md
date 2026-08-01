@@ -37,11 +37,12 @@ URMortgage.online is a mortgage and property knowledge platform serving **29 cou
 **How to work autonomously:**
 ```bash
 cd /home/claude
-git clone https://manishdiwaan:REDACTED — regenerate at github.com/settings/tokens if needed@github.com/manishdiwaan/mortgage-calculator.git repo
+git clone https://manishdiwaan:YOUR_GITHUB_TOKEN@github.com/manishdiwaan/mortgage-calculator.git repo
 cd repo
-# make changes
+git pull origin main   # ALWAYS do this first — never work from stale clone
 git config user.email "manishdiwaan@gmail.com"
 git config user.name "manishdiwaan"
+# make changes
 git add -A && git commit -m "..." && git push origin main
 # Cloudflare auto-deploys in ~15 seconds
 ```
@@ -55,9 +56,9 @@ git add -A && git commit -m "..." && git push origin main
 | Framework | Astro v7 SSG with TypeScript |
 | Styling | Tailwind CSS v3 (Precision Finance design tokens) |
 | Font | Geist (Google Fonts) |
-| Icons | Material Symbols Outlined |
-| Charts | Chart.js 4.4.1 (calculator only) |
-| PDF Export | jsPDF 2.5.2 + autoTable 3.8.4 (calculator only) |
+| Icons | Custom SVG Icon component (responds to text-xl/text-lg via 1em sizing) |
+| Charts | Chart.js 4.4.1 (calculator only, via cdnjs.cloudflare.com) |
+| PDF Export | jsPDF 2.5.2 + autoTable 3.8.4 (calculator only, via cdnjs) |
 | Hosting | Cloudflare Pages |
 | DNS/SSL | Cloudflare (full strict) |
 | AI Chat | Claude Sonnet 4.6 via Cloudflare Pages Function |
@@ -79,7 +80,7 @@ repo/
 ├── src/
 │   ├── astro.config.mjs
 │   ├── src/
-│   │   ├── components/              ← Navbar, Footer, Breadcrumbs, TOC, CTABanner, AdSlot, CookieBanner
+│   │   ├── components/              ← Navbar, Footer, Breadcrumbs, TOC, CTABanner, AdSlot, CookieBanner, Icon
 │   │   ├── content/
 │   │   │   ├── countries/           ← 29 .md files (one per country)
 │   │   │   ├── pillar-guides/       ← 29 dirs × 2 guides = 58 pillar guides
@@ -92,13 +93,25 @@ repo/
 │   │   └── utils/                   ← schema.ts, seo.ts, links.ts
 │   └── public/
 │       ├── _headers                 ← Cloudflare security headers (HSTS, CSP, X-Frame)
-│       ├── calculator/index.html    ← Standalone calculator (DO NOT MODIFY structure)
+│       ├── calculator/index.html    ← Standalone calculator — CRITICAL: has own deps, see notes below
+│       ├── favicon.svg              ← UR favicon (blue square, white text)
+│       ├── favicon.ico
 │       ├── privacy/index.html
 │       ├── terms/index.html
 │       └── robots.txt               ← Points to sitemap-0.xml
 ├── docs/                            ← Architecture docs and handover files
 └── tasks/                           ← backlog.md, todo.md, review.md, lessons.md
 ```
+
+### CRITICAL — Calculator Standalone File Notes
+`src/public/calculator/index.html` is a fully self-contained HTML file. It:
+- Has its own nav (Countries/Calculator/Ask URMortgage + Dashboard/Scenarios/Amortisation tabs)
+- Loads Material Symbols from `fonts.googleapis.com` + `fonts.gstatic.com`
+- Loads Chart.js + jsPDF from `cdnjs.cloudflare.com`
+- Loads Tailwind from `cdn.tailwindcss.com`
+- Has its own favicon link
+- Reads `?country=XX` URL param to pre-select country on load
+- ALL these domains must be in `_headers` CSP or the calculator breaks silently
 
 ---
 
@@ -112,9 +125,7 @@ repo/
 | Blog Posts | 290 (10 per country) |
 | FAQ Hubs | 29 × 50 FAQs = 1,450 total |
 | Calculator Lenders | 250+ |
-| Ad Placements | 700+ |
 | Security Score | 9.0 / 10 |
-| Internal Links | 13,597+ (validated) |
 
 ---
 
@@ -126,7 +137,14 @@ repo/
 
 **In countries.ts codes:** AU, IN, US, GB, AE, SG, CA, NZ, DE, FR, ES, IT, NL, IE, JP, KR, HK, MY, TH, ZA, BR, MX, SA, BE, CH, DK, NO, PT, SE
 
-**Calculator CD object:** All 29 codes present — AU, BE, BR, CA, CH, DE, DK, ES, FR, GB, HK, IE, IN, IT, JP, KR, MX, MY, NL, NO, NZ, PT, SA, SE, SG, TH, US, ZA (+ region grouping G updated)
+**Calculator CD object:** All 29 codes present — AU, BE, BR, CA, CH, DE, DK, ES, FR, GB, HK, IE, IN, IT, JP, KR, MX, MY, NL, NO, NZ, PT, SA, SE, SG, TH, US, ZA
+
+**Calculator region grouping G:**
+- Asia-Pacific: AU, NZ, JP, SG, HK, KR, IN, MY, TH
+- North America: US, CA, MX
+- Europe: GB, DE, FR, NL, ES, IT, SE, NO, DK, CH, IE, BE, PT
+- Middle East & Africa: AE, SA, ZA
+- South America: BR
 
 ---
 
@@ -154,7 +172,7 @@ repo/
 - Canonical URLs: absolute https://urmortgage.online/...
 - Schema: Article, FAQPage, BreadcrumbList, Organization, WebSite, SoftwareApplication
 - Breadcrumb @id: absolute URLs (fixed July 2026)
-- Sitemap: sitemap-0.xml (submitted to GSC — 350 pages, resubmit after expansion)
+- Sitemap: sitemap-0.xml (submitted to GSC — needs resubmission after 29-country expansion)
 - robots.txt: Allow all, Sitemap: https://urmortgage.online/sitemap-0.xml
 - hreflang: NOT YET implemented (needed for multi-language P1)
 
@@ -166,26 +184,26 @@ repo/
 1. **Cloudflare edge** — WAF rate limit (20 req/10s on /api/chat), custom rule (block empty User-Agent on /api/chat)
 2. **Cloudflare Turnstile** — invisible bot challenge on /ask/ page before chat requests
 3. **Pages Function** — in-memory rate limit (10 req/60s per IP), CORS restricted to urmortgage.online, HTML sanitisation, min(3)/max(500) char validation
-4. **HTTP Headers** — HSTS, CSP (includes Turnstile + AdSense domains), X-Frame-Options: DENY, Permissions-Policy via src/public/_headers
+4. **HTTP Headers** — HSTS, CSP, X-Frame-Options: DENY, Permissions-Policy via src/public/_headers
+
+### CSP Domains (src/public/_headers)
+- script-src: self, unsafe-inline, pagead2.googlesyndication.com, partner.googleadservices.com, tpc.googlesyndication.com, googletagmanager.com, google-analytics.com, adservice.google.com, fundingchoicesmessages.google.com, challenges.cloudflare.com, static.cloudflareinsights.com, **cdnjs.cloudflare.com, cdn.tailwindcss.com, ep2.adtrafficquality.google**
+- style-src: self, unsafe-inline, **fonts.googleapis.com**
+- font-src: self, **fonts.gstatic.com**
+- frame-src: googleads.g.doubleclick.net, tpc.googlesyndication.com, fundingchoicesmessages.google.com, challenges.cloudflare.com, **ep2.adtrafficquality.google, www.google.com**
 
 ### Chat API (functions/api/chat.js)
 - CORS: allowed origins = urmortgage.online, www.urmortgage.online, mortgage-calculator-4ju.pages.dev
 - Rate limiting: 10 req/60s per CF-Connecting-IP (in-memory)
-- Turnstile: verifies token via challenges.cloudflare.com/turnstile/v0/siteverify if TURNSTILE_SECRET_KEY is set
-- Input: strips HTML tags, control chars, trims whitespace, validates 3-500 chars
-- System prompt: hardcoded server-side, covers all 29 countries, anti-jailbreak rules
-- Fail-loud: console.error if CLAUDE_API_KEY missing
+- Turnstile: verifies token server-side if TURNSTILE_SECRET_KEY is set
+- Input: strips HTML tags, control chars, validates 3-500 chars
+- System prompt: covers all 29 countries, anti-jailbreak rules
 
-### Cloudflare WAF Rules (Security → Security rules)
+### Cloudflare WAF Rules
 | Type | Name | Rule | Status |
 |------|------|------|--------|
 | Rate Limiting | Chat API rate limit | URI Path = /api/chat → 20 req/10s → Block | Active |
 | Custom | Block empty user agents | URI Path = /api/chat AND User-Agent = "" → Block | Active |
-
-### Privacy
-- Cookie consent banner on all pages (CookieBanner.astro)
-- Privacy policy covers: AdSense, Turnstile (with Privacy Addendum reference), Anthropic Claude, Cloudflare CDN
-- Last updated: July 11, 2026
 
 ---
 
@@ -193,21 +211,18 @@ repo/
 
 - Property: urmortgage.online
 - Sitemap submitted: sitemap-0.xml
-- Discovered pages: 350 (as of July 11 2026 — needs resubmission after 29-country expansion adds ~70 more pages)
-- Homepage live URL test: passes
-- **TODO:** Resubmit sitemap-0.xml in GSC after expansion build deploys
+- Discovered pages: 350 (needs resubmission — 29-country expansion added ~70 more pages)
+- **TODO:** Resubmit sitemap-0.xml in GSC
 
 ---
 
 ## Content Pipeline (Ready, Not Yet Connected)
 
-All components built, none activated:
 - `scripts/prompts/` — brief generator, pillar guide, blog post, FAQ hub prompt templates
 - `scripts/n8n/` — brief-generator.json and content-pipeline.json workflow files
-- Airtable schema: documented in `docs/airtable-setup.md` (Content Queue table)
+- Airtable schema: documented in `docs/airtable-setup.md`
 - n8n workflow: reads Airtable → Claude API → GitHub commit → auto-deploy
-
-**To activate:** Connect n8n to Airtable, configure GitHub PAT in n8n, set ANTHROPIC_API_KEY in n8n workflow. See `docs/airtable-setup.md` and `docs/n8n-setup.md`.
+- **To activate:** Connect n8n to Airtable, configure GitHub PAT in n8n, set ANTHROPIC_API_KEY in n8n workflow
 
 ---
 
@@ -222,10 +237,10 @@ All components built, none activated:
 
 ---
 
-## Remaining Backlog
+## Backlog
 
 ### P1 — Do Next
-- [ ] Resubmit sitemap-0.xml to GSC (new pages from 29-country expansion)
+- [ ] Resubmit sitemap-0.xml to GSC (29-country expansion)
 - [ ] Airtable + n8n pipeline activation
 - [ ] Multi-language support for non-English countries
 
@@ -253,41 +268,58 @@ All components built, none activated:
 
 **L001 — GSC Sitemap:** Always submit `sitemap-0.xml` directly to GSC for Astro sites. robots.txt must reference it too.
 
-**L002 — Read Docs Thoroughly:** When summarising structured documents, read every subsection and preserve original structure (priority tiers, numbering).
+**L002 — Read Docs Thoroughly:** Read every subsection, preserve original structure (priority tiers, numbering).
 
-**L003 — FAQ Generation via API:** One country per API call. max_tokens=2500. Top up in multiple passes of 10-15. Always verify count after each call with `grep -c "question:"`.
+**L003 — FAQ Generation via API:** One country per API call. max_tokens=2500. Top up in multiple passes. Always verify count: `grep -c "question:"`.
 
-**L004 — Work Autonomously:** With ANTHROPIC_API_KEY and GITHUB_TOKEN available — clone repo, generate, commit, push without asking Manish. Only interrupt for decisions, not execution.
+**L004 — Work Autonomously:** With API key and GitHub token — clone repo, generate, commit, push. Only interrupt Manish for decisions, not execution.
 
-**L005 — Security Defaults:** Always restrict CORS to known origins. static sites need _headers file for HTTP security headers — meta tags alone are insufficient.
+**L005 — Security Defaults:** Always restrict CORS to known origins. Static sites need _headers for HTTP security headers.
 
-**L006 — Platform vs Calculator Alignment:** When adding countries to SEO platform, always cross-check calculator CD object and region grouping G. Run: `python3 -c "import re; c=open('src/public/calculator/index.html').read(); print(sorted(set(re.findall(r'\b([A-Z]{2})\s*:\s*\{n:', c))))"` to verify.
+**L006 — Platform vs Calculator Alignment:** When adding countries, cross-check calculator CD object and region grouping G.
+```bash
+python3 -c "import re; c=open('src/public/calculator/index.html').read(); print(sorted(set(re.findall(r'\b([A-Z]{2})\s*:\s*\{n:', c))))"
+```
 
-**L007 — Check Before Building:** Always diff calculator countries vs platform countries.ts before expansion work to catch gaps in both directions.
+**L007 — Check Before Building:** Always diff calculator countries vs platform countries.ts before expansion.
 
-**L008 — Shell Heredoc Quoting:** Bold markdown (`**text**`) and special chars break zsh heredocs. Use `echo` with single quotes or Python file writes for content with markdown formatting.
+**L008 — Shell Heredoc Quoting:** Bold markdown and special chars break zsh heredocs. Use Python file writes instead.
 
-**L009 — Update CLAUDE.md Every Session:** This file is the project memory. Always update it before ending a session — backlog changes, lessons learned, new credentials, architectural decisions.
+**L009 — Update CLAUDE.md Every Session:** This file is the project memory. Always update before ending.
+
+**L010 — ALWAYS git pull first:** `git pull origin main` before ANY changes. Never work from a stale clone. Stale push overwrote 3 commits and broke the entire site in Session 2.
+
+**L011 — Calculator is a Standalone File:** `src/public/calculator/index.html` has its own external dependencies (Material Symbols, Chart.js, jsPDF, Tailwind CDN). All must be in CSP _headers or calculator breaks silently. Never assume Astro build settings apply to it.
+
+**L012 — Screenshot Before Next Change:** Never push a fix and immediately push another. Get screenshot confirmation the fix worked first.
+
+**L013 — Icon Component Sizing:** The custom Icon.astro SVG component uses `width="1em" height="1em"` so it responds to Tailwind text-xl/text-lg classes. Never use w-/h- classes on Icon — use text-xl, text-lg etc.
 
 ---
 
 ## Key Commands Reference
 
 ```bash
-# Clone and work
+# Start of every session — clone fresh and pull
+cd /home/claude
 git clone https://manishdiwaan:YOUR_GITHUB_TOKEN@github.com/manishdiwaan/mortgage-calculator.git repo
+cd repo
+git pull origin main
 
 # Check FAQ counts
-for f in repo/src/src/content/faqs/*.md; do echo "$(basename $f .md): $(grep -c 'question:' $f)"; done
+for f in src/src/content/faqs/*.md; do echo "$(basename $f .md): $(grep -c 'question:' $f)"; done
 
-# Check calculator countries
-python3 -c "import re; c=open('repo/src/public/calculator/index.html').read(); keys=set(re.findall(r'\b([A-Z]{2})\s*:\s*\{n:', c)); print(len(keys), sorted(keys))"
+# Check calculator countries (should be 29)
+python3 -c "import re; c=open('src/public/calculator/index.html').read(); keys=set(re.findall(r'\b([A-Z]{2})\s*:\s*\{n:', c)); print(len(keys), sorted(keys))"
 
-# Check country count in platform
-ls repo/src/src/content/countries/ | wc -l
+# Check platform country count (should be 29)
+ls src/src/content/countries/ | wc -l
 
 # Trigger redeploy without changes
 git commit --allow-empty -m "chore: trigger redeploy" && git push origin main
+
+# Run build locally to check for errors
+cd src && npm install --legacy-peer-deps && npm run build
 ```
 
 ---
@@ -295,59 +327,21 @@ git commit --allow-empty -m "chore: trigger redeploy" && git push origin main
 ## Session History
 
 ### Session 1 — July 11, 2026
-**What was done:**
-- P0: GSC sitemap — submitted sitemap-0.xml, 350 pages discovered, robots.txt updated
+- P0: GSC sitemap — submitted sitemap-0.xml, 350 pages discovered
 - P1: FAQ equalisation — all 29 countries at 50 FAQs (1,450 total)
-- P1: Mobile responsive tweaks — 10 files updated across all layouts and components
-- Security hardening — CORS, WAF, Turnstile, HSTS, CSP, cookie consent, privacy policy (9.0/10)
-- Platform expansion — added Belgium, Switzerland, Denmark, Norway, Portugal, Sweden (23→29 countries)
-- Calculator fixed — TH, MX, SA added to calculator; all 29 now aligned across platform + calculator
-- Chat knowledge base — expanded to all 29 countries with country-specific rules and terminology
-- Handover v4.0 created
+- P1: Mobile responsive tweaks — 10 files updated
+- Security hardening — CORS, WAF, Turnstile, HSTS, CSP, cookie consent (9.0/10)
+- Platform expansion — Belgium, Switzerland, Denmark, Norway, Portugal, Sweden (23→29)
+- Calculator fixed — TH, MX, SA added; all 29 aligned
+- Chat knowledge base expanded to all 29 countries
 
-**Commits this session:**
-- `9861794` — fix: robots.txt sitemap ref + project OS
-- `e79516d` — feat: expand all 22 country FAQs to 50 questions
-- `7bbfd9a` — fix: mobile responsive tweaks
-- `b5a7276` — security: CORS, rate limiting, security headers, breadcrumb schema
-- `4aeade1` — security: Turnstile, HTML sanitisation, HSTS, cookie consent
-- `ef5808d` — legal: privacy policy updated for Turnstile invisible mode
-- `b0e8a5c` — feat: chat knowledge base expanded to 29 countries
-- `b09bf08` — feat: expand platform to 29 countries
-- `60e8bb0` — chore: update full project OS
-- `e6f1b1d` — docs: handover v4.0
-
-**Pending from this session:**
-- Resubmit sitemap-0.xml to GSC (new pages from expansion not yet crawled)
-
----
-
-## Session 2 — August 2026
-
-**What was done:**
-- Fixed Icon component SVG sizing — added `width="1em" height="1em"` so icons respond to text-xl/text-lg like Material Symbols
-- Standardised calculator nav to match site nav (Countries/Calculator/Ask URMortgage) with Dashboard/Scenarios/Amortisation as tabs below
-- Fixed CSP headers — added fonts.googleapis.com, fonts.gstatic.com, cdnjs.cloudflare.com, cdn.tailwindcss.com, ep2.adtrafficquality.google to appropriate CSP directives
+### Session 2 — August 2026
+- Fixed Icon SVG sizing — `width="1em" height="1em"` so text-xl/text-lg works
+- Standardised calculator nav — Countries/Calculator/Ask URMortgage + Dashboard/Scenarios/Amortisation tabs
+- Fixed CSP — added Google Fonts, cdnjs, Tailwind CDN, adtrafficquality to correct directives
 - Added favicon to calculator page
-- Added URL param country pre-selection to calculator (?country=AU etc)
-- Added Export CSV/PDF buttons to Scenarios tab
-- Removed ad gap in Dashboard — moved Calculate Repayments button directly under Apply All Rates
-- Fixed Dashboard tab not highlighted on calculator load
-
-**Key lesson from this session:**
-- L010: Always `git pull origin main` before making ANY changes. Never work from a stale clone. Our stale push overwrote 3 commits of work and broke the entire site.
-- L011: The calculator (src/public/calculator/index.html) is a standalone HTML file. It has its own font/script/icon dependencies separate from the Astro build. Any CSP changes in _headers must account for ALL resources the calculator uses: Material Symbols (fonts.googleapis.com + fonts.gstatic.com), Chart.js + jsPDF (cdnjs.cloudflare.com), Tailwind CDN (cdn.tailwindcss.com).
-- L012: Never push code without verifying it works first. Always get a screenshot confirmation before the next change.
-
-**Commits this session:**
-- `f68364a` — feat: add country URL param pre-selection + export buttons to Scenarios tab
-- `f4312ba` — fix: remove gap — move Calculate button directly under Apply All Rates
-- `00582f4` — fix: standardise calculator nav to match site nav
-- `2efe039` — fix: highlight Dashboard tab on calculator load
-- `8984a0c` — fix: add favicon to calculator page
-- `edf4b36` — fix: CSP frame-src for Google ad traffic quality
-
-**Pending:**
-- Favicon browser cache — will clear naturally for users
-- Country auto-selection from landing page → calculator: working (?country=XX param)
-- Chart rendering gap: ad slot removed, chart renders on calculate click
+- Added URL param country pre-selection to calculator (?country=XX)
+- Added Export CSV/PDF to Scenarios tab
+- Removed ad gap in Dashboard — Calculate button moved under Apply All Rates
+- Fixed Dashboard tab not highlighted on load
+- **Key mistakes:** Worked from stale clone, overwrote 3 commits, broke site. Never again — L010.
