@@ -37,8 +37,7 @@ const ogImg = ogImage || 'https://urmortgage.online/images/og-default.png';
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263369613506494" crossorigin="anonymous"></script>
+    <!-- Google AdSense — loaded conditionally by CookieBanner after consent -->
     {schemas.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}

@@ -1,5 +1,5 @@
 ---
-// Cookie consent banner — required for AdSense + Australian APPs compliance
+// Cookie consent banner — GDPR + Australian APPs compliance
 ---
 <div
   id="cookie-banner"
@@ -9,7 +9,8 @@
 >
   <div class="max-w-page mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
     <p class="text-sm text-slate-300 max-w-2xl">
-      We use cookies for analytics and personalised ads via Google AdSense. By continuing to use this site you agree to our
+      We use cookies for personalised ads via Google AdSense.
+      You can accept or decline. See our
       <a href="/privacy/" class="underline text-blue-300 hover:text-white">Privacy Policy</a>.
     </p>
     <div class="flex gap-2 shrink-0">
@@ -35,20 +36,43 @@
   var consent = null;
   try { consent = localStorage.getItem('cookie-consent'); } catch(e) {}
 
+  // Show banner if no consent decision yet
   if (!consent) {
     banner.classList.remove('hidden');
+  }
+
+  // If accepted, load AdSense dynamically
+  if (consent === 'accepted') {
+    loadAdSense();
   }
 
   document.getElementById('cookie-accept').addEventListener('click', function() {
     try { localStorage.setItem('cookie-consent', 'accepted'); } catch(e) {}
     banner.classList.add('hidden');
+    loadAdSense();
   });
 
   document.getElementById('cookie-decline').addEventListener('click', function() {
     try { localStorage.setItem('cookie-consent', 'declined'); } catch(e) {}
     banner.classList.add('hidden');
-    // Disable AdSense if declined
-    try { window['ga-disable-G-XXXXXXX'] = true; } catch(e) {}
+    // Remove any ad slots from the page
+    document.querySelectorAll('.adsbygoogle').forEach(function(el) {
+      el.parentElement.style.display = 'none';
+    });
   });
+
+  function loadAdSense() {
+    if (document.querySelector('script[src*="pagead2.googlesyndication.com"]')) return;
+    var s = document.createElement('script');
+    s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1263369613506494';
+    s.async = true;
+    s.crossOrigin = 'anonymous';
+    document.head.appendChild(s);
+    s.onload = function() {
+      document.querySelectorAll('.adsbygoogle').forEach(function() {
+        try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+      });
+    };
+  }
 })();
 </script>
