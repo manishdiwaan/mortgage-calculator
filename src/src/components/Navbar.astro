@@ -94,12 +94,12 @@ import Icon from './Icon.astro';
         e.stopPropagation();
         var open = !menu.classList.contains('hidden');
         menu.classList.toggle('hidden');
-        chevron.style.transform = open ? '' : 'rotate(180deg)';
+        if (chevron) chevron.style.transform = open ? '' : 'rotate(180deg)';
         btn.setAttribute('aria-expanded', !open);
       });
       document.addEventListener('click', function() {
         menu.classList.add('hidden');
-        chevron.style.transform = '';
+        if (chevron) chevron.style.transform = '';
         btn.setAttribute('aria-expanded', 'false');
       });
       menu.addEventListener('click', function(e) { e.stopPropagation(); });
