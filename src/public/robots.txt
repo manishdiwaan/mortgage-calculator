@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /calculator/?
 
 Sitemap: https://urmortgage.online/sitemap-0.xml
