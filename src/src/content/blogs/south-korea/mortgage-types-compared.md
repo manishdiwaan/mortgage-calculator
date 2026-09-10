@@ -1,41 +1,55 @@
 ---
-title: "Types of Mortgages Compared in South Korea 2026"
+title: "Mortgage Types Compared — South Korea 2026"
 country: "south-korea"
 slug: "mortgage-types-compared"
-category: "loan-types"
-metaTitle: "Types of Mortgages Compared in South Korea 2026 | URMortgage"
-metaDescription: "Complete guide to types of mortgages compared in South Korea. Expert advice for property buyers."
-primaryKeyword: "types of mortgages compared South Korea"
+category: "mortgages"
+metaTitle: "Mortgage Types in South Korea 2026 | Compare Fixed vs Variable"
+metaDescription: "Compare mortgage types available in South Korea. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
+primaryKeyword: "mortgage types South Korea"
 secondaryKeywords:
-  - "types of mortgages compared tips"
-  - "south korea property advice"
+  - "fixed vs variable mortgage South Korea"
+  - "home loan types South Korea"
+  - "best mortgage type South Korea"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "refinancing-guide"
-  - "first-home-buyer-guide"
+  - refinancing-guide
+  - first-home-buyer-guide
+  - buying-costs-explained
 published: true
 ---
 
-This is your complete guide to types of mortgages compared in South Korea. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## Choosing the Right Mortgage in South Korea
 
-## Key Considerations
+Selecting the right mortgage type is one of the most important financial decisions in the buying process. The wrong choice can cost you tens of thousands over the life of the loan. This guide explains every mortgage type available in South Korea and helps you choose.
 
-The South Korea property market has its own rules, costs, and processes. The Bank of Korea influences mortgage rates, and acquisition tax applies to most purchases.
+## Types of Mortgages Available
 
-## What You Need to Know
+South Korea's market is shaped by government regulation. **Byeondonggeum-ri (변동금리, variable rate)** is linked to COFIX or the bank's base rate — cheaper but rate-sensitive. **Gojeong-geum-ri (고정금리, fixed rate)** locks the rate for the full term or partial period. **Honhapgeum-ri (혼합금리, mixed)** is fixed initially then converts to variable. The **Bogeumjari Loan (보금자리론)** through HF is a government-backed long-term fixed product at favourable rates. **Didimdol Loan (디딤돌대출)** is a subsidised product specifically for first-time buyers and newlyweds
 
-Every property purchase in South Korea involves acquisition tax, legal fees, and various other costs. Our [buying costs guide](/south-korea/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/south-korea/blog/government-grants-schemes/).
+## Head-to-Head Comparison
 
-## Getting the Right Mortgage
+Government-backed products (Bogeumjari, Didimdol) offer the best terms if eligible — always check these first. Variable rate is cheapest in low-rate environments but the Korean government's frequent regulation changes create uncertainty. Fixed rate provides certainty at a premium. Mixed rate offers a compromise. The key Korean consideration: LTV/DTI limits vary by region and are adjusted frequently, making location choice as important as product choice
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=kr). Read our [mortgage guide](/south-korea/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+Use our [mortgage calculator](/calculator/?country=kr) to model different rate scenarios and see how each product type affects your monthly repayments and total interest paid.
 
-## Professional Support
+## Which Type Is Right for You?
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/south-korea/blog/property-inspection-checklist/) covers what to look for.
+Your ideal mortgage type depends on your risk tolerance, financial stability, and market outlook.
+
+Choose **fixed rate** if you value payment certainty, are on a tight budget with little room for payment increases, or believe rates will rise. Choose **variable rate** if you can absorb payment increases, want the lowest possible initial cost, or believe rates will stay stable or fall.
+
+Consider your loan term carefully. Shorter terms mean higher monthly payments but dramatically lower total interest. Our [mortgage guide](/south-korea/mortgage-guide/) provides a detailed analysis of how term length affects total cost.
+
+## Expert Tips for South Korea
+
+Check government-backed loan eligibility first — Bogeumjari and Didimdol rates are significantly below commercial products. LTV limits vary dramatically by zone — buying in a non-speculative area can double your borrowing capacity. Use Banksalad or Finda to compare all lenders. After 3 years, early repayment penalties disappear — plan any refinancing around this timeline
+
+## Refinancing Between Types
+
+If you chose the wrong type, or if market conditions change, refinancing is always an option. Read our [refinancing guide](/south-korea/blog/refinancing-guide/) for a step-by-step walkthrough of switching products or lenders.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=kr) to model your options, browse our [property buying guide](/south-korea/property-buying-guide/) for the complete process, or check our [FAQs](/south-korea/faqs/) for quick answers.
+Use our [mortgage calculator](/calculator/?country=kr) to compare scenarios, read our [first home buyer guide](/south-korea/blog/first-home-buyer-guide/) if you are a new buyer, or browse [South Korea FAQs](/south-korea/faqs/) for quick answers.

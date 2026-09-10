@@ -3,39 +3,65 @@ title: "First Home Buyer Guide in Malaysia 2026"
 country: "malaysia"
 slug: "first-home-buyer-guide"
 category: "first-home"
-metaTitle: "First Home Buyer Guide in Malaysia 2026 | URMortgage"
-metaDescription: "Complete guide to first home buyer guide in Malaysia. Expert advice for property buyers."
+metaTitle: "First Home Buyer Guide Malaysia 2026 | URMortgage"
+metaDescription: "Complete guide to buying your first home in Malaysia. Covers deposits, government schemes, mortgage approval, and common mistakes to avoid."
 primaryKeyword: "first home buyer guide Malaysia"
 secondaryKeywords:
-  - "first home buyer guide tips"
-  - "malaysia property advice"
+  - "first-time buyer Malaysia"
+  - "buying first house Malaysia"
+  - "first home deposit Malaysia"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "buying-costs-explained"
-  - "property-tax-guide"
+  - buying-costs-explained
+  - government-grants-schemes
+  - mortgage-types-compared
 published: true
 ---
 
-This is your complete guide to first home buyer guide in Malaysia. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## Your First Home in Malaysia — Where to Start
 
-## Key Considerations
+Buying your first home in Malaysia is one of the biggest financial decisions you will make. The process can feel overwhelming, but breaking it down into clear steps makes it manageable. This guide covers everything from saving your deposit to collecting the keys.
 
-The Malaysia property market has its own rules, costs, and processes. The Bank Negara Malaysia influences mortgage rates, and stamp duty applies to most purchases.
+## Saving for Your Deposit
 
-## What You Need to Know
+Most lenders in Malaysia require a deposit of 10% minimum of the property price. The more you save, the better your loan terms and the less you pay in additional costs.
 
-Every property purchase in Malaysia involves stamp duty, legal fees, and various other costs. Our [buying costs guide](/malaysia/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/malaysia/blog/government-grants-schemes/).
+Check your EPF Account 2 balance — this can be your deposit source. Build a clean CCRIS and CTOS credit record. Reduce existing hire purchase and personal loan balances to improve your DSR ratio. Some banks offer zero-entry-cost packages for first-time buyers
 
-## Getting the Right Mortgage
+## Government Support for First-Time Buyers
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=my). Read our [mortgage guide](/malaysia/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+Stamp duty exemption for first-time buyers on properties up to RM500,000. The MyFirst Home Scheme provides 100% financing guarantee for first-time buyers earning under RM5,000/month. EPF Account 2 can be used for deposits and monthly payments. These combined benefits make Malaysia one of the most accessible markets for first-time buyers
 
-## Professional Support
+Check our [government grants guide](/malaysia/blog/government-grants-schemes/) for the full list of current programmes and eligibility requirements.
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/malaysia/blog/property-inspection-checklist/) covers what to look for.
+## Getting Pre-Approved for a Mortgage
+
+Pre-approval tells you exactly how much you can borrow and shows sellers you are a serious buyer. In Malaysia, the process works as follows.
+
+Check CCRIS and CTOS reports before applying. Apply to at least 3 banks — Public Bank, Maybank, and CIMB are typically competitive. Ask specifically about first-time buyer packages with stamp duty exemptions and reduced processing fees
+
+Use our [mortgage calculator](/calculator/?country=my) to model different scenarios before applying. Read our [mortgage types guide](/malaysia/blog/mortgage-types-compared/) to understand which loan product suits your situation.
+
+## Understanding the Full Cost of Buying
+
+The purchase price is just the beginning. Budget for additional costs that can add significantly to your total outlay.
+
+Stamp duty on transfer: 1% on first RM100,000, 2% on RM100,001-500,000, 3% on RM500,001-1,000,000, 4% above RM1 million (exempt for first-time buyers up to RM500,000). Read our [buying costs guide](/malaysia/blog/buying-costs-explained/) for a complete breakdown of every expense.
+
+## Common First-Time Buyer Mistakes
+
+Not using EPF Account 2 for the deposit (leaving money idle that could be working for you), having outstanding hire purchase or personal loan payments that push DSR above the limit, not understanding the difference between freehold and leasehold (affecting long-term value), and not checking if the developer is blacklisted
+
+Avoid these pitfalls by taking your time, doing thorough research, and leaning on qualified professionals throughout the process. Our [property inspection checklist](/malaysia/blog/property-inspection-checklist/) covers what to check before committing.
+
+## Your Step-by-Step Timeline
+
+The typical first home purchase follows these stages: establish your budget and savings target, explore government support options, get pre-approved for financing, search for the right property, make an offer, complete legal due diligence and inspections, and finalise settlement.
+
+Our [property buying guide](/malaysia/property-buying-guide/) walks through each stage in detail, and our [mortgage guide](/malaysia/mortgage-guide/) covers everything about financing.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=my) to model your options, browse our [property buying guide](/malaysia/property-buying-guide/) for the complete process, or check our [FAQs](/malaysia/faqs/) for quick answers.
+Ready to start? Use our [mortgage calculator](/calculator/?country=my) to see what you can afford, browse [Malaysia FAQs](/malaysia/faqs/) for quick answers, or explore our full [property buying guide](/malaysia/property-buying-guide/).

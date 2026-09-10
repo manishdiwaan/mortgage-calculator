@@ -1,41 +1,55 @@
 ---
-title: "Types of Mortgages Compared in Ireland 2026"
+title: "Mortgage Types Compared — Ireland 2026"
 country: "ireland"
 slug: "mortgage-types-compared"
-category: "loan-types"
-metaTitle: "Types of Mortgages Compared in Ireland 2026 | URMortgage"
-metaDescription: "Complete guide to types of mortgages compared in Ireland. Expert advice for property buyers."
-primaryKeyword: "types of mortgages compared Ireland"
+category: "mortgages"
+metaTitle: "Mortgage Types in Ireland 2026 | Compare Fixed vs Variable"
+metaDescription: "Compare mortgage types available in Ireland. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
+primaryKeyword: "mortgage types Ireland"
 secondaryKeywords:
-  - "types of mortgages compared tips"
-  - "ireland property advice"
+  - "fixed vs variable mortgage Ireland"
+  - "home loan types Ireland"
+  - "best mortgage type Ireland"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "refinancing-guide"
-  - "first-home-buyer-guide"
+  - refinancing-guide
+  - first-home-buyer-guide
+  - buying-costs-explained
 published: true
 ---
 
-This is your complete guide to types of mortgages compared in Ireland. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## Choosing the Right Mortgage in Ireland
 
-## Key Considerations
+Selecting the right mortgage type is one of the most important financial decisions in the buying process. The wrong choice can cost you tens of thousands over the life of the loan. This guide explains every mortgage type available in Ireland and helps you choose.
 
-The Ireland property market has its own rules, costs, and processes. The European Central Bank influences mortgage rates, and stamp duty applies to most purchases.
+## Types of Mortgages Available
 
-## What You Need to Know
+The Irish market offers three main types. **Fixed rate** locks your rate for 1-10 years (some lenders now offer up to 30-year fixed) — increasingly popular and the majority choice for new borrowers. **Standard Variable Rate (SVR)** is set by the lender and can change at any time — historically the most expensive option. **Tracker rate** was linked directly to the ECB rate plus a margin — no longer available for new borrowers but existing trackers are extremely valuable (rates as low as ECB+0.5%). **Green mortgages** offer discounted rates for energy-efficient homes (BER A or B rated)
 
-Every property purchase in Ireland involves stamp duty, legal fees, and various other costs. Our [buying costs guide](/ireland/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/ireland/blog/government-grants-schemes/).
+## Head-to-Head Comparison
 
-## Getting the Right Mortgage
+Fixed rates (3-5 year) are the most popular choice for new borrowers — they provide certainty in a market with limited competition. SVR is almost always more expensive and should be avoided if possible. If you have a legacy tracker mortgage, never give it up — it cannot be replaced. Green mortgages reward energy-efficient properties with 0.1-0.2% rate discounts
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=ie). Read our [mortgage guide](/ireland/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+Use our [mortgage calculator](/calculator/?country=ie) to model different rate scenarios and see how each product type affects your monthly repayments and total interest paid.
 
-## Professional Support
+## Which Type Is Right for You?
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/ireland/blog/property-inspection-checklist/) covers what to look for.
+Your ideal mortgage type depends on your risk tolerance, financial stability, and market outlook.
+
+Choose **fixed rate** if you value payment certainty, are on a tight budget with little room for payment increases, or believe rates will rise. Choose **variable rate** if you can absorb payment increases, want the lowest possible initial cost, or believe rates will stay stable or fall.
+
+Consider your loan term carefully. Shorter terms mean higher monthly payments but dramatically lower total interest. Our [mortgage guide](/ireland/mortgage-guide/) provides a detailed analysis of how term length affects total cost.
+
+## Expert Tips for Ireland
+
+The LTI cap (4x gross income for FTBs) is usually the binding constraint — calculate this before starting your search. Always check Avant Money and Finance Ireland alongside the main banks for fixed rates. If buying a new build, apply for Help to Buy before signing the contract. Mortgage protection insurance is mandatory but can be sourced independently for cheaper rates
+
+## Refinancing Between Types
+
+If you chose the wrong type, or if market conditions change, refinancing is always an option. Read our [refinancing guide](/ireland/blog/refinancing-guide/) for a step-by-step walkthrough of switching products or lenders.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=ie) to model your options, browse our [property buying guide](/ireland/property-buying-guide/) for the complete process, or check our [FAQs](/ireland/faqs/) for quick answers.
+Use our [mortgage calculator](/calculator/?country=ie) to compare scenarios, read our [first home buyer guide](/ireland/blog/first-home-buyer-guide/) if you are a new buyer, or browse [Ireland FAQs](/ireland/faqs/) for quick answers.

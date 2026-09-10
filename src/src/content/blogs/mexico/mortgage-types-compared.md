@@ -1,41 +1,55 @@
 ---
-title: "Types of Mortgages Compared in Mexico 2026"
+title: "Mortgage Types Compared — Mexico 2026"
 country: "mexico"
 slug: "mortgage-types-compared"
-category: "loan-types"
-metaTitle: "Types of Mortgages Compared in Mexico 2026 | URMortgage"
-metaDescription: "Complete guide to types of mortgages compared in Mexico. Expert advice for property buyers."
-primaryKeyword: "types of mortgages compared Mexico"
+category: "mortgages"
+metaTitle: "Mortgage Types in Mexico 2026 | Compare Fixed vs Variable"
+metaDescription: "Compare mortgage types available in Mexico. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
+primaryKeyword: "mortgage types Mexico"
 secondaryKeywords:
-  - "types of mortgages compared tips"
-  - "mexico property advice"
+  - "fixed vs variable mortgage Mexico"
+  - "home loan types Mexico"
+  - "best mortgage type Mexico"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "refinancing-guide"
-  - "first-home-buyer-guide"
+  - refinancing-guide
+  - first-home-buyer-guide
+  - buying-costs-explained
 published: true
 ---
 
-This is your complete guide to types of mortgages compared in Mexico. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## Choosing the Right Mortgage in Mexico
 
-## Key Considerations
+Selecting the right mortgage type is one of the most important financial decisions in the buying process. The wrong choice can cost you tens of thousands over the life of the loan. This guide explains every mortgage type available in Mexico and helps you choose.
 
-The Mexico property market has its own rules, costs, and processes. The Bank of Mexico influences mortgage rates, and acquisition tax applies to most purchases.
+## Types of Mortgages Available
 
-## What You Need to Know
+Mexico has distinct financing channels. **Crédito hipotecario bancario (bank mortgage)** is typically fixed rate for the full term at 8-13% — higher than developed markets but providing certainty. **Crédito INFONAVIT** uses accumulated employer contributions at subsidised rates — significantly cheaper than bank rates. **Cofinavit** combines INFONAVIT credit with a bank loan to finance higher-value properties. **FOVISSSTE** provides similar benefits for government employees. Most bank mortgages use a reducing-balance calculation, but beware of flat-rate products from consumer finance companies which cost much more
 
-Every property purchase in Mexico involves acquisition tax, legal fees, and various other costs. Our [buying costs guide](/mexico/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/mexico/blog/government-grants-schemes/).
+## Head-to-Head Comparison
 
-## Getting the Right Mortgage
+INFONAVIT is always the cheapest option if you qualify — rates are subsidised and the credit comes from your accumulated employer contributions. Bank mortgages are more expensive (8-13%) but available for higher-value properties. Cofinavit cleverly combines both. Always compare using CAT (Costo Anual Total) which includes all costs, not just the interest rate. Avoid flat-rate products at all costs — they calculate interest on the original balance throughout, making them far more expensive
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=mx). Read our [mortgage guide](/mexico/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+Use our [mortgage calculator](/calculator/?country=mx) to model different rate scenarios and see how each product type affects your monthly repayments and total interest paid.
 
-## Professional Support
+## Which Type Is Right for You?
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/mexico/blog/property-inspection-checklist/) covers what to look for.
+Your ideal mortgage type depends on your risk tolerance, financial stability, and market outlook.
+
+Choose **fixed rate** if you value payment certainty, are on a tight budget with little room for payment increases, or believe rates will rise. Choose **variable rate** if you can absorb payment increases, want the lowest possible initial cost, or believe rates will stay stable or fall.
+
+Consider your loan term carefully. Shorter terms mean higher monthly payments but dramatically lower total interest. Our [mortgage guide](/mexico/mortgage-guide/) provides a detailed analysis of how term length affects total cost.
+
+## Expert Tips for Mexico
+
+Always check INFONAVIT first — the subsidised rate saves you hundreds of thousands of pesos over the life of the loan. Compare using CAT (Costo Anual Total), not just the tasa de interés. Use the CONDUSEF comparison tool. Pay extra whenever possible — at Mexican rates of 8-13%, prepayments generate enormous savings
+
+## Refinancing Between Types
+
+If you chose the wrong type, or if market conditions change, refinancing is always an option. Read our [refinancing guide](/mexico/blog/refinancing-guide/) for a step-by-step walkthrough of switching products or lenders.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=mx) to model your options, browse our [property buying guide](/mexico/property-buying-guide/) for the complete process, or check our [FAQs](/mexico/faqs/) for quick answers.
+Use our [mortgage calculator](/calculator/?country=mx) to compare scenarios, read our [first home buyer guide](/mexico/blog/first-home-buyer-guide/) if you are a new buyer, or browse [Mexico FAQs](/mexico/faqs/) for quick answers.
