@@ -1,33 +1,48 @@
 ---
-title: "Property Inspection Checklist in Norway 2026"
+title: "Property Inspection Checklist — Norway 2026"
 country: "norway"
 slug: "property-inspection-checklist"
-category: "inspections"
-metaTitle: "Property Inspection Checklist in Norway 2026 | URMortgage"
-metaDescription: "Complete guide to property inspection checklist in Norway. Expert advice for property buyers and investors."
+category: "inspection"
+metaTitle: "Property Inspection Checklist — Norway 2026 | URMortgage"
+metaDescription: "Complete property inspection checklist for buying in Norway. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Norway"
 secondaryKeywords:
+  - "Norway property advice"
   - "property inspection checklist tips"
-  - "norway property advice"
-publishDate: 2026-07-11
-lastUpdated: 2026-07-11
-wordCount: 1400
+publishDate: 2026-07-10
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "first-home-buyer-guide"
-  - "buying-costs-explained"
+  - common-buying-mistakes
+  - buying-costs-explained
 published: true
 ---
 
-## Property Inspection Checklist in Norway
+## Property Inspection Checklist — Norway 2026
 
-Norway has specific rules, taxes, and processes that every property buyer should understand. This guide covers the key information relevant to property inspection checklist in Norway.
+A thorough property inspection can save you from costly surprises after purchase. This checklist covers everything to check when buying property in Norway, from structural integrity to legal compliance.
 
-## Key Considerations for Norway
+## Professional Inspection
 
-The local property market in Norway is regulated by national and regional authorities. Always work with licensed local professionals — real estate agents, notaries, and mortgage brokers — who understand the specific rules in Norway.
+The tilstandsrapport (condition report) provided by the seller is a comprehensive document prepared by a certified building inspector (takstmann). Review it carefully for structural issues, moisture/mould, roof, electrical, plumbing, drainage, and any noted concerns. The 2022 strengthening of avhendingslova (Property Sales Act) eliminated 'as-is' sales — sellers are now liable for defects they knew or should have known about. Consider a supplementary independent inspection for older properties. Check radon levels (Norway has naturally high radon in some areas)
 
-Use our [mortgage calculator](/calculator/?country=no) to model your repayments, and browse our [Norway FAQ page](/norway/faqs/) for answers to common questions about property inspection checklist.
+## Your Personal Walkthrough Checklist
+
+Beyond the professional inspection, conduct your own assessment during viewings. Check water pressure in all taps and showers, test all light switches and power outlets, open and close all windows and doors (checking for sticking or misalignment), look for signs of damp or mould (especially in corners, under windows, and in bathrooms), check the condition of floors (soft spots may indicate structural issues), assess natural light at different times of day, and listen for noise from neighbours, roads, or aircraft.
+
+## External Checks
+
+Inspect the roof from ground level for visible damage, missing tiles, or sagging. Check guttering and downpipes. Look at the condition of external walls, windows, and doors. Assess the garden or common areas. Check boundary fences and walls. Verify drainage and check for signs of flooding.
+
+## Location and Neighbourhood
+
+Walk the neighbourhood at different times. Check proximity to transport, schools, shops, and amenities. Research local development plans that could affect value. Check crime statistics and flooding risk maps for the area.
+
+## Legal and Documentation Checks
+
+Verify ownership records, check for any encumbrances or restrictions, confirm planning permission compliance for any extensions or modifications, and review any leasehold or commonhold terms. Our [property buying guide](/norway/property-buying-guide/) covers the full legal process.
 
 ## Next Steps
 
-Read our [complete property buying guide](/norway/property-buying-guide/) and [mortgage guide](/norway/mortgage-guide/) for comprehensive information about buying property in Norway.
+Use our [mortgage calculator](/calculator/?country=no) once you have found the right property, read our [buying costs guide](/norway/blog/buying-costs-explained/) to budget accurately, or browse [Norway FAQs](/norway/faqs/).
+

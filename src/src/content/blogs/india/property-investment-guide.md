@@ -1,42 +1,44 @@
 ---
-title: "Property Investment Guide in India 2026"
+title: "Property Investment Guide — India 2026"
 country: "india"
 slug: "property-investment-guide"
 category: "investment"
-metaTitle: "Property Investment Guide India 2026 | URMortgage"
-metaDescription: "Complete guide to property investment guide in India. Expert advice for property buyers and homeowners."
+metaTitle: "Property Investment Guide — India 2026 | URMortgage"
+metaDescription: "Guide to property investment in India. Rental yields, tax implications, financing, and market analysis."
 primaryKeyword: "property investment guide India"
 secondaryKeywords:
+  - "India property advice"
   - "property investment guide tips"
-  - "india property advice"
-  - "buying house india"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - mortgage-types-compared
-  - refinancing-guide
+  - property-tax-guide
+  - buying-costs-explained
 published: true
 ---
 
-Property investment in India can be a powerful wealth-building strategy when done with proper research and planning.
+## Property Investment Guide — India 2026
 
-## How Property Investment Works
+Property investment can build long-term wealth through rental income and capital appreciation. However, it requires careful analysis of yields, taxes, financing costs, and market dynamics. This guide covers everything you need to know about investing in property in India.
 
-You buy a property and rent it out, earning income from rental yield and potential capital growth. Leverage (borrowing to invest) amplifies both gains and losses.
+## Rental Yields and Market Overview
 
-## Rental Yield vs Capital Growth
+Indian rental yields average 2-4% in major cities. Rental income above ₹2.5 lakh (old regime) is taxed at slab rate with 30% standard deduction for repairs. Capital gains: short-term (under 2 years) at slab rate, long-term at 20% with indexation. Section 54 allows exemption by reinvesting in another property. TDS of 1% on property transactions above ₹50 lakh. NRIs face 20.8% TDS on long-term capital gains
 
-Different markets offer different balances. Research vacancy rates, median rents, and growth trends in your target area before investing.
+## Financing Investment Property
+
+Investment property financing differs from owner-occupier mortgages. Lenders typically require higher deposits (20-40%), charge higher interest rates (0.5-2% premium), and apply stricter affordability criteria. Rental income may be partially factored into the assessment, but expect conservative treatment. Use our [mortgage calculator](/calculator/?country=in) to model investment scenarios.
 
 ## Tax Implications
 
-Property investors in India need to understand the tax treatment of rental income, deductible expenses, and capital gains. Consult a tax professional for your specific situation.
+Understanding the full tax picture is critical for investment returns. Rental income taxation, capital gains treatment, deductible expenses, and stamp duty or transfer tax surcharges on additional properties all affect your net return. Our [property tax guide](/india/blog/property-tax-guide/) provides a comprehensive breakdown of all applicable taxes.
 
-## Financing an Investment Property
+## Due Diligence for Investment
 
-Investment loans typically require larger down payments and may have slightly higher interest rates. Compare options with our [mortgage calculator](/calculator/?country=in).
+Investment due diligence goes beyond a standard purchase. Research local rental demand, vacancy rates, tenant quality, maintenance requirements, and comparable rental values. Our [property inspection checklist](/india/blog/property-inspection-checklist/) covers physical due diligence, while local rental market research is equally important.
 
-## Common Mistakes
+## Next Steps
 
-Over-leveraging, buying on emotion, and underestimating ongoing costs are the most common investment mistakes. Read our [mortgage guide](/india/mortgage-guide/) for financing strategies, or check our [FAQs](/india/faqs/).
+Model your investment returns using our [mortgage calculator](/calculator/?country=in), read our [buying costs guide](/india/blog/buying-costs-explained/) to understand total acquisition costs, or browse [India FAQs](/india/faqs/).
+

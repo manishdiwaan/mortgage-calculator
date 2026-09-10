@@ -1,40 +1,48 @@
 ---
-title: "Closing costs in United States Explained"
+title: "Property Tax Guide — United States 2026"
 country: "united-states"
 slug: "property-tax-guide"
-category: "taxes"
-metaTitle: "Closing costs United States 2026 | Complete Guide"
-metaDescription: "Understand closing costs when buying property in United States. Rates, exemptions, concessions, and how to calculate your liability."
-primaryKeyword: "closing costs United States"
+category: "tax"
+metaTitle: "Property Tax Guide — United States 2026 | URMortgage"
+metaDescription: "Complete guide to property taxes in United States. Purchase taxes, annual charges, rental income tax, and capital gains."
+primaryKeyword: "property tax guide United States"
 secondaryKeywords:
+  - "United States property advice"
   - "property tax guide tips"
-  - "united states property advice"
-  - "buying house united states"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - first-home-buyer-guide
   - buying-costs-explained
+  - property-investment-guide
 published: true
 ---
 
-Closing costs is one of the biggest additional costs when buying property in United States. Understanding how it works can save you thousands.
+## Property Tax Guide — United States 2026
 
-## How Closing costs Is Calculated
+Understanding the full tax picture is essential for any property purchase or investment. Taxes affect buying costs, ongoing ownership expenses, rental income, and eventual sale proceeds. This guide covers every tax that applies to property in United States.
 
-Closing costs in United States is typically calculated as a percentage of the property value. Rates may be tiered, with higher-value properties attracting higher percentages.
+## Taxes When Buying
 
-## Concessions and Exemptions
+Transfer taxes vary by state (0-2.5%). Title insurance of 0.5-1%. Annual property taxes of 0.5-2.5% of assessed value (the largest ongoing cost of ownership, varying dramatically by state). Mortgage interest deductible on loans up to $750,000 (if itemising). Capital gains: 0-20% long-term, plus 3.8% net investment income tax for high earners. Primary residence exclusion of $250,000 ($500,000 married). SALT deduction capped at $10,000
 
-First-time buyers, certain property types, and specific locations may qualify for reduced closing costs rates or full exemptions. These concessions can save significant amounts.
+## Ongoing Annual Taxes
 
-## Tips to Reduce Your Closing costs
+Property ownership in United States involves annual tax obligations beyond the one-off purchase taxes. These typically include local government property charges, which vary by area and property value. Budget for these as a fixed annual cost of ownership alongside insurance and maintenance.
 
-Buying below concession thresholds, choosing eligible property types, and timing your purchase can all help reduce your closing costs liability.
+## Taxes on Rental Income
 
-## Impact on Your Budget
+If you rent out your property, the rental income is subject to taxation. The rules for what expenses can be deducted (mortgage interest, maintenance, management fees, depreciation, insurance) vary and can significantly affect your net return. Consult a tax advisor familiar with United States's property tax rules for investment properties.
 
-Factor closing costs into your total budget from the start. Our [buying costs guide](/united-states/blog/buying-costs-explained/) covers all costs, and our [mortgage calculator](/calculator/?country=us) helps you see the full picture.
+## Taxes When Selling
 
-For a complete buying walkthrough, see our [property buying guide](/united-states/property-buying-guide/) or check our [FAQs](/united-states/faqs/).
+Capital gains treatment varies between primary residences and investment properties, with many jurisdictions offering preferential treatment or exemptions for primary residences held for a minimum period. Understanding the tax implications before you buy helps you plan your holding period and exit strategy.
+
+## Tax Planning Tips
+
+Work with a tax professional who understands property taxation in United States. Structure your purchase correctly from the start — the ownership structure (personal, joint, corporate) affects tax treatment. Keep records of all improvements and costs as these may reduce future capital gains liability.
+
+## Next Steps
+
+Use our [mortgage calculator](/calculator/?country=us) to factor tax costs into your budget, read our [buying costs guide](/united-states/blog/buying-costs-explained/) for total acquisition costs, or browse [United States FAQs](/united-states/faqs/).
+

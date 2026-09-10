@@ -1,41 +1,48 @@
 ---
-title: "Property Inspection Checklist in France 2026"
+title: "Property Inspection Checklist — France 2026"
 country: "france"
 slug: "property-inspection-checklist"
-category: "inspections"
-metaTitle: "Property Inspection Checklist in France 2026 | URMortgage"
-metaDescription: "Complete guide to property inspection checklist in France. Expert advice for property buyers."
+category: "inspection"
+metaTitle: "Property Inspection Checklist — France 2026 | URMortgage"
+metaDescription: "Complete property inspection checklist for buying in France. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist France"
 secondaryKeywords:
+  - "France property advice"
   - "property inspection checklist tips"
-  - "france property advice"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "first-home-buyer-guide"
-  - "common-buying-mistakes"
+  - common-buying-mistakes
+  - buying-costs-explained
 published: true
 ---
 
-This is your complete guide to property inspection checklist in France. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## Property Inspection Checklist — France 2026
 
-## Key Considerations
+A thorough property inspection can save you from costly surprises after purchase. This checklist covers everything to check when buying property in France, from structural integrity to legal compliance.
 
-The France property market has its own rules, costs, and processes. The European Central Bank influences mortgage rates, and notary fees applies to most purchases.
+## Professional Inspection
 
-## What You Need to Know
+Mandatory seller diagnostics (DDT — Dossier de Diagnostics Techniques) include: DPE (energy performance), amiante (asbestos, pre-1997 buildings), plomb (lead, pre-1949), termites (in designated zones), ERP (natural/technological risks), electricity (over 15 years), gas (over 15 years), and assainissement (sanitation). These are the seller's obligation. Buyers should additionally inspect for structural issues, humidity, roof condition, and compliance with planning regulations — especially important for rural properties
 
-Every property purchase in France involves notary fees, legal fees, and various other costs. Our [buying costs guide](/france/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/france/blog/government-grants-schemes/).
+## Your Personal Walkthrough Checklist
 
-## Getting the Right Mortgage
+Beyond the professional inspection, conduct your own assessment during viewings. Check water pressure in all taps and showers, test all light switches and power outlets, open and close all windows and doors (checking for sticking or misalignment), look for signs of damp or mould (especially in corners, under windows, and in bathrooms), check the condition of floors (soft spots may indicate structural issues), assess natural light at different times of day, and listen for noise from neighbours, roads, or aircraft.
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=fr). Read our [mortgage guide](/france/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+## External Checks
 
-## Professional Support
+Inspect the roof from ground level for visible damage, missing tiles, or sagging. Check guttering and downpipes. Look at the condition of external walls, windows, and doors. Assess the garden or common areas. Check boundary fences and walls. Verify drainage and check for signs of flooding.
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/france/blog/property-inspection-checklist/) covers what to look for.
+## Location and Neighbourhood
+
+Walk the neighbourhood at different times. Check proximity to transport, schools, shops, and amenities. Research local development plans that could affect value. Check crime statistics and flooding risk maps for the area.
+
+## Legal and Documentation Checks
+
+Verify ownership records, check for any encumbrances or restrictions, confirm planning permission compliance for any extensions or modifications, and review any leasehold or commonhold terms. Our [property buying guide](/france/property-buying-guide/) covers the full legal process.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=fr) to model your options, browse our [property buying guide](/france/property-buying-guide/) for the complete process, or check our [FAQs](/france/faqs/) for quick answers.
+Use our [mortgage calculator](/calculator/?country=fr) once you have found the right property, read our [buying costs guide](/france/blog/buying-costs-explained/) to budget accurately, or browse [France FAQs](/france/faqs/).
+

@@ -1,44 +1,48 @@
 ---
-title: "Property Inspection Checklist in India 2026"
+title: "Property Inspection Checklist — India 2026"
 country: "india"
 slug: "property-inspection-checklist"
-category: "inspections"
-metaTitle: "Property Inspection Checklist India 2026 | URMortgage"
-metaDescription: "Complete guide to property inspection checklist in India. Expert advice for property buyers and homeowners."
+category: "inspection"
+metaTitle: "Property Inspection Checklist — India 2026 | URMortgage"
+metaDescription: "Complete property inspection checklist for buying in India. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist India"
 secondaryKeywords:
+  - "India property advice"
   - "property inspection checklist tips"
-  - "india property advice"
-  - "buying house india"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - first-home-buyer-guide
   - common-buying-mistakes
+  - buying-costs-explained
 published: true
 ---
 
-A thorough property inspection before purchase can save you from expensive surprises. Here is what to check when buying in India.
+## Property Inspection Checklist — India 2026
 
-## What to Look for at Viewings
+A thorough property inspection can save you from costly surprises after purchase. This checklist covers everything to check when buying property in India, from structural integrity to legal compliance.
 
-Check the property's external condition, interior finishes, plumbing and electrical systems, and structural integrity. Note any signs of water damage, cracking, or pest activity.
+## Professional Inspection
 
-## Professional Building Inspection
+For under-construction: verify RERA registration on the state RERA portal, check developer track record, confirm occupancy certificate timeline, review CERSAI charge records. For resale: obtain encumbrance certificate for 30+ years, verify khata/patta records, check property tax clearance, confirm no pending litigation through revenue records. Physical inspection should cover structural integrity, water supply, electrical wiring, seepage/dampness, and legal compliance of all constructions. Engage an independent lawyer — do not rely on the builder's legal team
 
-A qualified inspector examines the structural integrity, roof, walls, foundations, and major systems. This is essential for any property purchase in India.
+## Your Personal Walkthrough Checklist
 
-## Pest and Environmental Checks
+Beyond the professional inspection, conduct your own assessment during viewings. Check water pressure in all taps and showers, test all light switches and power outlets, open and close all windows and doors (checking for sticking or misalignment), look for signs of damp or mould (especially in corners, under windows, and in bathrooms), check the condition of floors (soft spots may indicate structural issues), assess natural light at different times of day, and listen for noise from neighbours, roads, or aircraft.
 
-Depending on your location in India, pest inspections and environmental checks may be critical. Local conditions determine which inspections are most important.
+## External Checks
 
-## Using Results to Negotiate
+Inspect the roof from ground level for visible damage, missing tiles, or sagging. Check guttering and downpipes. Look at the condition of external walls, windows, and doors. Assess the garden or common areas. Check boundary fences and walls. Verify drainage and check for signs of flooding.
 
-Inspection findings can justify price reductions or repair requirements. Never waive inspections to save time or money — the cost is minimal compared to potential repair bills.
+## Location and Neighbourhood
 
-## When to Walk Away
+Walk the neighbourhood at different times. Check proximity to transport, schools, shops, and amenities. Research local development plans that could affect value. Check crime statistics and flooding risk maps for the area.
 
-Major structural defects, significant pest damage, or legal issues with the property may justify withdrawing from the purchase entirely.
+## Legal and Documentation Checks
 
-For the complete buying process, read our [property buying guide](/india/property-buying-guide/). See our [common mistakes guide](/india/blog/common-buying-mistakes/) for more pitfalls to avoid. Use our [mortgage calculator](/calculator/?country=in) to stay on budget.
+Verify ownership records, check for any encumbrances or restrictions, confirm planning permission compliance for any extensions or modifications, and review any leasehold or commonhold terms. Our [property buying guide](/india/property-buying-guide/) covers the full legal process.
+
+## Next Steps
+
+Use our [mortgage calculator](/calculator/?country=in) once you have found the right property, read our [buying costs guide](/india/blog/buying-costs-explained/) to budget accurately, or browse [India FAQs](/india/faqs/).
+

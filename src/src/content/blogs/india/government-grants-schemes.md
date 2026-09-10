@@ -1,42 +1,44 @@
 ---
-title: "Government Grants and Schemes for Buyers in India 2026"
+title: "Government Grants and Schemes for Property Buyers in India 2026"
 country: "india"
 slug: "government-grants-schemes"
 category: "grants"
-metaTitle: "Government Grants and Schemes for Buyers India 2026 | URMortgage"
-metaDescription: "Complete guide to government grants and schemes for buyers in India. Expert advice for property buyers and homeowners."
-primaryKeyword: "government grants and schemes for buyers India"
+metaTitle: "Government Grants and Schemes for Property Buyers in India 2026 | URMortgage"
+metaDescription: "Guide to government grants and schemes for property buyers in India. Subsidies, tax relief, and support programmes."
+primaryKeyword: "government grants schemes India"
 secondaryKeywords:
-  - "government grants and schemes for buyers tips"
-  - "india property advice"
-  - "buying house india"
+  - "India property advice"
+  - "government grants schemes tips"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
   - first-home-buyer-guide
   - property-tax-guide
 published: true
 ---
 
-Government grants and schemes in India can significantly reduce the cost of buying your first home or investment property.
+## Government Grants and Schemes for Property Buyers in India
 
-## First-Time Buyer Programmes
+Buying property is one of the largest financial commitments you will make. Government programmes in India can significantly reduce costs through grants, tax exemptions, subsidised financing, and other support mechanisms. This guide covers every major programme available in 2026.
 
-The India government offers several programmes specifically for first-time buyers. These may include down payment assistance, stamp duty concessions, and subsidised interest rates.
+## Current Programmes and Eligibility
 
-## Down payment Assistance
-
-Some schemes help buyers build their down payment through savings incentives, matching contributions, or reduced down payment requirements with government guarantees.
-
-## Stamp duty Concessions
-
-First-time buyers in India may qualify for reduced or waived stamp duty. Eligibility criteria typically include property value limits and buyer status requirements. See our [stamp duty guide](/india/blog/property-tax-guide/) for details.
+PMAY (Pradhan Mantri Awas Yojana) provides credit-linked interest subsidy up to ₹2.67 lakh for EWS/LIG/MIG. Section 80C allows ₹1.5 lakh deduction on principal repayment. Section 24(b) provides ₹2 lakh deduction on interest for self-occupied property. First-time buyers get additional benefits under various state schemes. State-specific programmes: MHADA (Maharashtra), DDA (Delhi), BDA (Bangalore) offer affordable housing through lottery
 
 ## How to Apply
 
-Most schemes require you to apply before or during the purchase process. Your lender or legal representative can usually assist with applications.
+Eligibility criteria, application windows, and benefit amounts change periodically. Always verify current terms directly with the administering body before making purchase decisions based on expected support. Apply for relevant programmes early in your buying process — some have limited funding or processing times that require advance planning.
 
-## Combining Benefits
+## Combining Multiple Benefits
 
-Many schemes can be combined for maximum savings. Review all available programmes before purchasing. Use our [mortgage calculator](/calculator/?country=in) to see how the savings affect your repayments, and read our [first home buyer guide](/india/blog/first-home-buyer-guide/) for the complete picture.
+In India, it is often possible to combine multiple government programmes. For example, first-time buyer tax relief can be combined with subsidised financing or grants. Calculate the total benefit package before finalising your budget — the combined value can be substantial.
+
+## Tax Benefits of Property Ownership
+
+Beyond direct grants and subsidies, property ownership in India often comes with ongoing tax advantages. These may include deductions on mortgage interest, reduced rates on primary residences, or exemptions on capital gains. Our [property tax guide](/india/blog/property-tax-guide/) covers all applicable taxes in detail.
+
+## Next Steps
+
+Use our [mortgage calculator](/calculator/?country=in) to see how government support affects your repayments. Read our [first home buyer guide](/india/blog/first-home-buyer-guide/) for the complete buying process, or browse [India FAQs](/india/faqs/) for quick answers.
+

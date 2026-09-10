@@ -1,40 +1,48 @@
 ---
-title: "Stamp duty in India Explained"
+title: "Property Tax Guide — India 2026"
 country: "india"
 slug: "property-tax-guide"
-category: "taxes"
-metaTitle: "Stamp duty India 2026 | Complete Guide"
-metaDescription: "Understand stamp duty when buying property in India. Rates, exemptions, concessions, and how to calculate your liability."
-primaryKeyword: "stamp duty India"
+category: "tax"
+metaTitle: "Property Tax Guide — India 2026 | URMortgage"
+metaDescription: "Complete guide to property taxes in India. Purchase taxes, annual charges, rental income tax, and capital gains."
+primaryKeyword: "property tax guide India"
 secondaryKeywords:
+  - "India property advice"
   - "property tax guide tips"
-  - "india property advice"
-  - "buying house india"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - first-home-buyer-guide
   - buying-costs-explained
+  - property-investment-guide
 published: true
 ---
 
-Stamp duty is one of the biggest additional costs when buying property in India. Understanding how it works can save you thousands.
+## Property Tax Guide — India 2026
 
-## How Stamp duty Is Calculated
+Understanding the full tax picture is essential for any property purchase or investment. Taxes affect buying costs, ongoing ownership expenses, rental income, and eventual sale proceeds. This guide covers every tax that applies to property in India.
 
-Stamp duty in India is typically calculated as a percentage of the property value. Rates may be tiered, with higher-value properties attracting higher percentages.
+## Taxes When Buying
 
-## Concessions and Exemptions
+Stamp duty of 3-8% by state. Registration of 1% in most states. GST of 5% on under-construction only. Annual property tax varies by municipal corporation. Rental income taxed at slab rate with 30% standard deduction. Capital gains: LTCG at 20% with indexation (after 2 years), STCG at slab rate. TDS of 1% on transactions above ₹50 lakh. Wealth tax abolished but annual property tax is ongoing
 
-First-time buyers, certain property types, and specific locations may qualify for reduced stamp duty rates or full exemptions. These concessions can save significant amounts.
+## Ongoing Annual Taxes
 
-## Tips to Reduce Your Stamp duty
+Property ownership in India involves annual tax obligations beyond the one-off purchase taxes. These typically include local government property charges, which vary by area and property value. Budget for these as a fixed annual cost of ownership alongside insurance and maintenance.
 
-Buying below concession thresholds, choosing eligible property types, and timing your purchase can all help reduce your stamp duty liability.
+## Taxes on Rental Income
 
-## Impact on Your Budget
+If you rent out your property, the rental income is subject to taxation. The rules for what expenses can be deducted (mortgage interest, maintenance, management fees, depreciation, insurance) vary and can significantly affect your net return. Consult a tax advisor familiar with India's property tax rules for investment properties.
 
-Factor stamp duty into your total budget from the start. Our [buying costs guide](/india/blog/buying-costs-explained/) covers all costs, and our [mortgage calculator](/calculator/?country=in) helps you see the full picture.
+## Taxes When Selling
 
-For a complete buying walkthrough, see our [property buying guide](/india/property-buying-guide/) or check our [FAQs](/india/faqs/).
+Capital gains treatment varies between primary residences and investment properties, with many jurisdictions offering preferential treatment or exemptions for primary residences held for a minimum period. Understanding the tax implications before you buy helps you plan your holding period and exit strategy.
+
+## Tax Planning Tips
+
+Work with a tax professional who understands property taxation in India. Structure your purchase correctly from the start — the ownership structure (personal, joint, corporate) affects tax treatment. Keep records of all improvements and costs as these may reduce future capital gains liability.
+
+## Next Steps
+
+Use our [mortgage calculator](/calculator/?country=in) to factor tax costs into your budget, read our [buying costs guide](/india/blog/buying-costs-explained/) for total acquisition costs, or browse [India FAQs](/india/faqs/).
+

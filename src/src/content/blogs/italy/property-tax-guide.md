@@ -1,41 +1,48 @@
 ---
-title: "registration tax in Italy Explained"
+title: "Property Tax Guide — Italy 2026"
 country: "italy"
 slug: "property-tax-guide"
-category: "taxes"
-metaTitle: "registration tax in Italy Explained | URMortgage"
-metaDescription: "Complete guide to property tax guide in Italy. Expert advice for property buyers."
-primaryKeyword: "registration tax Italy"
+category: "tax"
+metaTitle: "Property Tax Guide — Italy 2026 | URMortgage"
+metaDescription: "Complete guide to property taxes in Italy. Purchase taxes, annual charges, rental income tax, and capital gains."
+primaryKeyword: "property tax guide Italy"
 secondaryKeywords:
+  - "Italy property advice"
   - "property tax guide tips"
-  - "italy property advice"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "first-home-buyer-guide"
-  - "buying-costs-explained"
+  - buying-costs-explained
+  - property-investment-guide
 published: true
 ---
 
-This is your complete guide to property tax guide in Italy. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## Property Tax Guide — Italy 2026
 
-## Key Considerations
+Understanding the full tax picture is essential for any property purchase or investment. Taxes affect buying costs, ongoing ownership expenses, rental income, and eventual sale proceeds. This guide covers every tax that applies to property in Italy.
 
-The Italy property market has its own rules, costs, and processes. The European Central Bank influences mortgage rates, and registration tax applies to most purchases.
+## Taxes When Buying
 
-## What You Need to Know
+Imposta di registro: 2% of cadastral value for primary residence (from private), 9% for non-primary. IVA: 4% of full price for primary (from developer), 10% non-primary. Under-36 FTBs: exempt from registration taxes. IMU: exempt for primary residence, 0.76-1.06% of cadastral value for others. TARI (waste tax) is annual. Cedolare secca: 21% flat tax on rental income. Capital gains: 26% if sold within 5 years (primary exempt)
 
-Every property purchase in Italy involves registration tax, legal fees, and various other costs. Our [buying costs guide](/italy/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/italy/blog/government-grants-schemes/).
+## Ongoing Annual Taxes
 
-## Getting the Right Mortgage
+Property ownership in Italy involves annual tax obligations beyond the one-off purchase taxes. These typically include local government property charges, which vary by area and property value. Budget for these as a fixed annual cost of ownership alongside insurance and maintenance.
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=it). Read our [mortgage guide](/italy/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+## Taxes on Rental Income
 
-## Professional Support
+If you rent out your property, the rental income is subject to taxation. The rules for what expenses can be deducted (mortgage interest, maintenance, management fees, depreciation, insurance) vary and can significantly affect your net return. Consult a tax advisor familiar with Italy's property tax rules for investment properties.
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/italy/blog/property-inspection-checklist/) covers what to look for.
+## Taxes When Selling
+
+Capital gains treatment varies between primary residences and investment properties, with many jurisdictions offering preferential treatment or exemptions for primary residences held for a minimum period. Understanding the tax implications before you buy helps you plan your holding period and exit strategy.
+
+## Tax Planning Tips
+
+Work with a tax professional who understands property taxation in Italy. Structure your purchase correctly from the start — the ownership structure (personal, joint, corporate) affects tax treatment. Keep records of all improvements and costs as these may reduce future capital gains liability.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=it) to model your options, browse our [property buying guide](/italy/property-buying-guide/) for the complete process, or check our [FAQs](/italy/faqs/) for quick answers.
+Use our [mortgage calculator](/calculator/?country=it) to factor tax costs into your budget, read our [buying costs guide](/italy/blog/buying-costs-explained/) for total acquisition costs, or browse [Italy FAQs](/italy/faqs/).
+

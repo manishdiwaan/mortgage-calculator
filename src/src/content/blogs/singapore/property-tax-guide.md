@@ -1,40 +1,48 @@
 ---
-title: "Stamp duty in Singapore Explained"
+title: "Property Tax Guide — Singapore 2026"
 country: "singapore"
 slug: "property-tax-guide"
-category: "taxes"
-metaTitle: "Stamp duty Singapore 2026 | Complete Guide"
-metaDescription: "Understand stamp duty when buying property in Singapore. Rates, exemptions, concessions, and how to calculate your liability."
-primaryKeyword: "stamp duty Singapore"
+category: "tax"
+metaTitle: "Property Tax Guide — Singapore 2026 | URMortgage"
+metaDescription: "Complete guide to property taxes in Singapore. Purchase taxes, annual charges, rental income tax, and capital gains."
+primaryKeyword: "property tax guide Singapore"
 secondaryKeywords:
+  - "Singapore property advice"
   - "property tax guide tips"
-  - "singapore property advice"
-  - "buying house singapore"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - first-home-buyer-guide
   - buying-costs-explained
+  - property-investment-guide
 published: true
 ---
 
-Stamp duty is one of the biggest additional costs when buying property in Singapore. Understanding how it works can save you thousands.
+## Property Tax Guide — Singapore 2026
 
-## How Stamp duty Is Calculated
+Understanding the full tax picture is essential for any property purchase or investment. Taxes affect buying costs, ongoing ownership expenses, rental income, and eventual sale proceeds. This guide covers every tax that applies to property in Singapore.
 
-Stamp duty in Singapore is typically calculated as a percentage of the property value. Rates may be tiered, with higher-value properties attracting higher percentages.
+## Taxes When Buying
 
-## Concessions and Exemptions
+BSD of 1-6% (all buyers). ABSD: 0% first property (citizen HDB), 20% second, 30% third+, 60% foreigners. SSD if sold within 3 years. Annual property tax: 0-16% for owner-occupied (progressive on annual value), 12-36% for non-owner. No capital gains tax. Rental income at personal rates (0-22%). CPF accrued interest (2.5%) on amounts used for property — refunded to CPF on sale
 
-First-time buyers, certain property types, and specific locations may qualify for reduced stamp duty rates or full exemptions. These concessions can save significant amounts.
+## Ongoing Annual Taxes
 
-## Tips to Reduce Your Stamp duty
+Property ownership in Singapore involves annual tax obligations beyond the one-off purchase taxes. These typically include local government property charges, which vary by area and property value. Budget for these as a fixed annual cost of ownership alongside insurance and maintenance.
 
-Buying below concession thresholds, choosing eligible property types, and timing your purchase can all help reduce your stamp duty liability.
+## Taxes on Rental Income
 
-## Impact on Your Budget
+If you rent out your property, the rental income is subject to taxation. The rules for what expenses can be deducted (mortgage interest, maintenance, management fees, depreciation, insurance) vary and can significantly affect your net return. Consult a tax advisor familiar with Singapore's property tax rules for investment properties.
 
-Factor stamp duty into your total budget from the start. Our [buying costs guide](/singapore/blog/buying-costs-explained/) covers all costs, and our [mortgage calculator](/calculator/?country=sg) helps you see the full picture.
+## Taxes When Selling
 
-For a complete buying walkthrough, see our [property buying guide](/singapore/property-buying-guide/) or check our [FAQs](/singapore/faqs/).
+Capital gains treatment varies between primary residences and investment properties, with many jurisdictions offering preferential treatment or exemptions for primary residences held for a minimum period. Understanding the tax implications before you buy helps you plan your holding period and exit strategy.
+
+## Tax Planning Tips
+
+Work with a tax professional who understands property taxation in Singapore. Structure your purchase correctly from the start — the ownership structure (personal, joint, corporate) affects tax treatment. Keep records of all improvements and costs as these may reduce future capital gains liability.
+
+## Next Steps
+
+Use our [mortgage calculator](/calculator/?country=sg) to factor tax costs into your budget, read our [buying costs guide](/singapore/blog/buying-costs-explained/) for total acquisition costs, or browse [Singapore FAQs](/singapore/faqs/).
+

@@ -1,41 +1,44 @@
 ---
-title: "Refinancing Guide in Spain 2026"
+title: "When and How to Refinance Your Mortgage in Spain 2026"
 country: "spain"
 slug: "refinancing-guide"
 category: "refinancing"
-metaTitle: "Refinancing Guide in Spain 2026 | URMortgage"
-metaDescription: "Complete guide to refinancing guide in Spain. Expert advice for property buyers."
+metaTitle: "When and How to Refinance Your Mortgage in Spain 2026 | URMortgage"
+metaDescription: "Complete guide to refinancing your mortgage in Spain. When to switch, costs, penalties, and how much you can save."
 primaryKeyword: "refinancing guide Spain"
 secondaryKeywords:
+  - "Spain property advice"
   - "refinancing guide tips"
-  - "spain property advice"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "mortgage-types-compared"
-  - "common-buying-mistakes"
+  - mortgage-types-compared
+  - buying-costs-explained
 published: true
 ---
 
-This is your complete guide to refinancing guide in Spain. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## When and How to Refinance Your Mortgage in Spain
 
-## Key Considerations
+If your mortgage is more than a couple of years old, you may be paying more than necessary. Refinancing — switching to a better rate, different product, or new lender — can save you thousands over the remaining term. This guide explains when refinancing makes sense and how to do it in Spain.
 
-The Spain property market has its own rules, costs, and processes. The European Central Bank influences mortgage rates, and transfer tax applies to most purchases.
+## When Refinancing Makes Sense
 
-## What You Need to Know
+Refinancing typically makes sense when market rates have dropped significantly below your current rate, your financial profile has improved (higher income, better credit score, lower LTV through property appreciation), you want to switch from variable to fixed rate (or vice versa), you want to access equity for renovations or other purposes, or you want to change your loan term.
 
-Every property purchase in Spain involves transfer tax, legal fees, and various other costs. Our [buying costs guide](/spain/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/spain/blog/government-grants-schemes/).
+## How Refinancing Works in Spain
 
-## Getting the Right Mortgage
+Novación (renegotiation with current bank) is cheapest. Subrogación (transfer to new bank) is handled by the new bank. Cancelación y nueva constitución is most flexible but most expensive. Early repayment caps: 0.25% for variable, 2% for fixed (reducing over term). After the Euribor spike, many borrowers converted variable to fixed through novación or subrogación. The 2019 Mortgage Law protections apply to all refinancing options
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=es). Read our [mortgage guide](/spain/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+## Calculating the Break-Even Point
 
-## Professional Support
+The break-even point is how long the monthly savings take to exceed the costs of switching. Divide total switching costs by monthly savings to get the number of months. If you plan to stay longer than the break-even point, refinancing makes financial sense. Use our [mortgage calculator](/calculator/?country=es) to model the savings.
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/spain/blog/property-inspection-checklist/) covers what to look for.
+## When NOT to Refinance
+
+Refinancing does not always make sense. If the rate difference is small and switching costs are high, you may be better staying. If you are close to paying off the mortgage, the savings period is too short. If your property has decreased in value, your LTV may be worse, potentially increasing your rate.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=es) to model your options, browse our [property buying guide](/spain/property-buying-guide/) for the complete process, or check our [FAQs](/spain/faqs/) for quick answers.
+Compare current rates using our [mortgage calculator](/calculator/?country=es), read our [mortgage types guide](/spain/blog/mortgage-types-compared/) to understand your options, or check [Spain FAQs](/spain/faqs/) for quick answers.
+

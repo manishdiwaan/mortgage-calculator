@@ -1,40 +1,48 @@
 ---
-title: "Transfer fee in UAE Explained"
+title: "Property Tax Guide — UAE 2026"
 country: "uae"
 slug: "property-tax-guide"
-category: "taxes"
-metaTitle: "Transfer fee UAE 2026 | Complete Guide"
-metaDescription: "Understand transfer fee when buying property in UAE. Rates, exemptions, concessions, and how to calculate your liability."
-primaryKeyword: "transfer fee UAE"
+category: "tax"
+metaTitle: "Property Tax Guide — UAE 2026 | URMortgage"
+metaDescription: "Complete guide to property taxes in UAE. Purchase taxes, annual charges, rental income tax, and capital gains."
+primaryKeyword: "property tax guide UAE"
 secondaryKeywords:
+  - "UAE property advice"
   - "property tax guide tips"
-  - "uae property advice"
-  - "buying house uae"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - first-home-buyer-guide
   - buying-costs-explained
+  - property-investment-guide
 published: true
 ---
 
-Transfer fee is one of the biggest additional costs when buying property in UAE. Understanding how it works can save you thousands.
+## Property Tax Guide — UAE 2026
 
-## How Transfer fee Is Calculated
+Understanding the full tax picture is essential for any property purchase or investment. Taxes affect buying costs, ongoing ownership expenses, rental income, and eventual sale proceeds. This guide covers every tax that applies to property in UAE.
 
-Transfer fee in UAE is typically calculated as a percentage of the property value. Rates may be tiered, with higher-value properties attracting higher percentages.
+## Taxes When Buying
 
-## Concessions and Exemptions
+DLD transfer fee: 4% in Dubai (split), 2% in Abu Dhabi. No annual property tax on residential. No income tax on rental income. No capital gains tax. Service charges: AED 15-30/sqft/year. DEWA connection deposits. Oqood registration: 4% for off-plan. Mortgage registration: 0.25% + AED 290. No wealth tax, inheritance tax, or stamp duty beyond DLD. This zero-tax environment is a major draw for international investors
 
-First-time buyers, certain property types, and specific locations may qualify for reduced transfer fee rates or full exemptions. These concessions can save significant amounts.
+## Ongoing Annual Taxes
 
-## Tips to Reduce Your Transfer fee
+Property ownership in UAE involves annual tax obligations beyond the one-off purchase taxes. These typically include local government property charges, which vary by area and property value. Budget for these as a fixed annual cost of ownership alongside insurance and maintenance.
 
-Buying below concession thresholds, choosing eligible property types, and timing your purchase can all help reduce your transfer fee liability.
+## Taxes on Rental Income
 
-## Impact on Your Budget
+If you rent out your property, the rental income is subject to taxation. The rules for what expenses can be deducted (mortgage interest, maintenance, management fees, depreciation, insurance) vary and can significantly affect your net return. Consult a tax advisor familiar with UAE's property tax rules for investment properties.
 
-Factor transfer fee into your total budget from the start. Our [buying costs guide](/uae/blog/buying-costs-explained/) covers all costs, and our [mortgage calculator](/calculator/?country=ae) helps you see the full picture.
+## Taxes When Selling
 
-For a complete buying walkthrough, see our [property buying guide](/uae/property-buying-guide/) or check our [FAQs](/uae/faqs/).
+Capital gains treatment varies between primary residences and investment properties, with many jurisdictions offering preferential treatment or exemptions for primary residences held for a minimum period. Understanding the tax implications before you buy helps you plan your holding period and exit strategy.
+
+## Tax Planning Tips
+
+Work with a tax professional who understands property taxation in UAE. Structure your purchase correctly from the start — the ownership structure (personal, joint, corporate) affects tax treatment. Keep records of all improvements and costs as these may reduce future capital gains liability.
+
+## Next Steps
+
+Use our [mortgage calculator](/calculator/?country=ae) to factor tax costs into your budget, read our [buying costs guide](/uae/blog/buying-costs-explained/) for total acquisition costs, or browse [UAE FAQs](/uae/faqs/).
+

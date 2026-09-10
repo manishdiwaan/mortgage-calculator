@@ -1,41 +1,44 @@
 ---
-title: "Refinancing Guide in New Zealand 2026"
+title: "When and How to Refinance Your Mortgage in New Zealand 2026"
 country: "new-zealand"
 slug: "refinancing-guide"
 category: "refinancing"
-metaTitle: "Refinancing Guide in New Zealand 2026 | URMortgage"
-metaDescription: "Complete guide to refinancing guide in New Zealand. Expert advice for property buyers."
+metaTitle: "When and How to Refinance Your Mortgage in New Zealand 2026 | URMortgage"
+metaDescription: "Complete guide to refinancing your mortgage in New Zealand. When to switch, costs, penalties, and how much you can save."
 primaryKeyword: "refinancing guide New Zealand"
 secondaryKeywords:
+  - "New Zealand property advice"
   - "refinancing guide tips"
-  - "new zealand property advice"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "mortgage-types-compared"
-  - "common-buying-mistakes"
+  - mortgage-types-compared
+  - buying-costs-explained
 published: true
 ---
 
-This is your complete guide to refinancing guide in New Zealand. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## When and How to Refinance Your Mortgage in New Zealand
 
-## Key Considerations
+If your mortgage is more than a couple of years old, you may be paying more than necessary. Refinancing — switching to a better rate, different product, or new lender — can save you thousands over the remaining term. This guide explains when refinancing makes sense and how to do it in New Zealand.
 
-The New Zealand property market has its own rules, costs, and processes. The Reserve Bank of New Zealand influences mortgage rates, and stamp duty applies to most purchases.
+## When Refinancing Makes Sense
 
-## What You Need to Know
+Refinancing typically makes sense when market rates have dropped significantly below your current rate, your financial profile has improved (higher income, better credit score, lower LTV through property appreciation), you want to switch from variable to fixed rate (or vice versa), you want to access equity for renovations or other purposes, or you want to change your loan term.
 
-Every property purchase in New Zealand involves stamp duty, legal fees, and various other costs. Our [buying costs guide](/new-zealand/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/new-zealand/blog/government-grants-schemes/).
+## How Refinancing Works in New Zealand
 
-## Getting the Right Mortgage
+At each fixed-rate refix date, compare rates across all five main banks and negotiate. Break costs apply if you exit a fixed rate early — calculated based on the bank's cost of breaking the underlying swap. When switching banks, ask for cash contributions ($2,000-5,000 toward legal and switching costs). Floating-rate portions can be repaid or switched without penalty at any time
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=nz). Read our [mortgage guide](/new-zealand/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+## Calculating the Break-Even Point
 
-## Professional Support
+The break-even point is how long the monthly savings take to exceed the costs of switching. Divide total switching costs by monthly savings to get the number of months. If you plan to stay longer than the break-even point, refinancing makes financial sense. Use our [mortgage calculator](/calculator/?country=nz) to model the savings.
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/new-zealand/blog/property-inspection-checklist/) covers what to look for.
+## When NOT to Refinance
+
+Refinancing does not always make sense. If the rate difference is small and switching costs are high, you may be better staying. If you are close to paying off the mortgage, the savings period is too short. If your property has decreased in value, your LTV may be worse, potentially increasing your rate.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=nz) to model your options, browse our [property buying guide](/new-zealand/property-buying-guide/) for the complete process, or check our [FAQs](/new-zealand/faqs/) for quick answers.
+Compare current rates using our [mortgage calculator](/calculator/?country=nz), read our [mortgage types guide](/new-zealand/blog/mortgage-types-compared/) to understand your options, or check [New Zealand FAQs](/new-zealand/faqs/) for quick answers.
+

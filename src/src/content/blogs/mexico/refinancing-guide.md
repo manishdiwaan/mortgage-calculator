@@ -1,41 +1,44 @@
 ---
-title: "Refinancing Guide in Mexico 2026"
+title: "When and How to Refinance Your Mortgage in Mexico 2026"
 country: "mexico"
 slug: "refinancing-guide"
 category: "refinancing"
-metaTitle: "Refinancing Guide in Mexico 2026 | URMortgage"
-metaDescription: "Complete guide to refinancing guide in Mexico. Expert advice for property buyers."
+metaTitle: "When and How to Refinance Your Mortgage in Mexico 2026 | URMortgage"
+metaDescription: "Complete guide to refinancing your mortgage in Mexico. When to switch, costs, penalties, and how much you can save."
 primaryKeyword: "refinancing guide Mexico"
 secondaryKeywords:
+  - "Mexico property advice"
   - "refinancing guide tips"
-  - "mexico property advice"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "mortgage-types-compared"
-  - "common-buying-mistakes"
+  - mortgage-types-compared
+  - buying-costs-explained
 published: true
 ---
 
-This is your complete guide to refinancing guide in Mexico. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## When and How to Refinance Your Mortgage in Mexico
 
-## Key Considerations
+If your mortgage is more than a couple of years old, you may be paying more than necessary. Refinancing — switching to a better rate, different product, or new lender — can save you thousands over the remaining term. This guide explains when refinancing makes sense and how to do it in Mexico.
 
-The Mexico property market has its own rules, costs, and processes. The Bank of Mexico influences mortgage rates, and acquisition tax applies to most purchases.
+## When Refinancing Makes Sense
 
-## What You Need to Know
+Refinancing typically makes sense when market rates have dropped significantly below your current rate, your financial profile has improved (higher income, better credit score, lower LTV through property appreciation), you want to switch from variable to fixed rate (or vice versa), you want to access equity for renovations or other purposes, or you want to change your loan term.
 
-Every property purchase in Mexico involves acquisition tax, legal fees, and various other costs. Our [buying costs guide](/mexico/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/mexico/blog/government-grants-schemes/).
+## How Refinancing Works in Mexico
 
-## Getting the Right Mortgage
+Portabilidad (mortgage portability) allows moving to a better-rate bank under the 2014 Financial Reform. Your current bank has the right to match. No prepayment penalty on INFONAVIT loans. Bank loans may have early repayment charges in the first 2-3 years. Compare using CAT (Costo Anual Total). CONDUSEF provides an online comparison tool. Given Mexican rates of 8-13%, even a 1-2% reduction saves hundreds of thousands of pesos
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=mx). Read our [mortgage guide](/mexico/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+## Calculating the Break-Even Point
 
-## Professional Support
+The break-even point is how long the monthly savings take to exceed the costs of switching. Divide total switching costs by monthly savings to get the number of months. If you plan to stay longer than the break-even point, refinancing makes financial sense. Use our [mortgage calculator](/calculator/?country=mx) to model the savings.
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/mexico/blog/property-inspection-checklist/) covers what to look for.
+## When NOT to Refinance
+
+Refinancing does not always make sense. If the rate difference is small and switching costs are high, you may be better staying. If you are close to paying off the mortgage, the savings period is too short. If your property has decreased in value, your LTV may be worse, potentially increasing your rate.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=mx) to model your options, browse our [property buying guide](/mexico/property-buying-guide/) for the complete process, or check our [FAQs](/mexico/faqs/) for quick answers.
+Compare current rates using our [mortgage calculator](/calculator/?country=mx), read our [mortgage types guide](/mexico/blog/mortgage-types-compared/) to understand your options, or check [Mexico FAQs](/mexico/faqs/) for quick answers.
+

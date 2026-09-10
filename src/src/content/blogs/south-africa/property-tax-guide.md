@@ -1,41 +1,48 @@
 ---
-title: "transfer duty in South Africa Explained"
+title: "Property Tax Guide — South Africa 2026"
 country: "south-africa"
 slug: "property-tax-guide"
-category: "taxes"
-metaTitle: "transfer duty in South Africa Explained | URMortgage"
-metaDescription: "Complete guide to property tax guide in South Africa. Expert advice for property buyers."
-primaryKeyword: "transfer duty South Africa"
+category: "tax"
+metaTitle: "Property Tax Guide — South Africa 2026 | URMortgage"
+metaDescription: "Complete guide to property taxes in South Africa. Purchase taxes, annual charges, rental income tax, and capital gains."
+primaryKeyword: "property tax guide South Africa"
 secondaryKeywords:
+  - "South Africa property advice"
   - "property tax guide tips"
-  - "south africa property advice"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "first-home-buyer-guide"
-  - "buying-costs-explained"
+  - buying-costs-explained
+  - property-investment-guide
 published: true
 ---
 
-This is your complete guide to property tax guide in South Africa. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## Property Tax Guide — South Africa 2026
 
-## Key Considerations
+Understanding the full tax picture is essential for any property purchase or investment. Taxes affect buying costs, ongoing ownership expenses, rental income, and eventual sale proceeds. This guide covers every tax that applies to property in South Africa.
 
-The South Africa property market has its own rules, costs, and processes. The South African Reserve Bank influences mortgage rates, and transfer duty applies to most purchases.
+## Taxes When Buying
 
-## What You Need to Know
+Transfer duty: 0% up to R1,100,000, then 3-13% sliding scale. Annual rates (municipal property tax) vary by municipality. Rental income at personal progressive rate (up to 45%). Capital gains: 40% inclusion at marginal rate (R2,000,000 primary residence exclusion). Levies for sectional title properties. No VAT on residential resale between individuals (14% VAT applies to developer sales of new stock)
 
-Every property purchase in South Africa involves transfer duty, legal fees, and various other costs. Our [buying costs guide](/south-africa/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/south-africa/blog/government-grants-schemes/).
+## Ongoing Annual Taxes
 
-## Getting the Right Mortgage
+Property ownership in South Africa involves annual tax obligations beyond the one-off purchase taxes. These typically include local government property charges, which vary by area and property value. Budget for these as a fixed annual cost of ownership alongside insurance and maintenance.
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=za). Read our [mortgage guide](/south-africa/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+## Taxes on Rental Income
 
-## Professional Support
+If you rent out your property, the rental income is subject to taxation. The rules for what expenses can be deducted (mortgage interest, maintenance, management fees, depreciation, insurance) vary and can significantly affect your net return. Consult a tax advisor familiar with South Africa's property tax rules for investment properties.
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/south-africa/blog/property-inspection-checklist/) covers what to look for.
+## Taxes When Selling
+
+Capital gains treatment varies between primary residences and investment properties, with many jurisdictions offering preferential treatment or exemptions for primary residences held for a minimum period. Understanding the tax implications before you buy helps you plan your holding period and exit strategy.
+
+## Tax Planning Tips
+
+Work with a tax professional who understands property taxation in South Africa. Structure your purchase correctly from the start — the ownership structure (personal, joint, corporate) affects tax treatment. Keep records of all improvements and costs as these may reduce future capital gains liability.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=za) to model your options, browse our [property buying guide](/south-africa/property-buying-guide/) for the complete process, or check our [FAQs](/south-africa/faqs/) for quick answers.
+Use our [mortgage calculator](/calculator/?country=za) to factor tax costs into your budget, read our [buying costs guide](/south-africa/blog/buying-costs-explained/) for total acquisition costs, or browse [South Africa FAQs](/south-africa/faqs/).
+

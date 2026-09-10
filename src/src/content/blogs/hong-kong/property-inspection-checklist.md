@@ -1,41 +1,48 @@
 ---
-title: "Property Inspection Checklist in Hong Kong 2026"
+title: "Property Inspection Checklist — Hong Kong 2026"
 country: "hong-kong"
 slug: "property-inspection-checklist"
-category: "inspections"
-metaTitle: "Property Inspection Checklist in Hong Kong 2026 | URMortgage"
-metaDescription: "Complete guide to property inspection checklist in Hong Kong. Expert advice for property buyers."
+category: "inspection"
+metaTitle: "Property Inspection Checklist — Hong Kong 2026 | URMortgage"
+metaDescription: "Complete property inspection checklist for buying in Hong Kong. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Hong Kong"
 secondaryKeywords:
+  - "Hong Kong property advice"
   - "property inspection checklist tips"
-  - "hong kong property advice"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - "first-home-buyer-guide"
-  - "common-buying-mistakes"
+  - common-buying-mistakes
+  - buying-costs-explained
 published: true
 ---
 
-This is your complete guide to property inspection checklist in Hong Kong. Whether you are a first-time buyer or an experienced property owner, understanding the local market is essential.
+## Property Inspection Checklist — Hong Kong 2026
 
-## Key Considerations
+A thorough property inspection can save you from costly surprises after purchase. This checklist covers everything to check when buying property in Hong Kong, from structural integrity to legal compliance.
 
-The Hong Kong property market has its own rules, costs, and processes. The Hong Kong Monetary Authority influences mortgage rates, and stamp duty applies to most purchases.
+## Professional Inspection
 
-## What You Need to Know
+For older buildings: check for unauthorised building works (UBW) through the Buildings Department, review building orders, inspect common areas and building maintenance condition. For all properties: moisture and water seepage (very common in Hong Kong's humid climate), window condition (mandatory Window Inspection Scheme for buildings over 10 years), slope safety adjacent to the building, and lift maintenance records. Review the Deed of Mutual Covenant (DMC) for strata properties
 
-Every property purchase in Hong Kong involves stamp duty, legal fees, and various other costs. Our [buying costs guide](/hong-kong/blog/buying-costs-explained/) provides a full breakdown. First-time buyers may qualify for concessions — check our [grants guide](/hong-kong/blog/government-grants-schemes/).
+## Your Personal Walkthrough Checklist
 
-## Getting the Right Mortgage
+Beyond the professional inspection, conduct your own assessment during viewings. Check water pressure in all taps and showers, test all light switches and power outlets, open and close all windows and doors (checking for sticking or misalignment), look for signs of damp or mould (especially in corners, under windows, and in bathrooms), check the condition of floors (soft spots may indicate structural issues), assess natural light at different times of day, and listen for noise from neighbours, roads, or aircraft.
 
-Compare mortgage options using our [mortgage calculator](/calculator/?country=hk). Read our [mortgage guide](/hong-kong/mortgage-guide/) for detailed information on loan types, rates, and the application process.
+## External Checks
 
-## Professional Support
+Inspect the roof from ground level for visible damage, missing tiles, or sagging. Check guttering and downpipes. Look at the condition of external walls, windows, and doors. Assess the garden or common areas. Check boundary fences and walls. Verify drainage and check for signs of flooding.
 
-Engage qualified professionals for legal, financial, and inspection services. Our [inspection checklist](/hong-kong/blog/property-inspection-checklist/) covers what to look for.
+## Location and Neighbourhood
+
+Walk the neighbourhood at different times. Check proximity to transport, schools, shops, and amenities. Research local development plans that could affect value. Check crime statistics and flooding risk maps for the area.
+
+## Legal and Documentation Checks
+
+Verify ownership records, check for any encumbrances or restrictions, confirm planning permission compliance for any extensions or modifications, and review any leasehold or commonhold terms. Our [property buying guide](/hong-kong/property-buying-guide/) covers the full legal process.
 
 ## Next Steps
 
-Use our [mortgage calculator](/calculator/?country=hk) to model your options, browse our [property buying guide](/hong-kong/property-buying-guide/) for the complete process, or check our [FAQs](/hong-kong/faqs/) for quick answers.
+Use our [mortgage calculator](/calculator/?country=hk) once you have found the right property, read our [buying costs guide](/hong-kong/blog/buying-costs-explained/) to budget accurately, or browse [Hong Kong FAQs](/hong-kong/faqs/).
+

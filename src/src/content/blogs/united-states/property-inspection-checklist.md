@@ -1,44 +1,48 @@
 ---
-title: "Property Inspection Checklist in United States 2026"
+title: "Property Inspection Checklist — United States 2026"
 country: "united-states"
 slug: "property-inspection-checklist"
-category: "inspections"
-metaTitle: "Property Inspection Checklist United States 2026 | URMortgage"
-metaDescription: "Complete guide to property inspection checklist in United States. Expert advice for property buyers and homeowners."
+category: "inspection"
+metaTitle: "Property Inspection Checklist — United States 2026 | URMortgage"
+metaDescription: "Complete property inspection checklist for buying in United States. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist United States"
 secondaryKeywords:
+  - "United States property advice"
   - "property inspection checklist tips"
-  - "united states property advice"
-  - "buying house united states"
 publishDate: 2026-07-10
-lastUpdated: 2026-07-10
-wordCount: 1400
+lastUpdated: 2026-08-18
+wordCount: 1200
 relatedPosts:
-  - first-home-buyer-guide
   - common-buying-mistakes
+  - buying-costs-explained
 published: true
 ---
 
-A thorough property inspection before purchase can save you from expensive surprises. Here is what to check when buying in United States.
+## Property Inspection Checklist — United States 2026
 
-## What to Look for at Viewings
+A thorough property inspection can save you from costly surprises after purchase. This checklist covers everything to check when buying property in United States, from structural integrity to legal compliance.
 
-Check the property's external condition, interior finishes, plumbing and electrical systems, and structural integrity. Note any signs of water damage, cracking, or pest activity.
+## Professional Inspection
 
-## Professional Building Inspection
+Professional inspection covers structure, foundation, roof, plumbing, electrical, HVAC, insulation, windows/doors, and exterior grading. Most contracts include an inspection contingency. Additional specialised inspections: radon testing (especially in Midwest and Northeast), termite/pest, mould, lead paint (pre-1978 homes), asbestos, well water quality, septic system, and sewer scope. The appraisal (required by lender) is separate from the inspection and may flag additional issues. For condos: review HOA financials, reserve fund, CC&Rs, and any pending litigation
 
-A qualified inspector examines the structural integrity, roof, walls, foundations, and major systems. This is essential for any property purchase in United States.
+## Your Personal Walkthrough Checklist
 
-## Pest and Environmental Checks
+Beyond the professional inspection, conduct your own assessment during viewings. Check water pressure in all taps and showers, test all light switches and power outlets, open and close all windows and doors (checking for sticking or misalignment), look for signs of damp or mould (especially in corners, under windows, and in bathrooms), check the condition of floors (soft spots may indicate structural issues), assess natural light at different times of day, and listen for noise from neighbours, roads, or aircraft.
 
-Depending on your location in United States, pest inspections and environmental checks may be critical. Local conditions determine which inspections are most important.
+## External Checks
 
-## Using Results to Negotiate
+Inspect the roof from ground level for visible damage, missing tiles, or sagging. Check guttering and downpipes. Look at the condition of external walls, windows, and doors. Assess the garden or common areas. Check boundary fences and walls. Verify drainage and check for signs of flooding.
 
-Inspection findings can justify price reductions or repair requirements. Never waive inspections to save time or money — the cost is minimal compared to potential repair bills.
+## Location and Neighbourhood
 
-## When to Walk Away
+Walk the neighbourhood at different times. Check proximity to transport, schools, shops, and amenities. Research local development plans that could affect value. Check crime statistics and flooding risk maps for the area.
 
-Major structural defects, significant pest damage, or legal issues with the property may justify withdrawing from the purchase entirely.
+## Legal and Documentation Checks
 
-For the complete buying process, read our [property buying guide](/united-states/property-buying-guide/). See our [common mistakes guide](/united-states/blog/common-buying-mistakes/) for more pitfalls to avoid. Use our [mortgage calculator](/calculator/?country=us) to stay on budget.
+Verify ownership records, check for any encumbrances or restrictions, confirm planning permission compliance for any extensions or modifications, and review any leasehold or commonhold terms. Our [property buying guide](/united-states/property-buying-guide/) covers the full legal process.
+
+## Next Steps
+
+Use our [mortgage calculator](/calculator/?country=us) once you have found the right property, read our [buying costs guide](/united-states/blog/buying-costs-explained/) to budget accurately, or browse [United States FAQs](/united-states/faqs/).
+
