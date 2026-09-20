@@ -1,0 +1,51 @@
+name: Weekly Blog Post
+
+# Runs every Monday 08:00 AEST (Sunday 22:00 UTC) and calls the site's
+# /api/generate-blog endpoint, which writes a new post and commits it to main.
+# Cloudflare Pages then auto-deploys the commit.
+# Requires repo secret: ADMIN_SECRET (same value as the Cloudflare Pages env var).
+
+on:
+  schedule:
+    - cron: '0 22 * * 0'
+  workflow_dispatch:
+    inputs:
+      countrySlug:
+        description: 'Optional country slug (e.g. australia). Leave blank to use the weekly rotation.'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Call generate-blog endpoint
+        env:
+          ADMIN_SECRET: ${{ secrets.ADMIN_SECRET }}
+          COUNTRY: ${{ inputs.countrySlug }}
+        run: |
+          set -euo pipefail
+          if [ -z "${ADMIN_SECRET:-}" ]; then
+            echo "::error::ADMIN_SECRET repo secret is not set"
+            exit 1
+          fi
+          body='{}'
+          if [ -n "${COUNTRY:-}" ]; then
+            body=$(jq -n --arg c "$COUNTRY" '{countrySlug: $c}')
+          fi
+          status=$(curl -sS --max-time 150 -o response.json -w '%{http_code}' \
+            -X POST https://urmortgage.online/api/generate-blog \
+            -H 'Content-Type: application/json' \
+            -H "X-Admin-Secret: $ADMIN_SECRET" \
+            -d "$body")
+          cat response.json; echo
+          if [ "$status" != "200" ]; then
+            echo "::error::generate-blog returned HTTP $status"
+            exit 1
+          fi
+          jq -e '.success == true' response.json > /dev/null
+          echo "Published: $(jq -r '.pageUrl' response.json)"
