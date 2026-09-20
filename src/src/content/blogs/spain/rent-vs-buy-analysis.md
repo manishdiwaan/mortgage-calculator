@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — Spain 2026"
 country: "spain"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — Spain 2026 | URMortgage"
 metaDescription: "Should you rent or buy in Spain? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis Spain"

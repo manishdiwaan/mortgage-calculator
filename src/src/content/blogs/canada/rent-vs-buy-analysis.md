@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — Canada 2026"
 country: "canada"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — Canada 2026 | URMortgage"
 metaDescription: "Should you rent or buy in Canada? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis Canada"

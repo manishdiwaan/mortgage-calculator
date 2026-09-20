@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Italy 2026"
 country: "italy"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Italy 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Italy. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Italy"

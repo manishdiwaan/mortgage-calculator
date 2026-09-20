@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — Saudi Arabia 2026"
 country: "saudi-arabia"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — Saudi Arabia 2026 | URMortgage"
 metaDescription: "Should you rent or buy in Saudi Arabia? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis Saudi Arabia"

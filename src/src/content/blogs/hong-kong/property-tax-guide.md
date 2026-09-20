@@ -2,7 +2,7 @@
 title: "Property Tax Guide — Hong Kong 2026"
 country: "hong-kong"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — Hong Kong 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in Hong Kong. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide Hong Kong"

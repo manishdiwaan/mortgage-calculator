@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — UAE 2026"
 country: "uae"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — UAE 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in UAE. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist UAE"

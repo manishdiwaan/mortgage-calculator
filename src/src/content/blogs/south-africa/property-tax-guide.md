@@ -2,7 +2,7 @@
 title: "Property Tax Guide — South Africa 2026"
 country: "south-africa"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — South Africa 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in South Africa. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide South Africa"

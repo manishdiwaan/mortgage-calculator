@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Saudi Arabia 2026"
 country: "saudi-arabia"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Saudi Arabia 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Saudi Arabia. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Saudi Arabia"

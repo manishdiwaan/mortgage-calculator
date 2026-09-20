@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Brazil 2026"
 country: "brazil"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Brazil 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Brazil. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Brazil"

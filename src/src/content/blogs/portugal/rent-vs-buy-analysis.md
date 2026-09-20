@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — Portugal 2026"
 country: "portugal"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — Portugal 2026 | URMortgage"
 metaDescription: "Should you rent or buy in Portugal? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis Portugal"

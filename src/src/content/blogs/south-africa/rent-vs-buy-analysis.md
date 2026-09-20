@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — South Africa 2026"
 country: "south-africa"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — South Africa 2026 | URMortgage"
 metaDescription: "Should you rent or buy in South Africa? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis South Africa"

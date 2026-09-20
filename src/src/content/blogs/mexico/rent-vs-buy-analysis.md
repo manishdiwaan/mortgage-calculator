@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — Mexico 2026"
 country: "mexico"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — Mexico 2026 | URMortgage"
 metaDescription: "Should you rent or buy in Mexico? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis Mexico"

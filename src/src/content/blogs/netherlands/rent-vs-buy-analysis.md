@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — Netherlands 2026"
 country: "netherlands"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — Netherlands 2026 | URMortgage"
 metaDescription: "Should you rent or buy in Netherlands? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis Netherlands"

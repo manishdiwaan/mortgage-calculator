@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — United States 2026"
 country: "united-states"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — United States 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in United States. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist United States"

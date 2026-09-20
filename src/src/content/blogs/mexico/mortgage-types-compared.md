@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Mexico 2026"
 country: "mexico"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Mexico 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Mexico. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Mexico"

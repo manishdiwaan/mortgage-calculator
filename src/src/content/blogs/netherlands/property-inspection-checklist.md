@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Netherlands 2026"
 country: "netherlands"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Netherlands 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Netherlands. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Netherlands"

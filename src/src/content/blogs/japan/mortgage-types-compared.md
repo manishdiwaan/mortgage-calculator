@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Japan 2026"
 country: "japan"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Japan 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Japan. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Japan"

@@ -2,7 +2,7 @@
 title: "Property Tax Guide — Malaysia 2026"
 country: "malaysia"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — Malaysia 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in Malaysia. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide Malaysia"

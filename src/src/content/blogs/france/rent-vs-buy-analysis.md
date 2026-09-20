@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — France 2026"
 country: "france"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — France 2026 | URMortgage"
 metaDescription: "Should you rent or buy in France? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis France"

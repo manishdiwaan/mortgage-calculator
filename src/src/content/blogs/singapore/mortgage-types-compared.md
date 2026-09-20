@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Singapore 2026"
 country: "singapore"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Singapore 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Singapore. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Singapore"

@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — United Kingdom 2026"
 country: "united-kingdom"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — United Kingdom 2026 | URMortgage"
 metaDescription: "Should you rent or buy in United Kingdom? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis United Kingdom"

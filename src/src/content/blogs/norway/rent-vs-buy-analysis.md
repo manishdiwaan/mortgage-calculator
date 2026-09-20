@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — Norway 2026"
 country: "norway"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — Norway 2026 | URMortgage"
 metaDescription: "Should you rent or buy in Norway? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis Norway"

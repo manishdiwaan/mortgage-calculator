@@ -2,7 +2,7 @@
 title: "Property Tax Guide — Norway 2026"
 country: "norway"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — Norway 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in Norway. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide Norway"

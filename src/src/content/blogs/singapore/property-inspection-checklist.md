@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Singapore 2026"
 country: "singapore"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Singapore 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Singapore. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Singapore"

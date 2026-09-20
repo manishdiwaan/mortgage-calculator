@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Canada 2026"
 country: "canada"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Canada 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Canada. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Canada"

@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Spain 2026"
 country: "spain"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Spain 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Spain. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Spain"

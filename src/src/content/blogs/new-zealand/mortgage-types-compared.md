@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — New Zealand 2026"
 country: "new-zealand"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in New Zealand 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in New Zealand. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types New Zealand"

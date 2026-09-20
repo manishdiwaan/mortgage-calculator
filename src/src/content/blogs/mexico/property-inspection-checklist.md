@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Mexico 2026"
 country: "mexico"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Mexico 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Mexico. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Mexico"

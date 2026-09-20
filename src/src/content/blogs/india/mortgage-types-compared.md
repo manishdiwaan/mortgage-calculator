@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — India 2026"
 country: "india"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in India 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in India. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types India"

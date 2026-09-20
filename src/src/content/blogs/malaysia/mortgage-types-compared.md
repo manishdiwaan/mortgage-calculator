@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Malaysia 2026"
 country: "malaysia"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Malaysia 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Malaysia. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Malaysia"

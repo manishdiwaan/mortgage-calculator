@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — South Korea 2026"
 country: "south-korea"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — South Korea 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in South Korea. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist South Korea"

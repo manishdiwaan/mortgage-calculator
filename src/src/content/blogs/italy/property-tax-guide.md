@@ -2,7 +2,7 @@
 title: "Property Tax Guide — Italy 2026"
 country: "italy"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — Italy 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in Italy. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide Italy"

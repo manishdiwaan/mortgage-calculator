@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — South Korea 2026"
 country: "south-korea"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — South Korea 2026 | URMortgage"
 metaDescription: "Should you rent or buy in South Korea? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis South Korea"

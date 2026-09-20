@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Japan 2026"
 country: "japan"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Japan 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Japan. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Japan"

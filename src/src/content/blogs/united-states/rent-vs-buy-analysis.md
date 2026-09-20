@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — United States 2026"
 country: "united-states"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — United States 2026 | URMortgage"
 metaDescription: "Should you rent or buy in United States? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis United States"

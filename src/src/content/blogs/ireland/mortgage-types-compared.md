@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Ireland 2026"
 country: "ireland"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Ireland 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Ireland. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Ireland"

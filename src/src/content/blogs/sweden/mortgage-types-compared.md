@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Sweden 2026"
 country: "sweden"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Sweden 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Sweden. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Sweden"

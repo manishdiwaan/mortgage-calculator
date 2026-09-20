@@ -2,7 +2,7 @@
 title: "Property Tax Guide — Thailand 2026"
 country: "thailand"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — Thailand 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in Thailand. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide Thailand"

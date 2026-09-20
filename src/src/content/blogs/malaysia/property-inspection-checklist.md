@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Malaysia 2026"
 country: "malaysia"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Malaysia 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Malaysia. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Malaysia"

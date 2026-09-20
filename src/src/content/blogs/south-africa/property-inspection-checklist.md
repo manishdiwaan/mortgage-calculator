@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — South Africa 2026"
 country: "south-africa"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — South Africa 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in South Africa. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist South Africa"

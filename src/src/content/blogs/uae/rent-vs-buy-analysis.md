@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — UAE 2026"
 country: "uae"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — UAE 2026 | URMortgage"
 metaDescription: "Should you rent or buy in UAE? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis UAE"

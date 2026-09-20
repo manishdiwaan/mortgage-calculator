@@ -2,7 +2,7 @@
 title: "Property Tax Guide — United States 2026"
 country: "united-states"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — United States 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in United States. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide United States"

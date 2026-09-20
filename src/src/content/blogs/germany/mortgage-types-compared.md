@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Germany 2026"
 country: "germany"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Germany 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Germany. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Germany"

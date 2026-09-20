@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Switzerland 2026"
 country: "switzerland"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Switzerland 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Switzerland. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Switzerland"

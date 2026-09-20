@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Saudi Arabia 2026"
 country: "saudi-arabia"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Saudi Arabia 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Saudi Arabia. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Saudi Arabia"

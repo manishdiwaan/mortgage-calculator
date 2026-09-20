@@ -2,7 +2,7 @@
 title: "Property Tax Guide — Spain 2026"
 country: "spain"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — Spain 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in Spain. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide Spain"

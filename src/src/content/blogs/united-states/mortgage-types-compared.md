@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — United States 2026"
 country: "united-states"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in United States 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in United States. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types United States"

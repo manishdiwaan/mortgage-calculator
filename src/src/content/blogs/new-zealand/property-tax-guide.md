@@ -2,7 +2,7 @@
 title: "Property Tax Guide — New Zealand 2026"
 country: "new-zealand"
 slug: "property-tax-guide"
-category: "tax"
+category: "taxes"
 metaTitle: "Property Tax Guide — New Zealand 2026 | URMortgage"
 metaDescription: "Complete guide to property taxes in New Zealand. Purchase taxes, annual charges, rental income tax, and capital gains."
 primaryKeyword: "property tax guide New Zealand"

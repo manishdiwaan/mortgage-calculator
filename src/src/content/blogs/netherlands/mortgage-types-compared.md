@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Netherlands 2026"
 country: "netherlands"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Netherlands 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Netherlands. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Netherlands"

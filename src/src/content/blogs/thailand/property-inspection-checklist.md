@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Thailand 2026"
 country: "thailand"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Thailand 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Thailand. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Thailand"

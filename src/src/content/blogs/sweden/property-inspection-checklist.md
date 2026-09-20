@@ -2,7 +2,7 @@
 title: "Property Inspection Checklist — Sweden 2026"
 country: "sweden"
 slug: "property-inspection-checklist"
-category: "inspection"
+category: "inspections"
 metaTitle: "Property Inspection Checklist — Sweden 2026 | URMortgage"
 metaDescription: "Complete property inspection checklist for buying in Sweden. What to check before committing to a purchase."
 primaryKeyword: "property inspection checklist Sweden"

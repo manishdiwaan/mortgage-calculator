@@ -2,7 +2,7 @@
 title: "Rent vs Buy Analysis — Ireland 2026"
 country: "ireland"
 slug: "rent-vs-buy-analysis"
-category: "analysis"
+category: "rent-vs-buy"
 metaTitle: "Rent vs Buy Analysis — Ireland 2026 | URMortgage"
 metaDescription: "Should you rent or buy in Ireland? Financial comparison, breakeven analysis, and key factors to consider."
 primaryKeyword: "rent vs buy analysis Ireland"

@@ -2,7 +2,7 @@
 title: "Mortgage Types Compared — Spain 2026"
 country: "spain"
 slug: "mortgage-types-compared"
-category: "mortgages"
+category: "loan-types"
 metaTitle: "Mortgage Types in Spain 2026 | Compare Fixed vs Variable"
 metaDescription: "Compare mortgage types available in Spain. Fixed rate, variable rate, and other products explained with pros, cons, and tips."
 primaryKeyword: "mortgage types Spain"
